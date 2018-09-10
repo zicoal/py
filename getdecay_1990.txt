@@ -1,0 +1,917 @@
+2018-08-21 11:55:17,291 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 1000000,0.631788%, cost time:4 s
+2018-08-21 11:55:22,100 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 2000000,1.263576%, cost time:9 s
+2018-08-21 11:55:27,005 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 3000000,1.895364%, cost time:14 s
+2018-08-21 11:55:31,787 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 4000000,2.527152%, cost time:19 s
+2018-08-21 11:55:36,554 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 5000000,3.158939%, cost time:24 s
+2018-08-21 11:55:41,340 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 6000000,3.790727%, cost time:28 s
+2018-08-21 11:55:46,431 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 7000000,4.422515%, cost time:33 s
+2018-08-21 11:55:51,269 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 8000000,5.054303%, cost time:38 s
+2018-08-21 11:55:56,147 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 9000000,5.686091%, cost time:43 s
+2018-08-21 11:56:00,937 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 10000000,6.317879%, cost time:48 s
+2018-08-21 11:56:05,800 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 11000000,6.949667%, cost time:53 s
+2018-08-21 11:56:10,666 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 12000000,7.581455%, cost time:58 s
+2018-08-21 11:56:15,506 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 13000000,8.213243%, cost time:62 s
+2018-08-21 11:56:20,401 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 14000000,8.845031%, cost time:67 s
+2018-08-21 11:56:25,894 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 15000000,9.476818%, cost time:73 s
+2018-08-21 11:56:30,774 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 16000000,10.108606%, cost time:78 s
+2018-08-21 11:56:35,695 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 17000000,10.740394%, cost time:83 s
+2018-08-21 11:56:40,661 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 18000000,11.372182%, cost time:88 s
+2018-08-21 11:56:45,621 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 19000000,12.003970%, cost time:93 s
+2018-08-21 11:56:50,600 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 20000000,12.635758%, cost time:98 s
+2018-08-21 11:56:55,578 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 21000000,13.267546%, cost time:103 s
+2018-08-21 11:57:00,505 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 22000000,13.899334%, cost time:107 s
+2018-08-21 11:57:05,530 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 23000000,14.531122%, cost time:112 s
+2018-08-21 11:57:10,579 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 24000000,15.162910%, cost time:118 s
+2018-08-21 11:57:15,587 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 25000000,15.794697%, cost time:123 s
+2018-08-21 11:57:20,602 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 26000000,16.426485%, cost time:128 s
+2018-08-21 11:57:25,642 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 27000000,17.058273%, cost time:133 s
+2018-08-21 11:57:30,655 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 28000000,17.690061%, cost time:138 s
+2018-08-21 11:57:35,717 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 29000000,18.321849%, cost time:143 s
+2018-08-21 11:57:40,803 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 30000000,18.953637%, cost time:148 s
+2018-08-21 11:57:45,880 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 31000000,19.585425%, cost time:153 s
+2018-08-21 11:57:50,932 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 32000000,20.217213%, cost time:158 s
+2018-08-21 11:57:55,953 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 33000000,20.849001%, cost time:163 s
+2018-08-21 11:58:00,920 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 34000000,21.480789%, cost time:168 s
+2018-08-21 11:58:05,947 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 35000000,22.112576%, cost time:173 s
+2018-08-21 11:58:11,010 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 36000000,22.744364%, cost time:178 s
+2018-08-21 11:58:16,029 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 37000000,23.376152%, cost time:183 s
+2018-08-21 11:58:21,050 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 38000000,24.007940%, cost time:188 s
+2018-08-21 11:58:26,031 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 39000000,24.639728%, cost time:193 s
+2018-08-21 11:58:32,200 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 40000000,25.271516%, cost time:199 s
+2018-08-21 11:58:37,254 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 41000000,25.903304%, cost time:204 s
+2018-08-21 11:58:42,272 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 42000000,26.535092%, cost time:209 s
+2018-08-21 11:58:47,232 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 43000000,27.166880%, cost time:214 s
+2018-08-21 11:58:52,236 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 44000000,27.798667%, cost time:219 s
+2018-08-21 11:58:57,233 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 45000000,28.430455%, cost time:224 s
+2018-08-21 11:59:02,216 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 46000000,29.062243%, cost time:229 s
+2018-08-21 11:59:07,245 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 47000000,29.694031%, cost time:234 s
+2018-08-21 11:59:12,313 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 48000000,30.325819%, cost time:239 s
+2018-08-21 11:59:17,332 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 49000000,30.957607%, cost time:244 s
+2018-08-21 11:59:22,349 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 50000000,31.589395%, cost time:249 s
+2018-08-21 11:59:27,351 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 51000000,32.221183%, cost time:254 s
+2018-08-21 11:59:32,320 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 52000000,32.852971%, cost time:259 s
+2018-08-21 11:59:37,355 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 53000000,33.484759%, cost time:264 s
+2018-08-21 11:59:42,397 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 54000000,34.116546%, cost time:269 s
+2018-08-21 11:59:47,397 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 55000000,34.748334%, cost time:274 s
+2018-08-21 11:59:52,389 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 56000000,35.380122%, cost time:279 s
+2018-08-21 11:59:57,401 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 57000000,36.011910%, cost time:284 s
+2018-08-21 12:00:02,459 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 58000000,36.643698%, cost time:289 s
+2018-08-21 12:00:07,409 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 59000000,37.275486%, cost time:294 s
+2018-08-21 12:00:12,459 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 60000000,37.907274%, cost time:299 s
+2018-08-21 12:00:17,633 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 61000000,38.539062%, cost time:305 s
+2018-08-21 12:00:22,711 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 62000000,39.170850%, cost time:310 s
+2018-08-21 12:00:27,771 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 63000000,39.802638%, cost time:315 s
+2018-08-21 12:00:32,820 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 64000000,40.434425%, cost time:320 s
+2018-08-21 12:00:37,859 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 65000000,41.066213%, cost time:325 s
+2018-08-21 12:00:42,941 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 66000000,41.698001%, cost time:330 s
+2018-08-21 12:00:48,040 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 67000000,42.329789%, cost time:335 s
+2018-08-21 12:00:53,143 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 68000000,42.961577%, cost time:340 s
+2018-08-21 12:00:58,233 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 69000000,43.593365%, cost time:345 s
+2018-08-21 12:01:03,343 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 70000000,44.225153%, cost time:350 s
+2018-08-21 12:01:08,353 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 71000000,44.856941%, cost time:355 s
+2018-08-21 12:01:13,385 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 72000000,45.488729%, cost time:360 s
+2018-08-21 12:01:18,450 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 73000000,46.120517%, cost time:365 s
+2018-08-21 12:01:23,502 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 74000000,46.752304%, cost time:370 s
+2018-08-21 12:01:28,561 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 75000000,47.384092%, cost time:376 s
+2018-08-21 12:01:33,672 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 76000000,48.015880%, cost time:381 s
+2018-08-21 12:01:38,751 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 77000000,48.647668%, cost time:386 s
+2018-08-21 12:01:43,853 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 78000000,49.279456%, cost time:391 s
+2018-08-21 12:01:48,958 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 79000000,49.911244%, cost time:396 s
+2018-08-21 12:01:54,069 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 80000000,50.543032%, cost time:401 s
+2018-08-21 12:01:59,151 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 81000000,51.174820%, cost time:406 s
+2018-08-21 12:02:04,311 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 82000000,51.806608%, cost time:411 s
+2018-08-21 12:02:09,433 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 83000000,52.438395%, cost time:416 s
+2018-08-21 12:02:14,573 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 84000000,53.070183%, cost time:422 s
+2018-08-21 12:02:19,707 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 85000000,53.701971%, cost time:427 s
+2018-08-21 12:02:24,788 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 86000000,54.333759%, cost time:432 s
+2018-08-21 12:02:29,906 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 87000000,54.965547%, cost time:437 s
+2018-08-21 12:02:35,029 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 88000000,55.597335%, cost time:442 s
+2018-08-21 12:02:40,229 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 89000000,56.229123%, cost time:447 s
+2018-08-21 12:02:45,490 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 90000000,56.860911%, cost time:452 s
+2018-08-21 12:02:50,587 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 91000000,57.492699%, cost time:458 s
+2018-08-21 12:02:55,680 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 92000000,58.124487%, cost time:463 s
+2018-08-21 12:03:00,829 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 93000000,58.756274%, cost time:468 s
+2018-08-21 12:03:05,964 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 94000000,59.388062%, cost time:473 s
+2018-08-21 12:03:11,117 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 95000000,60.019850%, cost time:478 s
+2018-08-21 12:03:16,247 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 96000000,60.651638%, cost time:483 s
+2018-08-21 12:03:21,317 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 97000000,61.283426%, cost time:488 s
+2018-08-21 12:03:26,423 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 98000000,61.915214%, cost time:493 s
+2018-08-21 12:03:32,130 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 99000000,62.547002%, cost time:499 s
+2018-08-21 12:03:37,235 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 100000000,63.178790%, cost time:504 s
+2018-08-21 12:03:42,347 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 101000000,63.810578%, cost time:509 s
+2018-08-21 12:03:47,483 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 102000000,64.442366%, cost time:514 s
+2018-08-21 12:03:52,840 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 103000000,65.074153%, cost time:520 s
+2018-08-21 12:03:57,985 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 104000000,65.705941%, cost time:525 s
+2018-08-21 12:04:03,297 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 105000000,66.337729%, cost time:530 s
+2018-08-21 12:04:08,476 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 106000000,66.969517%, cost time:535 s
+2018-08-21 12:04:13,619 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 107000000,67.601305%, cost time:541 s
+2018-08-21 12:04:19,206 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 108000000,68.233093%, cost time:546 s
+2018-08-21 12:04:24,365 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 109000000,68.864881%, cost time:551 s
+2018-08-21 12:04:29,519 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 110000000,69.496669%, cost time:556 s
+2018-08-21 12:04:34,708 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 111000000,70.128457%, cost time:562 s
+2018-08-21 12:04:39,918 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 112000000,70.760245%, cost time:567 s
+2018-08-21 12:04:45,088 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 113000000,71.392032%, cost time:572 s
+2018-08-21 12:04:50,755 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 114000000,72.023820%, cost time:578 s
+2018-08-21 12:04:55,955 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 115000000,72.655608%, cost time:583 s
+2018-08-21 12:05:01,177 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 116000000,73.287396%, cost time:588 s
+2018-08-21 12:05:06,326 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 117000000,73.919184%, cost time:593 s
+2018-08-21 12:05:11,794 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 118000000,74.550972%, cost time:599 s
+2018-08-21 12:05:17,710 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 119000000,75.182760%, cost time:605 s
+2018-08-21 12:05:22,928 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 120000000,75.814548%, cost time:610 s
+2018-08-21 12:05:28,062 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 121000000,76.446336%, cost time:615 s
+2018-08-21 12:05:33,244 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 122000000,77.078124%, cost time:620 s
+2018-08-21 12:05:38,354 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 123000000,77.709911%, cost time:625 s
+2018-08-21 12:05:44,091 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 124000000,78.341699%, cost time:631 s
+2018-08-21 12:05:49,196 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 125000000,78.973487%, cost time:636 s
+2018-08-21 12:05:54,839 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 126000000,79.605275%, cost time:642 s
+2018-08-21 12:05:59,994 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 127000000,80.237063%, cost time:647 s
+2018-08-21 12:06:05,730 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 128000000,80.868851%, cost time:653 s
+2018-08-21 12:06:10,843 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 129000000,81.500639%, cost time:658 s
+2018-08-21 12:06:16,070 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 130000000,82.132427%, cost time:663 s
+2018-08-21 12:06:21,246 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 131000000,82.764215%, cost time:668 s
+2018-08-21 12:06:26,433 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 132000000,83.396002%, cost time:673 s
+2018-08-21 12:06:32,058 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 133000000,84.027790%, cost time:679 s
+2018-08-21 12:06:37,153 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 134000000,84.659578%, cost time:684 s
+2018-08-21 12:06:42,208 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 135000000,85.291366%, cost time:689 s
+2018-08-21 12:06:47,709 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 136000000,85.923154%, cost time:695 s
+2018-08-21 12:06:52,823 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 137000000,86.554942%, cost time:700 s
+2018-08-21 12:06:57,961 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 138000000,87.186730%, cost time:705 s
+2018-08-21 12:07:03,781 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 139000000,87.818518%, cost time:711 s
+2018-08-21 12:07:08,938 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 140000000,88.450306%, cost time:716 s
+2018-08-21 12:07:14,634 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 141000000,89.082094%, cost time:722 s
+2018-08-21 12:07:19,734 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 142000000,89.713881%, cost time:727 s
+2018-08-21 12:07:24,884 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 143000000,90.345669%, cost time:732 s
+2018-08-21 12:07:30,468 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 144000000,90.977457%, cost time:737 s
+2018-08-21 12:07:35,787 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 145000000,91.609245%, cost time:743 s
+2018-08-21 12:07:41,062 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 146000000,92.241033%, cost time:748 s
+2018-08-21 12:07:46,268 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 147000000,92.872821%, cost time:753 s
+2018-08-21 12:07:51,763 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 148000000,93.504609%, cost time:759 s
+2018-08-21 12:07:56,967 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 149000000,94.136397%, cost time:764 s
+2018-08-21 12:08:02,705 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 150000000,94.768185%, cost time:770 s
+2018-08-21 12:08:07,874 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 151000000,95.399973%, cost time:775 s
+2018-08-21 12:08:13,086 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 152000000,96.031760%, cost time:780 s
+2018-08-21 12:08:18,312 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 153000000,96.663548%, cost time:785 s
+2018-08-21 12:08:23,996 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 154000000,97.295336%, cost time:791 s
+2018-08-21 12:08:29,280 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 155000000,97.927124%, cost time:796 s
+2018-08-21 12:08:34,925 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 156000000,98.558912%, cost time:802 s
+2018-08-21 12:08:40,164 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 157000000,99.190700%, cost time:807 s
+2018-08-21 12:08:45,408 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 158000000,99.822488%, cost time:812 s
+2018-08-21 12:08:47,339 - MAGGenrateAttactivenessBySubField.py[line:87] - INFO: Reading papers field years: 158280968,100.000000%, cost time:814 s
+2018-08-21 12:08:50,926 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 1000000,0.189150%, cost time:818 s
+2018-08-21 12:08:54,732 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 2000000,0.378299%, cost time:822 s
+2018-08-21 12:09:00,636 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 3000000,0.567449%, cost time:828 s
+2018-08-21 12:09:04,480 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 4000000,0.756598%, cost time:831 s
+2018-08-21 12:09:08,366 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 5000000,0.945748%, cost time:835 s
+2018-08-21 12:09:12,683 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 6000000,1.134897%, cost time:840 s
+2018-08-21 12:09:16,540 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 7000000,1.324047%, cost time:843 s
+2018-08-21 12:09:20,407 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 8000000,1.513196%, cost time:847 s
+2018-08-21 12:09:24,270 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 9000000,1.702346%, cost time:851 s
+2018-08-21 12:09:28,128 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 10000000,1.891495%, cost time:855 s
+2018-08-21 12:09:31,980 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 11000000,2.080645%, cost time:859 s
+2018-08-21 12:09:35,856 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 12000000,2.269794%, cost time:863 s
+2018-08-21 12:09:39,731 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 13000000,2.458944%, cost time:867 s
+2018-08-21 12:09:44,394 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 14000000,2.648093%, cost time:871 s
+2018-08-21 12:09:48,298 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 15000000,2.837243%, cost time:875 s
+2018-08-21 12:09:52,223 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 16000000,3.026392%, cost time:879 s
+2018-08-21 12:09:56,189 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 17000000,3.215542%, cost time:883 s
+2018-08-21 12:10:00,121 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 18000000,3.404691%, cost time:887 s
+2018-08-21 12:10:04,222 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 19000000,3.593841%, cost time:891 s
+2018-08-21 12:10:08,305 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 20000000,3.782990%, cost time:895 s
+2018-08-21 12:10:12,258 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 21000000,3.972140%, cost time:899 s
+2018-08-21 12:10:16,206 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 22000000,4.161289%, cost time:903 s
+2018-08-21 12:10:20,167 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 23000000,4.350439%, cost time:907 s
+2018-08-21 12:10:24,144 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 24000000,4.539588%, cost time:911 s
+2018-08-21 12:10:28,190 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 25000000,4.728738%, cost time:915 s
+2018-08-21 12:10:32,225 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 26000000,4.917887%, cost time:919 s
+2018-08-21 12:10:36,258 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 27000000,5.107037%, cost time:923 s
+2018-08-21 12:10:40,263 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 28000000,5.296186%, cost time:927 s
+2018-08-21 12:10:44,246 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 29000000,5.485336%, cost time:931 s
+2018-08-21 12:10:48,247 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 30000000,5.674486%, cost time:935 s
+2018-08-21 12:10:52,271 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 31000000,5.863635%, cost time:939 s
+2018-08-21 12:10:56,372 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 32000000,6.052785%, cost time:943 s
+2018-08-21 12:11:00,489 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 33000000,6.241934%, cost time:947 s
+2018-08-21 12:11:04,595 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 34000000,6.431084%, cost time:952 s
+2018-08-21 12:11:08,635 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 35000000,6.620233%, cost time:956 s
+2018-08-21 12:11:12,720 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 36000000,6.809383%, cost time:960 s
+2018-08-21 12:11:16,839 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 37000000,6.998532%, cost time:964 s
+2018-08-21 12:11:20,978 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 38000000,7.187682%, cost time:968 s
+2018-08-21 12:11:25,212 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 39000000,7.376831%, cost time:972 s
+2018-08-21 12:11:29,319 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 40000000,7.565981%, cost time:976 s
+2018-08-21 12:11:33,406 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 41000000,7.755130%, cost time:980 s
+2018-08-21 12:11:39,592 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 42000000,7.944280%, cost time:987 s
+2018-08-21 12:11:43,643 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 43000000,8.133429%, cost time:991 s
+2018-08-21 12:11:47,694 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 44000000,8.322579%, cost time:995 s
+2018-08-21 12:11:51,641 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 45000000,8.511728%, cost time:999 s
+2018-08-21 12:11:55,618 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 46000000,8.700878%, cost time:1003 s
+2018-08-21 12:11:59,593 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 47000000,8.890027%, cost time:1007 s
+2018-08-21 12:12:03,606 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 48000000,9.079177%, cost time:1011 s
+2018-08-21 12:12:07,631 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 49000000,9.268326%, cost time:1015 s
+2018-08-21 12:12:11,615 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 50000000,9.457476%, cost time:1019 s
+2018-08-21 12:12:15,555 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 51000000,9.646625%, cost time:1023 s
+2018-08-21 12:12:19,584 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 52000000,9.835775%, cost time:1027 s
+2018-08-21 12:12:23,553 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 53000000,10.024924%, cost time:1031 s
+2018-08-21 12:12:27,550 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 54000000,10.214074%, cost time:1035 s
+2018-08-21 12:12:31,516 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 55000000,10.403223%, cost time:1038 s
+2018-08-21 12:12:35,517 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 56000000,10.592373%, cost time:1042 s
+2018-08-21 12:12:39,525 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 57000000,10.781523%, cost time:1046 s
+2018-08-21 12:12:43,581 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 58000000,10.970672%, cost time:1051 s
+2018-08-21 12:12:47,675 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 59000000,11.159822%, cost time:1055 s
+2018-08-21 12:12:51,683 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 60000000,11.348971%, cost time:1059 s
+2018-08-21 12:12:55,640 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 61000000,11.538121%, cost time:1063 s
+2018-08-21 12:12:59,562 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 62000000,11.727270%, cost time:1067 s
+2018-08-21 12:13:03,470 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 63000000,11.916420%, cost time:1070 s
+2018-08-21 12:13:07,371 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 64000000,12.105569%, cost time:1074 s
+2018-08-21 12:13:11,310 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 65000000,12.294719%, cost time:1078 s
+2018-08-21 12:13:15,264 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 66000000,12.483868%, cost time:1082 s
+2018-08-21 12:13:19,209 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 67000000,12.673018%, cost time:1086 s
+2018-08-21 12:13:23,131 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 68000000,12.862167%, cost time:1090 s
+2018-08-21 12:13:27,103 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 69000000,13.051317%, cost time:1094 s
+2018-08-21 12:13:31,061 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 70000000,13.240466%, cost time:1098 s
+2018-08-21 12:13:35,030 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 71000000,13.429616%, cost time:1102 s
+2018-08-21 12:13:38,971 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 72000000,13.618765%, cost time:1106 s
+2018-08-21 12:13:42,925 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 73000000,13.807915%, cost time:1110 s
+2018-08-21 12:13:46,881 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 74000000,13.997064%, cost time:1114 s
+2018-08-21 12:13:50,822 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 75000000,14.186214%, cost time:1118 s
+2018-08-21 12:13:54,725 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 76000000,14.375363%, cost time:1122 s
+2018-08-21 12:13:58,687 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 77000000,14.564513%, cost time:1126 s
+2018-08-21 12:14:02,627 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 78000000,14.753662%, cost time:1130 s
+2018-08-21 12:14:06,564 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 79000000,14.942812%, cost time:1134 s
+2018-08-21 12:14:10,537 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 80000000,15.131961%, cost time:1137 s
+2018-08-21 12:14:14,513 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 81000000,15.321111%, cost time:1141 s
+2018-08-21 12:14:18,460 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 82000000,15.510260%, cost time:1145 s
+2018-08-21 12:14:22,395 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 83000000,15.699410%, cost time:1149 s
+2018-08-21 12:14:26,350 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 84000000,15.888559%, cost time:1153 s
+2018-08-21 12:14:30,323 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 85000000,16.077709%, cost time:1157 s
+2018-08-21 12:14:34,265 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 86000000,16.266859%, cost time:1161 s
+2018-08-21 12:14:38,219 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 87000000,16.456008%, cost time:1165 s
+2018-08-21 12:14:42,172 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 88000000,16.645158%, cost time:1169 s
+2018-08-21 12:14:46,138 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 89000000,16.834307%, cost time:1173 s
+2018-08-21 12:14:50,153 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 90000000,17.023457%, cost time:1177 s
+2018-08-21 12:14:54,155 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 91000000,17.212606%, cost time:1181 s
+2018-08-21 12:14:58,138 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 92000000,17.401756%, cost time:1185 s
+2018-08-21 12:15:02,271 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 93000000,17.590905%, cost time:1189 s
+2018-08-21 12:15:06,298 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 94000000,17.780055%, cost time:1193 s
+2018-08-21 12:15:10,303 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 95000000,17.969204%, cost time:1197 s
+2018-08-21 12:15:14,346 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 96000000,18.158354%, cost time:1201 s
+2018-08-21 12:15:18,460 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 97000000,18.347503%, cost time:1205 s
+2018-08-21 12:15:22,539 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 98000000,18.536653%, cost time:1209 s
+2018-08-21 12:15:26,581 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 99000000,18.725802%, cost time:1214 s
+2018-08-21 12:15:30,634 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 100000000,18.914952%, cost time:1218 s
+2018-08-21 12:15:34,672 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 101000000,19.104101%, cost time:1222 s
+2018-08-21 12:15:38,736 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 102000000,19.293251%, cost time:1226 s
+2018-08-21 12:15:42,790 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 103000000,19.482400%, cost time:1230 s
+2018-08-21 12:15:46,855 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 104000000,19.671550%, cost time:1234 s
+2018-08-21 12:15:50,924 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 105000000,19.860699%, cost time:1238 s
+2018-08-21 12:15:54,913 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 106000000,20.049849%, cost time:1242 s
+2018-08-21 12:15:58,875 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 107000000,20.238998%, cost time:1246 s
+2018-08-21 12:16:02,848 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 108000000,20.428148%, cost time:1250 s
+2018-08-21 12:16:06,844 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 109000000,20.617297%, cost time:1254 s
+2018-08-21 12:16:10,846 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 110000000,20.806447%, cost time:1258 s
+2018-08-21 12:16:14,836 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 111000000,20.995596%, cost time:1262 s
+2018-08-21 12:16:18,837 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 112000000,21.184746%, cost time:1266 s
+2018-08-21 12:16:22,873 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 113000000,21.373896%, cost time:1270 s
+2018-08-21 12:16:26,918 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 114000000,21.563045%, cost time:1274 s
+2018-08-21 12:16:30,921 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 115000000,21.752195%, cost time:1278 s
+2018-08-21 12:16:34,981 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 116000000,21.941344%, cost time:1282 s
+2018-08-21 12:16:39,068 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 117000000,22.130494%, cost time:1286 s
+2018-08-21 12:16:43,108 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 118000000,22.319643%, cost time:1290 s
+2018-08-21 12:16:47,098 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 119000000,22.508793%, cost time:1294 s
+2018-08-21 12:16:51,054 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 120000000,22.697942%, cost time:1298 s
+2018-08-21 12:16:55,005 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 121000000,22.887092%, cost time:1302 s
+2018-08-21 12:16:58,941 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 122000000,23.076241%, cost time:1306 s
+2018-08-21 12:17:02,884 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 123000000,23.265391%, cost time:1310 s
+2018-08-21 12:17:06,767 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 124000000,23.454540%, cost time:1314 s
+2018-08-21 12:17:10,678 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 125000000,23.643690%, cost time:1318 s
+2018-08-21 12:17:14,597 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 126000000,23.832839%, cost time:1322 s
+2018-08-21 12:17:18,541 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 127000000,24.021989%, cost time:1325 s
+2018-08-21 12:17:22,463 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 128000000,24.211138%, cost time:1329 s
+2018-08-21 12:17:26,425 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 129000000,24.400288%, cost time:1333 s
+2018-08-21 12:17:30,431 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 130000000,24.589437%, cost time:1337 s
+2018-08-21 12:17:34,436 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 131000000,24.778587%, cost time:1341 s
+2018-08-21 12:17:38,428 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 132000000,24.967736%, cost time:1345 s
+2018-08-21 12:17:42,418 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 133000000,25.156886%, cost time:1349 s
+2018-08-21 12:17:46,396 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 134000000,25.346035%, cost time:1353 s
+2018-08-21 12:17:50,396 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 135000000,25.535185%, cost time:1357 s
+2018-08-21 12:17:54,396 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 136000000,25.724334%, cost time:1361 s
+2018-08-21 12:17:58,349 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 137000000,25.913484%, cost time:1365 s
+2018-08-21 12:18:02,304 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 138000000,26.102633%, cost time:1369 s
+2018-08-21 12:18:06,266 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 139000000,26.291783%, cost time:1373 s
+2018-08-21 12:18:10,268 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 140000000,26.480932%, cost time:1377 s
+2018-08-21 12:18:14,247 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 141000000,26.670082%, cost time:1381 s
+2018-08-21 12:18:18,250 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 142000000,26.859232%, cost time:1385 s
+2018-08-21 12:18:22,230 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 143000000,27.048381%, cost time:1389 s
+2018-08-21 12:18:26,177 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 144000000,27.237531%, cost time:1393 s
+2018-08-21 12:18:30,220 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 145000000,27.426680%, cost time:1397 s
+2018-08-21 12:18:34,337 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 146000000,27.615830%, cost time:1401 s
+2018-08-21 12:18:38,287 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 147000000,27.804979%, cost time:1405 s
+2018-08-21 12:18:42,237 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 148000000,27.994129%, cost time:1409 s
+2018-08-21 12:18:46,214 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 149000000,28.183278%, cost time:1413 s
+2018-08-21 12:18:50,199 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 150000000,28.372428%, cost time:1417 s
+2018-08-21 12:18:54,151 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 151000000,28.561577%, cost time:1421 s
+2018-08-21 12:18:58,111 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 152000000,28.750727%, cost time:1425 s
+2018-08-21 12:19:02,086 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 153000000,28.939876%, cost time:1429 s
+2018-08-21 12:19:06,100 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 154000000,29.129026%, cost time:1433 s
+2018-08-21 12:19:10,098 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 155000000,29.318175%, cost time:1437 s
+2018-08-21 12:19:14,096 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 156000000,29.507325%, cost time:1441 s
+2018-08-21 12:19:18,091 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 157000000,29.696474%, cost time:1445 s
+2018-08-21 12:19:22,071 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 158000000,29.885624%, cost time:1449 s
+2018-08-21 12:19:26,092 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 159000000,30.074773%, cost time:1453 s
+2018-08-21 12:19:30,097 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 160000000,30.263923%, cost time:1457 s
+2018-08-21 12:19:34,123 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 161000000,30.453072%, cost time:1461 s
+2018-08-21 12:19:38,226 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 162000000,30.642222%, cost time:1465 s
+2018-08-21 12:19:42,394 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 163000000,30.831371%, cost time:1469 s
+2018-08-21 12:19:46,537 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 164000000,31.020521%, cost time:1473 s
+2018-08-21 12:19:50,725 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 165000000,31.209670%, cost time:1478 s
+2018-08-21 12:19:54,964 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 166000000,31.398820%, cost time:1482 s
+2018-08-21 12:19:59,174 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 167000000,31.587969%, cost time:1486 s
+2018-08-21 12:20:03,598 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 168000000,31.777119%, cost time:1491 s
+2018-08-21 12:20:07,899 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 169000000,31.966268%, cost time:1495 s
+2018-08-21 12:20:12,149 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 170000000,32.155418%, cost time:1499 s
+2018-08-21 12:20:16,457 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 171000000,32.344568%, cost time:1503 s
+2018-08-21 12:20:20,686 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 172000000,32.533717%, cost time:1508 s
+2018-08-21 12:20:24,927 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 173000000,32.722867%, cost time:1512 s
+2018-08-21 12:20:29,221 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 174000000,32.912016%, cost time:1516 s
+2018-08-21 12:20:37,160 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 175000000,33.101166%, cost time:1524 s
+2018-08-21 12:20:41,222 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 176000000,33.290315%, cost time:1528 s
+2018-08-21 12:20:45,294 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 177000000,33.479465%, cost time:1532 s
+2018-08-21 12:20:49,460 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 178000000,33.668614%, cost time:1536 s
+2018-08-21 12:20:53,650 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 179000000,33.857764%, cost time:1541 s
+2018-08-21 12:20:57,833 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 180000000,34.046913%, cost time:1545 s
+2018-08-21 12:21:01,952 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 181000000,34.236063%, cost time:1549 s
+2018-08-21 12:21:06,142 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 182000000,34.425212%, cost time:1553 s
+2018-08-21 12:21:10,342 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 183000000,34.614362%, cost time:1557 s
+2018-08-21 12:21:14,515 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 184000000,34.803511%, cost time:1561 s
+2018-08-21 12:21:18,661 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 185000000,34.992661%, cost time:1566 s
+2018-08-21 12:21:22,846 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 186000000,35.181810%, cost time:1570 s
+2018-08-21 12:21:27,031 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 187000000,35.370960%, cost time:1574 s
+2018-08-21 12:21:31,195 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 188000000,35.560109%, cost time:1578 s
+2018-08-21 12:21:35,379 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 189000000,35.749259%, cost time:1582 s
+2018-08-21 12:21:39,543 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 190000000,35.938408%, cost time:1586 s
+2018-08-21 12:21:43,715 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 191000000,36.127558%, cost time:1591 s
+2018-08-21 12:21:47,884 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 192000000,36.316707%, cost time:1595 s
+2018-08-21 12:21:52,009 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 193000000,36.505857%, cost time:1599 s
+2018-08-21 12:21:56,120 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 194000000,36.695006%, cost time:1603 s
+2018-08-21 12:22:00,224 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 195000000,36.884156%, cost time:1607 s
+2018-08-21 12:22:04,288 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 196000000,37.073305%, cost time:1611 s
+2018-08-21 12:22:08,333 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 197000000,37.262455%, cost time:1615 s
+2018-08-21 12:22:12,442 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 198000000,37.451605%, cost time:1619 s
+2018-08-21 12:22:16,541 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 199000000,37.640754%, cost time:1623 s
+2018-08-21 12:22:20,624 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 200000000,37.829904%, cost time:1628 s
+2018-08-21 12:22:24,722 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 201000000,38.019053%, cost time:1632 s
+2018-08-21 12:22:28,793 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 202000000,38.208203%, cost time:1636 s
+2018-08-21 12:22:32,859 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 203000000,38.397352%, cost time:1640 s
+2018-08-21 12:22:36,907 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 204000000,38.586502%, cost time:1644 s
+2018-08-21 12:22:40,976 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 205000000,38.775651%, cost time:1648 s
+2018-08-21 12:22:45,023 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 206000000,38.964801%, cost time:1652 s
+2018-08-21 12:22:49,103 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 207000000,39.153950%, cost time:1656 s
+2018-08-21 12:22:53,202 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 208000000,39.343100%, cost time:1660 s
+2018-08-21 12:22:57,296 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 209000000,39.532249%, cost time:1664 s
+2018-08-21 12:23:01,395 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 210000000,39.721399%, cost time:1668 s
+2018-08-21 12:23:05,507 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 211000000,39.910548%, cost time:1672 s
+2018-08-21 12:23:09,575 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 212000000,40.099698%, cost time:1677 s
+2018-08-21 12:23:13,650 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 213000000,40.288847%, cost time:1681 s
+2018-08-21 12:23:17,705 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 214000000,40.477997%, cost time:1685 s
+2018-08-21 12:23:21,777 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 215000000,40.667146%, cost time:1689 s
+2018-08-21 12:23:25,813 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 216000000,40.856296%, cost time:1693 s
+2018-08-21 12:23:29,837 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 217000000,41.045445%, cost time:1697 s
+2018-08-21 12:23:33,874 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 218000000,41.234595%, cost time:1701 s
+2018-08-21 12:23:37,917 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 219000000,41.423744%, cost time:1705 s
+2018-08-21 12:23:41,993 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 220000000,41.612894%, cost time:1709 s
+2018-08-21 12:23:46,059 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 221000000,41.802043%, cost time:1713 s
+2018-08-21 12:23:50,152 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 222000000,41.991193%, cost time:1717 s
+2018-08-21 12:23:54,353 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 223000000,42.180342%, cost time:1721 s
+2018-08-21 12:23:58,623 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 224000000,42.369492%, cost time:1726 s
+2018-08-21 12:24:02,874 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 225000000,42.558641%, cost time:1730 s
+2018-08-21 12:24:07,031 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 226000000,42.747791%, cost time:1734 s
+2018-08-21 12:24:11,213 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 227000000,42.936941%, cost time:1738 s
+2018-08-21 12:24:15,441 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 228000000,43.126090%, cost time:1742 s
+2018-08-21 12:24:19,641 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 229000000,43.315240%, cost time:1747 s
+2018-08-21 12:24:23,880 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 230000000,43.504389%, cost time:1751 s
+2018-08-21 12:24:28,044 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 231000000,43.693539%, cost time:1755 s
+2018-08-21 12:24:32,115 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 232000000,43.882688%, cost time:1759 s
+2018-08-21 12:24:36,147 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 233000000,44.071838%, cost time:1763 s
+2018-08-21 12:24:40,152 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 234000000,44.260987%, cost time:1767 s
+2018-08-21 12:24:44,172 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 235000000,44.450137%, cost time:1771 s
+2018-08-21 12:24:48,171 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 236000000,44.639286%, cost time:1775 s
+2018-08-21 12:24:52,176 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 237000000,44.828436%, cost time:1779 s
+2018-08-21 12:24:56,218 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 238000000,45.017585%, cost time:1783 s
+2018-08-21 12:25:00,276 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 239000000,45.206735%, cost time:1787 s
+2018-08-21 12:25:04,370 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 240000000,45.395884%, cost time:1791 s
+2018-08-21 12:25:08,438 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 241000000,45.585034%, cost time:1795 s
+2018-08-21 12:25:12,487 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 242000000,45.774183%, cost time:1799 s
+2018-08-21 12:25:16,501 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 243000000,45.963333%, cost time:1803 s
+2018-08-21 12:25:20,583 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 244000000,46.152482%, cost time:1808 s
+2018-08-21 12:25:24,627 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 245000000,46.341632%, cost time:1812 s
+2018-08-21 12:25:28,659 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 246000000,46.530781%, cost time:1816 s
+2018-08-21 12:25:32,681 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 247000000,46.719931%, cost time:1820 s
+2018-08-21 12:25:36,791 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 248000000,46.909080%, cost time:1824 s
+2018-08-21 12:25:40,907 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 249000000,47.098230%, cost time:1828 s
+2018-08-21 12:25:45,019 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 250000000,47.287379%, cost time:1832 s
+2018-08-21 12:25:49,078 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 251000000,47.476529%, cost time:1836 s
+2018-08-21 12:25:53,158 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 252000000,47.665678%, cost time:1840 s
+2018-08-21 12:25:57,216 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 253000000,47.854828%, cost time:1844 s
+2018-08-21 12:26:01,259 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 254000000,48.043978%, cost time:1848 s
+2018-08-21 12:26:05,459 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 255000000,48.233127%, cost time:1852 s
+2018-08-21 12:26:09,578 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 256000000,48.422277%, cost time:1857 s
+2018-08-21 12:26:13,799 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 257000000,48.611426%, cost time:1861 s
+2018-08-21 12:26:17,994 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 258000000,48.800576%, cost time:1865 s
+2018-08-21 12:26:22,218 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 259000000,48.989725%, cost time:1869 s
+2018-08-21 12:26:26,425 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 260000000,49.178875%, cost time:1873 s
+2018-08-21 12:26:30,637 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 261000000,49.368024%, cost time:1878 s
+2018-08-21 12:26:34,873 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 262000000,49.557174%, cost time:1882 s
+2018-08-21 12:26:39,139 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 263000000,49.746323%, cost time:1886 s
+2018-08-21 12:26:43,399 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 264000000,49.935473%, cost time:1890 s
+2018-08-21 12:26:47,593 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 265000000,50.124622%, cost time:1895 s
+2018-08-21 12:26:51,790 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 266000000,50.313772%, cost time:1899 s
+2018-08-21 12:26:55,984 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 267000000,50.502921%, cost time:1903 s
+2018-08-21 12:27:00,196 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 268000000,50.692071%, cost time:1907 s
+2018-08-21 12:27:04,400 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 269000000,50.881220%, cost time:1911 s
+2018-08-21 12:27:08,671 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 270000000,51.070370%, cost time:1916 s
+2018-08-21 12:27:12,910 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 271000000,51.259519%, cost time:1920 s
+2018-08-21 12:27:17,174 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 272000000,51.448669%, cost time:1924 s
+2018-08-21 12:27:21,458 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 273000000,51.637818%, cost time:1928 s
+2018-08-21 12:27:25,712 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 274000000,51.826968%, cost time:1933 s
+2018-08-21 12:27:29,906 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 275000000,52.016117%, cost time:1937 s
+2018-08-21 12:27:34,152 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 276000000,52.205267%, cost time:1941 s
+2018-08-21 12:27:38,341 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 277000000,52.394416%, cost time:1945 s
+2018-08-21 12:27:42,541 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 278000000,52.583566%, cost time:1949 s
+2018-08-21 12:27:46,722 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 279000000,52.772715%, cost time:1954 s
+2018-08-21 12:27:50,972 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 280000000,52.961865%, cost time:1958 s
+2018-08-21 12:27:55,247 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 281000000,53.151014%, cost time:1962 s
+2018-08-21 12:27:59,520 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 282000000,53.340164%, cost time:1966 s
+2018-08-21 12:28:03,828 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 283000000,53.529314%, cost time:1971 s
+2018-08-21 12:28:08,111 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 284000000,53.718463%, cost time:1975 s
+2018-08-21 12:28:12,404 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 285000000,53.907613%, cost time:1979 s
+2018-08-21 12:28:16,634 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 286000000,54.096762%, cost time:1984 s
+2018-08-21 12:28:20,874 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 287000000,54.285912%, cost time:1988 s
+2018-08-21 12:28:25,198 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 288000000,54.475061%, cost time:1992 s
+2018-08-21 12:28:29,437 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 289000000,54.664211%, cost time:1996 s
+2018-08-21 12:28:33,558 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 290000000,54.853360%, cost time:2001 s
+2018-08-21 12:28:37,682 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 291000000,55.042510%, cost time:2005 s
+2018-08-21 12:28:41,777 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 292000000,55.231659%, cost time:2009 s
+2018-08-21 12:28:45,854 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 293000000,55.420809%, cost time:2013 s
+2018-08-21 12:28:49,929 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 294000000,55.609958%, cost time:2017 s
+2018-08-21 12:28:54,056 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 295000000,55.799108%, cost time:2021 s
+2018-08-21 12:28:58,107 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 296000000,55.988257%, cost time:2025 s
+2018-08-21 12:29:02,166 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 297000000,56.177407%, cost time:2029 s
+2018-08-21 12:29:06,280 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 298000000,56.366556%, cost time:2033 s
+2018-08-21 12:29:10,418 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 299000000,56.555706%, cost time:2037 s
+2018-08-21 12:29:14,486 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 300000000,56.744855%, cost time:2041 s
+2018-08-21 12:29:18,609 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 301000000,56.934005%, cost time:2046 s
+2018-08-21 12:29:22,643 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 302000000,57.123154%, cost time:2050 s
+2018-08-21 12:29:26,743 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 303000000,57.312304%, cost time:2054 s
+2018-08-21 12:29:30,838 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 304000000,57.501453%, cost time:2058 s
+2018-08-21 12:29:34,925 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 305000000,57.690603%, cost time:2062 s
+2018-08-21 12:29:38,976 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 306000000,57.879752%, cost time:2066 s
+2018-08-21 12:29:43,013 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 307000000,58.068902%, cost time:2070 s
+2018-08-21 12:29:47,022 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 308000000,58.258051%, cost time:2074 s
+2018-08-21 12:29:51,086 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 309000000,58.447201%, cost time:2078 s
+2018-08-21 12:29:55,192 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 310000000,58.636350%, cost time:2082 s
+2018-08-21 12:29:59,262 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 311000000,58.825500%, cost time:2086 s
+2018-08-21 12:30:03,453 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 312000000,59.014650%, cost time:2090 s
+2018-08-21 12:30:07,543 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 313000000,59.203799%, cost time:2094 s
+2018-08-21 12:30:11,601 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 314000000,59.392949%, cost time:2099 s
+2018-08-21 12:30:15,717 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 315000000,59.582098%, cost time:2103 s
+2018-08-21 12:30:19,773 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 316000000,59.771248%, cost time:2107 s
+2018-08-21 12:30:23,816 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 317000000,59.960397%, cost time:2111 s
+2018-08-21 12:30:27,863 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 318000000,60.149547%, cost time:2115 s
+2018-08-21 12:30:31,922 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 319000000,60.338696%, cost time:2119 s
+2018-08-21 12:30:35,947 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 320000000,60.527846%, cost time:2123 s
+2018-08-21 12:30:39,973 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 321000000,60.716995%, cost time:2127 s
+2018-08-21 12:30:44,052 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 322000000,60.906145%, cost time:2131 s
+2018-08-21 12:30:48,115 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 323000000,61.095294%, cost time:2135 s
+2018-08-21 12:30:52,175 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 324000000,61.284444%, cost time:2139 s
+2018-08-21 12:30:56,177 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 325000000,61.473593%, cost time:2143 s
+2018-08-21 12:31:00,164 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 326000000,61.662743%, cost time:2147 s
+2018-08-21 12:31:04,186 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 327000000,61.851892%, cost time:2151 s
+2018-08-21 12:31:08,249 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 328000000,62.041042%, cost time:2155 s
+2018-08-21 12:31:12,269 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 329000000,62.230191%, cost time:2159 s
+2018-08-21 12:31:16,269 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 330000000,62.419341%, cost time:2163 s
+2018-08-21 12:31:20,270 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 331000000,62.608490%, cost time:2167 s
+2018-08-21 12:31:24,267 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 332000000,62.797640%, cost time:2171 s
+2018-08-21 12:31:28,296 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 333000000,62.986789%, cost time:2175 s
+2018-08-21 12:31:32,310 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 334000000,63.175939%, cost time:2179 s
+2018-08-21 12:31:36,335 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 335000000,63.365088%, cost time:2183 s
+2018-08-21 12:31:40,336 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 336000000,63.554238%, cost time:2187 s
+2018-08-21 12:31:44,353 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 337000000,63.743387%, cost time:2191 s
+2018-08-21 12:31:48,374 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 338000000,63.932537%, cost time:2195 s
+2018-08-21 12:31:52,386 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 339000000,64.121687%, cost time:2199 s
+2018-08-21 12:31:56,398 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 340000000,64.310836%, cost time:2203 s
+2018-08-21 12:32:00,396 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 341000000,64.499986%, cost time:2207 s
+2018-08-21 12:32:04,508 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 342000000,64.689135%, cost time:2211 s
+2018-08-21 12:32:08,500 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 343000000,64.878285%, cost time:2215 s
+2018-08-21 12:32:12,453 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 344000000,65.067434%, cost time:2219 s
+2018-08-21 12:32:16,390 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 345000000,65.256584%, cost time:2223 s
+2018-08-21 12:32:20,333 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 346000000,65.445733%, cost time:2227 s
+2018-08-21 12:32:24,307 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 347000000,65.634883%, cost time:2231 s
+2018-08-21 12:32:28,263 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 348000000,65.824032%, cost time:2235 s
+2018-08-21 12:32:32,214 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 349000000,66.013182%, cost time:2239 s
+2018-08-21 12:32:36,152 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 350000000,66.202331%, cost time:2243 s
+2018-08-21 12:32:40,138 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 351000000,66.391481%, cost time:2247 s
+2018-08-21 12:32:44,132 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 352000000,66.580630%, cost time:2251 s
+2018-08-21 12:32:48,076 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 353000000,66.769780%, cost time:2255 s
+2018-08-21 12:32:52,074 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 354000000,66.958929%, cost time:2259 s
+2018-08-21 12:32:56,055 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 355000000,67.148079%, cost time:2263 s
+2018-08-21 12:33:00,021 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 356000000,67.337228%, cost time:2267 s
+2018-08-21 12:33:03,982 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 357000000,67.526378%, cost time:2271 s
+2018-08-21 12:33:07,972 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 358000000,67.715527%, cost time:2275 s
+2018-08-21 12:33:12,006 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 359000000,67.904677%, cost time:2279 s
+2018-08-21 12:33:15,969 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 360000000,68.093826%, cost time:2283 s
+2018-08-21 12:33:19,989 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 361000000,68.282976%, cost time:2287 s
+2018-08-21 12:33:24,031 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 362000000,68.472125%, cost time:2291 s
+2018-08-21 12:33:28,009 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 363000000,68.661275%, cost time:2295 s
+2018-08-21 12:33:31,968 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 364000000,68.850424%, cost time:2299 s
+2018-08-21 12:33:36,044 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 365000000,69.039574%, cost time:2303 s
+2018-08-21 12:33:40,121 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 366000000,69.228723%, cost time:2307 s
+2018-08-21 12:33:44,235 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 367000000,69.417873%, cost time:2311 s
+2018-08-21 12:33:48,270 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 368000000,69.607023%, cost time:2315 s
+2018-08-21 12:33:52,343 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 369000000,69.796172%, cost time:2319 s
+2018-08-21 12:33:56,373 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 370000000,69.985322%, cost time:2323 s
+2018-08-21 12:34:00,402 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 371000000,70.174471%, cost time:2327 s
+2018-08-21 12:34:04,496 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 372000000,70.363621%, cost time:2331 s
+2018-08-21 12:34:08,609 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 373000000,70.552770%, cost time:2336 s
+2018-08-21 12:34:12,704 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 374000000,70.741920%, cost time:2340 s
+2018-08-21 12:34:16,692 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 375000000,70.931069%, cost time:2344 s
+2018-08-21 12:34:20,693 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 376000000,71.120219%, cost time:2348 s
+2018-08-21 12:34:24,688 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 377000000,71.309368%, cost time:2352 s
+2018-08-21 12:34:28,804 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 378000000,71.498518%, cost time:2356 s
+2018-08-21 12:34:33,071 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 379000000,71.687667%, cost time:2360 s
+2018-08-21 12:34:37,230 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 380000000,71.876817%, cost time:2364 s
+2018-08-21 12:34:41,411 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 381000000,72.065966%, cost time:2368 s
+2018-08-21 12:34:45,586 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 382000000,72.255116%, cost time:2373 s
+2018-08-21 12:34:49,787 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 383000000,72.444265%, cost time:2377 s
+2018-08-21 12:34:53,987 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 384000000,72.633415%, cost time:2381 s
+2018-08-21 12:34:58,203 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 385000000,72.822564%, cost time:2385 s
+2018-08-21 12:35:02,596 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 386000000,73.011714%, cost time:2390 s
+2018-08-21 12:35:06,885 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 387000000,73.200863%, cost time:2394 s
+2018-08-21 12:35:11,036 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 388000000,73.390013%, cost time:2398 s
+2018-08-21 12:35:15,184 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 389000000,73.579162%, cost time:2402 s
+2018-08-21 12:35:19,340 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 390000000,73.768312%, cost time:2406 s
+2018-08-21 12:35:23,496 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 391000000,73.957461%, cost time:2410 s
+2018-08-21 12:35:27,644 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 392000000,74.146611%, cost time:2415 s
+2018-08-21 12:35:31,792 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 393000000,74.335760%, cost time:2419 s
+2018-08-21 12:35:36,006 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 394000000,74.524910%, cost time:2423 s
+2018-08-21 12:35:40,174 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 395000000,74.714060%, cost time:2427 s
+2018-08-21 12:35:44,392 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 396000000,74.903209%, cost time:2431 s
+2018-08-21 12:35:48,591 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 397000000,75.092359%, cost time:2436 s
+2018-08-21 12:35:52,833 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 398000000,75.281508%, cost time:2440 s
+2018-08-21 12:35:57,003 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 399000000,75.470658%, cost time:2444 s
+2018-08-21 12:36:01,217 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 400000000,75.659807%, cost time:2448 s
+2018-08-21 12:36:05,432 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 401000000,75.848957%, cost time:2452 s
+2018-08-21 12:36:09,625 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 402000000,76.038106%, cost time:2457 s
+2018-08-21 12:36:13,815 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 403000000,76.227256%, cost time:2461 s
+2018-08-21 12:36:17,996 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 404000000,76.416405%, cost time:2465 s
+2018-08-21 12:36:22,187 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 405000000,76.605555%, cost time:2469 s
+2018-08-21 12:36:26,401 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 406000000,76.794704%, cost time:2473 s
+2018-08-21 12:36:30,567 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 407000000,76.983854%, cost time:2478 s
+2018-08-21 12:36:34,754 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 408000000,77.173003%, cost time:2482 s
+2018-08-21 12:36:38,951 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 409000000,77.362153%, cost time:2486 s
+2018-08-21 12:36:43,120 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 410000000,77.551302%, cost time:2490 s
+2018-08-21 12:36:47,269 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 411000000,77.740452%, cost time:2494 s
+2018-08-21 12:36:51,428 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 412000000,77.929601%, cost time:2498 s
+2018-08-21 12:36:55,620 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 413000000,78.118751%, cost time:2503 s
+2018-08-21 12:36:59,835 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 414000000,78.307900%, cost time:2507 s
+2018-08-21 12:37:04,054 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 415000000,78.497050%, cost time:2511 s
+2018-08-21 12:37:08,286 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 416000000,78.686199%, cost time:2515 s
+2018-08-21 12:37:12,486 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 417000000,78.875349%, cost time:2519 s
+2018-08-21 12:37:16,711 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 418000000,79.064498%, cost time:2524 s
+2018-08-21 12:37:20,936 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 419000000,79.253648%, cost time:2528 s
+2018-08-21 12:37:25,022 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 420000000,79.442797%, cost time:2532 s
+2018-08-21 12:37:29,087 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 421000000,79.631947%, cost time:2536 s
+2018-08-21 12:37:33,179 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 422000000,79.821096%, cost time:2540 s
+2018-08-21 12:37:37,232 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 423000000,80.010246%, cost time:2544 s
+2018-08-21 12:37:41,288 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 424000000,80.199396%, cost time:2548 s
+2018-08-21 12:37:45,353 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 425000000,80.388545%, cost time:2552 s
+2018-08-21 12:37:49,443 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 426000000,80.577695%, cost time:2556 s
+2018-08-21 12:37:53,522 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 427000000,80.766844%, cost time:2560 s
+2018-08-21 12:37:57,577 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 428000000,80.955994%, cost time:2565 s
+2018-08-21 12:38:01,634 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 429000000,81.145143%, cost time:2569 s
+2018-08-21 12:38:05,695 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 430000000,81.334293%, cost time:2573 s
+2018-08-21 12:38:09,727 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 431000000,81.523442%, cost time:2577 s
+2018-08-21 12:38:13,755 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 432000000,81.712592%, cost time:2581 s
+2018-08-21 12:38:17,795 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 433000000,81.901741%, cost time:2585 s
+2018-08-21 12:38:21,867 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 434000000,82.090891%, cost time:2589 s
+2018-08-21 12:38:25,963 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 435000000,82.280040%, cost time:2593 s
+2018-08-21 12:38:30,061 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 436000000,82.469190%, cost time:2597 s
+2018-08-21 12:38:34,105 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 437000000,82.658339%, cost time:2601 s
+2018-08-21 12:38:38,110 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 438000000,82.847489%, cost time:2605 s
+2018-08-21 12:38:42,119 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 439000000,83.036638%, cost time:2609 s
+2018-08-21 12:38:46,110 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 440000000,83.225788%, cost time:2613 s
+2018-08-21 12:38:50,172 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 441000000,83.414937%, cost time:2617 s
+2018-08-21 12:38:54,212 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 442000000,83.604087%, cost time:2621 s
+2018-08-21 12:38:58,313 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 443000000,83.793236%, cost time:2625 s
+2018-08-21 12:39:02,381 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 444000000,83.982386%, cost time:2629 s
+2018-08-21 12:39:06,572 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 445000000,84.171535%, cost time:2634 s
+2018-08-21 12:39:10,657 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 446000000,84.360685%, cost time:2638 s
+2018-08-21 12:39:14,726 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 447000000,84.549834%, cost time:2642 s
+2018-08-21 12:39:18,771 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 448000000,84.738984%, cost time:2646 s
+2018-08-21 12:39:22,933 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 449000000,84.928133%, cost time:2650 s
+2018-08-21 12:39:27,090 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 450000000,85.117283%, cost time:2654 s
+2018-08-21 12:39:31,193 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 451000000,85.306432%, cost time:2658 s
+2018-08-21 12:39:35,300 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 452000000,85.495582%, cost time:2662 s
+2018-08-21 12:39:39,414 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 453000000,85.684732%, cost time:2666 s
+2018-08-21 12:39:43,557 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 454000000,85.873881%, cost time:2671 s
+2018-08-21 12:39:47,665 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 455000000,86.063031%, cost time:2675 s
+2018-08-21 12:39:51,780 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 456000000,86.252180%, cost time:2679 s
+2018-08-21 12:39:55,887 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 457000000,86.441330%, cost time:2683 s
+2018-08-21 12:40:00,040 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 458000000,86.630479%, cost time:2687 s
+2018-08-21 12:40:04,267 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 459000000,86.819629%, cost time:2691 s
+2018-08-21 12:40:08,407 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 460000000,87.008778%, cost time:2695 s
+2018-08-21 12:40:12,462 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 461000000,87.197928%, cost time:2699 s
+2018-08-21 12:40:16,535 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 462000000,87.387077%, cost time:2703 s
+2018-08-21 12:40:20,633 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 463000000,87.576227%, cost time:2708 s
+2018-08-21 12:40:24,724 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 464000000,87.765376%, cost time:2712 s
+2018-08-21 12:40:28,842 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 465000000,87.954526%, cost time:2716 s
+2018-08-21 12:40:32,960 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 466000000,88.143675%, cost time:2720 s
+2018-08-21 12:40:37,146 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 467000000,88.332825%, cost time:2724 s
+2018-08-21 12:40:41,233 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 468000000,88.521974%, cost time:2728 s
+2018-08-21 12:40:45,276 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 469000000,88.711124%, cost time:2732 s
+2018-08-21 12:40:49,344 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 470000000,88.900273%, cost time:2736 s
+2018-08-21 12:40:53,409 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 471000000,89.089423%, cost time:2740 s
+2018-08-21 12:40:57,499 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 472000000,89.278572%, cost time:2744 s
+2018-08-21 12:41:01,584 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 473000000,89.467722%, cost time:2749 s
+2018-08-21 12:41:05,692 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 474000000,89.656871%, cost time:2753 s
+2018-08-21 12:41:09,764 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 475000000,89.846021%, cost time:2757 s
+2018-08-21 12:41:13,919 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 476000000,90.035170%, cost time:2761 s
+2018-08-21 12:41:17,984 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 477000000,90.224320%, cost time:2765 s
+2018-08-21 12:41:22,049 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 478000000,90.413469%, cost time:2769 s
+2018-08-21 12:41:26,063 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 479000000,90.602619%, cost time:2773 s
+2018-08-21 12:41:30,055 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 480000000,90.791769%, cost time:2777 s
+2018-08-21 12:41:34,076 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 481000000,90.980918%, cost time:2781 s
+2018-08-21 12:41:38,175 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 482000000,91.170068%, cost time:2785 s
+2018-08-21 12:41:42,265 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 483000000,91.359217%, cost time:2789 s
+2018-08-21 12:41:46,291 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 484000000,91.548367%, cost time:2793 s
+2018-08-21 12:41:50,397 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 485000000,91.737516%, cost time:2797 s
+2018-08-21 12:41:54,428 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 486000000,91.926666%, cost time:2801 s
+2018-08-21 12:41:58,381 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 487000000,92.115815%, cost time:2805 s
+2018-08-21 12:42:02,388 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 488000000,92.304965%, cost time:2809 s
+2018-08-21 12:42:06,390 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 489000000,92.494114%, cost time:2813 s
+2018-08-21 12:42:10,341 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 490000000,92.683264%, cost time:2817 s
+2018-08-21 12:42:14,313 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 491000000,92.872413%, cost time:2821 s
+2018-08-21 12:42:18,305 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 492000000,93.061563%, cost time:2825 s
+2018-08-21 12:42:22,281 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 493000000,93.250712%, cost time:2829 s
+2018-08-21 12:42:26,238 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 494000000,93.439862%, cost time:2833 s
+2018-08-21 12:42:30,210 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 495000000,93.629011%, cost time:2837 s
+2018-08-21 12:42:34,198 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 496000000,93.818161%, cost time:2841 s
+2018-08-21 12:42:38,183 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 497000000,94.007310%, cost time:2845 s
+2018-08-21 12:42:42,166 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 498000000,94.196460%, cost time:2849 s
+2018-08-21 12:42:46,132 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 499000000,94.385609%, cost time:2853 s
+2018-08-21 12:42:50,123 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 500000000,94.574759%, cost time:2857 s
+2018-08-21 12:42:54,126 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 501000000,94.763908%, cost time:2861 s
+2018-08-21 12:42:58,158 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 502000000,94.953058%, cost time:2865 s
+2018-08-21 12:43:02,132 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 503000000,95.142207%, cost time:2869 s
+2018-08-21 12:43:06,227 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 504000000,95.331357%, cost time:2873 s
+2018-08-21 12:43:10,197 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 505000000,95.520506%, cost time:2877 s
+2018-08-21 12:43:14,123 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 506000000,95.709656%, cost time:2881 s
+2018-08-21 12:43:18,060 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 507000000,95.898805%, cost time:2885 s
+2018-08-21 12:43:22,034 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 508000000,96.087955%, cost time:2889 s
+2018-08-21 12:43:26,078 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 509000000,96.277105%, cost time:2893 s
+2018-08-21 12:43:30,200 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 510000000,96.466254%, cost time:2897 s
+2018-08-21 12:43:34,262 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 511000000,96.655404%, cost time:2901 s
+2018-08-21 12:43:38,267 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 512000000,96.844553%, cost time:2905 s
+2018-08-21 12:43:42,282 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 513000000,97.033703%, cost time:2909 s
+2018-08-21 12:43:46,349 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 514000000,97.222852%, cost time:2913 s
+2018-08-21 12:43:50,390 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 515000000,97.412002%, cost time:2917 s
+2018-08-21 12:43:54,481 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 516000000,97.601151%, cost time:2921 s
+2018-08-21 12:43:58,528 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 517000000,97.790301%, cost time:2925 s
+2018-08-21 12:44:02,578 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 518000000,97.979450%, cost time:2930 s
+2018-08-21 12:44:06,611 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 519000000,98.168600%, cost time:2934 s
+2018-08-21 12:44:10,645 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 520000000,98.357749%, cost time:2938 s
+2018-08-21 12:44:14,690 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 521000000,98.546899%, cost time:2942 s
+2018-08-21 12:44:18,736 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 522000000,98.736048%, cost time:2946 s
+2018-08-21 12:44:22,855 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 523000000,98.925198%, cost time:2950 s
+2018-08-21 12:44:27,017 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 524000000,99.114347%, cost time:2954 s
+2018-08-21 12:44:31,025 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 525000000,99.303497%, cost time:2958 s
+2018-08-21 12:44:35,023 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 526000000,99.492646%, cost time:2962 s
+2018-08-21 12:44:39,063 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 527000000,99.681796%, cost time:2966 s
+2018-08-21 12:44:43,085 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 528000000,99.870945%, cost time:2970 s
+2018-08-21 12:44:45,814 - MAGGenrateAttactivenessBySubField.py[line:114] - INFO: Reading Citations: 528682289,100.000000%, cost time:2973 s
+2018-08-21 12:44:47,589 - MAGGenrateAttactivenessBySubField.py[line:124] - INFO: Done: Read Roots from DB! Time cost:2975 s
+2018-08-21 12:44:47,932 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:00F03FC7,#subfileds: 4625,Time cost:2975 s
+2018-08-21 12:50:20,695 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:00F03FC7,#subfileds: 4625, #Intial papers:108011, Time cost:2975 s
+2018-08-21 12:50:20,696 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 7C41829B,7C723AF2,None,2010
+2018-08-21 12:50:27,443 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 4625, 1/19:5.263158%, time cost:3314
+2018-08-21 12:50:27,467 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:010EC23D,#subfileds: 495,Time cost:3314 s
+2018-08-21 12:50:32,822 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:010EC23D,#subfileds: 495, #Intial papers:9790, Time cost:3314 s
+--- Logging error ---
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: %d format: a number is required, not NoneType
+Call stack:
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/zico/py/cn/edu/hznu/hufengcitation/mag/output/MAGGenrateAttactivenessBySubField.py", line 174, in <module>
+    logger.info("%s,%s,%s,%d",paper_id,ref_id,p_intial,p_year)
+Message: '%s,%s,%s,%d'
+Arguments: ('79820CF7', '7730A8EF', None, None)
+2018-08-21 12:50:33,220 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 495, 2/19:10.526316%, time cost:3320
+2018-08-21 12:50:33,502 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:0205A1DB,#subfileds: 12927,Time cost:3320 s
+2018-08-21 12:51:54,826 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:0205A1DB,#subfileds: 12927, #Intial papers:189868, Time cost:3320 s
+2018-08-21 12:51:54,826 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 01DFDA24,7C6AC0B0,None,2009
+2018-08-21 12:52:03,550 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 12927, 3/19:15.789474%, time cost:3411
+2018-08-21 12:52:03,576 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:0259B070,#subfileds: 563,Time cost:3411 s
+2018-08-21 12:52:08,227 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:0259B070,#subfileds: 563, #Intial papers:29494, Time cost:3411 s
+2018-08-21 12:52:08,227 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 7C05FBFA,78C3FEE8,None,2003
+2018-08-21 12:52:08,939 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 563, 4/19:21.052632%, time cost:3416
+2018-08-21 12:52:09,235 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:0271BC14,#subfileds: 14470,Time cost:3416 s
+2018-08-21 12:53:31,561 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:0271BC14,#subfileds: 14470, #Intial papers:211641, Time cost:3416 s
+2018-08-21 12:53:31,561 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 7984CD8D,75314998,None,2002
+2018-08-21 12:53:42,771 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 14470, 5/19:26.315789%, time cost:3510
+2018-08-21 12:53:42,964 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:04497984,#subfileds: 5623,Time cost:3510 s
+2018-08-21 12:54:41,812 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:04497984,#subfileds: 5623, #Intial papers:181817, Time cost:3510 s
+2018-08-21 12:54:41,812 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 7C05FBFA,78C3FEE8,None,2003
+2018-08-21 12:54:52,130 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 5623, 6/19:31.578947%, time cost:3579
+2018-08-21 12:54:52,388 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:052C8328,#subfileds: 10522,Time cost:3579 s
+2018-08-21 12:55:45,351 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:052C8328,#subfileds: 10522, #Intial papers:229366, Time cost:3579 s
+2018-08-21 12:55:45,352 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 7C05FBFA,78C3FEE8,None,2003
+2018-08-21 12:55:58,977 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 10522, 7/19:36.842105%, time cost:3646
+2018-08-21 12:55:59,031 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:05B091C0,#subfileds: 2440,Time cost:3646 s
+2018-08-21 12:56:06,611 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:05B091C0,#subfileds: 2440, #Intial papers:42368, Time cost:3646 s
+--- Logging error ---
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: %d format: a number is required, not NoneType
+Call stack:
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/zico/py/cn/edu/hznu/hufengcitation/mag/output/MAGGenrateAttactivenessBySubField.py", line 174, in <module>
+    logger.info("%s,%s,%s,%d",paper_id,ref_id,p_intial,p_year)
+Message: '%s,%s,%s,%d'
+Arguments: ('3F357F7E', '7DDCB838', None, None)
+2018-08-21 12:56:07,700 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 2440, 8/19:42.105263%, time cost:3655
+2018-08-21 12:56:08,010 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:073B64E4,#subfileds: 14564,Time cost:3655 s
+2018-08-21 12:57:29,138 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:073B64E4,#subfileds: 14564, #Intial papers:287025, Time cost:3655 s
+2018-08-21 12:57:29,138 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 5A6C8E1E,7DE22158,None,2010
+2018-08-21 12:57:45,768 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 14564, 9/19:47.368421%, time cost:3753
+2018-08-21 12:57:45,909 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:0796A60A,#subfileds: 6678,Time cost:3753 s
+2018-08-21 12:58:08,026 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:0796A60A,#subfileds: 6678, #Intial papers:188979, Time cost:3753 s
+2018-08-21 12:58:08,026 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 7F6828E7,7C04866D,None,2009
+2018-08-21 12:58:14,988 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 6678, 10/19:52.631579%, time cost:3782
+2018-08-21 12:58:15,194 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:07982D63,#subfileds: 9004,Time cost:3782 s
+2018-08-21 12:58:53,760 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:07982D63,#subfileds: 9004, #Intial papers:220573, Time cost:3782 s
+--- Logging error ---
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: %d format: a number is required, not NoneType
+Call stack:
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/zico/py/cn/edu/hznu/hufengcitation/mag/output/MAGGenrateAttactivenessBySubField.py", line 174, in <module>
+    logger.info("%s,%s,%s,%d",paper_id,ref_id,p_intial,p_year)
+Message: '%s,%s,%s,%d'
+Arguments: ('07AAFC8B', '7C8719AC', None, None)
+2018-08-21 12:59:02,627 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 9004, 11/19:57.894737%, time cost:3830
+2018-08-21 12:59:02,716 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:08473A1E,#subfileds: 3172,Time cost:3830 s
+2018-08-21 12:59:10,146 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:08473A1E,#subfileds: 3172, #Intial papers:48044, Time cost:3830 s
+--- Logging error ---
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: %d format: a number is required, not NoneType
+Call stack:
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/zico/py/cn/edu/hznu/hufengcitation/mag/output/MAGGenrateAttactivenessBySubField.py", line 174, in <module>
+    logger.info("%s,%s,%s,%d",paper_id,ref_id,p_intial,p_year)
+Message: '%s,%s,%s,%d'
+Arguments: ('7654ABEA', '79518930', None, None)
+2018-08-21 12:59:11,579 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 3172, 12/19:63.157895%, time cost:3839
+2018-08-21 12:59:11,596 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:087C4600,#subfileds: 761,Time cost:3839 s
+2018-08-21 12:59:13,475 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:087C4600,#subfileds: 761, #Intial papers:16807, Time cost:3839 s
+--- Logging error ---
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: %d format: a number is required, not NoneType
+Call stack:
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/zico/py/cn/edu/hznu/hufengcitation/mag/output/MAGGenrateAttactivenessBySubField.py", line 174, in <module>
+    logger.info("%s,%s,%s,%d",paper_id,ref_id,p_intial,p_year)
+Message: '%s,%s,%s,%d'
+Arguments: ('7E8F2D40', '2F4CE839', None, None)
+2018-08-21 12:59:13,736 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 761, 13/19:68.421053%, time cost:3841
+2018-08-21 12:59:13,870 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:0895A350,#subfileds: 6145,Time cost:3841 s
+2018-08-21 12:59:38,458 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:0895A350,#subfileds: 6145, #Intial papers:151375, Time cost:3841 s
+--- Logging error ---
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: %d format: a number is required, not NoneType
+Call stack:
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/zico/py/cn/edu/hznu/hufengcitation/mag/output/MAGGenrateAttactivenessBySubField.py", line 174, in <module>
+    logger.info("%s,%s,%s,%d",paper_id,ref_id,p_intial,p_year)
+Message: '%s,%s,%s,%d'
+Arguments: ('76300FD9', '80910321', None, None)
+2018-08-21 12:59:44,050 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 6145, 14/19:73.684211%, time cost:3871
+2018-08-21 12:59:44,080 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:08974DB8,#subfileds: 1388,Time cost:3871 s
+2018-08-21 12:59:50,035 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:08974DB8,#subfileds: 1388, #Intial papers:39051, Time cost:3871 s
+--- Logging error ---
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: %d format: a number is required, not NoneType
+Call stack:
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/zico/py/cn/edu/hznu/hufengcitation/mag/output/MAGGenrateAttactivenessBySubField.py", line 174, in <module>
+    logger.info("%s,%s,%s,%d",paper_id,ref_id,p_intial,p_year)
+Message: '%s,%s,%s,%d'
+Arguments: ('76300FD9', '80910321', None, None)
+2018-08-21 12:59:51,142 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 1388, 15/19:78.947368%, time cost:3878
+2018-08-21 12:59:51,255 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:09ACE10E,#subfileds: 5513,Time cost:3878 s
+2018-08-21 13:00:14,345 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:09ACE10E,#subfileds: 5513, #Intial papers:141178, Time cost:3878 s
+2018-08-21 13:00:14,345 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 7F83454A,78CDE7F7,None,2009
+2018-08-21 13:00:19,712 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 5513, 16/19:84.210526%, time cost:3907
+2018-08-21 13:00:19,879 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:0B0FEB68,#subfileds: 8310,Time cost:3907 s
+2018-08-21 13:00:52,165 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:0B0FEB68,#subfileds: 8310, #Intial papers:238268, Time cost:3907 s
+2018-08-21 13:00:52,166 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 7637F12E,7A723BD7,None,2013
+2018-08-21 13:01:04,852 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 8310, 17/19:89.473684%, time cost:3952
+2018-08-21 13:01:04,894 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:0B7A44E7,#subfileds: 2025,Time cost:3952 s
+2018-08-21 13:01:12,892 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:0B7A44E7,#subfileds: 2025, #Intial papers:72521, Time cost:3952 s
+2018-08-21 13:01:12,892 - MAGGenrateAttactivenessBySubField.py[line:174] - INFO: 796A2C26,78EDF30A,None,2011
+2018-08-21 13:01:15,820 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 2025, 18/19:94.736842%, time cost:3963
+2018-08-21 13:01:15,864 - MAGGenrateAttactivenessBySubField.py[line:139] - INFO: Loading subfield Done! Root:0C41F50C,#subfileds: 1453,Time cost:3963 s
+2018-08-21 13:01:18,658 - MAGGenrateAttactivenessBySubField.py[line:161] - INFO: subfield Initial papers Loaded! Root:0C41F50C,#subfileds: 1453, #Intial papers:29397, Time cost:3963 s
+--- Logging error ---
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/root/anaconda3/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: %d format: a number is required, not NoneType
+Call stack:
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 184, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/root/anaconda3/lib/python3.5/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/zico/py/cn/edu/hznu/hufengcitation/mag/output/MAGGenrateAttactivenessBySubField.py", line 174, in <module>
+    logger.info("%s,%s,%s,%d",paper_id,ref_id,p_intial,p_year)
+Message: '%s,%s,%s,%d'
+Arguments: ('76842CBF', '7E8A6AA3', None, None)
+2018-08-21 13:01:19,412 - MAGGenrateAttactivenessBySubField.py[line:190] - INFO: One Root Generated. #subfields: 1453, 19/19:100.000000%, time cost:3966

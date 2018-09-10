@@ -1,0 +1,17 @@
+2018-07-19 11:09:33,563 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:1000000, file lines: 9621303,46.261380%, cost time:19 s
+2018-07-19 11:09:33,566 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:1000000, file lines: 9621304,46.261385%, cost time:63 s
+2018-07-19 11:09:33,568 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:1000000, file lines: 9621305,46.261389%, cost time:63 s
+2018-07-19 11:09:33,569 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:1000000, file lines: 9621306,46.261394%, cost time:63 s
+2018-07-19 11:09:33,571 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:1000000, file lines: 9621307,46.261399%, cost time:63 s
+2018-07-19 11:09:33,573 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:1000000, file lines: 9621308,46.261404%, cost time:63 s
+2018-07-19 11:09:33,575 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:1000000, file lines: 9621309,46.261409%, cost time:63 s
+2018-07-19 11:09:33,577 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:1000000, file lines: 9621310,46.261414%, cost time:63 s
+2018-07-19 11:10:37,998 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2000000, file lines: 19416060,93.356765%, cost time:82 s
+2018-07-19 11:10:38,000 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2000000, file lines: 19416061,93.356770%, cost time:127 s
+2018-07-19 11:10:38,002 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2000000, file lines: 19416062,93.356775%, cost time:127 s
+2018-07-19 11:10:38,004 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2000000, file lines: 19416063,93.356780%, cost time:127 s
+2018-07-19 11:10:38,016 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2000000, file lines: 19416064,93.356785%, cost time:127 s
+2018-07-19 11:10:38,018 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2000000, file lines: 19416065,93.356789%, cost time:127 s
+2018-07-19 11:10:38,030 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2000000, file lines: 19416066,93.356794%, cost time:127 s
+2018-07-19 11:10:38,032 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2000000, file lines: 19416067,93.356799%, cost time:127 s
+2018-07-19 11:10:45,893 - data2dbcitationbatch.py[line:84] - INFO: Inserted papers:2146342, file lines: 20797700,100.000000%, cost time:130 s
