@@ -1,0 +1,4 @@
+scp -r /home/zico/py/cn/edu/hznu/nos/  zico@172.31.218.51:/home/zico/py/cn/edu/hznu/
+
+nohup python -m cn.edu.hznu.nos.jason2txt > jason.out &
+
