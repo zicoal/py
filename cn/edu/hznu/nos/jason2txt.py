@@ -31,7 +31,7 @@ logger.addHandler(ch)
 #server
 src_dir='/home/zico/mag/data/microsoft-2017-nov/'
 src_root_file='/home/zico/mag/data/discipline.txt'
-dest_dir='/home/zico/py/data/processed/'
+dest_dir='/home/zico/mag/data/processed/'
 dest_file_papers=dest_dir+"papers.txt"
 
 
