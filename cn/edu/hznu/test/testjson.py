@@ -8,8 +8,8 @@ import os
 
 #src='/home/zico/py/data/mag-paper-year-2001-offset-500.json'
 
-#src='/home/zico/py/data/mag-paper-year-2014-offset-500.json'
-src='/home/zico/py/data/mag-paper-year-2017-offset-995500.json'
+src='/home/zico/py/data/mag-paper-year-2014-offset-500.json'
+#src='/home/zico/py/data/mag-paper-year-2017-offset-995500.json'
 src_dir='/home/zico/py/data/'
 
 f = open(src,'r')
@@ -17,9 +17,7 @@ f = open(src,'r')
 j=json.load(f)
 
 
-
-
-i=10
+i=15
 
 result = json.dumps(j[i],indent=4)
 print(result)
@@ -28,10 +26,10 @@ print(j[i])
 print(j[i]['Id'])
 print(j[i]['Y'])
 print(j[i]['RId'])
-#print(j[i]['F'][0]['FId'])
+print(j[i]['F'][0]['FN'])
 #print(j[i]['F'][0]['FN'])
 
-if (j[i].get('F')==None):
+if (j[i].get('F') ==  None):
     print('like you')
 
 if (j[i].get('Y') is not None):
@@ -39,7 +37,11 @@ if (j[i].get('Y') is not None):
 
 #print (os.path.dirname(src_dir))
 
-print (os.path.abspath(os.path.dirname(__file__)))
+print(os.path.abspath(os.path.dirname(src_dir)))
+
+print(os.listdir(src_dir))
+files = os.listdir(src_dir)
+print(files[0])
 #plt.savefig(fig_file)
 #plt.draw()
 #plt.show()
