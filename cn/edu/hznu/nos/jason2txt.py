@@ -119,4 +119,3 @@ for file in list_files:
     f.close()
 
 f_papers.close()
-#    print(s_file)
