@@ -50,6 +50,10 @@ while line:
 
     rootdesc=words[0].strip()
 
+    if (len(rootdesc) == 0):
+        line = f.readline()
+        continue
+
     dict_disciplines.setdefault(rootdesc, 0)
 
     line =f.readline()
@@ -71,6 +75,9 @@ while line:
         words = line.split('\t')
         p_id= words[0].strip()
         p_discipline = words[2].strip()
+        if(len(p_discipline)==0):
+            line = f.readline()
+            continue
         dict_paper_discipline.setdefault(p_id, p_discipline)
 
     line =f.readline()
@@ -94,11 +101,15 @@ while line:
         #paper line
         words = line.split('\t')
         p_discipline = words[2].strip()
-
-    if(num_linecount%2==0):
+        if (len(p_discipline) == 0):
+            line = f.readline()
+            continue
+    elif(num_linecount%2==0):
         #citation line
         words = line.replace('[', '').replace(']', '').split(',')
         for ref in words:
+            if(len(ref.strip())==0):
+                continue
             if dict_paper_discipline.get(ref.strip()) is not None:
                 ref_discipline = dict_paper_discipline.get(ref.strip())
                 keys =dict_discipline_ctations.get(ref_discipline)
