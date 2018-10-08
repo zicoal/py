@@ -23,18 +23,17 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 #pc
-#src_dir='/home/zico/py/data/'
+#src_dir='D:\\data\\mag\\big\\processed\\'
 #src_root_file='/home/zico/py/discipline.txt'
 #dest_dir='/home/zico/py/data/processed/'
 #dest_file_papers=dest_dir+"papers.txt"
 
 #server
 #src_dir='/home/zico/mag/data/microsoft-2017-nov/'
-src_dir='D:\\data\\mag\\big\\processed\\'
+src_dir='/home/zico/py/data/processed/'
 src_file_papers=src_dir+"interdispline_citation.txt"
 dest_file_interdispline_citation_pic= src_dir+"interdiscipline_citation.png"
 dest_file_singledispline_citation= src_dir+"singlediscipline_citation.txt"
-
 
 
 f_citations = open(dest_file_singledispline_citation, encoding='UTF-8', mode='w', errors='ignore')
