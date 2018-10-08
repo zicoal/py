@@ -119,7 +119,10 @@ while line:
             b_valid_label = True
     elif(num_linecount%2==0 and b_valid_label == True):
         #citation line
-        refs = line.replace('[', '').replace(']', '').replace('\n', '').split(',')
+        refs_tmp = line.replace('[', '').replace(']', '').replace('\n', '')
+        if (len(refs_tmp.strip()) == 0):
+            continue
+        refs = refs_tmp.split(',')
         for ref in refs:
             if(len(ref.strip())==0):
                 continue
