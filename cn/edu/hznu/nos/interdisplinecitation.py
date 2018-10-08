@@ -113,9 +113,8 @@ while line:
         words = line.split('\t')
         p_discipline = words[2].strip()
         if (len(p_discipline) == 0):
-#            line = f.readline()
+            p_discipline = ''
             b_valid_label = False
- #           continue
         else:
             b_valid_label = True
     elif(num_linecount%2==0 and b_valid_label == True):
@@ -123,21 +122,18 @@ while line:
         refs = line.replace('[', '').replace(']', '').replace('\n', '').split(',')
         for ref in refs:
             if(len(ref.strip())==0):
-                line = f.readline()
                 continue
             if dict_paper_discipline.get(ref.strip()) is not None:
                 ref_discipline = dict_paper_discipline.get(ref.strip())
                 keys =dict_discipline_ctations.get(ref_discipline)
 
-
                 if(keys is None):
                     # no citing paper
                     dict_discipline_ctations.setdefault(ref_discipline,{})[p_discipline]=1
                 elif (p_discipline in keys):
-
                     dict_discipline_ctations[ref_discipline][p_discipline] +=1
 
-
+                    '''
                     print(keys)
                     print(refs)
                     print(ref.strip() + ":" + ref_discipline)
@@ -149,6 +145,7 @@ while line:
                     if ( dict_discipline_ctations[ref_discipline][p_discipline] >10000000):
                         print(ref_discipline +":" +p_discipline)
                         exit(0)
+                    '''
                 else:
                     #citing paper does not exist
                     dict_discipline_ctations.setdefault(ref_discipline,{})[p_discipline]=1

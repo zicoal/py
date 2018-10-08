@@ -83,9 +83,9 @@ for file in list_files:
     num_total_papers+=len(json_papers)
     for paper in json_papers:
 
-        if (paper.get('RId') == None):
-            num_no_reference_papers += 1
-            continue
+#        if (paper.get('RId') == None):
+#            num_no_reference_papers += 1
+#            continue
 
         if (paper.get('F') == None):
             num_no_discipline_papers += 1
@@ -108,7 +108,9 @@ for file in list_files:
                 # two lines
                 # paper info
                 # refs_id
-                refs = paper['RId']
+                refs = paper.get('RId')
+                if (refs is None):
+                    refs='[]'
                 tmp_str_paper = tmp_str_paper + ("%s\t%s\t%s\n%s\n" % (paper['Id'],paper['Y'],tmp_discipline,refs))
     f_papers.write(tmp_str_paper)
     if (num_file_count % 1000 == 0) or (num_file_count == num_total_files):
