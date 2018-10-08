@@ -82,7 +82,8 @@ print(d1)
 
 print('方案三 获取值')
 print
-print(list(d1[key]))
+print(2 not in list(d1[key]))
+print(2 in d1.get(key))
 
 print('方案三 删除值，会留下一个空列表')
 d1[key].remove(value)
