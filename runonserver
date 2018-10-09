@@ -1,4 +1,6 @@
 scp -r /home/zico/py/cn/edu/hznu/nos/  zico@172.31.218.51:/home/zico/py/cn/edu/hznu/
 
-nohup python -m cn.edu.hznu.nos.jason2txt > jason.out &
+scp zico@172.31.218.51:/home/zico/mag/data/processed/*dis*.txt /home/zico/data/mag/processed/
+nohup python -m cn.edu.hznu.nos.jason2txt > jason. &
+nohup python -m cn.edu.hznu.nos.interdisplinecitation > getinterdicipline.txt &
 

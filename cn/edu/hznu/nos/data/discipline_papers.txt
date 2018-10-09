@@ -1,0 +1,19 @@
+mathematics	1784308
+materials science	1738367
+physics	4322640
+computer science	2576730
+medicine	6793163
+business	291050
+geography	807874
+political science	633529
+art	534695
+philosophy	185673
+engineering	4439552
+chemistry	4443374
+sociology	532093
+psychology	1498089
+geology	714480
+environmental science	164907
+economics	976423
+history	467920
+biology	6513463

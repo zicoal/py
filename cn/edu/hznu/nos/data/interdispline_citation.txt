@@ -1,0 +1,361 @@
+mathematics	mathematics	10313948
+mathematics	materials science	60768
+mathematics	physics	697221
+mathematics	computer science	1592267
+mathematics	medicine	482649
+mathematics	business	32540
+mathematics	geography	81172
+mathematics	political science	20940
+mathematics	art	5630
+mathematics	engineering	598424
+mathematics	chemistry	111152
+mathematics	sociology	40673
+mathematics	psychology	428560
+mathematics	geology	138925
+mathematics	environmental science	6661
+mathematics	economics	558751
+mathematics	philosophy	11478
+mathematics	biology	459876
+mathematics	history	2495
+materials science	mathematics	46961
+materials science	materials science	3625459
+materials science	physics	490503
+materials science	computer science	47872
+materials science	medicine	87723
+materials science	political science	78
+materials science	geography	13068
+materials science	business	1159
+materials science	art	2480
+materials science	philosophy	16
+materials science	engineering	906901
+materials science	chemistry	787617
+materials science	sociology	514
+materials science	psychology	2056
+materials science	geology	25477
+materials science	environmental science	2684
+materials science	economics	1433
+materials science	history	141
+materials science	biology	120771
+physics	mathematics	783599
+physics	materials science	1183965
+physics	physics	29080271
+physics	computer science	352833
+physics	medicine	210475
+physics	business	1134
+physics	geography	138010
+physics	political science	3034
+physics	art	4143
+physics	engineering	717675
+physics	chemistry	2268972
+physics	sociology	7698
+physics	psychology	115404
+physics	geology	590471
+physics	environmental science	20492
+physics	economics	15690
+physics	philosophy	3324
+physics	biology	459840
+physics	history	1706
+computer science	mathematics	1199653
+computer science	materials science	44543
+computer science	psychology	441942
+computer science	computer science	16171815
+computer science	medicine	277306
+computer science	business	157380
+computer science	geography	157687
+computer science	political science	44944
+computer science	art	17247
+computer science	engineering	1644495
+computer science	chemistry	110085
+computer science	sociology	81653
+computer science	physics	247223
+computer science	geology	36613
+computer science	environmental science	3833
+computer science	economics	166727
+computer science	philosophy	11565
+computer science	biology	383832
+computer science	history	3537
+medicine	mathematics	160181
+medicine	materials science	199088
+medicine	psychology	2164342
+medicine	economics	153217
+medicine	medicine	63094409
+medicine	business	21503
+medicine	geography	68508
+medicine	political science	78548
+medicine	art	12884
+medicine	philosophy	2572
+medicine	engineering	317507
+medicine	chemistry	987735
+medicine	sociology	150077
+medicine	physics	215760
+medicine	geology	7802
+medicine	environmental science	9512
+medicine	computer science	287214
+medicine	history	3966
+medicine	biology	6776326
+business	mathematics	10799
+business	materials science	417
+business	psychology	17934
+business	computer science	144378
+business	sociology	24573
+business	political science	28125
+business	geography	15727
+business	business	239414
+business	art	962
+business	philosophy	172
+business	engineering	87167
+business	chemistry	661
+business	medicine	23748
+business	physics	645
+business	geology	663
+business	environmental science	1836
+business	economics	569833
+business	history	408
+business	biology	10342
+geography	mathematics	55345
+geography	materials science	11601
+geography	psychology	25588
+geography	economics	117773
+geography	sociology	79019
+geography	business	13344
+geography	geography	173993
+geography	political science	23988
+geography	art	4657
+geography	philosophy	1304
+geography	engineering	148017
+geography	chemistry	20945
+geography	medicine	56033
+geography	physics	120643
+geography	geology	174858
+geography	environmental science	22124
+geography	computer science	137028
+geography	history	6428
+geography	biology	434984
+political science	mathematics	24502
+political science	materials science	305
+political science	psychology	157913
+political science	economics	374083
+political science	sociology	402039
+political science	political science	230732
+political science	geography	30027
+political science	business	38523
+political science	art	5452
+political science	engineering	46251
+political science	chemistry	2337
+political science	medicine	144600
+political science	physics	1989
+political science	geology	2488
+political science	environmental science	3530
+political science	computer science	62412
+political science	philosophy	5662
+political science	biology	35015
+political science	history	4572
+art	mathematics	9380
+art	materials science	4407
+art	psychology	31061
+art	computer science	24762
+art	sociology	49651
+art	business	1271
+art	geography	8346
+art	political science	6858
+art	art	18013
+art	engineering	21547
+art	chemistry	7954
+art	medicine	14123
+art	physics	5526
+art	geology	4254
+art	environmental science	352
+art	economics	11203
+art	philosophy	7412
+art	biology	24091
+art	history	7251
+engineering	mathematics	353609
+engineering	materials science	780663
+engineering	psychology	88579
+engineering	computer science	1498214
+engineering	medicine	213828
+engineering	business	96665
+engineering	geography	139714
+engineering	political science	33247
+engineering	art	11887
+engineering	engineering	9001636
+engineering	chemistry	370778
+engineering	sociology	46902
+engineering	physics	433170
+engineering	geology	92938
+engineering	environmental science	18069
+engineering	economics	244250
+engineering	philosophy	1024
+engineering	biology	237315
+engineering	history	1670
+chemistry	mathematics	66079
+chemistry	materials science	1544159
+chemistry	physics	1420299
+chemistry	computer science	98848
+chemistry	medicine	1136885
+chemistry	political science	886
+chemistry	geography	22901
+chemistry	business	862
+chemistry	art	3907
+chemistry	philosophy	355
+chemistry	engineering	485497
+chemistry	chemistry	30974277
+chemistry	sociology	2170
+chemistry	psychology	187225
+chemistry	geology	275269
+chemistry	environmental science	37928
+chemistry	economics	6005
+chemistry	history	1335
+chemistry	biology	4991940
+sociology	mathematics	32513
+sociology	materials science	388
+sociology	psychology	297189
+sociology	economics	280309
+sociology	sociology	724639
+sociology	political science	152330
+sociology	geography	40572
+sociology	business	24650
+sociology	art	12457
+sociology	engineering	41378
+sociology	chemistry	2924
+sociology	medicine	207374
+sociology	physics	2920
+sociology	geology	4642
+sociology	environmental science	1920
+sociology	computer science	87122
+sociology	philosophy	11300
+sociology	biology	50178
+sociology	history	9218
+psychology	mathematics	177425
+psychology	materials science	4354
+psychology	psychology	16038458
+psychology	economics	309916
+psychology	sociology	348350
+psychology	business	39505
+psychology	geography	29980
+psychology	political science	128427
+psychology	art	19338
+psychology	engineering	143975
+psychology	chemistry	109506
+psychology	medicine	2242442
+psychology	physics	62414
+psychology	geology	1902
+psychology	environmental science	1644
+psychology	computer science	606141
+psychology	philosophy	28769
+psychology	biology	1199518
+psychology	history	4937
+geology	mathematics	61906
+geology	materials science	20722
+geology	physics	297814
+geology	computer science	20747
+geology	medicine	4975
+geology	business	352
+geology	geography	105495
+geology	political science	925
+geology	art	965
+geology	philosophy	104
+geology	engineering	90739
+geology	chemistry	161109
+geology	sociology	3243
+geology	psychology	750
+geology	geology	5981653
+geology	environmental science	41661
+geology	economics	10764
+geology	history	2664
+geology	biology	499336
+environmental science	mathematics	5972
+environmental science	materials science	3029
+environmental science	psychology	1284
+environmental science	computer science	3646
+environmental science	medicine	6086
+environmental science	business	1974
+environmental science	geography	26933
+environmental science	political science	3165
+environmental science	art	195
+environmental science	philosophy	35
+environmental science	engineering	25629
+environmental science	chemistry	41614
+environmental science	sociology	2433
+environmental science	physics	19788
+environmental science	geology	71884
+environmental science	environmental science	35750
+environmental science	economics	27241
+environmental science	history	265
+environmental science	biology	341800
+economics	mathematics	241315
+economics	philosophy	2039
+economics	psychology	173024
+economics	economics	7611458
+economics	materials science	1015
+economics	sociology	222457
+economics	political science	232484
+economics	geography	117077
+economics	business	727075
+economics	art	9013
+economics	engineering	268421
+economics	chemistry	6676
+economics	medicine	174728
+economics	physics	9740
+economics	geology	13008
+economics	environmental science	20663
+economics	computer science	220660
+economics	history	5579
+economics	biology	136473
+philosophy	mathematics	12545
+philosophy	materials science	42
+philosophy	psychology	39722
+philosophy	computer science	17972
+philosophy	sociology	32595
+philosophy	business	512
+philosophy	geography	1728
+philosophy	political science	7566
+philosophy	art	3976
+philosophy	engineering	2543
+philosophy	chemistry	548
+philosophy	medicine	6627
+philosophy	physics	2169
+philosophy	geology	241
+philosophy	environmental science	108
+philosophy	economics	6671
+philosophy	philosophy	49499
+philosophy	biology	5388
+philosophy	history	2605
+biology	mathematics	237116
+biology	materials science	345693
+biology	psychology	1638666
+biology	computer science	326149
+biology	medicine	8520734
+biology	business	7930
+biology	geography	280849
+biology	political science	18925
+biology	art	8311
+biology	philosophy	3680
+biology	engineering	320012
+biology	chemistry	4313358
+biology	sociology	38866
+biology	physics	398918
+biology	geology	608193
+biology	environmental science	244383
+biology	economics	121561
+biology	history	11083
+biology	biology	112301048
+history	mathematics	6307
+history	philosophy	6681
+history	psychology	21818
+history	computer science	10685
+history	materials science	654
+history	medicine	18586
+history	business	1888
+history	geography	8693
+history	political science	11998
+history	art	5729
+history	engineering	5549
+history	chemistry	3421
+history	sociology	59507
+history	physics	5004
+history	geology	6134
+history	environmental science	536
+history	economics	26667
+history	history	12815
+history	biology	32725
