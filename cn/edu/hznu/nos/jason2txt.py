@@ -32,7 +32,7 @@ logger.addHandler(ch)
 src_dir='/home/zico/mag/data/microsoft-2017-nov/'
 src_root_file='/home/zico/mag/data/discipline.txt'
 dest_dir='/home/zico/mag/data/processed/'
-dest_file_papers=dest_dir+"papers.txt"
+dest_file_papers=dest_dir+"papers_new.txt"
 
 
 
@@ -49,7 +49,8 @@ while line:
 
     rootdesc=words[0].strip()
 
-    dict_disciplines.setdefault(rootdesc, rootdesc)
+    if(len(rootdesc) >0 ):
+        dict_disciplines.setdefault(rootdesc, rootdesc)
 
     line =f.readline()
 f.close()
@@ -95,7 +96,9 @@ for file in list_files:
             tmp_num_disciplines=0
             tmp_discipline=""
             for field in fields:
-                field_name=field['FN'].lower()
+                field_name=field['FN'].lower().strip()
+                if(len(field_name)==0):
+                    continue
                 if (dict_disciplines.get(field_name) is not None):
                     tmp_num_disciplines += 1
                     tmp_discipline=field_name

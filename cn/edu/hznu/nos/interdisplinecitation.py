@@ -111,6 +111,9 @@ while line:
     if(num_linecount%2!=0):
         #paper line
         words = line.split('\t')
+#        if(len(words)<3):
+#            print(line)
+#            print(num_linecount)
         p_discipline = words[2].strip()
         if (len(p_discipline) == 0):
             p_discipline = ''
@@ -121,6 +124,7 @@ while line:
         #citation line
         refs_tmp = line.replace('[', '').replace(']', '').replace('\n', '')
         if (len(refs_tmp.strip()) == 0):
+            line = f.readline()
             continue
         refs = refs_tmp.split(',')
         for ref in refs:
@@ -179,4 +183,4 @@ f_papers.close()
 
 
 time_end = time.time()
-logger.info(' Done, #total papers: %d, cost time:%d s',num_totallines/2, time_end - time_start)
+logger.info(' Done, #total lines: %d,#total papers: %d,#empty_disciplines: %d, cost time:%d s',num_totallines/2,num_totallines/2-num_no_disciplines, num_no_disciplines, time_end - time_start)
