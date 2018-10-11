@@ -33,10 +33,16 @@ formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(l
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
+#---linux---
+#src_dir='/home/zico/data/mag/processed/'
+#src_file_papers=src_dir+"discipline_papers.txt"
+#src_file_citations=src_dir+"interdispline_citation.txt"
 
-src_dir='/home/zico/data/mag/processed/'
+#---win---
+src_dir='D:\\py\\cn\\edu\\hznu\\nos\\data\\'
 src_file_papers=src_dir+"discipline_papers.txt"
 src_file_citations=src_dir+"interdispline_citation.txt"
+
 
 colors= ['bisque','lightgreen','slategrey','lightcoral','gold',
          'c','cornflowerblue','blueviolet','tomato','olivedrab',
