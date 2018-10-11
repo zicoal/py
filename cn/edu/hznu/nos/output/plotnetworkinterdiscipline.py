@@ -12,8 +12,8 @@ from pyecharts import Style
 style = Style(
     title_color="#000",
     title_pos="center",
-    width=1200,
-    height=600,
+    width=1300,
+    height=800,
 #    background_color='#404a59'
 )
 
@@ -70,8 +70,11 @@ while line:
     line =f.readline()
 f.close()
 
-for key,value in dict_disciplines_papers_num.items():
-    nodes.append({"name":key,"symbolSize":100.0*value/num_max_papers})
+dict_disciplines_papers_num = sorted(dict_disciplines_papers_num.items(), key=lambda x: x[1])
+
+#for key,value in dict_disciplines_papers_num.items():
+for p in  dict_disciplines_papers_num:
+    nodes.append({"name":p[0],"symbolSize":100.0*p[1]/num_max_papers})
 
 dict_disciplines_cited= {}
 dict_disciplines_citing= {}
