@@ -99,11 +99,12 @@ while line:
 
 f.close()
 
+link_width={}
 
 num_top_citations = 3
 for keys,values in dict_disciplines_citing.items():
     values = sorted(values.items(), key=lambda x: x[1],reverse=True)
-    top=0
+    top = 0
     for key in values:
         if(top<num_top_citations):
             links.append({"source": keys, "target": key[0]})
