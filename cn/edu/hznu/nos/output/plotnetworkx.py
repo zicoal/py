@@ -6,9 +6,17 @@ import json
 import os
 import logging
 import time
-import networkx as nx
-import numpy as p
-import matplotlib.pyplot as plt
+from pyecharts import Graph
+from pyecharts import Style
+
+style = Style(
+    title_color="#000",
+    title_pos="center",
+    width=1300,
+    height=800,
+#    background_color='#404a59'
+)
+
 
 
 
@@ -31,6 +39,10 @@ src_dir='/home/zico/data/mag/processed/'
 src_file_papers=src_dir+"discipline_papers.txt"
 src_file_citations=src_dir+"interdispline_citation.txt"
 
+dest_file_papers=src_dir+"normalized_discipline_papers.txt"
+dest_file_citations_citing=src_dir+"normalized_citing_interdispline_citation.txt"
+dest_file_citations_cited=src_dir+"normalized_cited_interdispline_citation.txt"
+
 colors= ['bisque','lightgreen','slategrey','lightcoral','gold',
          'c','cornflowerblue','blueviolet','tomato','olivedrab',
          'lightsalmon','sage','lightskyblue','orchid','hotpink',
@@ -40,6 +52,8 @@ colors= ['bisque','lightgreen','slategrey','lightcoral','gold',
 dict_disciplines_papers_num= {}
 
 #reading disciplines
+nodes = []
+links = []
 
 f = open(src_file_papers,encoding='UTF-8', mode='r',errors='ignore')
 line =f.readline()
@@ -55,21 +69,16 @@ while line:
     line =f.readline()
 f.close()
 
-g = nx.DiGraph()
-
-nodes = []
-links = []
-g.position = {}
-g.population = {}
-
-
 dict_disciplines_papers_num = sorted(dict_disciplines_papers_num.items(), key=lambda x: x[1])
+
+#for key,value in dict_disciplines_papers_num.items():
+f = open(dest_file_papers, encoding='UTF-8', mode='w', errors='ignore')
+
 for p in  dict_disciplines_papers_num:
-    g.add_node(p[0],size=100.0*p[1]/num_max_papers,fillcolor=colors[0])
-#    nodes.append({"name":p[0],"symbolSize":100.0*p[1]/num_max_papers})
+    f.write('%s\t%s\n' % (p[0],100.0*p[1]/num_max_papers))
+    nodes.append({"name":p[0],"symbolSize":100.0*p[1]/num_max_papers})
 
-nodes=nx.draw_networkx_nodes(g,pos=nx.spring_layout(g))
-
+f.close()
 dict_disciplines_cited= {}
 dict_disciplines_citing= {}
 
@@ -90,7 +99,7 @@ while line:
 
 f.close()
 
-'''
+
 num_top_citations = 3
 for keys,values in dict_disciplines_citing.items():
     values = sorted(values.items(), key=lambda x: x[1],reverse=True)
@@ -100,7 +109,7 @@ for keys,values in dict_disciplines_citing.items():
             links.append({"source": keys, "target": key[0]})
             top += 1
 
-'''
+
 '''
 #output citing
 f = open(dest_file_citations_citing, encoding='UTF-8', mode='w', errors='ignore')
@@ -123,7 +132,6 @@ for keys,values in dict_disciplines_cited.items():
         f.write('%s\t%s\t%s\n' % (key,keys,100.0*int(value)*1.0/num_total))
 f.close()
 '''
-'''
 graph = Graph("InterDiscipline Citing Relationship", **style.init_style)
 graph.add(
     "",
@@ -137,6 +145,5 @@ graph.add(
 #    graph_edge_symbol= "arrow"
 )
 graph.render()
-'''
 
 
