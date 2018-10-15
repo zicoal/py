@@ -7,8 +7,8 @@ import os
 import logging
 import time
 import networkx as nx
-import numpy as p
-import matplotlib.pyplot as plt
+import numpy as np
+from  matplotlib import pyplot as plt
 
 
 
@@ -62,13 +62,12 @@ links = []
 g.position = {}
 g.population = {}
 
-
 dict_disciplines_papers_num = sorted(dict_disciplines_papers_num.items(), key=lambda x: x[1])
 for p in  dict_disciplines_papers_num:
-    g.add_node(p[0],size=100.0*p[1]/num_max_papers,fillcolor=colors[0])
+    #g.add_node(p[0],size=100.0*p[1]/num_max_papers,fillcolor=colors[0])
+    g.add_node(p[0], size=1000.0 * p[1] / num_max_papers, fillcolor=colors[0])
 #    nodes.append({"name":p[0],"symbolSize":100.0*p[1]/num_max_papers})
 
-nodes=nx.draw_networkx_nodes(g,pos=nx.spring_layout(g))
 
 dict_disciplines_cited= {}
 dict_disciplines_citing= {}
@@ -90,6 +89,9 @@ while line:
 
 f.close()
 
+plt.axis('off')
+plt.show()
+
 '''
 num_top_citations = 3
 for keys,values in dict_disciplines_citing.items():
@@ -101,18 +103,20 @@ for keys,values in dict_disciplines_citing.items():
             top += 1
 
 '''
-'''
-#output citing
-f = open(dest_file_citations_citing, encoding='UTF-8', mode='w', errors='ignore')
+
 for keys,values in dict_disciplines_citing.items():
     num_total=0
     for key, value in values.items():
         num_total+=value
     for key, value in values.items():
-        f.write('%s\t%s\t%s\n' % (keys,key,100.0*int(value)*1.0/num_total))
-        links.append({"source": keys, "target": key})
-f.close()
+        g.add_edge(keys, key, weight=int(value)*1.0/num_total)
 
+pos=nx.circular_layout(g)
+nx.draw_networkx_nodes(g,pos=pos)
+nx.draw_networkx_edges(g,pos=pos)
+plt.axis('off')
+plt.show()
+'''
 #output cited
 f = open(dest_file_citations_cited, encoding='UTF-8', mode='w', errors='ignore')
 for keys,values in dict_disciplines_cited.items():
