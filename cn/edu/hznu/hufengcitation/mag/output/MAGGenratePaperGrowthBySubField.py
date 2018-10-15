@@ -2,9 +2,9 @@ import logging
 import time
 from collections import defaultdict
 
-from pylab import *
+#from pylab import *
 
-from cn.edu.hznu import db
+from cn.edu.hznu.tools import db
 
 #insert paper into db
 logger = logging.getLogger()
