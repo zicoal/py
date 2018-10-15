@@ -64,6 +64,7 @@ plt.loglog(x, y, linewidth='1',  label=('r=%s, t0=%s' % (r,t0)), color=colors[6]
 #ax.yaxis.get_major_formatter().set_powerlimits((0,1)) # 将坐标轴的base number设置为一位。
 
 
+
 plt.legend(loc='lower left')
 #plt.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0., handleheight=1.675)
 plt.title('Citation Distribution',size ='30')
