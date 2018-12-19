@@ -42,6 +42,7 @@ f = open(src_file_papers,encoding='UTF-8', mode='r',errors='ignore')
 line =f.readline()
 num_totallines=0
 dict_paper_discipline= {}
+dict_paper_year= {}
 
 dict_disciplines= {}
 num_no_disciplines=0
@@ -59,10 +60,17 @@ while line:
             line = f.readline()
             continue
         if (dict_disciplines.get(p_discipline) is None):
-            dict_disciplines.setdefault(p_discipline, 1)
+            #dict_disciplines.setdefault(p_discipline, 1)
+            #for each discipline in each year,
+            dict_disciplines.setdefault(p_discipline,{})[p_year] =1
         else:
-            dict_disciplines[p_discipline] += 1
+            tmp =  dict_disciplines.get(p_discipline)
+            if (tmp.get(p_year) is None):
+                tmp[p_year] =1
+            else:
+                dict_disciplines[p_discipline][p_year] +=1
 
+#        dict_paper_year.setdefault(p_id, p_year)
         dict_paper_discipline.setdefault(p_id, p_discipline)
 
     line =f.readline()
@@ -80,6 +88,7 @@ line =f.readline()
 num_linecount=0
 dict_discipline_ctations= {}
 p_discipline = ''
+p_year='N/A'
 b_valid_label=False
 while line:
     num_linecount += 1
@@ -90,8 +99,10 @@ while line:
 #            print(line)
 #            print(num_linecount)
         p_discipline = words[2].strip()
+        p_year = words[1].strip()
         if (len(p_discipline) == 0):
             p_discipline = ''
+            p_year='N/A'
             b_valid_label = False
         else:
             b_valid_label = True
@@ -106,31 +117,34 @@ while line:
             if(len(ref.strip())==0):
                 continue
             if dict_paper_discipline.get(ref.strip()) is not None:
+                #ref DOES in paper list
                 ref_discipline = dict_paper_discipline.get(ref.strip())
-                keys =dict_discipline_ctations.get(ref_discipline)
+                #ref_year = dict_paper_year.get(ref.strip())
 
-                if(keys is None):
+                d0_cited_discipline=dict_discipline_ctations.get(ref_discipline)
+
+
+                keys=dict_discipline_ctations.get(ref_discipline)
+
+                if(d0_cited_discipline is None):
                     # no citing paper
-                    dict_discipline_ctations.setdefault(ref_discipline,{})[p_discipline]=1
-                elif (p_discipline in keys):
-                    dict_discipline_ctations[ref_discipline][p_discipline] +=1
-
-                    '''
-                    print(keys)
-                    print(refs)
-                    print(ref.strip() + ":" + ref_discipline)
-                    print(p_discipline + ":" + p_discipline)
-                    print(keys)
-                    print(dict_discipline_ctations[ref_discipline][p_discipline])
-                    exit(0)
-
-                    if ( dict_discipline_ctations[ref_discipline][p_discipline] >10000000):
-                        print(ref_discipline +":" +p_discipline)
-                        exit(0)
-                    '''
+                    d1_cited_discipline=dict_discipline_ctations.setdefault(ref_discipline, {})
+                    d1_cited_discipline.setdefault(p_discipline, {})[p_year] =1
                 else:
-                    #citing paper does not exist
-                    dict_discipline_ctations.setdefault(ref_discipline,{})[p_discipline]=1
+                    keys_disciplines = dict_discipline_ctations[ref_discipline].keys()
+                    if(p_discipline in keys_disciplines):
+                        d2_cited_discipline= d0_cited_discipline.get(p_discipline)
+#                        keys_cited_year =d2_cited_discipline.get(p_discipline)
+                        if(p_year in d2_cited_discipline.keys()):
+                            #print(p_year)
+                            #print(d2_cited_discipline.keys())
+                            #print(keys_cited_year)
+                            d2_cited_discipline[p_year]+=1
+                        else:
+                            d2_cited_discipline.setdefault(p_discipline, {})[p_year] = 1
+                    else:
+                        #citing discilipine not exsit
+                        d0_cited_discipline.setdefault(p_discipline, {})[p_year] = 1
     line =f.readline()
     if (num_linecount % 1000000 == 0 or num_linecount==num_totallines):
         time_end = time.time()
@@ -138,10 +152,17 @@ while line:
 f.close()
 
 str_interdiscipline=""
-for keys,dict_discipline_ctations_values in dict_discipline_ctations.items():
-    for key, value in dict_discipline_ctations_values.items():
-        #a<-b
-        str_interdiscipline = str_interdiscipline+("%s\t%s\t%d\n" % (keys,key,value))
+
+
+for  keyx, valuex  in dict_discipline_ctations.items():
+    # a<-b
+    for keyxx, valuexx in valuex.items():
+        for keyxxx, valuexxx in valuexx.items():
+            str_interdiscipline = str_interdiscipline + ("%s\t%s\t%s\t%d" % (keyx, keyxx, keyxxx,valuexxx))
+
+
+#for keys,dict_discipline_ctations_values in dict_discipline_ctations.items():
+#    for key, value in dict_discipline_ctations_values.items():
 
 f_citations = open(dest_file_interdispline_citation, encoding='UTF-8', mode='w', errors='ignore')
 f_citations.write(str_interdiscipline)
@@ -150,7 +171,9 @@ f_citations.close()
 str_discipline_papers=""
 for  key, value  in dict_disciplines.items():
         #a<-b
-        str_discipline_papers = str_discipline_papers+("%s\t%d\n" % (key,value))
+        for key1, value1 in value.items():
+            #discipline, year, publications
+            str_discipline_papers = str_discipline_papers+("%s\t%s\t%d\n" % (key,key1,value1))
 
 f_papers = open(dest_file_discipline_papers_nums, encoding='UTF-8', mode='w', errors='ignore')
 f_papers.write(str_discipline_papers)

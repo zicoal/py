@@ -145,18 +145,51 @@ print('方案物五 使用嵌套子字典作为dict的值 值不允许重复')
 d1 = {}
 key = 'Physics'
 keyin1 = 'Chemistry'
-keyin2 = 'Physics'
+keyin2 = 'Biology'
+keyin3 = 'Math'
 keyin11 = 2018
+keyin12 = 2019
+keyin13 = 2020
 value1 = 10
 value2 = 12
+value3 = 11
 #d1.setdefault(key, {keyin1,{}})[keyin2] = value
 d=d1.setdefault(key,{})
 d2=d.setdefault(keyin1,{})
 d2[keyin11]=value1
-print(d1)
-d.setdefault(keyin2,{})[keyin1] =value2
+d2[keyin11]+=10
 
+print(d1)
+d.setdefault(keyin2,{})[keyin12] =value2
 #d3=d.setdefault(keyin2,{})
 #d3[keyin11]=value2
 
 print(d1)
+print(d1[key].keys())
+
+
+#print(d1[key][keyin1])
+
+
+print('--test--')
+for  key, valuex  in d1.items():
+    keys=valuex.keys()
+    for k in keys:
+        k_year_keys= d1[key][k].keys()
+        for b in k_year_keys:
+            print ("%s\t%s\t%s\t%d" % (key, k, b,d1[key][k][b]))
+
+print('--test--')
+for  keyx, valuex  in d1.items():
+    for keyxx, valuexx in valuex.items():
+        for keyxxx, valuexxx in valuexx.items():
+            print ("%s\t%s\t%s\t%d" % (keyx, keyxx, keyxxx,valuexxx))
+
+#        keys_year = valuex[key]
+#        print(keys_year)
+#    for key_year, paper_value in tmp_year_value.items():
+#        print ("%s\t%s\t%d\n" % (key, key_year, paper_value))
+
+
+
+#print("%s-%s" %(keyin1,keyin2))
