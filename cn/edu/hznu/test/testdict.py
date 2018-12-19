@@ -139,3 +139,24 @@ print(c)
 
 a={}
 print(len(a))
+
+print('方案物五 使用嵌套子字典作为dict的值 值不允许重复')
+
+d1 = {}
+key = 'Physics'
+keyin1 = 'Chemistry'
+keyin2 = 'Physics'
+keyin11 = 2018
+value1 = 10
+value2 = 12
+#d1.setdefault(key, {keyin1,{}})[keyin2] = value
+d=d1.setdefault(key,{})
+d2=d.setdefault(keyin1,{})
+d2[keyin11]=value1
+print(d1)
+d.setdefault(keyin2,{})[keyin1] =value2
+
+#d3=d.setdefault(keyin2,{})
+#d3[keyin11]=value2
+
+print(d1)
