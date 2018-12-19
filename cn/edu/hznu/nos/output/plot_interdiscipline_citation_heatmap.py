@@ -47,7 +47,7 @@ style = Style(
 #---win---
 src_dir='D:\\py\\cn\\edu\\hznu\\nos\\data\\'
 src_file_citations=src_dir+"inter_citation_year.txt"
-dest_file_citations=src_dir+"inter_citation_weight_all.txt"
+dest_file_citations=src_dir+"inter_citation_weight_all_%s_%s.txt"
 
 
 colors= ['bisque','lightgreen','slategrey','lightcoral','gold',
@@ -67,9 +67,13 @@ str_observation_discipline2='chemistry'
 num_max_papers_ci=0
 num_linecount=0
 
+begin_year=1900
+end_year=1950
+
 dict_discipline_citation={}
 while line:
         words=line.replace('\n','').split('\t')
+
 
         str_discipline_cited = words[0].strip()
         str_discipline_citing = words[1].strip()
@@ -77,6 +81,10 @@ while line:
         cite_year =  int(words[2].strip())
         num_citations =  int(words[3].strip())
 
+        if(cite_year<begin_year or cite_year>end_year):
+            line=f.readline()
+            num_linecount += 1
+            continue
         if(dict_discipline_citation.get(str_discipline_citing) is None):
             dict_discipline_citation.setdefault(str_discipline_citing, {})[str_discipline_cited] = num_citations
         else:
@@ -96,6 +104,7 @@ data=[]
 i=0
 x_axis =[]
 y_axis =[]
+dest_file_citations = dest_file_citations % (begin_year,end_year)
 f_citation = open(dest_file_citations, encoding='UTF-8', mode='w', errors='ignore')
 str_scitation=""
 for keyx, valuex in dict_discipline_citation.items():
