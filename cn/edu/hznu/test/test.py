@@ -134,5 +134,12 @@ s=[(734649.7158912, '991033,733498,734649.6596296,734649.7158912'),
 (734649.8563995, '1193431,2392157,734649.8049421,734649.8563995')]
 
 s=sorted(s,key=lambda x:x[0])
+#
+#print(s)
 
-print(s)
+
+data = [[i, j, random.randint(0, 15)] for i in range(10) for j in range(7)]
+print(data)
+
+x = np.random.randn(4, 4)
+print(x)

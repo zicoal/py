@@ -123,8 +123,7 @@ while line:
 
                 d0_cited_discipline=dict_discipline_ctations.get(ref_discipline)
 
-
-                keys=dict_discipline_ctations.get(ref_discipline)
+               # keys=dict_discipline_ctations.get(ref_discipline)
 
                 if(d0_cited_discipline is None):
                     # no citing paper
@@ -134,17 +133,27 @@ while line:
                     keys_disciplines = dict_discipline_ctations[ref_discipline].keys()
                     if(p_discipline in keys_disciplines):
                         d2_cited_discipline= d0_cited_discipline.get(p_discipline)
-#                        keys_cited_year =d2_cited_discipline.get(p_discipline)
                         if(p_year in d2_cited_discipline.keys()):
                             #print(p_year)
                             #print(d2_cited_discipline.keys())
                             #print(keys_cited_year)
                             d2_cited_discipline[p_year]+=1
                         else:
-                            d2_cited_discipline.setdefault(p_discipline, {})[p_year] = 1
+                            d0_cited_discipline.setdefault(p_discipline, {})[p_year] = 1
                     else:
                         #citing discilipine not exsit
                         d0_cited_discipline.setdefault(p_discipline, {})[p_year] = 1
+
+                    #for keyx, valuex in dict_discipline_ctations.items():
+                        #    # a<-b
+                        #    for keyxx, valuexx in valuex.items():
+                        #    for keyxxx, valuexxx in valuexx.items():
+                        #       print("%s\t%s\t%s" % (keyx, keyxx, keyxxx))
+                        #       print(valuexx)
+                        #       print(valuexxx)
+                        #       print("%s\t%s\t%s\t%s" % (keyx, keyxx, keyxxx,valuexxx))
+                        #       exit()
+
     line =f.readline()
     if (num_linecount % 1000000 == 0 or num_linecount==num_totallines):
         time_end = time.time()
@@ -158,7 +167,7 @@ for  keyx, valuex  in dict_discipline_ctations.items():
     # a<-b
     for keyxx, valuexx in valuex.items():
         for keyxxx, valuexxx in valuexx.items():
-            str_interdiscipline = str_interdiscipline + ("%s\t%s\t%s\t%d" % (keyx, keyxx, keyxxx,valuexxx))
+            str_interdiscipline = str_interdiscipline + ("%s\t%s\t%s\t%s\n" % (keyx, keyxx, keyxxx,valuexxx))
 
 
 #for keys,dict_discipline_ctations_values in dict_discipline_ctations.items():
