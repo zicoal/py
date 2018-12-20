@@ -101,6 +101,7 @@ f.close()
 
 
 for tmp_citing_displine in dict_disciplines:
+    i=0
     for tmp_cited_displine in dict_disciplines:
         x1 = []
         y1 = []
@@ -108,6 +109,7 @@ for tmp_citing_displine in dict_disciplines:
         y2 = []
         if (tmp_cited_displine == tmp_citing_displine):
             continue
+        i += 1
         for  keyx, valuex  in dict_year_discipline_citation.items():
             for keyxx, valuexx in valuex.items():
                  if(keyxx==tmp_citing_displine):
@@ -126,16 +128,20 @@ for tmp_citing_displine in dict_disciplines:
                              x2.append(keyx)
                              y2.append(valuexxx)
 
-        plt.plot(x1, y1, linewidth='2', label=("%s -> %s",(tmp_citing_displine.capitalize(),tmp_cited_displine.capitalize())), color=colors[1], linestyle='-', marker='o')
-        plt.plot(x2, y2, linewidth='2', label=("%s -> %s",(tmp_cited_displine.capitalize(),tmp_citing_displine.capitalize())), color=colors[2], linestyle='-', marker='^')
+        plt.figure().set_size_inches(8.4, 5)
+        plt.plot(x1, y1, linewidth='2', label=("%s -> %s" %(tmp_citing_displine.capitalize(),tmp_cited_displine.capitalize())), color=colors[1], linestyle='-', marker='o')
+        plt.plot(x2, y2, linewidth='2', label=("%s -> %s" % (tmp_cited_displine.capitalize(),tmp_citing_displine.capitalize())), color=colors[2], linestyle='-', marker='^')
         plt.legend(loc='upper left')
-        plt.title('Citing Pattern (Unnormalized)',size ='30')
-        plt.xlabel('Year',size ='30')
-        plt.ylabel('# of Citations',size ='30')
-        tmp_dest_fig_citation_patten=dest_fig_citation_patten % ('unnormalized',tmp_citing_displine,tmp_cited_displine.stat_year,end_year);
+        plt.title('Citing Pattern (Unnormalized)',size ='20')
+        plt.xlabel('Year',size ='20')
+        plt.ylabel('# of Citations',size ='20')
+        tmp_dest_fig_citation_patten=dest_fig_citation_patten % ('unnormalized',tmp_citing_displine,tmp_cited_displine,start_year,end_year);
         plt.savefig(tmp_dest_fig_citation_patten)
+        plt.show()
         time_end = time.time()
         logger.info('Plotting %s - %s (UN_Normalized), cost time:%d s', tmp_citing_displine, tmp_cited_displine,time_end - time_start)
+        if(i==2):
+            exit()
 #plt.show()
 #--unnormalized ends--
 '''
