@@ -99,15 +99,15 @@ f.close()
 #no normalized
 
 
-
+list_dicsipline_done=[]
+i = 0
 for tmp_citing_displine in dict_disciplines:
-    i=0
     for tmp_cited_displine in dict_disciplines:
         x1 = []
         y1 = []
         x2 = []
         y2 = []
-        if (tmp_cited_displine == tmp_citing_displine):
+        if ((tmp_cited_displine == tmp_citing_displine) or (tmp_cited_displine in list_dicsipline_done)):
             continue
         i += 1
         for  keyx, valuex  in dict_year_discipline_citation.items():
@@ -138,10 +138,12 @@ for tmp_citing_displine in dict_disciplines:
         tmp_dest_fig_citation_patten=dest_fig_citation_patten % ('unnormalized',tmp_citing_displine,tmp_cited_displine,start_year,end_year);
         plt.savefig(tmp_dest_fig_citation_patten)
         plt.show()
+        list_dicsipline_done.append(tmp_citing_displine)
         time_end = time.time()
         logger.info('Plotting %s - %s (UN_Normalized), cost time:%d s', tmp_citing_displine, tmp_cited_displine,time_end - time_start)
         if(i==2):
             exit()
+print("Total number of figures: %d.",i)
 #plt.show()
 #--unnormalized ends--
 '''
