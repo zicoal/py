@@ -35,13 +35,14 @@ logger.addHandler(ch)
 #src_file_citations=src_dir+"interdispline_citation.txt"
 
 #---win---
-#src_dir='D:\\py\\cn\\edu\\hznu\\nos\\data\\'
-#src_file_citations=src_dir+"inter_citation_year.txt"
+src_dir='D:\\py\\cn\\edu\\hznu\\nos\\'
+src_file_citations=src_dir+"data\\inter_citation_year.txt"
+dest_fig_citation_patten=src_dir+"figs\\%s\citation_patten_%s_%s_%s_%s.png"
 
 #--linux--
-src_dir='/home/zico/py/cn/edu/hznu/nos/'
-src_file_citations=src_dir+"data/inter_citation_year.txt"
-dest_fig_citation_patten=src_dir+"figs/citation_patten_%s_%s_%s_%s_%s.png"
+#src_dir='/home/zico/py/cn/edu/hznu/nos/'
+#src_file_citations=src_dir+"data/inter_citation_year.txt"
+#dest_fig_citation_patten=src_dir+"figs/citation_patten_%s_%s_%s_%s_%s.png"
 
 colors= ['bisque','lightgreen','slategrey','lightcoral','gold',
          'c','cornflowerblue','blueviolet','tomato','olivedrab',
@@ -63,8 +64,8 @@ num_linecount=0
 dict_year_discipline_citation={}
 dict_disciplines=[]
 
-start_year=1920
-end_year=2017
+start_year=1900
+end_year=1950
 
 while line:
         words=line.replace('\n','').split('\t')
@@ -98,10 +99,11 @@ f.close()
 ##output physics->chemistry and physics<-chemistry
 #no normalized
 
-
 list_dicsipline_done=[]
 i = 0
 for tmp_citing_displine in dict_disciplines:
+    if(tmp_citing_displine != str_observation_discipline1):
+        continue
     for tmp_cited_displine in dict_disciplines:
         x1 = []
         y1 = []
@@ -128,7 +130,7 @@ for tmp_citing_displine in dict_disciplines:
                              x2.append(keyx)
                              y2.append(valuexxx)
 
-        plt.figure().set_size_inches(8.4, 5)
+        plt.figure().set_size_inches(8.4, 5.5)
         plt.plot(x1, y1, linewidth='2', label=("%s -> %s" %(tmp_citing_displine.capitalize(),tmp_cited_displine.capitalize())), color=colors[1], linestyle='-', marker='o')
         plt.plot(x2, y2, linewidth='2', label=("%s -> %s" % (tmp_cited_displine.capitalize(),tmp_citing_displine.capitalize())), color=colors[2], linestyle='-', marker='^')
         plt.legend(loc='upper left')
@@ -137,12 +139,10 @@ for tmp_citing_displine in dict_disciplines:
         plt.ylabel('# of Citations',size ='20')
         tmp_dest_fig_citation_patten=dest_fig_citation_patten % ('unnormalized',tmp_citing_displine,tmp_cited_displine,start_year,end_year);
         plt.savefig(tmp_dest_fig_citation_patten)
-        plt.show()
+        #plt.show()
         list_dicsipline_done.append(tmp_citing_displine)
         time_end = time.time()
         logger.info('Plotting %s - %s (UN_Normalized), cost time:%d s', tmp_citing_displine, tmp_cited_displine,time_end - time_start)
-        if(i==2):
-            exit()
 print("Total number of figures: %d.",i)
 #plt.show()
 #--unnormalized ends--
