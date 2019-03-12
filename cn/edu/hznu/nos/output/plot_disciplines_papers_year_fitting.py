@@ -9,16 +9,17 @@ import time
 import networkx as nx
 import numpy as np
 from  matplotlib import pyplot as plt
-#import matplotlib.patches.ArrowStyle
-from pyecharts import Graph
-from pyecharts import Style
-from pyecharts import Bar
-from pyecharts import Line
+from scipy.optimize import curve_fit
+
+
+def func(x, a, b, c):
+    return a * np.exp(b * x) + c
 
 time_start=time.time()
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
+
 
 
 # 定义handler的输出格式
@@ -37,8 +38,8 @@ logger.addHandler(ch)
 #---win---
 src_dir='D:\\py\\cn\\edu\\hznu\\nos\\'
 src_file_papers=src_dir+"data\\discipline_papers_year.txt"
-dest_fig_growth_yearly=src_dir+"figs\\discpline_growth\growth_dynamical_pattern_yearly_%s_%s.png"
-dest_fig_growth_culmulative=src_dir+"figs\\discpline_growth\growth_dynamical_pattern_culmulative_%s_%s.png"
+dest_fig_growth_yearly=src_dir+"figs\\discpline_growth\growth_dynamical_pattern_yearly_%s_%s_fitting.png"
+dest_fig_growth_culmulative=src_dir+"figs\\discpline_growth\growth_dynamical_pattern_culmulative_%s_%s_fitting.png"
 
 #--linux--
 #src_dir='/home/zico/py/cn/edu/hznu/nos/'
