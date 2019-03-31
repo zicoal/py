@@ -143,3 +143,16 @@ print(data)
 
 x = np.random.randn(4, 4)
 print(x)
+
+start_year=1946
+end_year=2017
+num_bin=3
+p=int((1948-start_year)/3)+1+start_year
+print(p)
+p=int((1949-start_year)/3)+1+start_year
+print(p)
+p=int((1950-start_year)/num_bin)*num_bin+int(num_bin/2)+start_year
+print(p)
+
+p=int((1952-start_year)/num_bin)*num_bin+int(num_bin/2)+start_year
+print(p)
