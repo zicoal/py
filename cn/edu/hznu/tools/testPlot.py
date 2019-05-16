@@ -18,4 +18,4 @@ ax2.set_xlim([0, np.e])
 ax2.set_ylabel('Y values for ln(x)')
 ax1.set_xlabel('Same X for both exp(-x) and ln(x)')
 
-plt.show()
+#plt.show()
