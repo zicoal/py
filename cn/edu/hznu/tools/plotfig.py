@@ -162,6 +162,91 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
 
     if(isSave==True):
         plt.savefig(fig_file, dpi=400, bbox_inches='tight')
+        plt.cla()
+        plt.clf()
+        plt.close()
+
+
+    #more parameters
+#pars=[xlabel,ylabel, linewidth, color=[mean_color,bound_color],fig_file]
+def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean, errors, subplot_pos, pars=[], logx=False,logy=False, n=1, isSave=False):
+    values_up=[]
+    values_down=[]
+    num_count=0
+    for x in values_mean:
+        values_up.append(x + n * errors[num_count])
+        values_down.append(x - n * errors[num_count] )
+        num_count+=1
+
+    colors=['red','pink']
+    line_width=2
+    fig_file=''
+    xlabel=''
+    ylabel=''
+
+#    axes = plt.subplots(subplot_pos, figsize=(5, 5))
+
+    axes = plt.subplot(subplot_pos)
+#    if (pars[5] is not None):
+ #      plt.legend("ddddddddddddddddd",loc='upper right')
+    if (pars[4] is not None):
+        fig_file = pars[4]
+    if (pars[3] is not None):
+        colors = pars[3]
+    if (pars[2] is not None):
+        line_width = pars[2]
+    if (isSave==True):
+        if (pars[1] is not None):
+            ylabel = pars[1]
+            ylabel_axis = pars[9]
+#            axes.set_ylabel(ylabel, size='10')
+            plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90,
+                 family="fantasy", color='black', size='12', weight="light")
+
+        if (pars[0] is not None):
+            xlabel = pars[0]
+            xlabel_axis = pars[8]
+            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel, \
+                     family="fantasy", color='black', size='12', weight="light")
+
+    plt.tick_params(labelsize=7)
+    #axes.plot(category, values_mean, linewidth=line_width, color=colors[0])
+    #fig
+    axes.plot(category, values_mean, linewidth=line_width, color=colors[0])
+#    plt.legend(pars[5], loc='upper right')
+    if (pars[5] is not None):
+#        axes.legend(pars[5],loc='upper right')
+        pos=pars[7]-4  #the position
+
+        if (pars[6]==1):
+
+            xy=plt.axis()
+
+            x= (xy[1] )/2
+            y= (xy[3] )*0.9
+            axes.text(x,y,pars[5], \
+                    family = "fantasy", color = 'black', style = "italic", weight = "light")
+
+        else:
+            axes.text(0.9, 92, pars[5])
+
+
+    if (logx == True):
+        axes.set_xscale("log")
+    if (logy == True):
+        axes.set_yscale("log")
+
+  #  print(subplot_pos)
+    axes.plot(category, values_up, colors[1])
+    axes.plot(category, values_down, colors[1])
+
+    plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
+                        wspace=0.3, hspace=None)
+    plt.fill_between(category, values_down, values_up, color=colors[0], alpha=0.25)
+
+    if(isSave==True):
+        plt.savefig(fig_file, dpi=400, bbox_inches='tight')
+        plt.close('all')
 
 #more parameters
 #pars=[xlabel,ylabel, linewidth, color=[mean_color,bound_color],fig_file]
