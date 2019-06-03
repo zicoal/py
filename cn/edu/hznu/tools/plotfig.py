@@ -103,22 +103,31 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
     values_up=[]
     values_down=[]
     num_count=0
+    scale=0.3
     for x in values_mean:
-        values_up.append(x + n * errors[num_count])
-        values_down.append(x - n * errors[num_count] )
+        if (logy == True):
+            values_up.append(x + n * errors[num_count])
+            if(errors[num_count]/x>0.25):
+                values_down.append((x - x*0.4))
+            else:
+                values_down.append((x - n * errors[num_count]))
+        else:
+            if (errors[num_count] / x > 0.25):
+                values_up.append(x + x * scale)
+                values_down.append((x - x * scale))
+            else:
+                values_up.append(x + n * errors[num_count])
+                values_down.append((x - n * errors[num_count]))
+
         num_count+=1
 
     colors=['red','pink']
     line_width=2
     fig_file=''
-    xlabel=''
-    ylabel=''
 
-#    axes = plt.subplots(subplot_pos, figsize=(5, 5))
 
     axes = plt.subplot(subplot_pos)
-#    if (pars[5] is not None):
- #      plt.legend("ddddddddddddddddd",loc='upper right')
+
     if (pars[4] is not None):
         fig_file = pars[4]
     if (pars[3] is not None):
@@ -133,32 +142,24 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
         axes.set_xlabel(xlabel, size='7')
 
     plt.tick_params(labelsize=7)
-    #axes.plot(category, values_mean, linewidth=line_width, color=colors[0])
-    #fig
+    axes.plot(category, values_up, colors[1])
+    axes.plot(category, values_down, colors[1])
+    plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
+                        wspace=0.3, hspace=None)
+    plt.fill_between(category, values_down, values_up, color=colors[0], alpha=0.25)
     axes.plot(category, values_mean, linewidth=line_width, color=colors[0])
-    if (pars[5] is not None):
-#        axes.legend(pars[5],loc='upper right')
-        if (pars[6]==1):
-            axes.text(0.9,51,pars[5])
-#            axes.text(0.9,51,pars[5], bbox = dict(facecolor = "r", alpha = 0.2))
-        else:
-            axes.text(0.9, 92, pars[5])
 
-    #        axes.plot(category, values_mean, linewidth=line_width, color=colors[0],label=pars[5])
-#        plt.legend(loc='upper right')
+    if (pars[5] is not None):
+        if (pars[6]==1):
+            axes.text(2,95,pars[5])
+        else:
+            axes.text(1.5, 165, pars[5])
 
     if (logx == True):
         axes.set_xscale("log")
     if (logy == True):
         axes.set_yscale("log")
 
-  #  print(subplot_pos)
-    axes.plot(category, values_up, colors[1])
-    axes.plot(category, values_down, colors[1])
-
-    plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0.3, hspace=None)
-    plt.fill_between(category, values_down, values_up, color=colors[0], alpha=0.25)
 
     if(isSave==True):
         plt.savefig(fig_file, dpi=400, bbox_inches='tight')
@@ -195,23 +196,33 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean,
         colors = pars[3]
     if (pars[2] is not None):
         line_width = pars[2]
+
     if (isSave==True):
         if (pars[1] is not None):
             ylabel = pars[1]
             ylabel_axis = pars[9]
 #            axes.set_ylabel(ylabel, size='10')
             plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90,
-                 family="fantasy", color='black', size='12', weight="light")
+                  color='black', size='12', weight="light")
+#            plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90,
+#                 family="fantasy", color='black', size='12', weight="light")
 
         if (pars[0] is not None):
             xlabel = pars[0]
             xlabel_axis = pars[8]
             plt.text(xlabel_axis[0], xlabel_axis[1], xlabel, \
-                     family="fantasy", color='black', size='12', weight="light")
+                     color='black', size='12',  weight="bold")
+#            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel, \
+#                     family="fantasy", color='black', size='12', weight="light")
+
 
     plt.tick_params(labelsize=7)
     #axes.plot(category, values_mean, linewidth=line_width, color=colors[0])
     #fig
+    axes.plot(category, values_up, colors[1])
+    axes.plot(category, values_down, colors[1])
+    plt.fill_between(category, values_down, values_up, color=colors[0], alpha=0.25)
+
     axes.plot(category, values_mean, linewidth=line_width, color=colors[0])
 #    plt.legend(pars[5], loc='upper right')
     if (pars[5] is not None):
@@ -226,6 +237,8 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean,
             y= (xy[3] )*0.9
             axes.text(x,y,pars[5], \
                     family = "fantasy", color = 'black', style = "italic", weight = "light")
+#            axes.text(x,y,pars[5], \
+#                    family = "fantasy", color = 'black', style = "italic", weight = "light")
 
         else:
             axes.text(0.9, 92, pars[5])
@@ -237,15 +250,13 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean,
         axes.set_yscale("log")
 
   #  print(subplot_pos)
-    axes.plot(category, values_up, colors[1])
-    axes.plot(category, values_down, colors[1])
 
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
                         wspace=0.3, hspace=None)
-    plt.fill_between(category, values_down, values_up, color=colors[0], alpha=0.25)
 
     if(isSave==True):
-        plt.savefig(fig_file, dpi=400, bbox_inches='tight')
+
+        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
 #more parameters
@@ -319,7 +330,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_Smooth(category, values_mean, err
     plt.fill_between(xnew, ynew_down, ynew_up, color=colors[0], alpha=0.25)
 
     if(isSave==True):
-        plt.savefig(fig_file, dpi=400, bbox_inches='tight')
+        plt.savefig(fig_file, dpi=1200, bbox_inches='tight')
 '''
     plt.plot(x, y1, linewidth=2, color="#007500", label='log1.5(x)')
     plt.plot([1, 1], [y1[0], y1[-1]], "r--", linewidth=2)

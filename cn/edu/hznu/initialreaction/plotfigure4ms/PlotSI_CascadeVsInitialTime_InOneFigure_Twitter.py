@@ -15,9 +15,14 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean,
     values_up=[]
     values_down=[]
     num_count=0
+    scale=0.3
     for x in values_mean:
-        values_up.append(x + n * errors[num_count])
-        values_down.append(x - n * errors[num_count] )
+        if (errors[num_count] / x > 0.25):
+            values_up.append(x + x * scale)
+            values_down.append((x - x * scale))
+        else:
+            values_up.append(x + n * errors[num_count])
+            values_down.append((x - n * errors[num_count]))
         num_count+=1
 
     colors=['red','pink']
@@ -40,13 +45,15 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean,
             ylabel_axis = pars[9]
 #            axes.set_ylabel(ylabel, size='10')
             plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
-                 family="fantasy", color='black', size='12', weight="light")
+                  color='black', size='12', weight="light")
 
         if (pars[0] is not None):
             xlabel = pars[0]
             xlabel_axis = pars[8]
             plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
-                     family="fantasy", color='black', size='12', weight="light")
+                   color='black', size='12', weight="bold")
+#            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
+#                     family="fantasy", color='black', size='12', weight="light")
 
 
     plt.tick_params(labelsize=7)
@@ -84,7 +91,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean,
     if(isSave==True):
         ax = plt.gca()
         #ax.update_datalim(corners)
-        plt.savefig(fig_file, dpi=800,  bbox_inches='tight')
+        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
 
@@ -110,13 +117,11 @@ logy = False
 num_data_type = 2
 str_data_type = "Twitter"
 xlabel_bak='Initial Time (%s)'% str_data_type
-data_dir = ['a','b','c', 'd','e']
-str_feature="intital_time"
+str_feature="initial_time"
 
-#xlabels=['Initial Complexity','Initial Time','Initial Participation ', 'Initial Attention']
-fig_names = ['%s_vs_1hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_2hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_1day_cascade_%s' % (str_feature,str_data_type), '%s_vs_2day_cascade_%s' % (str_feature,str_data_type),'%s_vs_final_cascade_%s' % (str_feature,str_data_type)]
-ylabel=['Cascade Size (One-Hour)','Cascade Size (Two-Hour)','Cascade Size (One-Day)','Cascade Size (Two-Day)','Cascade Size (Final)']
-#ylabel=['1-Hour Cascade Size (%s)','2-Hour Cascade Size(%s)','1-Day Cascade Size(%s)','2-Day Cascade Size(%s)','Final Cascade Size(%s)']
+data_dir = ['a','b','c', 'd','e','f']
+fig_names = ['%s_vs_1hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_2hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_1day_cascade_%s' % (str_feature,str_data_type), '%s_vs_2day_cascade_%s' % (str_feature,str_data_type), '%s_vs_10day_cascade_%s' % (str_feature,str_data_type),'%s_vs_final_cascade_%s' % (str_feature,str_data_type)]
+ylabel=['Cascade Size (One-Hour)','Cascade Size (Two-Hour)','Cascade Size (One-Day)','Cascade Size (Two-Day)','Cascade Size (Ten-Day)','Cascade Size (Final)']
 color_index=1
 colors = [('red','pink'),('green','lightgreen'),('blue','lightblue'),('black','gray')]
 
@@ -124,8 +129,9 @@ xx=-1.3
 yx=-3
 xy=-0.25
 yy=1.4
-y_text_axis=[[yx,yy],[yx,yy],[yx,yy],[yx,yy],[yx,yy]]
-x_text_axis=[[xx,xy],[xx,xy],[xx,xy],[xx,xy],[xx,xy]]
+
+y_text_axis=[[yx,yy],[yx,yy],[yx,yy],[yx,yy],[yx,yy],[yx,yy]]
+x_text_axis=[[xx,xy],[xx,xy],[xx,xy],[xx,xy],[xx-0.3,xy-0.05],[xx-0.3,xy-0.05]]
 
 
 num_data_dir=0
@@ -166,7 +172,9 @@ for d in data_dir:
         if file==10:
            isSave=True
            fig_file = (fig_data % fig_names[num_data_dir]  )+".png"
-           xlabel=xlabel_bak
+
+        if (num_data_dir ==(len(data_dir)-1) or num_data_dir ==(len(data_dir)-2)):
+            xlabel=xlabel_bak
         pars=[xlabel,ylabel[num_data_dir] ,1,colors[color_index],fig_file,legend,num_data_type,file-4,x_text_axis[num_data_dir],y_text_axis[num_data_dir]]
         shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(tmp_values_x,tmp_values_y,tmp_values_err,subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
         f.close()
