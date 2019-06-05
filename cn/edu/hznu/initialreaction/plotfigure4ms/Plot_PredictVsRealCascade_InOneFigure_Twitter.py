@@ -46,12 +46,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
 #            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
 #                     family="fantasy", color='black', size='12', weight="light")
 
-    x_max=2001
-    y_max=2001
-    axes.tick_params(axis='x', tickdir='in', labelsize=7)
-    axes.tick_params(axis='y', tickdir='out', labelsize=7)
+    x_max=20001
+    y_max=20001
     axes.set_xlim(1,x_max)
     axes.set_ylim(1,y_max)
+
     x_compare = list(range(x_max))
     y_compare = list(range(x_max))
     axes.plot(x_compare,y_compare, linewidth=0.5, linestyle=':', color='black')
@@ -69,13 +68,13 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
         legend=pars[5]
         xy=plt.axis()
         x=2
-        y=700
+        y=5000
         axes.text(x,y,legend[0], \
                   family="fantasy", size='6', color = 'black', weight = "light")
-        x=50
+        x=100
         y=5
         axes.text(x,y,legend[1], \
-                   size='4.5', color = 'black', weight = "light")
+                   size='5', color = 'black', weight = "light")
 
 
     if (logx == True):
@@ -85,16 +84,21 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
 
 
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0.1, hspace=0.05)
+                        wspace=0.15, hspace=0.1)
+#    plt.subplots_adjust(left=0.2, bottom=0.2, right=0.8, top=0.8,hspace = 0.1, wspace = 0.1)
+
 
     if (pars[9] ==False):
         axes.set_yticks([])
     if (pars[10] ==False):
         axes.set_xticks([])
 
+    axes.tick_params(axis='x', tickdir='in', labelsize=7)
+    axes.tick_params(axis='y', tickdir='out', labelsize=7)
+
     if(isSave==True):
         ax = plt.gca()
-        #ax.update_datalim(corners)
+#        plt.tight_layout()
         plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
@@ -119,10 +123,9 @@ logx = True
 logy = True
 #Weibo
 num_data_type = 2
-str_data_type = "Weibo"
+str_data_type = "Twitter"
 xlabel_bak='Real Cascade Size (%s)'% str_data_type
 ylabel_bak='Predicted Cascade Size'
-str_feature="initial_attention"
 
 
 data_observation=['10m','30m','1h']
@@ -133,9 +136,15 @@ data_predict=[['1h','2h','12h','1d','final'],['1h','2h','12h','1d','final'],['2h
 color_index=2
 colors = [('red','pink'),('blue','lightblue'),('green','lightgreen'),('black','gray')]
 
-xx=-2.9
+'''
+xx=-3.4
 xy=-0.35
-yx=-5.0
+yx=-5.8
+yy=2.5
+'''
+xx=-3.0
+xy=-0.35
+yx=-5.2
 yy=2.3
 
 y_text_axis=[yx,yy]
@@ -194,7 +203,7 @@ for data_obs in data_observation:
             y_num_show = True
         if(num_data_dir==len(data_observation)-1):
             x_num_show = True
-        pars=[xlabel,ylabel,1,colors[0],fig_file,legend,num_data_type,x_text_axis,y_text_axis,y_num_show,x_num_show]
+        pars=[xlabel,ylabel,1,colors[1],fig_file,legend,num_data_type,x_text_axis,y_text_axis,y_num_show,x_num_show]
         shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(tmp_values_x,tmp_values_y,subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
         f.close()
         num_data_count += 1
