@@ -70,11 +70,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
         x=2
         y=5000
         axes.text(x,y,legend[0], \
-                  family="fantasy", size='8', color = 'black', weight = "light")
+                  family="fantasy", size='6', color = 'black', weight = "light")
         x=100
         y=5
         axes.text(x,y,legend[1], \
-                   size='6', color = 'black', weight = "light")
+                   size='5', color = 'black', weight = "light")
 
 
     if (logx == True):
@@ -128,11 +128,8 @@ xlabel_bak='Real Cascade Size (%s)'% str_data_type
 ylabel_bak='Predicted Cascade Size'
 
 
-data_observation=['10m','1h']
-data_predict=[['1h','final'],['2h','final']]
-
-#data_observation=['10m','30m','1h']
-#data_predict=[['1h','2h','12h','1d','final'],['1h','2h','12h','1d','final'],['2h','12h','1d','2d','final']]
+data_observation=['10m','30m','1h']
+data_predict=[['1h','2h','12h','1d','final'],['1h','2h','12h','1d','final'],['2h','12h','1d','2d','final']]
 
 
 #fig_names = ['%s_vs_1hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_2hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_1day_cascade_%s' % (str_feature,str_data_type), '%s_vs_2day_cascade_%s' % (str_feature,str_data_type), '%s_vs_10day_cascade_%s' % (str_feature,str_data_type),'%s_vs_final_cascade_%s' % (str_feature,str_data_type)]
@@ -145,11 +142,11 @@ xy=-0.35
 yx=-5.8
 yy=2.5
 '''
+xx=-3.0
+xy=-0.35
+yx=-5.2
+yy=2.3
 
-xx=-0.5
-xy=-0.25
-yx=-1.4
-yy=1.4
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]
 #y_text_axis=[[yx,yy],[yx,yy],[yx,yy],[yx,yy],[yx,yy],[yx,yy]]
