@@ -28,16 +28,16 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
         colors = pars[3]
     if (pars[2] is not None):
         line_width = pars[2]
-    '''
+
     if (isSave==True):
         if (pars[1] is not None):
             ylabel = pars[1]
             ylabel_axis = pars[8]
             plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
-                 color='black', size='12', weight="light")
+                 color='black', size='10', weight="light")
 #            plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
 #                 family="fantasy", color='black', size='12', weight="light")
-
+        '''
         if (pars[0] is not None):
             xlabel = pars[0]
             xlabel_axis = pars[7]
@@ -45,15 +45,18 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
                      color='black', size='12', weight="light")
 #            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
 #                     family="fantasy", color='black', size='12', weight="light")
-     '''
+         '''
 
     if (isSave == False):
-        xlegend = ['10min','30min','1h']
+        xlegend = ['10m','30m','1h']
         for i in range(len(error)):
             axes.errorbar(x[i],y[i],yerr=errors[i],fmt='-')
         plt.legend(xlegend,
                        loc='upper right',
-                       fontsize=5)
+                       fontsize=5,ncol=3)
+#        plt.legend(xlegend,
+#                       loc='upper right',
+#                       fontsize=5,ncol=3)
 
     else:
         for i in range(len(error)):
@@ -72,10 +75,12 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
         axes.text(x,y,legend, \
                   size='12', color = 'black', weight = "light")
 
-    xtickers=(('1h','2h','12h','1d','2d','10d','final'))
+    xt=[1,2,3,4,5,6,7]
+    xtickers=['1h','2h','12h','1d','2d','10d','final']
 #    axes.set_xticks(x[0])
-    axes.set_xticklabels(xtickers)
-  #  plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
+    #axes.set_xticklabels(xtickers)
+    plt.xticks(xt,xtickers)
+#  plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
   #                      wspace=0.1, hspace=0.05)
 
     axes.tick_params(axis='x', tickdir='in', labelsize=7)
@@ -111,7 +116,7 @@ logy = False
 num_data_type = 2
 str_data_type = ["Weibo","Twitter"]
 xlabel_bak='Time'
-ylabel_bak='MAE'
+ylabel_bak='Accuracy'
 
 
 data_observation=['10mins','30mins','1hour']
@@ -123,8 +128,8 @@ colors = [('red','pink'),('blue','lightblue'),('green','lightgreen'),('black','g
 
 xx=-1.3
 xy=-0.2
-yx=-2.5
-yy=1.5
+yx=-1.42
+yy=0.6
 
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]
