@@ -147,7 +147,7 @@ yy=2.5
 '''
 
 xx=-0.5
-xy=-0.25
+xy=-0.23
 yx=-1.4
 yy=1.4
 y_text_axis=[yx,yy]
