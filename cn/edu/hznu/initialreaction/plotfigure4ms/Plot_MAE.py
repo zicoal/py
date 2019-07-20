@@ -52,26 +52,27 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
         for i in range(len(error)):
             axes.errorbar(x[i],y[i],yerr=errors[i],fmt='-')
         plt.legend(xlegend,
-                       loc='upper right',
+                       loc='upper left',
                        fontsize=5,ncol=3)
 #        plt.legend(xlegend,
 #                       loc='upper right',
 #                       fontsize=5,ncol=3)
-
     else:
         for i in range(len(error)):
             axes.errorbar(x[i],y[i],yerr=errors[i])
+        plt.yticks([0.1,0.2,0.3,0.4,0.5 ])
 
 
     if (pars[5] is not None):
         legend=pars[5]
         xy = plt.axis()
         x=5
+        y_minus = 0.03
      #   print(xy)
         if(isSave==True):
-            y=xy[2]+0.08
+            y=xy[2]+0.08-y_minus
         else:
-            y = xy[2] + 0.1
+            y = xy[2] + 0.1 -y_minus
         axes.text(x,y,legend, \
                   size='12', color = 'black', weight = "light")
 
@@ -116,10 +117,10 @@ logy = False
 num_data_type = 2
 str_data_type = ["Weibo","Twitter"]
 xlabel_bak='Time'
-ylabel_bak='Accuracy'
+ylabel_bak='Prediction Error'
 
 
-data_observation=['10mins','30mins','1hour']
+data_observation=['10min','30min','1hour']
 
 
 #fig_names = ['%s_vs_1hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_2hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_1day_cascade_%s' % (str_feature,str_data_type), '%s_vs_2day_cascade_%s' % (str_feature,str_data_type), '%s_vs_10day_cascade_%s' % (str_feature,str_data_type),'%s_vs_final_cascade_%s' % (str_feature,str_data_type)]
@@ -128,8 +129,8 @@ colors = [('red','pink'),('blue','lightblue'),('green','lightgreen'),('black','g
 
 xx=-1.3
 xy=-0.2
-yx=-1.42
-yy=0.6
+yx=-1.38
+yy=0.75
 
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]
@@ -162,7 +163,10 @@ for dt in str_data_type:
                 line = f.readline()
                 continue
             words = line.replace('\n', '').split('\t')
-            tmp_values_x.append(float(words[0]))
+            if(data_obs==data_observation[2]):
+                tmp_values_x.append(float(words[0])+1)
+            else:
+                tmp_values_x.append(float(words[0]))
             tmp_values_y.append(float(words[1]))
             tmp_error.append(float(words[2]))
             line = f.readline()

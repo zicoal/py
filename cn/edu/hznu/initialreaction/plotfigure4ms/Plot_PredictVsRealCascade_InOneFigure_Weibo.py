@@ -48,10 +48,13 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
 
     x_max=2001
     y_max=2001
+    x_min=1
     axes.tick_params(axis='x', tickdir='in', labelsize=7)
     axes.tick_params(axis='y', tickdir='out', labelsize=7)
-    axes.set_xlim(1,x_max)
-    axes.set_ylim(1,y_max)
+    if(int(pos[2]) %2==0):
+        x_min = 10
+    axes.set_xlim(x_min,x_max)
+    axes.set_ylim(x_min,y_max)
     x_compare = list(range(x_max))
     y_compare = list(range(x_max))
     axes.plot(x_compare,y_compare, linewidth=0.5, linestyle=':', color='black')
@@ -70,10 +73,16 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
         xy=plt.axis()
         x=2
         y=700
+        if (int(pos[2]) % 2 == 0):
+            x = 15
+            y = 900
         axes.text(x,y,legend[0], \
                   family="fantasy", size='8', color = 'black', weight = "light")
         x=50
         y=5
+        if (int(pos[2]) % 2 == 0):
+            x = 200
+            y = 40
         axes.text(x,y,legend[1], \
                    size='6', color = 'black', weight = "light")
 
@@ -85,10 +94,10 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
 
 
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0.1, hspace=0.05)
+                        wspace=0.15, hspace=0.05)
 
-    if (pars[9] ==False):
-        axes.set_yticks([])
+    #if (pars[9] ==False):
+       # axes.set_yticks([])
     if (pars[10] ==False):
         axes.set_xticks([])
 
@@ -125,8 +134,10 @@ ylabel_bak='Predicted Cascade Size'
 str_feature="initial_attention"
 
 
-data_observation=['10m','1h']
-data_predict=[['1h','final'],['2h','final']]
+data_observation=['10m','30m','1h']
+#data_predict=[['1h','final'],['2h','final']]
+data_predict=[['1','7'],['1','7'],['2','7']]
+predict_map=[['1h','final'],['1h','final'],['2h','final']]
 
 #data_observation=['10m','30m','1h']
 #data_predict=[['1h','2h','12h','1d','final'],['1h','2h','12h','1d','final'],['2h','12h','1d','2d','final']]
@@ -137,9 +148,9 @@ color_index=2
 colors = [('red','pink'),('blue','lightblue'),('green','lightgreen'),('black','gray')]
 
 xx=-0.5
-xy=-0.25
+xy=-0.35
 yx=-1.35
-yy=1.4
+yy=2.2
 
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]
@@ -153,9 +164,10 @@ for data_obs in data_observation:
     num_data_count=0
     for data_pre in data_predict[num_data_dir]:
         isSave = False
-        logger.info('plotting Real vs Predicted Cascade (%s): %s ' % (str_data_type,data_obs+'-'+data_pre))
-        legend=[data_obs+'-'+data_pre]
+        logger.info('plotting Real vs Predicted Cascade (%s): %s ' % (str_data_type,data_obs+'-'+predict_map[num_data_dir][num_data_count]))
+        legend=[data_obs+'-'+predict_map[num_data_dir][num_data_count]]
         tmp_src_file = dir_data %(str_data_type,data_obs+'_'+data_pre)
+
         f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
         line =f.readline()
         tmp_values_x=[]
@@ -169,7 +181,7 @@ for data_obs in data_observation:
                 line_count+=1
                 line = f.readline()
                 continue
-            elif(line_count==1):
+            elif(line_count<=2):
                 line_count+=1
                 line = f.readline()
                 continue
@@ -186,6 +198,7 @@ for data_obs in data_observation:
     #   pf.shaded_Error_Bar_Mean_Error(tmp_values_x,tmp_values_y,tmp_values_err,logx=logx)
 #        subplot=int("%s%s%s" % (len(data_observation),len(data_predict[0]), num_data_dir*(len(data_predict[0]))+num_data_count+1))
         subplot="%s,%s,%s" % (len(data_observation),len(data_predict[0]), num_data_dir*(len(data_predict[0]))+num_data_count+1)
+        logger.info(subplot)
         fig_file=""
         #logger.info(subplot)
         if (num_data_dir==len(data_observation)-1 and (num_data_count==len(data_predict[0])-1)):

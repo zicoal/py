@@ -84,7 +84,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
 
 
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0.15, hspace=0.1)
+                        wspace=0.08, hspace=0.1)
 #    plt.subplots_adjust(left=0.2, bottom=0.2, right=0.8, top=0.8,hspace = 0.1, wspace = 0.1)
 
 
@@ -128,8 +128,8 @@ xlabel_bak='Real Cascade Size (%s)'% str_data_type
 ylabel_bak='Predicted Cascade Size'
 
 
-data_observation=['10m','1h']
-data_predict=[['1h','final'],['2h','final']]
+data_observation=['10m','30m','1h']
+data_predict=[['1h','final'],['1h','final'],['2h','final']]
 
 #data_observation=['10m','30m','1h']
 #data_predict=[['1h','2h','12h','1d','final'],['1h','2h','12h','1d','final'],['2h','12h','1d','2d','final']]
@@ -147,9 +147,9 @@ yy=2.5
 '''
 
 xx=-0.5
-xy=-0.23
-yx=-1.4
-yy=1.4
+xy=-0.35
+yx=-1.25
+yy=2.2
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]
 #y_text_axis=[[yx,yy],[yx,yy],[yx,yy],[yx,yy],[yx,yy],[yx,yy]]

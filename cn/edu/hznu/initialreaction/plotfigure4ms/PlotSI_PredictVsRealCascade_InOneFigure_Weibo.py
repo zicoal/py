@@ -113,7 +113,7 @@ logger.addHandler(ch)
 #logger.addHandler(fh)Hs_Hr
 
 dir_data = "D:\\py\\data\\initialreaction\\results\\Fig234\\Fig2\\%s\\%s.txt"
-fig_data = "D:\\py\\data\\initialreaction\\figs\\predict_vs_real_%s"
+fig_data = "D:\\py\\data\\initialreaction\\figs\\SI_predict_vs_real_%s"
 #weibo_axis_motif
 logx = True
 logy = True
@@ -126,7 +126,10 @@ str_feature="initial_attention"
 
 
 data_observation=['10m','30m','1h']
-data_predict=[['1h','2h','12h','1d','final'],['1h','2h','12h','1d','final'],['2h','12h','1d','2d','final']]
+#data_predict=[['1h','2h','12h','1d','final'],['1h','2h','12h','1d','final'],['2h','12h','1d','2d','final']]
+data_predict=[['1','2','4','6','7'],['1','2','4','6','7'],['2','3','4','6','7']]
+predict_map=[['1h','2h','1d','10d','final'],['1h','2h','1d','10d','final'],['2h','12h','1d','10d','final']]
+
 
 
 #fig_names = ['%s_vs_1hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_2hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_1day_cascade_%s' % (str_feature,str_data_type), '%s_vs_2day_cascade_%s' % (str_feature,str_data_type), '%s_vs_10day_cascade_%s' % (str_feature,str_data_type),'%s_vs_final_cascade_%s' % (str_feature,str_data_type)]
@@ -150,8 +153,8 @@ for data_obs in data_observation:
     num_data_count=0
     for data_pre in data_predict[num_data_dir]:
         isSave = False
-        logger.info('plotting Real vs Predicted Cascade (%s): %s ' % (str_data_type,data_obs+'-'+data_pre))
-        legend=[data_obs+'-'+data_pre]
+        logger.info('plotting Real vs Predicted Cascade (%s): %s ' % (str_data_type,data_obs+'-'+predict_map[num_data_dir][num_data_count]))
+        legend=[data_obs+'-'+predict_map[num_data_dir][num_data_count]]
         tmp_src_file = dir_data %(str_data_type,data_obs+'_'+data_pre)
         f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
         line =f.readline()
@@ -166,7 +169,7 @@ for data_obs in data_observation:
                 line_count+=1
                 line = f.readline()
                 continue
-            elif(line_count==1):
+            elif(line_count<=2):
                 line_count+=1
                 line = f.readline()
                 continue
@@ -179,6 +182,7 @@ for data_obs in data_observation:
         ylabel = None
         x_num_show=False
         y_num_show=False
+#        legend.append("r=%s" % r)
         legend.append("r=%s\np<$10^{-5}$" % r)
     #   pf.shaded_Error_Bar_Mean_Error(tmp_values_x,tmp_values_y,tmp_values_err,logx=logx)
 #        subplot=int("%s%s%s" % (len(data_observation),len(data_predict[0]), num_data_dir*(len(data_predict[0]))+num_data_count+1))
