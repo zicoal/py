@@ -162,7 +162,8 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
 
 
     if(isSave==True):
-        plt.savefig(fig_file, dpi=400, bbox_inches='tight')
+#        plt.savefig(fig_file, dpi=400, bbox_inches='tight')
+        plt.savefig(fig_file, dpi=100, bbox_inches='tight')
         plt.cla()
         plt.clf()
         plt.close()
@@ -256,7 +257,8 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean,
 
     if(isSave==True):
 
-        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
+        plt.savefig(fig_file, dpi=100,  bbox_inches='tight')
+#        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
 #more parameters

@@ -91,7 +91,8 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     if(isSave==True):
         ax = plt.gca()
         #ax.update_datalim(corners)
-        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
+        plt.savefig(fig_file, dpi=200, bbox_inches='tight')
+#        plt.savefig(fig_file, dpi=1200, bbox_inches='tight')
         plt.close('all')
 
 
@@ -130,6 +131,7 @@ colors = [('red','pink'),('blue','lightblue'),('green','lightgreen'),('black','g
 xx=-1.3
 xy=-0.2
 yx=-1.38
+#yx=-0.20
 yy=0.75
 
 y_text_axis=[yx,yy]
@@ -182,7 +184,7 @@ for dt in str_data_type:
 
     subplot="%s,%s,%s" % (2,2, num_data_dir+1)
     fig_file=""
-    #logger.info(subplot)
+    logger.info(subplot)
     if (num_data_dir==len(str_data_type)-1):
        isSave=True
        fig_file = fig_data

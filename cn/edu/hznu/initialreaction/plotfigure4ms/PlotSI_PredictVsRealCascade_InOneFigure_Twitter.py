@@ -99,7 +99,8 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
     if(isSave==True):
         ax = plt.gca()
 #        plt.tight_layout()
-        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
+        plt.savefig(fig_file, dpi=100,  bbox_inches='tight')
+#        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
 
@@ -117,7 +118,7 @@ logger.addHandler(ch)
 #logger.addHandler(fh)Hs_Hr
 
 dir_data = "D:\\py\\data\\initialreaction\\results\\Fig234\\Fig2\\%s\\%s.txt"
-fig_data = "D:\\py\\data\\initialreaction\\figs\\predict_vs_real_%s"
+fig_data = "D:\\py\\data\\initialreaction\\figs\\SI_predict_vs_real_%s"
 #weibo_axis_motif
 logx = True
 logy = True

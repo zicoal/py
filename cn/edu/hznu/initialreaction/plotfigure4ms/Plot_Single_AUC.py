@@ -51,5 +51,6 @@ plt.text(-0.45,-0.13, "Area Under Curve", transform=axes.transAxes,
 #plt.text(-0.45,-0.2, "Area Under Curve", transform=axes.transAxes,
 #         color='black', size='10',weight="bold" )
 
-plt.savefig(fig_file, dpi=400, bbox_inches='tight')
+plt.savefig(fig_file, dpi=100, bbox_inches='tight')
+#plt.savefig(fig_file, dpi=400, bbox_inches='tight')
 #plt.show()#显示图像

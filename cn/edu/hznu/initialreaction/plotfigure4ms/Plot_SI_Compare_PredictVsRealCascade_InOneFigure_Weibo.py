@@ -96,7 +96,8 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
     if(isSave==True):
         ax = plt.gca()
         #ax.update_datalim(corners)
-        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
+        plt.savefig(fig_file, dpi=100,  bbox_inches='tight')
+#        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
 
