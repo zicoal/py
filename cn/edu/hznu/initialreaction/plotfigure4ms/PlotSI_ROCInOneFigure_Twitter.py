@@ -115,14 +115,13 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
 
             xy=plt.axis()
 
-            x= (xy[1] )*0.01
-            y= (xy[3] )*0.9
+            x= (xy[1] )*0.005
+            y= (xy[3] )*0.91
             axes.text(x,y,pars[5], \
-                   color = 'black',  weight = "light", size=7)
+                    color = 'black', weight = "light", size=7)
+            #axes.text(x,y,pars[5], \
+             #       family = "fantasy", color = 'black', style = "italic", weight = "light", size=7)
 
-
-#            axes.text(x, y, pars[5], \
-#                family="fantasy", color='black', style="italic", weight="light", size=7)
 #            axes.text(x,y,pars[5], \
 #                    family = "fantasy", color = 'black', style = "italic", weight = "light")
 
@@ -142,22 +141,23 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
         plt.close('all')
 
 
-dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\roc\\Prediction_ROC_Weibo\\Fig%s\\Prediction_ROC_Weibo_%s_%s\\%s.txt"
-dir_data_single = "D:\\py\\data\\initialreaction\\results\\201911\\roc\\Prediction_ROC_Single_Weibo\\Fig%s\\Prediction_ROC_Single_Feature_Weibo_%s_%s\\%s.txt"
+dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\roc\\Prediction_ROC_Twitter\\Fig%s\\%s_%s\\%s.txt"
+dir_data_single = "D:\\py\\data\\initialreaction\\results\\201911\\roc\\Prediction_ROC_Single_Twitter\\Fig%s\\%s_%s\\%s.txt"
 fig_data = "D:\\py\\data\\initialreaction\\figs\\figS11\\%s"
 #weibo_axis_motif
 logx = False
 logy = False
-#Weibo
+#Twitter
 num_data_type = 1
-str_data_type = "Weibo"
+str_data_type = "Twitter"
 xlabel_bak='False Postive (%s)'% str_data_type
 str_feature="ROC"
 
 fig_dir = ['1','2','3', '4']
 data_dir = ['5','6','7', '8', '9', '10']
+fig_dir2 = ['500','400','300', '200']
 file_list = ['1h']
-file_list_single = ['feature1','feature2','10m','30m','1h']
+file_list_single = ['feature2','feature3','2','30m','1h']
 lenged_auc = ['S:%.3f','T:%.3f','A:%.3f (10m)','A:%.3f (30m)','A:%.3f (1h)','All:%.3f']
 fig_names = ['%s_500_%s' % (str_feature,str_data_type),'%s_400_%s' % (str_feature,str_data_type),'%s_300_%s' % (str_feature,str_data_type),'%s_200_%s' % (str_feature,str_data_type)]
 ylabel_bak='True Postive'
@@ -167,6 +167,7 @@ xlabel=xlabel_bak
 
 legend_seq = ['(a)','(b)','(c)', '(d)', '(e)', '(f)']
 
+
 #生成几个图，就几个
 y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4]]
 x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-1.8,-0.3],[-1.8,-0.3]]
@@ -175,21 +176,21 @@ num_data_dir=0
 
 for f_d in fig_dir:
     logger.info('plotting ROC curve: ' + str_data_type + f_d)
-    l_index = 0
+    l_index=0
     for d in data_dir:
 
         x = []
         y = []
         errors = []
         isSave = False
-        legend_index = 0
         xlegend=[]
+        legend_index=0
         for file in file_list_single:
             tmp_values_x = []
             tmp_values_y = []
             tmp_values_err = []
             tmp_values_auc =0
-            tmp_single_src_file = dir_data_single %(f_d,d,f_d,file)
+            tmp_single_src_file = dir_data_single %(f_d,d,fig_dir2[num_data_dir],file)
             #logger.info(tmp_single_src_file)
             f = open(tmp_single_src_file, encoding='UTF-8', mode='r', errors='ignore')
             line =f.readline()
@@ -225,7 +226,7 @@ for f_d in fig_dir:
             tmp_values_y = []
             tmp_values_err = []
             tmp_values_auc = []
-            tmp_src_file = dir_data % (f_d, d, f_d, file)
+            tmp_src_file = dir_data % (f_d, d, fig_dir2[num_data_dir], file)
             f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
             line = f.readline()
             line_count = 0
@@ -254,11 +255,10 @@ for f_d in fig_dir:
             f.close()
 
         xlabel = None
-        legend = legend_seq[l_index]
-        l_index += 1
 #        legend = "n=%s" % d
-
-     #   subplot = int("23%s" % (int(d) - 4))
+        legend = legend_seq[l_index]
+        l_index+=1
+        #   subplot = int("23%s" % (int(d) - 4))
         subplot = "%s,%s,%s" % (2, 3, int(d) - 4)
         #logger.info(subplot)
         fig_file = None
