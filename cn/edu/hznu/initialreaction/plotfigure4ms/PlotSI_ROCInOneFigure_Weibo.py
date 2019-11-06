@@ -29,7 +29,7 @@ logger.addHandler(ch)
 
 #more parameters
 #pars=[xlabel,ylabel, linewidth, color=[mean_color,bound_color],fig_file]
-colors = [('red','pink'),('green','lightgreen'),('blue','lightblue'),('orange','lightblue'),('purple','lightblue'),('black','gray')]
+colors = [('red','pink'),('green','lightgreen'),('blue','lightblue'),('orange','navajowhite'),('purple','orchid'),('black','lightgray')]
 
 def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_pos, pars=[], logx=False,logy=False, n=1, isSave=False):
     values_up=[]
@@ -50,8 +50,9 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
     pos = subplot_pos.split(',')
     axes = plt.subplot(int(pos[0]), int(pos[1]), int(pos[2]))
     #logger.info(subplot_pos)
-#    if (pars[5] is not None):
- #      plt.legend("ddddddddddddddddd",loc='upper right')
+    #if (pars[5] is not None):
+    #   plt.legend(pars[5],loc='best')
+
     if (pars[4] is not None):
         fig_file = pars[4]
 
@@ -82,8 +83,9 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
 #            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel, \
 #                     family="fantasy", color='black', size='12', weight="light")
 
+#    if (pars[10] is not None):
 
-    plt.tick_params(labelsize=7)
+    plt.tick_params(labelsize=5)
     #axes.plot(category, values_mean, linewidth=line_width, color=colors[0])
     #fig
 
@@ -94,10 +96,17 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
 #    plt.plot(category, values_mean, linewidth=line_width, color=colors[0])
 #    axes.plot(x, y, linewidth=line_width, color=colors[0])
 
+    x_legend = pars[10]
+#    logger.info( pars[10])
+    #logger.info(len(x_legend))
     for i in range(len(error)):
         color=colors[i]
-        axes.errorbar(x[i], y[i], yerr=errors[i], fmt='-',color =color[0])
-#    plt.legend(pars[5], loc='upper right')
+        axes.errorbar(x[i], y[i], yerr=errors[i], fmt='o:',color =color[1],elinewidth=0.2,ms=1)
+    plt.legend(x_legend,
+                       loc='lower right',
+                       fontsize=5,frameon=False)
+
+    #labels inside
     if (pars[5] is not None):
 #        axes.legend(pars[5],loc='upper right')
         pos=pars[7]-4  #the position
@@ -109,7 +118,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
             x= (xy[1] )*0.01
             y= (xy[3] )*0.9
             axes.text(x,y,pars[5], \
-                    family = "fantasy", color = 'black', style = "italic", weight = "light")
+                    family = "fantasy", color = 'black', style = "italic", weight = "light", size=7)
 #            axes.text(x,y,pars[5], \
 #                    family = "fantasy", color = 'black', style = "italic", weight = "light")
 
@@ -145,6 +154,7 @@ fig_dir = ['1','2','3', '4']
 data_dir = ['5','6','7', '8', '9', '10']
 file_list = ['1h']
 file_list_single = ['feature1','feature2','10m','30m','1h']
+lenged_auc = ['S:%.3f','T:%.3f','A:%.3f (10m)','A:%.3f (30m)','A:%.3f (1h)','All:%.3f']
 fig_names = ['%s_500_%s' % (str_feature,str_data_type),'%s_400_%s' % (str_feature,str_data_type),'%s_300_%s' % (str_feature,str_data_type),'%s_200_%s' % (str_feature,str_data_type)]
 ylabel_bak='True Postive'
 ylabel=ylabel_bak
@@ -154,7 +164,7 @@ xlabel=xlabel_bak
 
 
 #生成几个图，就几个
-y_text_axis=[[-3.3,1.4],[-3.3,1.4],[-3.3,1.4],[-3.3,1.4]]
+y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4]]
 x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-1.8,-0.3],[-1.8,-0.3]]
 
 num_data_dir=0
@@ -167,7 +177,8 @@ for f_d in fig_dir:
         y = []
         errors = []
         isSave = False
-        color_index = 0
+        legend_index = 0
+        xlegend=[]
         for file in file_list_single:
             tmp_values_x = []
             tmp_values_y = []
@@ -182,7 +193,9 @@ for f_d in fig_dir:
             while line:
                 if(line_count==0):
                     words = line.replace('\n', '').split('\t')
-                    tmp_values_auc=float(words[1])
+                   # tmp_values_auc=float(words[1])
+                    xlegend.append(lenged_auc[legend_index] % float(words[1]))
+                    legend_index +=1
                     line_count+=1
                     line = f.readline()
                     continue
@@ -214,7 +227,9 @@ for f_d in fig_dir:
             while line:
                 if (line_count == 0):
                     words = line.replace('\n', '').split('\t')
-                    tmp_values_auc.append(float(words[1]))
+                    #tmp_values_auc=float(words[1])#
+                    xlegend.append(lenged_auc[legend_index] % float(words[1]))
+                    legend_index += 1
                     line_count += 1
                     line = f.readline()
                     continue
@@ -235,6 +250,7 @@ for f_d in fig_dir:
 
         xlabel = None
         legend = "motif=%s" % d
+
      #   subplot = int("23%s" % (int(d) - 4))
         subplot = "%s,%s,%s" % (2, 3, int(d) - 4)
         #logger.info(subplot)
@@ -246,13 +262,12 @@ for f_d in fig_dir:
             xlabel = xlabel_bak
       #  ylabel =None
 #            logger.info(tmp_values_y)
-        pars = [xlabel, ylabel, 1, colors[color_index], fig_file, legend, num_data_type, int(d) - 4,
-                x_text_axis[num_data_dir], y_text_axis[num_data_dir]]
+        pars = [xlabel, ylabel, 1, colors[1], fig_file, legend, num_data_type, int(d) - 4,
+                x_text_axis[num_data_dir], y_text_axis[num_data_dir],xlegend]
         shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, errors,
                                                               subplot, pars=pars, logx=logx, logy=logy,
                                                               isSave=isSave)
-        #color_index += 1
-    #sys.exit()
+
     num_data_dir += 1
 
 
