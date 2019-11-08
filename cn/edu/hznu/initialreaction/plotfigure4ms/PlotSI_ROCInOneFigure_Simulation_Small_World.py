@@ -79,7 +79,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
             xlabel = pars[0]
             xlabel_axis = pars[8]
             plt.text(xlabel_axis[0], xlabel_axis[1], xlabel, \
-                     color='black', size='12',  weight="bold")
+                     color='black', size='12',  weight="light")
 #            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel, \
 #                     family="fantasy", color='black', size='12', weight="light")
 
@@ -150,7 +150,8 @@ logy = False
 #Simulation
 num_data_type = 1
 str_data_type = "Small World"
-xlabel_bak='False Postive (%s)'% str_data_type
+num_delta=[800,600,400,200]
+xlabel_bak='False Postive ($\delta=$%s)'
 str_feature="ROC"
 
 fig_dir = ['5','6','7', '8']
@@ -170,7 +171,7 @@ legend_seq = ['(a)','(b)','(c)', '(d)', '(e)', '(f)']
 
 #生成几个图，就几个
 y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4]]
-x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-2.2,-0.3],[-2.2,-0.3]]
+x_text_axis=[[-1.7,-0.3],[-1.7,-0.3],[-1.7,-0.3],[-1.7,-0.3]]
 
 num_data_dir=0
 
@@ -265,9 +266,9 @@ for f_d in fig_dir:
         if d == data_dir[len(data_dir) - 1]:
             isSave = True
             fig_file = (fig_data % fig_names[num_data_dir]) + ".png"
-        if (num_data_dir == (len(fig_dir) - 1) or num_data_dir == (len(fig_dir) - 2)):
-            xlabel = xlabel_bak
-      #  ylabel =None
+#        if (num_data_dir == (len(fig_dir) - 1) or num_data_dir == (len(fig_dir) - 2)):
+            xlabel = xlabel_bak % num_delta[num_data_dir]
+        #  ylabel =None
 #            logger.info(tmp_values_y)
         pars = [xlabel, ylabel, 1, colors[1], fig_file, legend, num_data_type, int(d) - 4,
                 x_text_axis[num_data_dir], y_text_axis[num_data_dir],xlegend]

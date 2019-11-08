@@ -79,7 +79,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
             xlabel = pars[0]
             xlabel_axis = pars[8]
             plt.text(xlabel_axis[0], xlabel_axis[1], xlabel, \
-                     color='black', size='12',  weight="bold")
+                     color='black', size='12',  weight="light")
 #            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel, \
 #                     family="fantasy", color='black', size='12', weight="light")
 
@@ -115,8 +115,12 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
 
             xy=plt.axis()
 
-            x= (xy[1] )*0.005
-            y= (xy[3] )*0.91
+            x= -0.01
+            #x= (xy[1] )*0.001
+            if(isSave==True):
+                x=-0.03
+
+            y= (xy[3] )*0.9
             axes.text(x,y,pars[5], \
                     color = 'black', weight = "light", size=7)
             #axes.text(x,y,pars[5], \
@@ -186,14 +190,14 @@ legend_seq = ['(a)','(b)','(c)', '(d)', '(e)', '(f)']
 #y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4]]
 #x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-2.2,-0.3],[-2.2,-0.3],[-3.2,1.4]]
 
-y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-1.2,2]]
-x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-2.2,-0.3],[-2.2,-0.3],[-0.6,-0.3]]
+y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-0.15,2.2]]
+x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-2.2,-0.3],[-2.2,-0.3],[0.35,-0.4]]
 
 num_data_dir=0
 
+l_index = 0
 for f_d in dir_data:
     logger.info('plotting ROC curve: ' + str_data_type + f_d)
-    l_index=0
 
     x = []
     y = []
@@ -275,14 +279,13 @@ for f_d in dir_data:
     f.close()
 
     xlabel = None
-#        legend = "n=%s" % d
+#   legend = "n=%s" % d
     legend = legend_seq[l_index]
     l_index+=1
     #   subplot = int("23%s" % (int(d) - 4))
     subplot = "%s,%s,%s" % (3, 2, num_data_dir+1)
     if (num_data_dir == (len(dir_data) - 1)):
-        subplot = "%s,%s,%s" % (3,1, 1)
-    #logger.info(subplot)
+        subplot = "%s,%s,%s" % (3,1, 3)
     fig_file = None
   #  if num_data_dir == dir_data[len(dir_data) - 1]:
   #      isSave = True
@@ -292,7 +295,7 @@ for f_d in dir_data:
         xlabel = xlabel_bak
         isSave = True
         fig_file = fig_data
-#  ylabel =None
+    #ylabel =None
 #            logger.info(tmp_values_y)
     pars = [xlabel, ylabel, 1, colors[1], fig_file, legend, num_data_type,  num_data_dir+1,
             x_text_axis[num_data_dir], y_text_axis[num_data_dir],xlegend]
