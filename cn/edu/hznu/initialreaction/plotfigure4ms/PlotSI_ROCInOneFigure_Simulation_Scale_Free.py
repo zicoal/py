@@ -149,7 +149,7 @@ logx = False
 logy = False
 #Simulation
 num_data_type = 1
-str_data_type = "Scale Free"
+str_data_type = "Scale_Free"
 num_delta=[800,600,400,200]
 xlabel_bak='False Postive ($\delta=$%s)'
 str_feature="ROC"

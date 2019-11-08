@@ -149,7 +149,7 @@ logx = False
 logy = False
 #Simulation
 num_data_type = 1
-str_data_type = "Small World"
+str_data_type = "Small_World"
 num_delta=[800,600,400,200]
 xlabel_bak='False Postive ($\delta=$%s)'
 str_feature="ROC"
