@@ -137,7 +137,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
 
     if(isSave==True):
 
-        plt.savefig(fig_file, dpi=200,  bbox_inches='tight')
+        plt.savefig(fig_file, dpi=100,  bbox_inches='tight')
 #        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
