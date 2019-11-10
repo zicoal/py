@@ -147,15 +147,15 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
 dir = "D:\\py\\data\\initialreaction\\results\\201911\\roc\\%s"
 dir_data =[dir % "Prediction_ROC_Weibo\\Fig4\\Prediction_ROC_Weibo_5_4\\%s.txt",\
            dir % "Prediction_ROC_Twitter\\Fig4\\5_200\\%s.txt",\
+           dir % "Prediction_ROC_Simulation\\Fig4\\Random_5_200\\%s.txt",\
            dir % "Prediction_ROC_Simulation\\Fig8\\Small_World_5_200\\%s.txt",\
-           dir % "Prediction_ROC_Simulation\\Fig12\\Scale_Free_5_200\\%s.txt",\
-           dir % "Prediction_ROC_Simulation\\Fig4\\Random_5_200\\%s.txt"]
+           dir % "Prediction_ROC_Simulation\\Fig12\\Scale_Free_5_200\\%s.txt"]
 
 dir_data_single =[dir % "Prediction_ROC_Single_Weibo\\Fig4\\Prediction_ROC_Single_Feature_Weibo_5_4\\%s.txt",\
            dir % "Prediction_ROC_Single_Twitter\\Fig4\\5_200\\%s.txt",\
+           dir % "Prediction_ROC_Simulation_Single\\Fig4\\Random_5_200\\%s.txt",\
            dir % "Prediction_ROC_Simulation_Single\\Fig8\\Small_World_5_200\\%s.txt",\
-           dir % "Prediction_ROC_Simulation_Single\\Fig12\\Scale_Free_5_200\\%s.txt",\
-           dir % "Prediction_ROC_Simulation_Single\\Fig4\\Random_5_200\\%s.txt"]
+           dir % "Prediction_ROC_Simulation_Single\\Fig12\\Scale_Free_5_200\\%s.txt"]
 fig_data = "D:\\py\\data\\initialreaction\\figs\\roc.png"
 #weibo_axis_motif
 logx = False
@@ -190,8 +190,8 @@ legend_seq = ['(a)','(b)','(c)', '(d)', '(e)', '(f)']
 #y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4]]
 #x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-2.2,-0.3],[-2.2,-0.3],[-3.2,1.4]]
 
-y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-0.15,2.2]]
-x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-2.2,-0.3],[-2.2,-0.3],[0.35,-0.4]]
+y_text_axis=[[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.4],[-3.2,1.3]]
+x_text_axis=[[-1.8,-0.2],[-1.8,-0.2],[-2.2,-0.3],[-2.2,-0.3],[-1.3,-0.3]]
 
 num_data_dir=0
 
@@ -283,10 +283,16 @@ for f_d in dir_data:
     legend = legend_seq[l_index]
     l_index+=1
     #   subplot = int("23%s" % (int(d) - 4))
+    '''
     subplot = "%s,%s,%s" % (3, 2, num_data_dir+1)
     if (num_data_dir == (len(dir_data) - 1)):
         subplot = "%s,%s,%s" % (3,1, 3)
+    '''
+    subplot = "%s,%s,%s" % (2, 2, num_data_dir+1)
+    if (num_data_dir >1):# (len(dir_data) - 1)):
+        subplot = "%s,%s,%s" % (2,3, num_data_dir+2)
     fig_file = None
+    logger.info(subplot)
   #  if num_data_dir == dir_data[len(dir_data) - 1]:
   #      isSave = True
   #      fig_file = fig_data
