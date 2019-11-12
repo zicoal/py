@@ -14,7 +14,6 @@ color_line= [['lavender','pink','palegreen'],['lightblue','navajowhite','lightgr
 
 def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_pos, pars=[], logx=False,logy=False, n=1, isSave=False):
 
-    colors=['red','pink']
     line_width=2
     fig_file=''
     xlabel=''
@@ -25,8 +24,8 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
     if (pars[4] is not None):
         fig_file = pars[4]
-    if (pars[3] is not None):
-        colors = pars[3]
+#    if (pars[3] is not None):
+#        colors = pars[3]
     if (pars[2] is not None):
         line_width = pars[2]
 
@@ -41,24 +40,15 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
         if (pars[1] is not None):
             ylabel = pars[1]
             ylabel_axis = pars[8]
-            if (pars[6] == 1 or pars[6] == 4):
-                ylabel_axis[0] =-3.1
-            if (pars[6] == 3 ):
-                ylabel_axis[0] =-2.8
-            if (pars[6] == 2 ):
-                ylabel_axis[0] =-2.8
             plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
                  color='black', size='12', weight="light")
 
-    cl=color_line[0]
-    if(pars[6]>1):
-        cl= color_line[1]
+    '''
     if (isSave == True):
+        
         xlegend = ['10m','30m','1h']
-        if (pars[6] > 1):
-            xlegend = ['t=3', 't=5', 't=7']
         for i in range(len(error)):
-            axes.errorbar(x[i], y[i], yerr=errors[i], fmt='-',color=cl[i],ecolor=cl[i])
+            axes.errorbar(x[i],y[i],yerr=errors[i],fmt='-')
         plt.legend(xlegend,
                        loc='upper right',
                        fontsize=7,ncol=1,frameon=False)
@@ -67,8 +57,25 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 #                       fontsize=5,ncol=3)
     else:
         for i in range(len(error)):
+            axes.errorbar(x[i],y[i],yerr=errors[i])
+    '''
+    cl=color_line[0]
+    if(pars[6]>1):
+        cl= color_line[1]
+    if(pars[6]==1 or pars[6]==4 ):
+        xlegend = ['10m', '30m', '1h']
+        if (pars[6] > 1):
+            xlegend = ['t=3', 't=5', 't=7']
+        for i in range(len(error)):
             axes.errorbar(x[i], y[i], yerr=errors[i], fmt='-',color=cl[i],ecolor=cl[i])
-
+        plt.legend(xlegend,
+                   loc='upper right',
+                   fontsize=7, ncol=1, frameon=False)
+    else:
+        for i in range(len(error)):
+            logger.info(cl[i])
+            axes.errorbar(x[i], y[i], yerr=errors[i],color=cl[i],ecolor=cl[i])
+        #sys.exit()
     #plt.yticks([0.5,0.6,0.7,0.8,0.9, 1])
     #plt.yticks([1])
     if(pars[11] ==2): # the 3d subgraph
@@ -91,9 +98,9 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     x = (xy[0]) +0.1
     y = (xy[2]) + ((xy[3])-(xy[2]))/10
     if (pars[6] == 2):
-        x = x+0.5
+        x = x+0.6
     axes.text(x, y, pars[12], \
-              color='black', weight="light", size=7)
+              color='black', weight="light", size=10)
 
     xt=[1,2,3,4,5,6,7]
     if(pars[6]<2):#weibo or twitter
@@ -105,9 +112,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     #axes.set_xticklabels(xtickers)
 
     plt.xticks(xt,xtickers)
-    if (pars[6] == 1 or pars[6] == 4):
+
+    if ( pars[6] == 4):
         plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
                    wspace=0.3, hspace=0.15)
+
 
     axes.tick_params(axis='x', tickdir='in', labelsize=7)
     axes.tick_params(axis='y', tickdir='out', labelsize=7)
@@ -116,7 +125,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     if(isSave==True):
         ax = plt.gca()
         #ax.update_datalim(corners)
-        plt.savefig(fig_file, dpi=100, bbox_inches='tight')
+        plt.savefig(fig_file, dpi=200, bbox_inches='tight')
 #        plt.savefig(fig_file, dpi=1200, bbox_inches='tight')
         plt.close('all')
 
@@ -136,7 +145,7 @@ logger.addHandler(ch)
 
 dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\Multi-Classification\\Prediction_Kappa_Value\\Fig%s\\%s_Prediction_Percentage_Error_%s_%s\\%s.txt"
 
-fig_data = "D:\\py\\data\\initialreaction\\figs\\figS12\\%s_%s_Kappa" #e.g.Weibo_200_Kappa
+fig_data = "D:\\py\\data\\initialreaction\\figs\\kappa.png" #e.g.Weibo_200_Kappa
 #weibo_axis_motif
 logx = False
 logy = False
@@ -155,7 +164,7 @@ data_observation=[['10min','30min','1hour'],\
                     ['3','5','7'],\
                     ['3','5','7']
                   ]
-data_motif=['5','6','7','8','9','10']
+data_motif=['5']
 data_legend=['(a)','(b)','(c)','(d)','(e)','(f)']
 data_size=['100','200']
 
@@ -165,7 +174,7 @@ colors = [('red','pink'),('blue','lightblue'),('green','lightgreen'),('black','g
 
 xx=-0.8
 xy=-0.25
-yx=-2.8
+yx=-3.0
 #yx=-0.20
 yy=1.25
 
@@ -177,68 +186,71 @@ x_text_axis=[xx,xy]
 num_data_dir=1
 legend=[]
 num_data_type=0
-
+num=0
+motif = data_motif[0]
 for dt in str_data_type:
-    for num in (0,1):
-        logger.info("Plotting %s : %s" % (dt,num+1))
 
-        tmp_num_motif = 0
-        for motif in data_motif:
-            x = []
-            y = []
-            errors = []
-            legend = str_fig_type[num_data_type]
-            isSave = False
-            for data_obs in data_observation[num_data_type]:
+    logger.info("Plotting %s ." % dt)
 
-                tmp_src_file = dir_data % (2*num_data_type+num+1,dt, motif,data_size[num],data_obs)
-                #logger.info('plotting Kappa : %s ' % tmp_src_file)
-                f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
-                line =f.readline()
-                tmp_values_x=[]
-                tmp_values_y=[]
-                tmp_error=[]
-                line_count=0
-                r1=0
-                while line:
-                    if(line_count<1):
-                        line_count+=1
-                        line = f.readline()
-                        continue
-                    words = line.replace('\n', '').split('\t')
-                    if((data_obs==data_observation[num_data_type][2]) and num_data_type <2):
-                        tmp_values_x.append(float(words[0])+1) # 去掉第一个数字 1h-1h
-                    else:
-                        tmp_values_x.append(float(words[0]))
-                    tmp_values_y.append(float(words[1]))
-                    tmp_error.append(float(words[2]))
-                    line = f.readline()
-                x.append(tmp_values_x)
-                y.append(tmp_values_y)
-                errors.append(tmp_error)
-                f.close()
+    tmp_num_motif = 0
 
-            xlabel = None
-            ylabel = None
-            x_num_show=True
-            y_num_show=True
+    x = []
+    y = []
+    errors = []
+    legend = str_fig_type[num_data_type]
+    isSave = False
+    for data_obs in data_observation[num_data_type]:
 
-            subplot="%s,%s,%s" % (2,3, tmp_num_motif+1)
-            fig_file=""
-            #logger.info(subplot)
-            if (tmp_num_motif==len(data_motif)-1):
-               isSave=True
-               fig_file = fig_data % (str_fig_type[num_data_type],data_size[num-1])
+        tmp_src_file = dir_data % (2*num_data_type+num+1,dt, motif,data_size[num],data_obs)
+        #logger.info('plotting Kappa : %s ' % tmp_src_file)
+        f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
+        line =f.readline()
+        tmp_values_x=[]
+        tmp_values_y=[]
+        tmp_error=[]
+        line_count=0
+        r1=0
+        while line:
+            if(line_count<1):
+                line_count+=1
+                line = f.readline()
+                continue
+            words = line.replace('\n', '').split('\t')
+            if((data_obs==data_observation[num_data_type][2]) and num_data_type <2):
+                tmp_values_x.append(float(words[0])+1) # 去掉第一个数字 1h-1h
+            else:
+                tmp_values_x.append(float(words[0]))
+            tmp_values_y.append(float(words[1]))
+            tmp_error.append(float(words[2]))
+            line = f.readline()
+        x.append(tmp_values_x)
+        y.append(tmp_values_y)
+        errors.append(tmp_error)
+        f.close()
+
+    xlabel = None
+    ylabel = None
+    x_num_show=True
+    y_num_show=True
+
+    subplot = "%s,%s,%s" % (2, 2, num_data_type+1)
+    if (num_data_type >1):# (len(dir_data) - 1)):
+        subplot = "%s,%s,%s" % (2,3, num_data_type+2)
+    fig_file=""
+    #logger.info(subplot)
+    if (num_data_type==len(str_data_type)-1):
+       isSave=True
+       fig_file = fig_data
 #               xlabel = xlabel_bak
 #               ylabel = ylabel_bak
-               xlabel = xlabel_bak
-               ylabel = ylabel_bak
-            pars=[xlabel,ylabel,1,colors[0],fig_file,legend,num_data_type,x_text_axis,y_text_axis,y_num_show,x_num_show,tmp_num_motif,data_legend[tmp_num_motif]]
-            shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x,y,errors, subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
-            f.close()
-           # os._exit(0)
-            tmp_num_motif += 1
-        #num_data_dir += 1
+       xlabel = xlabel_bak
+       ylabel = ylabel_bak
+    pars=[xlabel,ylabel,1,colors[0],fig_file,legend,num_data_type,x_text_axis,y_text_axis,y_num_show,x_num_show,tmp_num_motif,data_legend[num_data_type] + " " +str_fig_type[num_data_type] ]
+    shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x,y,errors, subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
+    f.close()
+   # os._exit(0)
+    tmp_num_motif += 1
+#num_data_dir += 1
 
     #sys.exit()
     num_data_type +=1
