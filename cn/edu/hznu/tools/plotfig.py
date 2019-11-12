@@ -169,7 +169,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
         plt.close()
 
 
-    #more parameters
+#more parameters
 #pars=[xlabel,ylabel, linewidth, color=[mean_color,bound_color],fig_file]
 def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(category, values_mean, errors, subplot_pos, pars=[], logx=False,logy=False, n=1, isSave=False):
     values_up=[]
