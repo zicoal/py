@@ -17,6 +17,8 @@ data_observation=['10m','30m','1h']
 data_predict=[['1h','12h','1d','final'],\
               ['1h','12h','1d','final'],\
               ['2h','12h','1d','final']]
+str_data_type = ["Weibo","Twitter"]
+
 def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_pos, pars=[], logx=False,logy=False, n=1, isSave=False):
 
     colors=['red','pink']
@@ -24,8 +26,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     fig_file=''
     xlabel=''
     ylabel=''
-    x_small_width =0.05
-    x_big_width = 0.12
+
 
     pos = subplot_pos.split(',')
     axes = plt.subplot(int(pos[0]),int(pos[1]),int(pos[2]))
@@ -37,14 +38,15 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     if (pars[2] is not None):
         line_width = pars[2]
 
+
+    if (pars[0] is not None):
+        xlabel = str_data_type[pars[6]]
+        xlabel_axis = [0.35,-0.1]
+        plt.text(xlabel_axis[0], xlabel_axis[1],  xlabel,transform=axes.transAxes,
+             color='black', size='12', weight="light")
+
+
     if (isSave==True):
-        if (pars[0] is not None):
-            xlabel = pars[0]
-            xlabel_axis = pars[7]
-            plt.text(xlabel_axis[0], xlabel_axis[1],  xlabel,transform=axes.transAxes,
-                 color='black', size='12', weight="light")
-
-
         if (pars[1] is not None):
             ylabel = pars[1]
             ylabel_axis = pars[8]
@@ -61,10 +63,6 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     large=[]
 
     for i in range(len(error)):
-        tmp_num_head = i // len(data_predict[0])
-        tmp_num_tail = i % len(data_predict[0])
-#            logger.info("%s,%s",tmp_num_head,tmp_num_tail)
-#            sys.exit()
         small.append(y[i][0])
         medium.append(y[i][1])
         large.append(y[i][2])
@@ -87,7 +85,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
             l.append(0)
         #            x_ticker.append(tmp_num_head*x_big_width+tmp_num_head+1+ x_small_width*(tmp_num_tail+b))
 
-    labels = ["1h", "12h", "1d",  "f", "", "1h", "12h", "1d",  "f", "", "2h", "12h", "1d", "f"]
+    labels = ["1h", "12h", "1d",  "final", "", "1h", "12h", "1d",  "final", "", "2h", "12h", "1d", "final"]
 
     x = np.arange(len(labels))  # 横坐标
     x = np.arange(len(x))  # 首先用第一个的长度作为横坐标
@@ -98,54 +96,48 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 #    axes.bar(x_ticker, y[i],color=color_line[0],width=1)
 #        axes.bar(x_ticker, y[i], yerr=errors[i],color=color_line[1])
 
-    width = 0.2  # 设置柱与柱之间的宽度
-#    axes.bar(x, s, width, alpha=0.9, color=color_line[0], label='small')
+    width = 0.3  # 设置柱与柱之间的宽度
+    axes.bar(x, s, width, alpha=0.9, color=color_line[0], label='small')
     axes.bar(x + width, m, width, alpha=0.7, color=color_line[1], label='medium')
-#    axes.bar(x + width * 2, l, width, alpha=0.7, color=color_line[2], label='large')
+    axes.bar(x + width * 2, l, width, alpha=0.7, color=color_line[2], label='large')
     axes.set_xticks(x + width / 2)  # 将坐标设置在指定位置
     axes.set_xticklabels(labels)  # 将横坐标替换成
+    axes.tick_params(axis='x', tickdir='in', labelsize=5, length=0)
+    axes.tick_params(axis='y', tickdir='out', labelsize=7)
+
+
+
 
     if (isSave == True):
         labels = []
         xlegend = ['small','medium','large']
         plt.legend(xlegend,
                        loc='upper right',
-                       fontsize=3,ncol=3,frameon=False)
+                       fontsize=5,ncol=3,frameon=False)
 
-    #plt.yticks([0.5,0.6,0.7,0.8,0.9, 1])
-    #plt.yticks([1])
-    '''
-    if(pars[11] ==2): # the 3d subgraph
-        if (pars[5] is not None):
-            legend=pars[5]
-            xy = plt.axis()
-            x=4.3
-            y = 0.85
-            if (pars[6] > 1 ):
-                x = 5.5
-            if (pars[6]==1):
-                y=0.96
-            if( pars[6] == 4):
-                y = 0.92
-            axes.text(x,y,legend, \
-                      size='12', color = 'black', weight = "light")
-    
-    '''
-    #(a-e)
+
+    #(a-b)
     xy = plt.axis()
+    logger.info(xy)
     x = (xy[0]) +0.5
-    y = 0.99
+    y = 1.01
     axes.text(x, y, pars[12], \
-              color='black', weight="light", size=5)
+              color='black', weight="light", size=7)
+#    axes.text(x, y, ("%s %s" % (pars[12], str_data_type[pars[6]])), \
+#              color='black', weight="light", size=7)
 
 
-    '''
-    xt=[1,2,3,4,5,6,7]
-    if(pars[6]<2):#weibo or twitter
-        xtickers=['1h','2h','12h','1d','2d','10d','final']
-    else:
-        xtickers=['10','15','20','25','30','40','final']
-    '''
+
+    line_start = 0.05
+    line_width = 3.5
+    line_start_step = 5
+    line_v_width_min = -0.1
+    line_v_width_max = -0.15
+
+    for i in range(len(data_observation)):
+        plt.vlines(line_start + i * line_start_step, line_v_width_min, line_v_width_max)
+        plt.vlines(line_start + i * line_start_step + line_width, line_v_width_min, line_v_width_max)
+    plt.ylim(0, 1.05)
 #    axes.set_xticks(x[0])
     #axes.set_xticklabels(xtickers)
 
@@ -154,8 +146,6 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     #    plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
     #               wspace=0.3, hspace=0.15)
 
-    axes.tick_params(axis='x', tickdir='in', labelsize=3, length=0)
-    axes.tick_params(axis='y', tickdir='out', labelsize=7)
 
 
     if(isSave==True):
@@ -184,11 +174,10 @@ logx = False
 logy = False
 #Weibo
 num_data_type = 2
-str_data_type = ["Weibo","Twitter"]
 str_fig_type = ["Weibo","Twitter"]
 
 xlabel_bak=None
-ylabel_bak='Accuracy'
+ylabel_bak='Precision'
 
 data_motif='5'
 data_legend=['(a)','(b)']
@@ -204,9 +193,9 @@ color_index=0
 
 xx=-0.9
 xy=-0.2
-yx=-2.8
+yx=-1.45
 #yx=-0.20
-yy=1.5
+yy=0.6
 
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]
@@ -224,12 +213,12 @@ for dt in str_data_type:
     y = []
     errors = []
     isSave = False
-    for num in range(data_dist,data_dist):
+    for num in range(data_dist,data_dist+1):
         logger.info("Plotting Precison %s : %s" % (dt,data_size))
 
         tmp_num_motif = 0
-        tmp_num_fig1 = len(str_data_type)*num_data_type*data_len*2*num+1
-#        logger.info('%s,%s,%s', num_data_type, num, tmp_num_fig1)
+        tmp_num_fig1 = len(str_data_type)*num_data_type*data_len+(data_dist+1)
+        #logger.info('%s,%s,%s', num_data_type, num, tmp_num_fig1)
         tmp_num_fig2 = tmp_num_fig1+1
 
         legend = str_fig_type[num_data_type]
@@ -240,8 +229,8 @@ for dt in str_data_type:
             for data_to_redict in data_predict[tmp_num_predict]:
 
                 tmp_src_file = dir_data % (tmp_num_fig1,tmp_num_fig2, dt, data_motif,data_size,data_obs,data_to_redict)
-#                    logger.info('plotting Precison : %s ' % tmp_src_file)
-#                    sys.exit()
+               # logger.info('plotting file : %s ' % tmp_src_file)
+               # sys.exit()
                 f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
                 line =f.readline()
                 tmp_values_x=[]
@@ -264,7 +253,7 @@ for dt in str_data_type:
                 f.close()
             tmp_num_predict+=1
 
-    xlabel = None
+    xlabel = str_data_type[num_data_type]
     ylabel = None
     x_num_show=True
     y_num_show=True
@@ -277,8 +266,8 @@ for dt in str_data_type:
        fig_file = fig_data
 #               xlabel = xlabel_bak
 #               ylabel = ylabel_bak
-       xlabel = xlabel_bak =None
-       ylabel = ylabel_bak =None
+       #xlabel = xlabel_bak
+       ylabel = ylabel_bak
     pars=[xlabel,ylabel,1,colors[0],fig_file,legend,num_data_type,x_text_axis,y_text_axis,y_num_show,x_num_show,num_data_type,data_legend[num_data_type]]
     shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x,y,errors, subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
 
