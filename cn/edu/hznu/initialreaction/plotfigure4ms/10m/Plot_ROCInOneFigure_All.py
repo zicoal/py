@@ -115,12 +115,15 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, error, subplot_p
 
             xy=plt.axis()
 
-            x= -0.01
+#            x= -0.01
             #x= (xy[1] )*0.001
             if(isSave==True):
                 x=-0.03
 
-            y= (xy[3] )*0.9
+            x=0.65
+            y=0.5
+
+#            y= (xy[3] )*0.9
             axes.text(x,y,pars[5], \
                     color = 'black', weight = "light", size=7)
             #axes.text(x,y,pars[5], \
@@ -183,7 +186,7 @@ ylabel=ylabel_bak
 xlabel=xlabel_bak
 #ylabel=['1-Hour Cascade Size (%s)','2-Hour Cascade Size(%s)','1-Day Cascade Size(%s)','2-Day Cascade Size(%s)','Final Cascade Size(%s)']
 
-legend_seq = ['(a)','(b)','(c)', '(d)', '(e)', '(f)']
+legend_seq = ['(a) Weibo','(b) Twitter','(c) RN', '(d) SW', '(e) SF', '(f)']
 
 
 #生成几个图，就几个

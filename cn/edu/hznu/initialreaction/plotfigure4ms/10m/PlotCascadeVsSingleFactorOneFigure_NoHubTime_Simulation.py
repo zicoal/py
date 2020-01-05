@@ -23,7 +23,7 @@ formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(l
 #fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 logger.addHandler(ch)
-#logger.addHandler(fh)Hs_Hr
+dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\Feature_Size_Correlation_Simulation\\%s\\Fig%s\\(f).txt" # 6. 12, 18
 
 
 #more parameters
@@ -65,12 +65,12 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
         line_width = pars[2]
     if (pars[1] is not None):
         ylabel = pars[1]
-        axes.set_ylabel(ylabel, size='10')
+        axes.set_ylabel(ylabel, size='8')
     if (pars[0] is not None):
         xlabel = pars[0]
-        axes.set_xlabel(xlabel, size='7')
+        axes.set_xlabel(xlabel, size='8')
 
-    plt.tick_params(labelsize=7)
+    plt.tick_params(labelsize=8)
     axes.plot(category, values_up, colors[1])
     axes.plot(category, values_down, colors[1])
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
@@ -79,16 +79,24 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
     axes.plot(category, values_mean, linewidth=line_width, color=colors[0])
 
     if (pars[5] is not None):
+        xy = plt.axis()
+        yy=xy[3]*0.8
+        xx=xy[1]*0.5
+        logger.info(xy)
         if (pars[6]==1):
-            axes.text(2,95,pars[5])
+           axes.text(xx*0.5,yy,pars[5], size='8',  weight="light")
         else:
-            axes.text(1.5, 165, pars[5])
+            axes.text(xx,yy, pars[5], size='8',  weight="light")
 
     if (logx == True):
         axes.set_xscale("log")
     if (logy == True):
         axes.set_yscale("log")
 
+    if(pars[7]==1):
+        plt.xlim(0.5,10)
+        xtickers = ['2', '4', '6', '8']
+        axes.set_xticklabels(xtickers)
 
     if(isSave==True):
 #        plt.savefig(fig_file, dpi=400, bbox_inches='tight')
@@ -97,13 +105,12 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
         plt.clf()
         plt.close()
 
-dir_data = "D:\\py\\data\\initialreaction\\results\\%s\\Feature_VS_Size\\"
+data_type=["Random","Small_World","Scale_Free"]
+lengend_text=["Random Network","Small World","Scale Free"]
 
-data_type=["Weibo","Twitter"]
+fig_data = "D:\\py\\data\\initialreaction\\figs\\tmp\\%s"
 
-fig_data = "D:\\py\\data\\initialreaction\\figs\\%s"
-
-files = ['motif_entropy','initial_time', 'initial_size']
+files = ['6','12', '18']
 xlabels=['Initial Structure','Initial Time', 'Initial Attention']
 file_names = ['cascade_vs_motif','cascade_vs_initial_time', 'cascade_vs_initial_size']
 colors = [('red','pink'),('green','lightgreen'),('blue','lightblue'),('black','gray')]
@@ -118,14 +125,14 @@ for d in data_type:
 #    if num_data_type ==2:
 #        continue
     for file in files:
-        tmp_src_file = (dir_data % d) + file +".txt"
+        tmp_src_file = dir_data % (d,file)
         f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
         line =f.readline()
         tmp_values_x=[]
         tmp_values_y=[]
         tmp_values_err=[]
         line_count=0
-        logx = True
+        logx = False
         logy = False
         while line:
             if(line_count==0):
@@ -140,25 +147,26 @@ for d in data_type:
     #    logger.info(tmp_values_x)
         xlabel = None
         lengend = None
-        if num_file_count == 0:
-            logx = False
-            ylabel = ylabel_bak
-            lengend = d
-        else:
-            ylabel=None
+        if num_file_count == 2:
+            logx = True
         if num_file_count == len(files)-1:
             logy = True
         if num_data_type!=1:
             xlabel=xlabels[num_file_count]
     #   pf.shaded_Error_Bar_Mean_Error(tmp_values_x,tmp_values_y,tmp_values_err,logx=logx)
-        subplot=int("23%s" % (3*(num_data_type-1) + num_file_count+1))
+        if num_file_count==0:
+            lengend = lengend_text[num_data_type-1]
+            ylabel = ylabel_bak
+        else:
+            ylabel = None
+
+        subplot=int("33%s" % (3*(num_data_type-1) + num_file_count+1))
         fig_file=""
         logger.info(tmp_src_file)
-        #logger.info(subplot)
-        if num_data_type==2 and num_file_count==2:
+        if num_data_type==len(data_type) and num_file_count==len(files)-1:
            isSave=True
-           fig_file = (fig_data % "cascade_vs_single_factor.png" )
-        pars=[xlabel,ylabel,1,colors[num_file_count],fig_file,lengend,num_data_type]
+           fig_file = (fig_data % "cascade_vs_single_factor_simulation.png" )
+        pars=[xlabel,ylabel,1,colors[num_file_count],fig_file,lengend,num_data_type,num_file_count]
         shaded_Error_Bar_Mean_Error_Params_SubPlot(tmp_values_x,tmp_values_y,tmp_values_err,subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
         isSave= False
         #pf.shaded_Error_Bar_Mean_Error_Params(tmp_values_x,tmp_values_y,tmp_values_err,pars=pars,logx=logx,logy=logy,isShow=False)

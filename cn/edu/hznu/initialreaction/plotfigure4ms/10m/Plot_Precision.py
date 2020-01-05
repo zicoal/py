@@ -137,6 +137,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     for i in range(len(data_observation)):
         plt.vlines(line_start + i * line_start_step, line_v_width_min, line_v_width_max)
         plt.vlines(line_start + i * line_start_step + line_width, line_v_width_min, line_v_width_max)
+    #    plt.hlines(line_start + i * line_start_step, line_v_width_min, line_v_width_max)
     plt.ylim(0, 1.05)
 #    axes.set_xticks(x[0])
     #axes.set_xticklabels(xtickers)
