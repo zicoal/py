@@ -25,11 +25,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     plt.tick_params(labelsize=5)
 
     if(pars[6]==0):
-        plt.text(-0.5,1.04,'A' + pos[2],fontsize=10)
+        plt.text(-0.6,1.04,'A' + pos[2],fontsize=10)
         yt=[ 0.65, 0.75, 0.85, 0.95, 1]
         plt.yticks(yt)
     else:
-        plt.text(-0.4,1.02,'A' + pos[2],fontsize=10)
+        plt.text(-0.4,1.021,'A' + pos[2],fontsize=10)
         yt=[0.80, 0.85, 0.90, 0.95, 1]
         plt.yticks(yt)
 
@@ -144,7 +144,7 @@ logger.addHandler(ch)
 #logger.addHandler(fh)Hs_Hr
 
 #dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\Multi-Classification\\Prediction_Kappa_Value\\Fig%s\\%s_Prediction_Percentage_Error_%s_%s\\%s.txt"
-dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\Result_Updata_1.5Hour\\Prediction_Kappa_Value\\Fig%s\\%s_Prediction_Kappa_5_100\\%s.txt"
+dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\Result_Updata_1.5Hour\\Prediction_Kappa_Value\\Fig%s\\%s_Prediction_Kappa_5_400\\%s.txt"
 
 fig_data = "D:\\py\\data\\initialreaction\\figs\\kappa" #e.g.Weibo_200_Kappa
 #weibo_axis_motif
@@ -203,10 +203,10 @@ for dt in str_data_type:
     isSave = False
     for data_obs in data_observation[num_data_type]:
 
-        tmp_src_file = dir_data % (num_data_type+num+1,dt,data_obs)
-        #tmp_src_file = dir_data % (2 * num_data_type + num + 1, dt, data_obs)
+        #tmp_src_file = dir_data % (num_data_type+num+1,dt,data_obs)
+        tmp_src_file = dir_data % (5 * num_data_type + 4, dt, data_obs)
 #        tmp_src_file = dir_data % (2*num_data_type+num+1,dt, motif,data_size[num],data_obs)
-        #logger.info('plotting Kappa : %s ' % tmp_src_file)
+        logger.info('plotting Kappa : %s ' % tmp_src_file)
         f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
         line =f.readline()
         tmp_values_x=[]
