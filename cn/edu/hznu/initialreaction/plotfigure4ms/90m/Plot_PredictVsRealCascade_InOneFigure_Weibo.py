@@ -21,7 +21,6 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
 
     pos = subplot_pos.split(',')
     axes = plt.subplot(int(pos[0]),int(pos[1]),int(pos[2]))
-
     if (pars[4] is not None):
         fig_file = pars[4]
     if (pars[3] is not None):
@@ -34,7 +33,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
             ylabel = pars[1]
             ylabel_axis = pars[8]
             plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
-                 color='black', size='12', weight="light")
+                 color='black', size='10', weight="light")
 #            plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
 #                 family="fantasy", color='black', size='12', weight="light")
 
@@ -42,9 +41,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
             xlabel = pars[0]
             xlabel_axis = pars[7]
             plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
-                     color='black', size='12', weight="light")
+                     color='black', size='10', weight="light")
 #            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
 #                     family="fantasy", color='black', size='12', weight="light")
+        #logger.info("come to a")
+        plt.text(0.007, 180000000, 'A', fontsize=15)
 
     x_max=2001
     y_max=2001
@@ -104,7 +105,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
     if(isSave==True):
         ax = plt.gca()
         #ax.update_datalim(corners)
-        plt.savefig(fig_file, dpi=100,  bbox_inches='tight')
+        plt.savefig(fig_file+ ".png", dpi=200,  bbox_inches='tight')
         plt.savefig(fig_file + ".pdf", format='pdf', dpi=400, bbox_inches='tight')
 #        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
@@ -131,7 +132,7 @@ logy = True
 #Weibo
 num_data_type = 2
 str_data_type = "Weibo"
-xlabel_bak='Real Cascade Size (%s)'% str_data_type
+xlabel_bak='Real Cascade Size'
 ylabel_bak='Predicted Cascade Size'
 str_feature="initial_attention"
 
@@ -149,9 +150,9 @@ predict_map=[['1h','final'],['1h','final'],['2h','final']]
 color_index=2
 colors = [('red','pink'),('blue','lightblue'),('green','lightgreen'),('black','gray')]
 
-xx=-0.5
-xy=-0.35
-yx=-1.35
+xx=-0.35
+xy=-0.3
+yx=-1.4
 yy=2.2
 
 y_text_axis=[yx,yy]

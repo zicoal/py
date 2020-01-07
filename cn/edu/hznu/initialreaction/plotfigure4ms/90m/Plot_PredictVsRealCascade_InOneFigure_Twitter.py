@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # coding:utf-8
 
-import os
+import os,sys
 import logging
 import time
 import string
@@ -34,7 +34,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
             ylabel = pars[1]
             ylabel_axis = pars[8]
             plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
-                 color='black', size='12', weight="light")
+                 color='black', size='10', weight="light")
 #            plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
 #                 family="fantasy", color='black', size='12', weight="light")
 
@@ -42,9 +42,10 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
             xlabel = pars[0]
             xlabel_axis = pars[7]
             plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
-                     color='black', size='12', weight="light")
+                     color='black', size='10', weight="light")
 #            plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
 #                     family="fantasy", color='black', size='12', weight="light")
+        plt.text(0.000002, 100000000000000, 'B', fontsize=15)
 
     x_max=20001
     y_max=20001
@@ -84,7 +85,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
 
 
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0.08, hspace=0.1)
+                        wspace=0.13, hspace=0.1)
 #    plt.subplots_adjust(left=0.2, bottom=0.2, right=0.8, top=0.8,hspace = 0.1, wspace = 0.1)
 
 
@@ -99,7 +100,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
     if(isSave==True):
         ax = plt.gca()
 #        plt.tight_layout()
-        plt.savefig(fig_file+".png", dpi=100,  bbox_inches='tight')
+        plt.savefig(fig_file+".png", dpi=200,  bbox_inches='tight')
         plt.savefig(fig_file+".pdf", format='pdf', dpi=400, bbox_inches='tight')
 #        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
@@ -126,7 +127,7 @@ logy = True
 #Weibo
 num_data_type = 2
 str_data_type = "Twitter"
-xlabel_bak='Real Cascade Size (%s)'% str_data_type
+xlabel_bak='Real Cascade Size'
 ylabel_bak='Predicted Cascade Size'
 
 
@@ -148,9 +149,9 @@ yx=-5.8
 yy=2.5
 '''
 
-xx=-0.5
-xy=-0.35
-yx=-1.25
+xx=-0.3
+xy=-0.3
+yx=-1.34
 yy=2.2
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]
@@ -192,7 +193,7 @@ for data_obs in data_observation:
         xlabel = None
         ylabel = None
         x_num_show=False
-        y_num_show=False
+        y_num_show=True
         legend.append("r=%s\np<$10^{-5}$" % r)
     #   pf.shaded_Error_Bar_Mean_Error(tmp_values_x,tmp_values_y,tmp_values_err,logx=logx)
 #        subplot=int("%s%s%s" % (len(data_observation),len(data_predict[0]), num_data_dir*(len(data_predict[0]))+num_data_count+1))
@@ -215,3 +216,4 @@ for data_obs in data_observation:
        # os._exit(0)
     num_data_dir += 1
 
+sys.exit()
