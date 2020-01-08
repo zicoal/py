@@ -11,6 +11,7 @@ import numpy as np
 
 
 
+color_lines=['lavender','pink','palegreen']
 def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_pos, pars=[], logx=False,logy=False, n=1, isSave=False):
 
     colors=['red','pink']
@@ -50,19 +51,20 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
     if (isSave == False):
         for i in range(len(error)):
-            axes.errorbar(x[i],y[i],yerr=errors[i],fmt='-')
+            axes.errorbar(x[i],y[i],yerr=errors[i],fmt='-',color=color_lines[i], ecolor=color_lines[i])
 
-        plt.yticks([0.4,0.5, 0.6, 0.7, 0.8])
+        plt.yticks([0.5, 0.6, 0.7, 0.8, 0.9])
         plt.ylabel("Accuracy",fontsize='9')
     else:
         for i in range(len(error)):
-            axes.errorbar(x[i],y[i],yerr=errors[i])
+            axes.errorbar(x[i],y[i],yerr=errors[i],fmt='-',color=color_lines[i], ecolor=color_lines[i])
 
-        xlegend = ['10m','30m','1h']
+        xlegend = ['30m','60m','90m']
         plt.legend(xlegend,
                        loc='upper left',
-                       fontsize=7,ncol=3,bbox_to_anchor=(0.16, 1.15))
-        plt.yticks([0.5,0.6,0.7,0.8,0.9 ])
+                       fontsize=7,ncol=3,bbox_to_anchor=(0.12, 1.15))
+#        plt.yticks([0.7,0.8,0.9,1])
+        plt.yticks([0.75,0.85,0.95])
 
     '''
     if (pars[5] is not None):
@@ -91,9 +93,9 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
     logger.info(pars[6])
     if(pars[6]==0):
-        plt.text(-0.5,0.857,'C' + pos[2],fontsize=10)
+        plt.text(-0.5,0.97,'C' + pos[2],fontsize=10)
     else:
-        plt.text(-0.6,0.92,'C' + pos[2],fontsize=10)
+        plt.text(-0.6,0.985,'C' + pos[2],fontsize=10)
 
 
     if(isSave==True):
@@ -118,7 +120,8 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 #logger.addHandler(fh)Hs_Hr
 
-dir_data = "D:\\py\\data\\initialreaction\\results\\Fig234\\Fig4\\%s\\%s.txt"
+#dir_data = "D:\\py\\data\\initialreaction\\results\\Fig234\\Fig4\\%s\\%s.txt"
+dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\Result_Updata_1.5Hour\\Prediction_Percentage_Error\\Fig%s\\%s_Prediction_Percentage_Error_5_100\\%s.txt"
 fig_data = "D:\\py\\data\\initialreaction\\figs\\mae"
 #weibo_axis_motif
 logx = False
@@ -130,7 +133,7 @@ xlabel_bak='Time'
 ylabel_bak='Accuracy'
 
 
-data_observation=['10min','30min','1hour']
+data_observation=['30m','1h','1.5h']
 
 
 #fig_names = ['%s_vs_1hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_2hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_1day_cascade_%s' % (str_feature,str_data_type), '%s_vs_2day_cascade_%s' % (str_feature,str_data_type), '%s_vs_10day_cascade_%s' % (str_feature,str_data_type),'%s_vs_final_cascade_%s' % (str_feature,str_data_type)]
@@ -160,7 +163,8 @@ for dt in str_data_type:
 
         logger.info('plotting MAE (%s): %s ' % (dt,data_obs))
 
-        tmp_src_file = dir_data %(dt,data_obs)
+        tmp_src_file = dir_data %((num_data_dir+1),dt,data_obs)
+
         f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
         line =f.readline()
         tmp_values_x=[]
@@ -174,7 +178,7 @@ for dt in str_data_type:
                 line = f.readline()
                 continue
             words = line.replace('\n', '').split('\t')
-            if(data_obs==data_observation[2]):
+            if(data_obs!=data_observation[0]):
                 tmp_values_x.append(float(words[0])+1)
             else:
                 tmp_values_x.append(float(words[0]))
@@ -201,6 +205,7 @@ for dt in str_data_type:
        ylabel = ylabel_bak
     pars=[xlabel,ylabel,1,colors[0],fig_file,legend,num_data_dir,x_text_axis,y_text_axis,y_num_show,x_num_show]
     shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x,y,errors, subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
+    logger.info(x)
     f.close()
    # os._exit(0)
     num_data_dir += 1
