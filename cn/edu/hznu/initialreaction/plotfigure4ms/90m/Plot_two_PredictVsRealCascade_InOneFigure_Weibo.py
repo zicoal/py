@@ -61,10 +61,10 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
     y_compare = list(range(x_max))
     axes.plot(x_compare,y_compare, linewidth=0.5, linestyle=':', color='black')
     tmp_color=colors[0]
-    if("final" in  pars[5][0]):
-       tmp_color = color_lines[2]
-    else:
+    if("10m" in  pars[5][0]):
        tmp_color = color_lines[0]
+    else:
+       tmp_color = color_lines[2]
 
     axes.scatter(x,y,s=line_width, color=tmp_color)
 
