@@ -43,11 +43,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, z,p
             plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
                      color='black', size='10', weight="light")
         xy=plt.axis()
-        plt.text(0.0022, 1000, 'D', fontsize=15)
+        plt.text(0.022, 120, 'D', fontsize=15)
 
 
     tmp_color=colors[0]
-    if("10m" in  pars[5][0]):
+    if("30m" in  pars[5][0]):
        tmp_color = color_lines[0]
     else:
        tmp_color = color_lines[2]
@@ -71,9 +71,9 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, z,p
         logger.info(xy)
         if ("final" in pars[5][0]):
             x1 = 10
-            y1=  0.01
-            if ("10m" in pars[5][0]):
-                x1 = 9
+            y1=  0.05
+            if ("30m" in pars[5][0]):
+                x1 = 10
                 y1 = 0.06
             xlegend = ['Real','Predicted']
             plt.legend(xlegend,
@@ -82,7 +82,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, z,p
         else:
             x1 = 1.5
             y1= 0.003
-            if ("10m" in pars[5][0]):
+            if ("30" in pars[5][0]):
                 y1 = 0.002
 
         axes.text(x1,y1,legend[0], \
@@ -130,7 +130,7 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 #logger.addHandler(fh)Hs_Hr
 
-dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\distribution\\Prediction_Real_Distribution_%s\\Fig7\\%s.txt"
+dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\distribution\\Prediction_Real_Distribution\\Fig7\\%s.txt"
 fig_data = "D:\\py\\data\\initialreaction\\figs\\size_ccdf_two_%s"
 #weibo_axis_motif
 logx = True
@@ -145,7 +145,7 @@ ylabel_bak='CCDF'
 #data_observation=['10m','30m','1h']
 #data_predict=[['1h','final'],['1h','final'],['2h','final']]
 
-data_observation=['10m','1h']
+data_observation=['30m','1.5h']
 data_predict=[['1','7'],['2','7']]
 predict_map=[['1h','final'],['2h','final']]
 
@@ -164,9 +164,9 @@ yx=-5.8
 yy=2.5
 '''
 
-xx=-0.23
+xx=-0.25
 xy=-0.18
-yx=-1.35
+yx=-1.38
 yy=1.2
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]
@@ -182,7 +182,8 @@ for data_obs in data_observation:
         isSave = False
         logger.info('plotting Real vs Predicted Cascade (%s): %s ' % (str_data_type,data_obs+'-'+predict_map[num_data_dir][num_data_count]))
         legend=[data_obs+'-'+predict_map[num_data_dir][num_data_count]]
-        tmp_src_file = dir_data %(str_data_type,data_obs+'_'+data_pre)
+#        tmp_src_file = dir_data %(str_data_type,data_obs+'_'+data_pre)
+        tmp_src_file = dir_data % (data_obs + '_' + data_pre)
 
         f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
         #logger.info(tmp_src_file)
