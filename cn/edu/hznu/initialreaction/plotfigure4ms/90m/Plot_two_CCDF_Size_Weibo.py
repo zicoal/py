@@ -43,7 +43,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, z,p
             plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
                      color='black', size='10', weight="light")
         xy=plt.axis()
-        plt.text(0.022, 120, 'C', fontsize=15)
+        plt.text(0.001, 3000, 'C', fontsize=15)
 
 
     tmp_color=colors[0]
@@ -70,20 +70,20 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, z,p
         y1=0
         logger.info(xy)
         if ("final" in pars[5][0]):
-            x1 = 10
-            y1=  0.05
+            x1 = 6
+            y1=  0.005
             if ("30m" in pars[5][0]):
-                x1 = 10
-                y1 = 0.06
+                x1 = 1.5
+                y1 = 0.02
             xlegend = ['Real','Predicted']
             plt.legend(xlegend,
                            loc='upper right',
-                           fontsize=7,ncol=1)
+                           fontsize=7,ncol=1, frameon=False)
         else:
             x1 = 1.5
-            y1= 0.003
-            if ("30" in pars[5][0]):
-                y1 = 0.002
+            y1= 0.001
+            if ("30m" in pars[5][0]):
+                y1 = 0.001
 
         axes.text(x1,y1,legend[0], \
                   family="fantasy", size='8', color = 'black', weight = "light")
