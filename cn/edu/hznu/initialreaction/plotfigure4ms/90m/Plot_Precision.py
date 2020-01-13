@@ -93,9 +93,9 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
 
     if(pars[6]==0):
-        plt.text(-4,1.12,'B' + pos[2],fontsize=10)
+        plt.text(-4,1.12,'C' + pos[2],fontsize=10)
     else:
-        plt.text(-3.5,1.12,'B' + pos[2],fontsize=10)
+        plt.text(-3.5,1.12,'C' + pos[2],fontsize=10)
 
 
 
@@ -166,7 +166,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
         ax = plt.gca()
         #ax.update_datalim(corners)
         plt.savefig(fig_file+ ".png", dpi=200,  bbox_inches='tight')
-        plt.savefig(fig_file + ".pdf", format='pdf', dpi=400, bbox_inches='tight')
+        plt.savefig(fig_file + ".pdf", format='pdf', dpi=600, bbox_inches='tight')
         plt.close('all')
 
 

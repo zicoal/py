@@ -7,17 +7,22 @@ import time
 import string
 from matplotlib import pyplot as plt
 import numpy as np
+import matplotlib.transforms as mtransforms
 #from cn.edu.hznu.tools import plotfig as pf
 
 
 color_lines=['pink','lavender','skyblue']
 
 data_observation=['Weibo','Twitter']
-indicators=['E','F']
+indicators=['D','E']
 
-time_labels=['10m','30m','60m''90m','2h','12h','1d','10d']
-time_positions=[0.166666667, 0.5,1,2,12,24,168,240]
-time_colors=['gray','skyblue','pink','lightgreen','lightblue','lightblue','lightblue','lightblue']
+#time_labels=['10m','30m','60m''90m','2h','12h','1d','10d']
+#time_positions=[0.166666667, 0.5,1,2,12,24,168,240]
+#time_colors=['gray','skyblue','pink','lightgreen','lightblue','lightblue','lightblue','lightblue']
+
+time_labels=['30m','60m','90m','10d']
+time_positions=[0.166666667, 0.5,1,240]
+time_colors=['gray','coral','khaki','skyblue']
 
 def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type, pars=[], logx=False,logy=False, n=1, isSave=False):
 
@@ -95,7 +100,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type
     if(type==0):
         ecolor="orange"
     else:
-        ecolor = "skyblue"
+        ecolor = "palevioletred"
 #        x_max = 100000
 #    axes.set_xlim(0,x_max)
 #    axes.set_ylim(0,y_max)
@@ -103,7 +108,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type
     axes.plot(x,y, linewidth=2, linestyle="-", color=ecolor)
 
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0.18, hspace=0.12)
+                        wspace=0.28, hspace=0.12)
 #    plt.subplots_adjust(left=0.2, bottom=0.2, right=0.8, top=0.8,hspace = 0.1, wspace = 0.1)
 
 
@@ -117,12 +122,15 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type
     axes.tick_params(axis='y', tickdir='out', labelsize=7)
 
     xx=plt.axis()
+    yy=1
+    xxx=0
+    trans = mtransforms.blended_transform_factory(axes.transData, axes.transAxes)
     for i in range(0,len(time_labels)):
         if(i==0):
 #            plt.fill_between([xx[0],time_positions[i]],[0,xy[3]],facecolor=time_colors[i],alpha = 0.3)
-            plt.fill_between([xx[0], time_positions[i]], 0, xy[3], facecolor=time_colors[i], alpha=0.3)
+            plt.fill_between([0, time_positions[i]], xxx, yy, facecolor=time_colors[i], alpha=0.5,transform=trans)
         else:
-            plt.fill_between([time_positions[i-1], time_positions[i]], 0, xy[3], facecolor=time_colors[i], alpha=0.3)
+            plt.fill_between([time_positions[i-1], time_positions[i]], xxx, yy,  facecolor=time_colors[i], alpha=0.5,transform=trans)
 
 
     if(isSave==True):
@@ -180,7 +188,7 @@ yy=2.5
 
 xx=0.38
 xy=-0.16
-yx=-1.41
+yx=-1.51
 yy=0.55
 y_text_axis=[yx,yy]
 x_text_axis=[xx,xy]

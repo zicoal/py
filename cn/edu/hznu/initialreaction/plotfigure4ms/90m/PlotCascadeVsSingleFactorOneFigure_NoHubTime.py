@@ -93,7 +93,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
     if(isSave==True):
 #        plt.savefig(fig_file, dpi=400, bbox_inches='tight')
         plt.savefig(fig_file+".png", dpi=200,  bbox_inches='tight')
-        plt.savefig(fig_file+".pdf", format='pdf', dpi=400, bbox_inches='tight')
+        plt.savefig(fig_file+".pdf", format='pdf', dpi=600, bbox_inches='tight')
         plt.cla()
         plt.clf()
         plt.close()
@@ -158,7 +158,8 @@ for d in data_type:
         #logger.info(subplot)
         if num_data_type==2 and num_file_count==2:
            isSave=True
-           fig_file = (fig_data % "cascade_vs_single_factor" )
+           fig_file = (fig_data % "fig1-1" )
+    #        fig_file = (fig_data % "cascade_vs_single_factor")
         pars=[xlabel,ylabel,1,colors[num_file_count],fig_file,lengend,num_data_type]
         shaded_Error_Bar_Mean_Error_Params_SubPlot(tmp_values_x,tmp_values_y,tmp_values_err,subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
         isSave= False

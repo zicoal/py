@@ -10,8 +10,8 @@ import numpy as np
 #from cn.edu.hznu.tools import plotfig as pf
 
 
-#color_lines=['lavender','pink','palegreen']
-color_lines=['pink','lavender','skyblue']
+color_lines=['coral','lavender','palevioletred']
+
 def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, pars=[], logx=False,logy=False, n=1, isSave=False):
 
     colors=['red','pink']
@@ -59,14 +59,15 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
     axes.set_ylim(x_min,y_max)
     x_compare = list(range(x_max))
     y_compare = list(range(x_max))
-    axes.plot(x_compare,y_compare, linewidth=0.5, linestyle=':', color='black')
+    axes.plot(x_compare,y_compare, linewidth=1, linestyle=':', color='gray')
     tmp_color=colors[0]
     if("10m" in  pars[5][0]):
        tmp_color = color_lines[0]
     else:
        tmp_color = color_lines[2]
 
-    axes.scatter(x,y,s=line_width, color=tmp_color)
+ #   axes.scatter(x,y,s=line_width, color=tmp_color)
+    axes.scatter(x,y,s=5, color=tmp_color)
 
 #    print(pars[9])
     #plt.yticks([])
@@ -111,7 +112,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos, par
         ax = plt.gca()
         #ax.update_datalim(corners)
         plt.savefig(fig_file+ ".png", dpi=200,  bbox_inches='tight')
-        plt.savefig(fig_file + ".pdf", format='pdf', dpi=400, bbox_inches='tight')
+        plt.savefig(fig_file + ".pdf", format='pdf', dpi=600, bbox_inches='tight')
 #        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
@@ -130,7 +131,8 @@ logger.addHandler(ch)
 #logger.addHandler(fh)Hs_Hr
 
 dir_data = "D:\\py\\data\\initialreaction\\results\\Fig234\\Fig2\\%s\\%s.txt"
-fig_data = "D:\\py\\data\\initialreaction\\figs\\predict_vs_real_two_%s"
+fig_data = "D:\\py\\data\\initialreaction\\figs\\fig4-1"
+#fig_data = "D:\\py\\data\\initialreaction\\figs\\predict_vs_real_two_%s"
 #weibo_axis_motif
 logx = True
 logy = True
@@ -218,7 +220,8 @@ for data_obs in data_observation:
         #logger.info(subplot)
         if (num_data_dir==len(data_observation)-1 and (num_data_count==len(data_predict[0])-1)):
            isSave=True
-           fig_file = (fig_data % (str_data_type))
+           fig_file = fig_data
+#           fig_file = (fig_data % (str_data_type))
            xlabel = xlabel_bak
            ylabel = ylabel_bak
         if(num_data_count==0):

@@ -25,11 +25,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     plt.tick_params(labelsize=5)
 
     if(pars[6]==0):
-        plt.text(-0.6,1.04,'A' + pos[2],fontsize=10)
+        plt.text(-1.1,1.04,'A' + pos[2],fontsize=10)
         yt=[ 0.65, 0.75, 0.85, 0.95, 1]
         plt.yticks(yt)
     else:
-        plt.text(-0.4,1.021,'A' + pos[2],fontsize=10)
+        plt.text(-0.9,1.022,'A' + pos[2],fontsize=10)
         yt=[0.80, 0.85, 0.90, 0.95, 1]
         plt.yticks(yt)
 
@@ -40,9 +40,9 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     if (pars[2] is not None):
         line_width = pars[2]
 
-    plt.xlabel(pars[0],fontsize='5')
+#    plt.xlabel(pars[0],fontsize='5')
     if (isSave is not True):
-        plt.ylabel("K-Value\n",fontsize='8')
+        plt.ylabel("K-Value",fontsize='9')
 
 
     cl=color_line[0]
@@ -99,9 +99,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
     plt.xticks(xt,xtickers)
 
+    '''
     if ( pars[6] == 4):
         plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                   wspace=0.3, hspace=0.15)
+                   wspace=0.2, hspace=0.15)
+    '''
 
 
     axes.tick_params(axis='x', tickdir='in', labelsize=7)
@@ -112,7 +114,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
         ax = plt.gca()
         #ax.update_datalim(corners)
         plt.savefig(fig_file+ ".png", dpi=200,  bbox_inches='tight')
-        plt.savefig(fig_file + ".pdf", format='pdf', dpi=400, bbox_inches='tight')
+        plt.savefig(fig_file + ".pdf", format='pdf', dpi=600, bbox_inches='tight')
         plt.close('all')
 '''
     if (isSave==True):
@@ -146,7 +148,8 @@ logger.addHandler(ch)
 #dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\Multi-Classification\\Prediction_Kappa_Value\\Fig%s\\%s_Prediction_Percentage_Error_%s_%s\\%s.txt"
 dir_data = "D:\\py\\data\\initialreaction\\results\\201911\\Result_Updata_1.5Hour\\Prediction_Kappa_Value\\Fig%s\\%s_Prediction_Kappa_5_400\\%s.txt"
 
-fig_data = "D:\\py\\data\\initialreaction\\figs\\kappa" #e.g.Weibo_200_Kappa
+fig_data = "D:\\py\\data\\initialreaction\\figs\\fig3-1" #e.g.Weibo_200_Kappa
+#fig_data = "D:\\py\\data\\initialreaction\\figs\\kappa" #e.g.Weibo_200_Kappa
 #weibo_axis_motif
 logx = False
 logy = False

@@ -61,8 +61,13 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
         xlegend = ['30m','60m','90m']
         plt.legend(xlegend,
-                       loc='upper left',
-                       fontsize=7,ncol=3,bbox_to_anchor=(0.12, 1.15))
+                       loc='upper right',
+                       fontsize=7,ncol=1, frameon=False)
+
+
+        #plt.legend(xlegend,
+        #   loc='upper left',
+        #   fontsize=7, ncol=3, bbox_to_anchor=(0.12, 1.15))
 #        plt.yticks([0.7,0.8,0.9,1])
         plt.yticks([0.75,0.85,0.95])
 
@@ -93,16 +98,16 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
     logger.info(pars[6])
     if(pars[6]==0):
-        plt.text(-0.5,0.97,'C' + pos[2],fontsize=10)
+        plt.text(-0.5,0.97,'B' + pos[2],fontsize=10)
     else:
-        plt.text(-0.6,0.985,'C' + pos[2],fontsize=10)
+        plt.text(-0.6,0.985,'B' + pos[2],fontsize=10)
 
 
     if(isSave==True):
         ax = plt.gca()
         #ax.update_datalim(corners)
         plt.savefig(fig_file + ".png", dpi=200, bbox_inches='tight')
-        plt.savefig(fig_file + ".pdf", format='pdf', dpi=400, bbox_inches='tight')
+        plt.savefig(fig_file + ".pdf", format='pdf', dpi=600, bbox_inches='tight')
 #        plt.savefig(fig_file, dpi=1200, bbox_inches='tight')
         plt.close('all')
 
