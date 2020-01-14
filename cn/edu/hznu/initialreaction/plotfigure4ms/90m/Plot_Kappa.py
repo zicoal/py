@@ -25,11 +25,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     plt.tick_params(labelsize=5)
 
     if(pars[6]==0):
-        plt.text(-1.1,1.04,'A' + pos[2],fontsize=10)
+        plt.text(-0.6,1.04,'A' + pos[2],fontsize=10)
         yt=[ 0.65, 0.75, 0.85, 0.95, 1]
         plt.yticks(yt)
     else:
-        plt.text(-0.9,1.022,'A' + pos[2],fontsize=10)
+        plt.text(-0.5,1.022,'A' + pos[2],fontsize=10)
         yt=[0.80, 0.85, 0.90, 0.95, 1]
         plt.yticks(yt)
 
