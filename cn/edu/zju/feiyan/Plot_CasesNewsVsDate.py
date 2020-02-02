@@ -64,7 +64,6 @@ fig = plt.figure()
 
 ax1 = fig.add_subplot(111)
 ax1.set_ylabel('累计确诊病例')
-ax1.set_title("全国确诊病例与舆情情况对比图(截止至1月27日)")
 legends="累计确诊病例"
 lns1=ax1.plot(dates, cases_cul,'r',label=legends)
 #plt.legend(legends,loc='upper left',
@@ -84,10 +83,10 @@ plt.fill_between([10,20], 0, 4000, facecolor=time_colors[1], alpha=0.5, transfor
 plt.fill_between([20,len(labels)], 0, 4000, facecolor=time_colors[2], alpha=0.5, transform=trans)
 #plt.fill_between([1,10], 0, 4000, facecolor=time_colors[0], alpha=0.5, transform=trans)
 
-num_height=2300
-plt.text(4.5,num_height,"酝酿期")
+num_height=6000
+plt.text(4.5,num_height,"发酵期")
 plt.text(13.5,num_height,"初发期")
-plt.text(21,num_height,"爆发期")
+plt.text(24,num_height,"爆发期")
 
 ax2 = ax1.twinx()  # this is the important function
 ax2.set_ylabel('累计舆情总数')
@@ -105,9 +104,10 @@ ax1.legend(lns,labs,loc='upper left',
                    fontsize=7, ncol=1, frameon=False)
 #fig.legend(loc='upper left',
 #                   fontsize=7, ncol=1, frameon=False,bbox_to_anchor=(1,1), bbox_transform=ax.transAxes)
+plt.text(len(labels)+0.2,7800000,"$ \\times 10^6$")
 plt.gcf().autofmt_xdate()#自动适应刻度线密度，包括x轴，y轴
 
-plt.text(27.2,2700000,"$ \\times 10^6$")
+ax1.set_title("全国确诊病例与舆情发展趋势图(截止至%s月%s日)" %(1,len(labels)))
 
 
 
