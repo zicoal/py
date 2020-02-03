@@ -61,7 +61,7 @@ while line:
                 #print("tmp_sb/tmp_count:%s,%s" % (tmp_sb,tmp_count))
                 beta[tmp_sb].append(float(word))
             elif tmp_count ==1:
-                gamma1.append(float(word))
+                gamma1.append(1-float(word))
 
     line_count += 1
     line = f.readline()
@@ -77,16 +77,17 @@ plt.rcParams['font.sans-serif']=['SimHei']#用来正常显示中文标签
 #fig = plt.figure()
 
 ax = plt.subplot(121)
-ax.set_ylabel("有效传染率($ \\beta_c / \\mu $)")
+ax.set_ylabel("疫情爆发阈值($ \\beta_c / \\mu $)")
 
 tmp_count=0
 for betas in beta:
     ax.plot(gamma1, betas,lw=2,marker=style[tmp_count])
     tmp_count+=1
 
-plt.legend(legends,loc='upper right',
+plt.legend(legends,loc='upper left',
                    fontsize=9, ncol=1, frameon=False)
-plt.xlabel("采取自我保护措施的概率($ \\gamma $)")
+plt.xlabel("采取自我保护措施的概率")
+#plt.xlabel("采取自我保护措施的概率($ \\gamma $)")
 plt.text(-0.35,0.0875,"A",fontsize=15,fontweight="bold")
 
 
@@ -115,7 +116,7 @@ while line:
                 #print("tmp_sb/tmp_count:%s,%s" % (tmp_sb,tmp_count))
                 r0[tmp_sb].append(float(word))
             elif tmp_count ==1:
-                gamma2.append(float(word))
+                gamma2.append(1-float(word))
 
     line_count += 1
     line = f.readline()
@@ -127,15 +128,17 @@ logger.info(r0)
 #sys.exit()
 ax2 = plt.subplot(122)
 ax2.set_ylabel("基本再生数($ R_{0} $)")
-plt.xlabel("采取自我保护措施的概率($ \\gamma $)")
+plt.xlabel("采取自我保护措施的概率")
+#plt.xlabel("采取自我保护措施的概率(1-$ \\gamma $)")
 tmp_count=0
 for r01 in r0:
     ax2.plot(gamma2, r01,lw=2,marker=style[tmp_count])
     tmp_count+=1
 
-plt.legend(legends,loc='upper left',
+plt.legend(legends,loc='upper right',
                    fontsize=9, ncol=1, frameon=False)
-plt.xlabel("采取自我保护措施的概率($ \\gamma $)")
+#plt.xlabel("采取自我保护措施的概率")
+#plt.xlabel("采取自我保护措施的概率")
 plt.text(-0.35,2.98,"B",fontsize=15,fontweight="bold")
 
 '''

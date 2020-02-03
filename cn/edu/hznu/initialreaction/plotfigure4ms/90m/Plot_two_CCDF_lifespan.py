@@ -121,7 +121,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type
     axes.tick_params(axis='x', tickdir='in', labelsize=7)
     axes.tick_params(axis='y', tickdir='out', labelsize=7)
 
-    xx=plt.axis()
+    #xx=plt.axis()
     yy=1
     xxx=0
     trans = mtransforms.blended_transform_factory(axes.transData, axes.transAxes)
