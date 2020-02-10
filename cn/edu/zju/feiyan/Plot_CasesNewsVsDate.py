@@ -29,7 +29,7 @@ fig="d://BaiduNetdiskDownload//肺炎相关数据//figs//CasesNewsVsDates.png"
 fig_cul="d://BaiduNetdiskDownload//肺炎相关数据//figs//CasesNewsVsDates_Culumative.png"
 
 def formatnum(x, pos):
-    return '$%.1f$' % (x/1000000)
+    return '$%.1f$' % (x/10000000)
 #    return '$%.1f$x$10^{6}$' % (x/1000000)
 
 dates=[]
@@ -46,10 +46,9 @@ while line:
         line_count += 1
         line = f.readline()
         continue
-    words = line.replace('\n', '').split('\t')
+    words = line.replace('号', '').replace('\n', '').split('\t')
     logger.info(words)
-    dates.append(int(words[0])+1)
-#    dates.append("1-%s" % (int(words[0])+1))
+    dates.append(int(words[0]))
     news_cul.append(int(words[2]))
     if (len(words[3])==0):
         words[3]=0
@@ -71,7 +70,14 @@ lns1=ax1.plot(dates, cases_cul,'r',label=legends)
 print(dates)
 ax1.tick_params(axis='x',labelsize=6)
 
-labels=["1-%s" % (int(i)) for i in dates]
+labels=[]
+num_count=0
+for i in dates:
+    num_count+=1
+    if(num_count<=31):
+        labels.append("%s-%s" % (1,num_count))
+    else:
+        labels.append("%s-%s" % (2, num_count-31))
 plt.xticks(dates,labels)
 plt.xlim(1,len(labels))
 time_colors=['gray','coral','khaki','skyblue']
@@ -83,19 +89,19 @@ plt.fill_between([10,20], 0, 4000, facecolor=time_colors[1], alpha=0.5, transfor
 plt.fill_between([20,len(labels)], 0, 4000, facecolor=time_colors[2], alpha=0.5, transform=trans)
 #plt.fill_between([1,10], 0, 4000, facecolor=time_colors[0], alpha=0.5, transform=trans)
 
-num_height=6000
+num_height=14000
 plt.text(4.5,num_height,"发酵期")
 plt.text(13.5,num_height,"初发期")
-plt.text(24,num_height,"爆发期")
+plt.text(26,num_height,"爆发期")
 
 ax2 = ax1.twinx()  # this is the important function
-ax2.set_ylabel('累计舆情总数')
+ax2.set_ylabel('累计信息总数')
 
 
 
 formatter = FuncFormatter(formatnum)
 ax2.yaxis.set_major_formatter(formatter)
-legends="累计舆情总数"
+legends="累计信息总数"
 lns2=ax2.plot(dates, news_cul,label=legends)
 
 lns = lns1+lns2
@@ -104,10 +110,10 @@ ax1.legend(lns,labs,loc='upper left',
                    fontsize=7, ncol=1, frameon=False)
 #fig.legend(loc='upper left',
 #                   fontsize=7, ncol=1, frameon=False,bbox_to_anchor=(1,1), bbox_transform=ax.transAxes)
-plt.text(len(labels)+0.2,7800000,"$ \\times 10^6$")
+plt.text(len(labels)+0.2,17000000,"$ \\times 10^7$")
 plt.gcf().autofmt_xdate()#自动适应刻度线密度，包括x轴，y轴
 
-ax1.set_title("全国确诊病例与舆情发展趋势图(截止至%s月%s日)" %(1,len(labels)))
+ax1.set_title("全国新型肺炎确诊病例与舆情发展趋势图(截止至%s月%s日)" %(2,len(labels)-31))
 
 
 
