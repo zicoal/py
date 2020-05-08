@@ -10,7 +10,7 @@ dblp = {}
 exp = []
 data_alpha_dir="D:\\我的坚果云\\ms\\h胡枫的引文网络\\JOI\\r1\\data-alpha\\a=%s.txt"
 data_dist="D:\\我的坚果云\\ms\\h胡枫的引文网络\\JOI\\r1\\data-fig4.txt"
-fig_file="D:\\我的坚果云\\ms\\h胡枫的引文网络\\JOI\\r1\\alpha-mle-dist.png"
+fig_file="D:\\我的坚果云\\ms\\h胡枫的引文网络\\JOI\\r1\\Figure4-1"
 
 def formatnum(x):
     return '%.1f' % x
@@ -84,7 +84,7 @@ for filename in l:
 
 newticks = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
 fig = plt.figure()
-font={'weight':'black','size':15}
+font={'weight':'black','size':12}
 
 print("min alpha(APS):%s,min:%s",min_alpha_aps,min_aps)
 print("min alpha(DBLP):%s,min:%s",min_alpha_dblp,min_dblp)
@@ -92,7 +92,7 @@ print("min alpha(DBLP):%s,min:%s",min_alpha_dblp,min_dblp)
 y1 = y_aps
 y2 = y_dblp
 
-ax2 = fig.add_subplot(111)
+ax2 = fig.add_subplot(211)
 ax2.plot(x, y1,'D',c = 'skyblue',markersize=6, alpha=0.6,label='APS')
 ax2.plot(x, y2,'o',c ='limegreen',markersize=6, alpha=0.6,label='DBLP')
 
@@ -126,12 +126,15 @@ ax.spines['top'].set_linewidth(2)
 xy=plt.axis()
 print(xy)
 #plt.vlines(0.75, xy[2], xy[3], colors="pink", linestyles="dashed")
-plt.axvline(x=0.75,color="pink", linestyle="dashed",lw=3)
-plt.axvline(x=0.5,color="lightcoral", linestyle="dashed",lw=3)
+plt.axvline(x=0.75,color="skyblue", linestyle="dashed",lw=3)
+plt.axvline(x=0.5,color="limegreen", linestyle="dashed",lw=3)
+plt.text(0.0,0.028,'(c)',fontsize=15, weight = "bold")
+
 #plt.grid(axis="x",linestyle = '--')
 plt.style.use( 'ggplot')
 #plt.show()
 #plt.savefig("Figure6.eps", dpi=600, format='eps', bbox_inches='tight')
-plt.savefig(fig_file, dpi=200, bbox_inches='tight')
+plt.savefig(fig_file+".png", dpi=200, bbox_inches='tight')
+plt.savefig(fig_file+".eps", dpi=600, format='eps', bbox_inches='tight')
 
 sys.exit()
