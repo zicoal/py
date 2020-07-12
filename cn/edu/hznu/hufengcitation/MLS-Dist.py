@@ -12,6 +12,8 @@ data_alpha_dir="D:\\我的坚果云\\ms\\h胡枫的引文网络\\JOI\\r1\\data-a
 data_dist="D:\\我的坚果云\\ms\\h胡枫的引文网络\\JOI\\r1\\data-fig4.txt"
 fig_file="D:\\我的坚果云\\ms\\h胡枫的引文网络\\JOI\\r1\\Figure4-1"
 
+fig_file_data="D:\\我的坚果云\\ms\\h胡枫的引文网络\\JOI\\r1\\论文数据及图\\fig4_data_all.txt"
+
 def formatnum(x):
     return '%.1f' % x
 

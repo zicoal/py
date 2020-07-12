@@ -1,13 +1,11 @@
 #abadoned
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import math
 import sys
 from matplotlib.ticker import MultipleLocator
 from scipy.optimize import curve_fit
-import matplotlib.pyplot as plt
-
 
 
 def fund(z, a, b):
@@ -15,6 +13,9 @@ def fund(z, a, b):
 
 def fund_exp(z, a, b):
 	return math.exp(a*z)  + b
+
+def fund_eexp(z, a, b):
+	return np.exp(-1*a*(z**a)) + b
 
 x=[]
 aps = []
@@ -49,17 +50,19 @@ ax2 = fig.add_subplot(121)
 #print(type(xdata))
 #print(type(x))
 xdata=np.array(x)
-ydata=np.array(dblp)
+ydata=np.array(aps)
 #y = fund(xdata, 0.75, 0.07)
 ax2.plot(x, aps, 'b-')
-popt, pcov = curve_fit(fund, xdata, ydata)
+popt, pcov = curve_fit(fund_eexp, xdata, ydata)
 # popt数组中，三个值分别是待求参数a,b,c
-y_exp1 = [fund(i, popt[0], popt[1]) for i in x]
+#y_exp1 = [fund(i, popt[0], popt[1]) for i in x]
 y_exp2 = [fund_exp(i, -0.75, 0.04) for i in x]
+y_exp3 = [fund_eexp(i, popt[0], popt[1]) for i in x]
 
-ax2.plot(x, y_exp1, 'r--')
-ax2.plot(x, y_exp2, 'g--')
-print(y_exp2)
+#ax2.plot(x, y_exp1, 'r--')
+ax2.plot(x, y_exp3, 'g--')
+#ax2.plot(x, y_exp2, 'g--')
+#print(y_exp2)
 print("a:%s,b:%s" % (popt[0], popt[1]))
 
 
