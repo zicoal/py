@@ -51,8 +51,9 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
                  color='black', size='12', weight="light")
 
     cl=color_line[0]
+
     if(pars[6]>1):
-        cl= color_line[1]
+        cl= color_line[0]
     if (isSave == True):
         xlegend = ['4','8','12']
         if (pars[6] > 1):
@@ -149,10 +150,13 @@ logx = False
 logy = False
 #Weibo
 num_data_type = 2
+#str_data_type = ["Random"]
+#str_fig_type = ["RN"]
+
 str_data_type = ["Random","Small_World","Scale_Free"]
 str_fig_type = ["RN","SW","SF"]
 
-xlabel_bak='Time'
+xlabel_bak='t'
 ylabel_bak='K-Value'
 
 
@@ -218,7 +222,8 @@ for dt in str_data_type:
                         continue
                     words = line.replace('\n', '').split('\t')
                     if((data_obs==data_observation[num_data_type][2]) and num_data_type <2):
-                        tmp_values_x.append(float(words[0])+1) # 去掉第一个数字 1h-1h
+                        tmp_values_x.append(float(words[0]))
+#                        tmp_values_x.append(float(words[0])+1) # 去掉第一个数字 1h-1h
                     else:
                         tmp_values_x.append(float(words[0]))
                     tmp_values_y.append(float(words[1]))
