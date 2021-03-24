@@ -7,6 +7,7 @@ import time
 import string
 from matplotlib import pyplot as plt
 import numpy as np
+from matplotlib.pyplot import MultipleLocator
 #from cn.edu.hznu.tools import plotfig as pf
 
 
@@ -42,7 +43,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
             ylabel = pars[1]
             ylabel_axis = pars[8]
             if (pars[6] == 1 or pars[6] == 4):
-                ylabel_axis[0] =-3
+                ylabel_axis[0] =-2.8
             if (pars[6] == 3 ):
                 ylabel_axis[0] =-2.8
             if (pars[6] == 2 ):
@@ -72,6 +73,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
     #plt.yticks([0.5,0.6,0.7,0.8,0.9, 1])
     #plt.yticks([1])
+    yy=y
     if(pars[11] ==2): # the 3d subgraph with legend (SW, RN, SF)
         if (pars[5] is not None):
             legend=pars[5]
@@ -83,10 +85,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 #            if (pars[6] >0 ):
 #                x = 5.5
 #            if (pars[6]==1):
-#                y=0.96
-            if( pars[6] == 2):
-                y = 0.76
+#                y=0.96s
+            if(pars[6] == 2 and max(yy[2])<0.82): #SF net
+                y = max(yy[2])
                 x = 5.6
+#                logger.info(max(yy[2]))
             axes.text(x,y,legend, \
                       size='12', color = 'black', weight = "light")
 
@@ -116,6 +119,8 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
     axes.tick_params(axis='x', tickdir='in', labelsize=7)
     axes.tick_params(axis='y', tickdir='out', labelsize=7)
 
+    y_major_locator = MultipleLocator(0.1)
+    axes.yaxis.set_major_locator(y_major_locator)
 
     if(isSave==True):
         ax = plt.gca()
@@ -142,7 +147,7 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 #logger.addHandler(fh)Hs_Hr
 
-dir_data = "D:\\py\\data\\initialreaction\\results\\Simulation_Result20210316\\Fig_Kappa_Coefficient_Value_Simulation\\Fig%s\\%s_Prediction_Kappa_%s_%s\\%s.txt"
+dir_data = "D:\\py\\data\\initialreaction\\results\\Simulation_Result20210316\\Fig_Kappa_Coefficient_Value_Simulation_Update\\Fig%s\\%s_Prediction_Kappa_%s_%s\\%s.txt"
 
 fig_data = "D:\\py\\data\\initialreaction\\figs\\figS12\\%s_%s_Kappa" #e.g.Weibo_200_Kappa
 #weibo_axis_motif
@@ -166,7 +171,7 @@ data_observation=[  ['4','8','12'],\
                   ]
 data_motif=['5','6','7','8','9','10']
 data_legend=['(a)','(b)','(c)','(d)','(e)','(f)']
-data_size=['100']
+data_size=['200','400','600','800','1000']
 
 #fig_names = ['%s_vs_1hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_2hour_cascade_%s' % (str_feature,str_data_type),'%s_vs_1day_cascade_%s' % (str_feature,str_data_type), '%s_vs_2day_cascade_%s' % (str_feature,str_data_type), '%s_vs_10day_cascade_%s' % (str_feature,str_data_type),'%s_vs_final_cascade_%s' % (str_feature,str_data_type)]
 color_index=0
@@ -194,7 +199,7 @@ for i in range(len(data_size)):
 #sys.exit()
 for dt in str_data_type:
     for num in range(len(data_size)):
-        logger.info("Plotting %s : %s" % (dt,num+1))
+        logger.info("Plotting %s: %s" % (dt,num+1))
 
         tmp_num_motif = 0
         for motif in data_motif:
@@ -205,9 +210,10 @@ for dt in str_data_type:
             isSave = False
             for data_obs in data_observation[num_data_type]:
 #                logger.info(num_data_type+1)
-#                tmp_src_file = dir_data % (2*num_data_type+num+1,dt, motif,data_size[num],data_obs)
-                tmp_src_file = dir_data % (num_data_type+1,dt, motif,data_size[num],data_obs)
-                #logger.info('plotting Kappa : %s ' % tmp_src_file)
+                tmp_src_file = dir_data % ((num*3)+num_data_type+1,dt, motif,data_size[num],data_obs)
+                #tmp_src_file = dir_data % (2 * num_data_type + num + 1, dt, motif, data_size[num], data_obs)
+#                tmp_src_file = dir_data % (num_data_type+1,dt, motif,data_size[num],data_obs)
+                logger.info('plotting Kappa : %s ' % tmp_src_file)
                 f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
                 line =f.readline()
                 tmp_values_x=[]
