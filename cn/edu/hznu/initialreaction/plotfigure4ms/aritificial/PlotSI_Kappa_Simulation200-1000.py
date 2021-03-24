@@ -86,8 +86,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 #                x = 5.5
 #            if (pars[6]==1):
 #                y=0.96s
-            if(pars[6] == 2 and max(yy[2])<0.82): #SF net
-                y = max(yy[2])
+            if(pars[6] == 2): #SF net
+                maxy=max(yy[2])
+                miny = min(yy[0])
+                if((maxy-miny)>0.3):
+                    y = max(yy[2])-0.04
                 x = 5.6
 #                logger.info(max(yy[2]))
             axes.text(x,y,legend, \
