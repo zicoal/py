@@ -154,7 +154,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type
         ax = plt.gca()
 #        plt.tight_layout()
         plt.savefig(fig_file+".png", dpi=200,  bbox_inches='tight')
-        plt.savefig(fig_file+".pdf", format='pdf', dpi=100, bbox_inches='tight')
+        plt.savefig(fig_file+".pdf", format='pdf', dpi=200, bbox_inches='tight')
 #        plt.savefig(fig_file, dpi=1200,  bbox_inches='tight')
         plt.close('all')
 
@@ -173,7 +173,7 @@ logger.addHandler(ch)
 #logger.addHandler(fh)Hs_Hr
 
 dir_data = "D:\\py\\data\\initialreaction\\results\\Simulation_Result20210316\Fig_Lifespan_Simulation\\Lifespan_Distribution_%s.txt"
-fig_data = "D:\\py\\data\\initialreaction\\figs\\FigS12\\lifespan_ccdf_aritifical"
+fig_data = "D:\\py\\data\\initialreaction\\figs\\FigS12\\lifespan_ccdf_aritificial"
 #weibo_axis_motif
 logx = True
 logy = True
