@@ -33,7 +33,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y,error, subplot_po
 
     if (isSave==True):
         if (pars[0] is not None):
-            xlabel = pars[0]
+            xlabel = pars[0] % (data_size[pars[13]])
             xlabel_axis = pars[7]
             plt.text(xlabel_axis[0], xlabel_axis[1],  xlabel,transform=axes.transAxes,
                  color='black', size='12', weight="light")
@@ -164,7 +164,7 @@ num_data_type = 2
 str_data_type = ["Random","Small_World","Scale_Free"]
 str_fig_type = ["RN","SW","SF"]
 
-xlabel_bak='t'
+xlabel_bak='t ($\delta=$%s)'
 ylabel_bak='K-Value'
 
 
@@ -180,7 +180,7 @@ data_size=['200','400','600','800','1000']
 color_index=0
 colors = [('red','pink'),('blue','lightblue'),('green','lightgreen'),('black','gray')]
 
-xx=-0.8
+xx=-1.0
 xy=-0.25
 yx=-2.8
 #yx=-0.20
@@ -260,7 +260,7 @@ for dt in str_data_type:
 #               ylabel = ylabel_bak
                xlabel = xlabel_bak
                ylabel = ylabel_bak
-            pars=[xlabel,ylabel,1,colors[0],fig_file,legend,num_data_type,x_text_axis,y_text_axis,y_num_show,x_num_show,tmp_num_motif,data_legend[tmp_num_motif]]
+            pars=[xlabel,ylabel,1,colors[0],fig_file,legend,num_data_type,x_text_axis,y_text_axis,y_num_show,x_num_show,tmp_num_motif,data_legend[tmp_num_motif],num-1]
             shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x,y,errors, subplot,pars=pars,logx=logx,logy=logy,isSave=isSave)
             f.close()
            # os._exit(0)
