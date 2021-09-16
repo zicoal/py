@@ -7,6 +7,7 @@ import time
 import string
 from matplotlib import pyplot as plt
 import numpy as np
+import sys
 #from cn.edu.hznu.tools import plotfig as pf
 
 
@@ -190,3 +191,4 @@ for d in data_dir:
         f.close()
     num_data_dir += 1
 
+sys.exit(0)

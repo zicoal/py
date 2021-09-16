@@ -182,3 +182,4 @@ for d in data_dir:
         f.close()
     num_data_dir += 1
 
+exit(0)

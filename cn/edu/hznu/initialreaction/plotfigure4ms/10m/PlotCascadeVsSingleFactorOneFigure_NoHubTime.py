@@ -66,9 +66,11 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
     if (pars[1] is not None):
         ylabel = pars[1]
         axes.set_ylabel(ylabel, size='10')
+     #   axes.set_ylabel(ylabel, size='10', fontweight='bold')
     if (pars[0] is not None):
         xlabel = pars[0]
-        axes.set_xlabel(xlabel, size='7')
+        axes.set_xlabel(xlabel, size='9')
+#        axes.set_xlabel(xlabel, size='9', fontweight ='bold')
 
     plt.tick_params(labelsize=7)
     axes.plot(category, values_up, colors[1])
@@ -93,7 +95,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot(category, values_mean, errors, su
     if(isSave==True):
 #        plt.savefig(fig_file, dpi=400, bbox_inches='tight')
         plt.savefig(fig_file+".png", dpi=200,  bbox_inches='tight')
-        plt.savefig(fig_file+".pdf", format='pdf', dpi=400, bbox_inches='tight')
+        plt.savefig(fig_file+".pdf", format='pdf', dpi=600, bbox_inches='tight')
         plt.cla()
         plt.clf()
         plt.close()
@@ -120,6 +122,7 @@ for d in data_type:
 #        continue
     for file in files:
         tmp_src_file = (dir_data % d) + file +".txt"
+        logger.info(tmp_src_file)
         f = open(tmp_src_file, encoding='UTF-8', mode='r', errors='ignore')
         line =f.readline()
         tmp_values_x=[]

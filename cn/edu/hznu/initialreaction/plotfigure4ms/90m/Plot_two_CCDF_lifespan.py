@@ -20,8 +20,11 @@ indicators=['D','E']
 #time_positions=[0.166666667, 0.5,1,2,12,24,168,240]
 #time_colors=['gray','skyblue','pink','lightgreen','lightblue','lightblue','lightblue','lightblue']
 
-time_labels=['30m','60m','90m','10d']
+time_labels=['10m','30m','60m','10d']
 time_positions=[0.166666667, 0.5,1,240]
+#time_labels=['30m','60m','90m','10d']
+#time_positions=[0.5, 1,1.5,240]
+#time_positions=[0.166666667, 0.5,1,240]
 time_colors=['gray','coral','khaki','skyblue']
 
 def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type, pars=[], logx=False,logy=False, n=1, isSave=False):
@@ -42,19 +45,22 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type
     if (pars[2] is not None):
         line_width = pars[2]
 
+    '''print ylabel
     if (isSave==True):
         if (pars[1] is not None):
             ylabel = pars[1]
             ylabel_axis = pars[8]
             plt.text(ylabel_axis[0], ylabel_axis[1],  ylabel, rotation=90, transform=axes.transAxes,
                  color='black', size='10', weight="light")
+    '''
 
     if (pars[0] is not None):
         xlabel = pars[0]
         xlabel_axis = pars[7]
         plt.text(xlabel_axis[0], xlabel_axis[1], xlabel,  transform=axes.transAxes,
                  color='black', size='10', weight="light")
-    plt.text(0.0004, 2.05, indicators[type], fontsize=15)
+ #   plot D E indicators
+ #   plt.text(0.0004, 2.05, indicators[type], fontsize=15)
 
 
 
@@ -108,7 +114,7 @@ def shaded_Error_Bar_Mean_Error_Params_SubPlot_OneCaption(x, y, subplot_pos,type
     axes.plot(x,y, linewidth=2, linestyle="-", color=ecolor)
 
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0.28, hspace=0.12)
+                        wspace=0.28, hspace=0.20)
 #    plt.subplots_adjust(left=0.2, bottom=0.2, right=0.8, top=0.8,hspace = 0.1, wspace = 0.1)
 
 
@@ -186,6 +192,11 @@ yx=-5.8
 yy=2.5
 '''
 
+#xx=0.38
+#xy=-0.16
+#yx=-1.51
+#yy=0.55
+
 xx=0.38
 xy=-0.16
 yx=-1.51
@@ -233,7 +244,8 @@ for data_obs in data_observation:
     ylabel = None
     x_num_show=True
     y_num_show=True
-    subplot="%s,%s,%s" % (len(data_observation),2, num_data_dir+1)
+    subplot="%s,%s,%s" % (len(data_observation), 2, 2*num_data_dir+1)
+#    subplot="%s,%s,%s" % (len(data_observation),2, num_data_dir+1)
     fig_file=""
     #logger.info(subplot)
     if (num_data_dir==len(data_observation)-1):
