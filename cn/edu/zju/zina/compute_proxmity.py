@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import math
+import dijkstra_distance
 
 import networkx as nx
 import numpy as np
@@ -8,9 +9,10 @@ from random import *
 import time
 
 f1 = 'D:\\py\\data\\zinan\\Data_for_Digital_Proximity.xlsx'
-f_rca= 'D:\\py\\data\\zinan\\rca_number.xlsx'
 f_weights = 'D:\\py\\data\\zinan\\weights_number_max.xlsx'
+f_primixity = "D:\\py\\data\\zinan\\primixity_max.xls"
 
+print("reading data:")
 df = pd.read_excel(f1)
 df = df.loc[::, ['证券简称', 'year', '行业代码1', '行业代码2', '公司年总收入', '公司年产品收入'
                     , '收入占比']]
@@ -30,68 +32,68 @@ year = sorted(list(set(year)))
 current_year =2021
 
 df_one_year=[]
-company_code_part = pd.DataFrame(columns=['证券简称', 'year', '行业代码', 'RCA'])
-industry_weights = pd.DataFrame(columns=['行业代码1', '行业代码2', 'year', 'weights'])
+industry_weights = pd.read_excel(f_weights)
+company_promixity = pd.DataFrame(columns=['证券简称', 'year', 'proximity'])
 
 for y in year:
-    current_year = y
+    #current_year = y
+    print("current running year:", y)
     if (y==current_year):
+        industry_weights_one_year = industry_weights.loc[industry_weights['year'] == current_year]
         df_one_year = df.loc[df['year'] == current_year]
         data_one_year = df_one_year.values.tolist()
-        code = [data_one_year[i][2] + str(data_one_year[i][3]) for i in range(len(data_one_year))]
+        code= [data_one_year[i][2] + str(data_one_year[i][3]) for i in range(len(data_one_year))]
+        codes = sorted(list(set(code))) #去重
         df_one_year.insert(loc=len(df_one_year.columns), column='行业代码', value=code)
         companies = [data_one_year[i][0] for i in range(len(df_one_year))]
         companies = sorted(list(set(companies))) #去重
-        codes = sorted(list(set(code))) #去重
-        code_part={}
-        sum_all= df_one_year['公司年产品收入'].sum()
-        code_company = {}
-        for c in code:
-            code_part[c] =  df_one_year.loc[(df_one_year['行业代码'] == c)]['公司年产品收入'].sum()/sum_all
-            code_company[c]=[]
-            #print(c,code_company.get(c))
-
-        #print(data_one_year)
-
-        #计算RCA
+        company_codes = {}
+        #construct company_codes in certain year
         for i in range(len(data_one_year)):
-            #company_code_part[data_one_year[i][0]]=
-            #cols = df_one_year.shape[1] #列数
-           # print(cols)
-            code1 = data_one_year[i][2] + str(data_one_year[i][3])
-            company_part = data_one_year[i][6] #产品年收入
-            #binary computing RCA
-            rca = 1 if company_part/(code_part[code1]*100) >=1 else 0
-            company_code_part.loc[i] = [data_one_year[i][0],current_year,code1,rca]
+            c = data_one_year[i][2] + str(data_one_year[i][3])
+            company = data_one_year[i][0]
+            if (company_codes.get(company) == None):
+                 company_codes[company] =  [c]
+            else:
+                cc = company_codes[company]
+                cc.append(c)
+                company_codes[company] = cc
+        # print(company_codes)
 
-            ####此处暂停
-            if rca == 1:
-                list_companies=code_company.get(code1)
-                list_companies.append(data_one_year[i][0])
-                code_company[code1]=list_companies
-        k = 0
-        #计算phi
-        for i in range(len(codes)-1):
-            for j in range(i+1, len(codes)):
-                set_companies = set(code_company[codes[i]]) & set(code_company[codes[j]])
-                if (len(set_companies)>0):
-                    phi_ij = len(set_companies) / len(code_company[codes[j]])
-                    phi_ji = len(set_companies) / len(code_company[codes[i]])
-                    phi_max = phi_ij if phi_ij > phi_ji else phi_ji
-                    industry_weights.loc[k] = [codes[i], codes[j], current_year, phi_max]
-                    k = k+1
+        # construct code_code matrix by dict in certain year
+        graph = {}
+        code_digital_proxmity = {}
+        for c in codes:
+            graph[c] = {}
+        for _, row in industry_weights.iterrows():
+            code1 = row['行业代码1']
+            code2 = row['行业代码2']
+            weight = 1/math.log(row['weights'])
 
-        #for c in code:
-        #    d = company_code_part.loc[(company_code_part['行业代码'] == 'J')]
-        #    for c
-industry_weights.to_excel(f_weights,index=False)
-company_code_part.to_excel(f_rca,index=False)
-#print(code_company)
-        #    print(c+":"+str(code_part[c]))
-        #print(sum(code_part.values()))
-        #for company_industry in data_one_year:
-#print(company_code_part.loc[0:10])
-#print(df_one_year)
+            c1=graph.get(code1)
+            c1[code2] = weight
+            graph[code1]=c1
+
+            c2 = graph.get(code2)
+            c2[code1] = weight
+            graph[code2] = c2
+        # print(graph)
+
+        #这里暂停
+        #caluclating distance....
+        print("\tcaluclating distance")
+        for c in codes:
+            parent_dict, distance_dict = dijkstra_distance(graph, c)
+
+        #caluclating proxmity....
+        print("\tcaluclating proxmity")
+
+
+
+
+
+#company_promixity.to_excel(f_primixity,index=False)
+
 
 #df_one_year2= df_one_year.loc[(df_one_year['行业代码1'] == 'J') & (df_one_year['行业代码2'] == 66)]
 #print(df_one_year2)
