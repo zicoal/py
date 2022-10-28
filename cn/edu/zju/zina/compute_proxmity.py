@@ -10,9 +10,9 @@ import time
 
 f1 = 'D:\\py\\data\\zinan\\Data_for_Digital_Proximity.xlsx'
 f_weights = 'D:\\py\\data\\zinan\\weights_number_max.xlsx'
-f_primixity = "D:\\py\\data\\zinan\\primixity_max.xls"
+f_primixity = "D:\\py\\data\\zinan\\primixity_max.xlsx"
 
-print("reading data:")
+print("loading data:")
 df = pd.read_excel(f1)
 df = df.loc[::, ['证券简称', 'year', '行业代码1', '行业代码2', '公司年总收入', '公司年产品收入'
                     , '收入占比']]
@@ -36,7 +36,7 @@ industry_weights = pd.read_excel(f_weights)
 company_promixity = pd.DataFrame(columns=['证券简称', 'year', 'proximity'])
 
 for y in year:
-    #current_year = y
+    current_year = y
     print("current running year:", y)
     if (y==current_year):
         industry_weights_one_year = industry_weights.loc[industry_weights['year'] == current_year]
@@ -62,13 +62,14 @@ for y in year:
 
         # construct code_code matrix by dict in certain year
         graph = {}
-        code_digital_proxmity = {}
         for c in codes:
             graph[c] = {}
+        #direct iterates for dataframe
         for _, row in industry_weights.iterrows():
             code1 = row['行业代码1']
             code2 = row['行业代码2']
-            weight = 1/math.log(row['weights'])
+            print(code1,code2,row['weights'])
+            weight =math.log(1/row['weights'])
 
             c1=graph.get(code1)
             c1[code2] = weight
@@ -79,74 +80,49 @@ for y in year:
             graph[code2] = c2
         # print(graph)
 
-        #这里暂停
-        #caluclating distance....
+
+        #caluclating code-code distance....
         print("\tcaluclating distance")
+        code_digital_proxmity = {}
         for c in codes:
-            parent_dict, distance_dict = dijkstra_distance(graph, c)
+            parent_dict, distance_dict = dijkstra_distance.dijkstra(graph, c)
+ #           print(graph)
+            it_dict={}
+            max_dist=0
+            for key,value in distance_dict.items():
+                if("I" in key and value != float("inf")):
+                    it_dict[key] = value
+                   # print(c, key,value)
+            #print(it_dict)
+            #exit(0)
+            if(len(it_dict)>0):
+                max_distance_code = max(it_dict, key=lambda x: it_dict[x])
+                max_dist = it_dict[max_distance_code]
+            else:
+                max_dist = float("inf")
+            code_digital_proxmity[c]= 1/(1+max_dist)
 
         #caluclating proxmity....
         print("\tcaluclating proxmity")
+        k = 0
+        for k in range(len(companies)):
+            proximity = 0
+            for code in company_codes.get(companies[k]):
+                proximity = proximity + code_digital_proxmity[code]
+            company_promixity.loc[len(company_promixity)] = \
+                [companies[k], current_year, proximity / len(company_codes.get(companies[k]))]
+            k = k+ 1
+
+        #exit(0)
 
 
 
+  #这里暂停
 
-
-#company_promixity.to_excel(f_primixity,index=False)
+  #caluclating proxmity....
+print("writing results to file..")
+company_promixity.to_excel(f_primixity,index=False)
 
 
 #df_one_year2= df_one_year.loc[(df_one_year['行业代码1'] == 'J') & (df_one_year['行业代码2'] == 66)]
 #print(df_one_year2)
-'''
-nodes = {}
-
-for i in range(len(data)):
-    #current_year = int(data[i][1])
-    # 暂时只计算最后一年的
-    for y in range(data[i][1]):
-        if (current_year == year[len(year) - 1]):
-            info = {}
-            info['year'] = int(data[i][1])
-            info['code'] = data[i][2] + str(data[i][3])
-            info['income_total'] = data[i][4]
-            info['income_dg_total'] = data[i][5]
-            info['income_dg_prop'] = data[i][5] / data[i][4]
-            info['income_dg_prop_1'] = data[i][6] / data[i][4]
-            info['income_dg_prop_2'] = data[i][7] / data[i][4]
-            info['income_dg_prop_3'] = data[i][8] / data[i][4]
-            info['income_dg_prop_4'] = data[i][9] / data[i][4]
-            info['income_dg_prop_5'] = data[i][10] / data[i][4]
-            nodes[data[i][0]] = info
-
-edge_list = []
-for key in nodes.keys():
-    info = nodes.get(key)
-    if (info['income_dg_prop_1'] > 0):
-        edge_list.append((info['code'], 'dg1'))
-    elif (info['income_dg_prop_2'] > 0):
-        edge_list.append((info['code'], 'dg2'))
-    elif (info['income_dg_prop_3'] > 0):
-        edge_list.append((info['code'], 'dg3'))
-    elif (info['income_dg_prop_4'] > 0):
-        edge_list.append((info['code'], 'dg4'))
-    elif (info['income_dg_prop_5'] > 0):
-        edge_list.append((info['code'], 'dg5'))
-
-g = nx.MultiGraph()
-g.add_nodes_from(['dg1', 'dg2', 'dg3', 'dg4', 'dg5'])
-g.add_edges_from(edge_list)
-pos = nx.shell_layout(g)
-# pos = nx.spring_layout(g)
-nx.draw(g, pos, with_labels=True, node_size=200, width=0.6)
-plt.show()
-
-# g = nx.Graph()
-# plt.figure(figsize=(20,5))
-
-# 也可以
-# list = [('a','b',5.0),('b','c',3.0),('a','c',1.0)]
-# g.add_weight_edges_from(list)
-
-# nx.draw(g)
-# plt.show()
-'''
