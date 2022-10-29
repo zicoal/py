@@ -6,30 +6,43 @@ import numpy as np
 import pandas as pd
 from random import *
 import time
+import logging
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+# 定义handler的输出格式
+#logger to console
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s")
+#fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+logger.addHandler(ch)
 
 f1 = 'D:\\py\\data\\zinan\\Data_for_Digital_Proximity.xlsx'
 f_rca= 'D:\\py\\data\\zinan\\rca_number.xlsx'
 f_weights = 'D:\\py\\data\\zinan\\weights_number_max.xlsx'
 
-print("loading data:")
-
+logger.info("loading data:")
+time_start=time.time()
 df = pd.read_excel(f1)
 df = df.loc[::, ['证券简称', 'year', '行业代码1', '行业代码2', '公司年总收入', '公司年产品收入'
                     , '收入占比']]
-# print(df['year'].value_counts())
+# logger.info(df['year'].value_counts())
 data = df.values.tolist()
-# print(datas
+# logger.info(datas
 #name = [data[i][0] for i in range(len(data))]
 #name = list(set(name))
-# print(name)
+# logger.info(name)
 year = [int(data[i][1]) for i in range(len(data))]
 year = sorted(list(set(year)))
 #code = [data[i][3] for i in range(len(data))]
 
 
-# print(year)
+# logger.info(year)
 
-current_year =2019
+current_year =2012
 
 df_one_year=[]
 company_code_part = pd.DataFrame(columns=['证券简称', 'year', '行业代码', 'RCA'])
@@ -37,7 +50,8 @@ industry_weights = pd.DataFrame(columns=['行业代码1', '行业代码2', 'year
 
 for y in year:
     current_year = y
-    print("current running year:", y)
+    time_end = time.time()
+    logger.info('current running year: %d, time past:%d s', y, time_end - time_start)
     if (y==current_year):
         df_one_year = df.loc[df['year'] == y]
         data_one_year = df_one_year.values.tolist()
@@ -52,15 +66,15 @@ for y in year:
         for c in code:
             code_part[c] =  df_one_year.loc[(df_one_year['行业代码'] == c)]['公司年产品收入'].sum()/sum_all
             code_company[c]=[]
-            #print(c,code_company.get(c))
+            #logger.info(c,code_company.get(c))
 
-        #print(data_one_year)
+        #logger.info(data_one_year)
 
         #计算RCA
         for i in range(len(data_one_year)):
             #company_code_part[data_one_year[i][0]]=
             #cols = df_one_year.shape[1] #列数
-           # print(cols)
+           # logger.info(cols)
             code1 = data_one_year[i][2] + str(data_one_year[i][3])
             company_part = data_one_year[i][6] #产品年收入
             #binary computing RCA
@@ -87,18 +101,20 @@ for y in year:
         #for c in code:
         #    d = company_code_part.loc[(company_code_part['行业代码'] == 'J')]
         #    for c
-print("writing results to file..")
+logger.info("writing results to file..")
 industry_weights.to_excel(f_weights,index=False)
 company_code_part.to_excel(f_rca,index=False)
-#print(code_company)
-        #    print(c+":"+str(code_part[c]))
-        #print(sum(code_part.values()))
+time_end = time.time()
+logger.info('The end,cost time:%d s', time_end - time_start)
+#logger.info(code_company)
+        #    logger.info(c+":"+str(code_part[c]))
+        #logger.info(sum(code_part.values()))
         #for company_industry in data_one_year:
-#print(company_code_part.loc[0:10])
-#print(df_one_year)
+#logger.info(company_code_part.loc[0:10])
+#logger.info(df_one_year)
 
 #df_one_year2= df_one_year.loc[(df_one_year['行业代码1'] == 'J') & (df_one_year['行业代码2'] == 66)]
-#print(df_one_year2)
+#logger.info(df_one_year2)
 '''
 
 '''
