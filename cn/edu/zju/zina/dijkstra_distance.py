@@ -44,7 +44,7 @@ if __name__ == '__main__':
     }
 #    parent_dict, distance_dict = dijkstra(graph_dict, "D")
 #    print(parent_dict)
-
+#    print(len(graph_dict['C']))
     parent_dict, distance_dict = dijkstra(graph_dict, "D")
     print(parent_dict)
     print(distance_dict)

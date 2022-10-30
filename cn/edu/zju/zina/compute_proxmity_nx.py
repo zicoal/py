@@ -26,7 +26,7 @@ f_weights = 'D:\\py\\data\\zinan\\weights_number_max.xlsx'
 f_primixity = "D:\\py\\data\\zinan\\primixity_max.xlsx"
 f_primixity_product = "D:\\py\\data\\zinan\\primixity_by_product_number_max.xlsx"
 
-logger.info("loading data....")
+logger.info("loading data...")
 time_start=time.time()
 
 df = pd.read_excel(f1)
@@ -44,6 +44,7 @@ year = sorted(list(set(year)))
 
 
 # logger.info(year)
+it_codes = ['I65','I101','I102','I103','I104','I105']
 
 current_year =2011
 
@@ -54,7 +55,6 @@ company_promixity_product = pd.DataFrame(columns=['证券简称', 'year','code',
 
 for y in year:
     current_year = y
-#    print("current running year:", y)
     time_end = time.time()
     logger.info('current running year: %d, time past:%d s', y, time_end - time_start)
     if (y==current_year):
@@ -62,7 +62,21 @@ for y in year:
         df_one_year = df.loc[df['year'] == current_year]
         data_one_year = df_one_year.values.tolist()
         code= [data_one_year[i][2] + str(data_one_year[i][3]) for i in range(len(data_one_year))]
+        '''@test special error
+        code = []
+        for i in range(len(data_one_year)):
+            d = data_one_year[i][2] + str(data_one_year[i][3])
+            code.append(d)
+            if(d=="M75"):
+                print(data_one_year[i])
+                exit(0)
+        if("M75" in codes):
+            print(code)
+            print("found M75 node")
+        '''
+
         codes = sorted(list(set(code))) #去重
+
         df_one_year.insert(loc=len(df_one_year.columns), column='行业代码', value=code)
         companies = [data_one_year[i][0] for i in range(len(df_one_year))]
         companies = sorted(list(set(companies))) #去重
@@ -86,52 +100,32 @@ for y in year:
        # print(company_codes)
 
         # construct code_code matrix by dict in certain year
-        graph = {}
-        for c in codes:
-            graph[c] = {}
+        graph = nx.Graph()
+
         #direct iterates for dataframe
-        #@Todo check the graph is connected or not
         for _, row in industry_weights_one_year.iterrows():
             code1 = row['行业代码1']
             code2 = row['行业代码2']
 #            logger.info("%s, %s, %lf"code1,code2,row['weights'])
-            weight =math.log(1/row['weights'])
+            weights =  float("inf") if row['weights'] ==0 else math.log(1/row['weights'])
+            graph.add_edge(code1, code2, weight=weights)
 
-            c1=graph.get(code1)
-            c1[code2] = weight
-            graph[code1]=c1
-
-            c2 = graph.get(code2)
-            c2[code1] = weight
-            graph[code2] = c2
+        #print(nx.is_connected(graph))
         # logger.info(graph)
 
 
         #caluclating code-code distance....
         logger.info("\tcaluclating distance")
         code_digital_proxmity = {}
+
         for c in codes:
-            parent_dict, distance_dict = dijkstra_distance.dijkstra(graph, c)
- #           logger.info(graph)
-            it_dict={}
-            max_dist=0
-            for key,value in distance_dict.items():
-                if("I" in key and value != float("inf")):
-                    it_dict[key] = value
-                   # logger.info(c, key,value)
-            #logger.info(it_dict)
-            #exit(0)
-            if(len(it_dict)>0):
-                max_distance_code = max(it_dict, key=lambda x: it_dict[x])
-                max_dist = it_dict[max_distance_code]
-            else:
-                max_dist = float("inf")
+            max_dist = 0
+            for itc in it_codes:
+                if itc in codes:
+                    dist = nx.dijkstra_path_length(graph,source=c,target=itc)
+                    if dist > max_dist:
+                        max_dist = dist
             code_digital_proxmity[c]= 1/(1+max_dist)
-            print(y,c,graph[c])
-            print(parent_dict)
-            print(distance_dict)
-            if(c=='A2'):
-                exit(0)
 
         #caluclating proxmity....
         logger.info("\tcaluclating proxmity")
@@ -142,10 +136,10 @@ for y in year:
             for code, sales in company_codes.get(companies[k]).items():
                 proximity = proximity + code_digital_proxmity[code]
                 proximity_sales = proximity_sales + code_digital_proxmity[code] * sales
+
                 #output all each product proximity  for each company
-                #@TODO to be decroated
-                #company_promixity_product.loc[len(company_promixity_product)] = \
-                 #   [companies[k], current_year,code, code_digital_proxmity[code],sales]
+                company_promixity_product.loc[len(company_promixity_product)] = \
+                    [companies[k], current_year,code, code_digital_proxmity[code],sales]
 
             # output average proximity  for each company
             company_promixity.loc[len(company_promixity)] = \

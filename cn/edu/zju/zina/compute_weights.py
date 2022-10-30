@@ -86,17 +86,20 @@ for y in year:
                 list_companies=code_company.get(code1)
                 list_companies.append(data_one_year[i][0])
                 code_company[code1]=list_companies
-        k = 0
+
         #计算phi
         for i in range(len(codes)-1):
             for j in range(i+1, len(codes)):
                 set_companies = set(code_company[codes[i]]) & set(code_company[codes[j]])
+                #@Todo
                 if (len(set_companies)>0):
                     phi_ij = len(set_companies) / len(code_company[codes[j]])
                     phi_ji = len(set_companies) / len(code_company[codes[i]])
                     phi_max = phi_ij if phi_ij > phi_ji else phi_ji
                     industry_weights.loc[len(industry_weights)] = [codes[i], codes[j], current_year, phi_max]
-                    k = k+1
+                else:
+                    industry_weights.loc[len(industry_weights)] = [codes[i], codes[j], current_year, 0]
+
 
         #for c in code:
         #    d = company_code_part.loc[(company_code_part['行业代码'] == 'J')]
