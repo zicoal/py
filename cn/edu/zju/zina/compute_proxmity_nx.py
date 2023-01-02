@@ -44,7 +44,8 @@ year = sorted(list(set(year)))
 
 
 # logger.info(year)
-it_codes = ['I65','I101','I102','I103','I104','I105']
+#it_codes = ['I65','I101','I102','I103','I104','I105']
+it_codes = ['I99']
 
 current_year =2011
 

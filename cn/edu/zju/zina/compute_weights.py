@@ -24,7 +24,7 @@ f1 = 'D:\\py\\data\\zinan\\Data_for_Digital_Proximity.xlsx'
 f_rca= 'D:\\py\\data\\zinan\\rca_number.xlsx'
 f_weights = 'D:\\py\\data\\zinan\\weights_number_max.xlsx'
 
-logger.info("loading data:")
+logger.info("loading data...")
 time_start=time.time()
 df = pd.read_excel(f1)
 df = df.loc[::, ['证券简称', 'year', '行业代码1', '行业代码2', '公司年总收入', '公司年产品收入'
