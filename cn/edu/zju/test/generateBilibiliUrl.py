@@ -21,10 +21,11 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 
-N=918
-add_prefix = "https://www.bilibili.com/video/BV1Tv41187ZD?p=%d&vd_source=d94552e1f7e47ccb7a41478dbfcf74be\n"
+N=329
+#add_prefix = "https://www.bilibili.com/video/BV1DJ411S79k?p=%d&vd_source=d94552e1f7e47ccb7a41478dbfcf74be\n"
+add_prefix = "https://www.bilibili.com/video/BV1DJ411S79k?p=%d\n"
 
-name = "TED-Ed科普"
+name = "英文动画 神话故事系列 English Fairy Tales"
 file="D:\\temp\\"+name+"\\"+name+".txt"
 
 f = open(file,"w")
