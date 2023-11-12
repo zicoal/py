@@ -38,37 +38,33 @@ def getscore (x):
 #exit(0)
 
 
-f_country_value= 'D:\\py\\data\\jonathan\\%s\\country_network_Gini_%.1f.xlsx' % (equations, rca_threshold)
+f_country_value= 'D:\\py\\data\\jonathan\\%s\\country_network_gini.xlsx' % equations
 f_weights = 'D:\\py\\data\\jonathan\\%s\\weights_number_min_%.1f.xlsx' % (equations, rca_threshold)
-add_column_name = 'rca=%d' % rca_threshold
+add_column_name = 'rca=%.1f' % rca_threshold
 logger.info("RCA:%.1f,Equation:%s" % (rca_threshold,equations))
-country_value = pd.DataFrame(columns=["country", 'value'])
-if os.path.isfile(f_country_value)==False:
+country_value = pd.DataFrame(columns=["country"])
 
-    writer = pd.ExcelWriter(f_country_value)
-    country_value.to_excel(writer,  index=False)
-    writer.save()
-    writer.close()
 
 
 logger.info("loading data...")
 time_start=time.time()
-df = pd.read_csv(f_weights)
-#df = pd.read_excel(f1)
-#df = df.loc[::, ['id','country', 'q1', 'q2', 'q3', 'q4',
-#                 'q5', 'q6', 'q7', 'q8',
-#                 'q9', 'q10', 'q11', 'q12',
-#                 'q13', 'q14', 'q15', 'q16']]
-#df_code= pd.read_excel(f_code)
-#df_code = df_code.loc[::, ['q', 'answer', 'coded_value']]
-
+df = pd.read_excel(f_weights)
 time_end = time.time()
-
-logger.info("data loaded...time cost:%d s'", time_end - time_start)
 countries = {}
 data = df.values.tolist()
 countries = [data[i][0] for i in range(len(data))]
 countries = sorted(list(set(countries)))
+logger.info("data loaded...time cost:%d s'", time_end - time_start)
+
+
+if os.path.isfile(f_country_value)==False:
+
+    writer = pd.ExcelWriter(f_country_value)
+    for country in countries:
+        country_value.loc[len(country_value)] = [country]
+    country_value.to_excel(writer,  index=False)
+    writer.save()
+
 
 #logger.info(data[0])
 #logger.info(data[1])
@@ -98,7 +94,8 @@ countries = sorted(list(set(countries)))
 country_weights=[]
 for country in countries:
     df_one_country = df.loc[df['country'] == country]
-    weights = [df_one_country[i][3] for i in range(len(df_one_country))]
+    data_one_country = df_one_country.values.tolist()
+    weights = [data_one_country[i][3] for i in range(len(df_one_country))]
     country_weights.append( gini.gini_coefficient(weights))
     #country_value.loc[len(country_value)] =[country,weight]
 
@@ -107,7 +104,7 @@ col_names  = df1.columns. tolist()
 col_names.append(add_column_name)
 df1.reindex(columns= col_names)
 df1[add_column_name]=country_weights
-df1.to_excel(f_country_value)
+df1.to_excel(f_country_value,index=False)
 
 
 '''

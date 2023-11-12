@@ -20,7 +20,7 @@ def gini_coefficient(src):
 	avdiff = np.mean(out)
 	mn = np.mean(src)
 	return avdiff / (2*mn)
-
+'''
 s=[1,1,1,1]
 print('I: ',gini_coefficient(s))
 s=[1,2,1,1]
@@ -39,3 +39,4 @@ s=[1,2,3,3]
 print('VIII: ',gini_coefficient(s))
 s=[1,2,3,4,5,6,7,8,9,10]
 print('IX: ',gini_coefficient(s))
+'''
