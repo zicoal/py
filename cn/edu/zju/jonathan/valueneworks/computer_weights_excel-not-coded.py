@@ -1,13 +1,15 @@
 import matplotlib.pyplot as plt
 import math
-
+import os
 import networkx as nx
 import numpy as np
 import pandas as pd
 from random import *
 import time
 import logging
-
+import xlsxwriter
+from openpyxl import load_workbook
+from xlsxwriter import Workbook
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -20,10 +22,24 @@ formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(l
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
+rca_threshold=2.5
+
 f1 = 'D:\\py\\data\\jonathan\\Climate_Survey_2022_marapril_microdata.xlsx'
 f_code= 'D:\\py\\data\\jonathan\\code.xlsx'
-f_rca= 'D:\\py\\data\\jonathan\\rca_number.xlsx'
-f_weights = 'D:\\py\\data\\jonathan\\weights_number_min.xlsx'
+f_rca= 'D:\\py\\data\\jonathan\\rca_number_%.1f.xlsx' % rca_threshold
+f_weights = 'D:\\py\\data\\jonathan\\weights_number_min_%.1f.xlsx' % rca_threshold
+
+if os.path.isfile(f_rca)==False:
+    country_paticipant_quest_rca = pd.DataFrame(columns=["country", 'id', 'Q', 'RCA'])
+    country_quest_phi_weight_network = pd.DataFrame(columns=["country", 'QA', 'QB', 'weights'])
+
+    writer = pd.ExcelWriter(f_rca)
+    country_paticipant_quest_rca.to_excel(writer,  index=False)
+    writer.save()
+
+    writer = pd.ExcelWriter(f_weights)
+    country_quest_phi_weight_network.to_excel(writer, index=False)
+    writer.save()
 
 dirty_words = {'Not sure', 'Dont\'t know','Refused'}
 
@@ -69,19 +85,27 @@ for i in range(len(data_answers)):
 #logger.info(answer_values)
 #exit(0)
 
-current_countries =["Zambia"]
-#current_countries =["Germany","Hong Kong","United States","Zambia"]
+#current_countries =countries
+k=56
 
 
-df_one_country=[]
-country_paticipant_quest_rca = pd.DataFrame(columns=["country",'id', 'Q', 'RCA'])
-country_quest_phi_weight_network = pd.DataFrame(columns=["country", 'QA', 'QB', 'weights'])
+#current_countries = [countries[i] for i in range(k,len(countries))]
+#current_countries =["Zambia"]
+current_countries =["Germany","Hong Kong","United States","Zambia"]
+
+#logger.info(current_countries)
+#logger.info(countries)
+
+#df_one_country=[]
 
 for y in countries:
-    time_end = time.time()
     if (y in current_countries):
+        k += 1
+        time_end = time.time()
+        country_paticipant_quest_rca = pd.DataFrame(columns=["country", 'id', 'Q', 'RCA'])
+        country_quest_phi_weight_network = pd.DataFrame(columns=["country", 'QA', 'QB', 'weights'])
         df_one_country = df.loc[df['country'] == y]
-        logger.info('Country: %s, # of participants:%d, time cost:%d s',y, len(df_one_country), time_end - time_start)
+        logger.info('Country: %s(%d/%d),# of participants:%d, time cost:%d s',y, k,len(countries), len(df_one_country), time_end - time_start)
         data_one_country = df_one_country.values.tolist()
         df_one_country_values =  pd.DataFrame(columns=['id','q1', 'q2', 'q3', 'q4',
                  'q5', 'q6', 'q7', 'q8',
@@ -126,40 +150,35 @@ for y in countries:
         i=0
         #todo come to here
         for participant in paticipants:
-#        for i in range(len(df_one_country_values)):
-            #company_code_part[data_one_year[i][0]]=
-            #cols = df_one_year.shape[1] #列数
-           # logger.info(cols)
-#            logger.info(df_temp[i])
-           #logger.info(df_temp[i].sum(axis=0))
-#            exit(0)
-            for j in range(len(questions)):
+            #ignore invalid users : did not response at all
+            if (sum_participants[i] >0):
+                for j in range(len(questions)):
 #                logger.info('est')
 #                logger.info(df_one_country_values.loc[(df_one_country_values["id"]==participant)])
                 #logger.info(df_one_country_values.loc[(df_one_country_values["id"]==participant)][questions[j]])
 #                logger.info(df_one_country_values.loc[i,questions[j]])
 #                logger.info(sum_participants[i])
-                participant_question_ratio= df_one_country_values.loc[i,questions[j]] /sum_participants[i]
-                #participant_question_ratio= df_one_country_values.loc["id"==][questions[j]]/sum_participants[i]
-                #participant_question_global_ratio = df_one_country_values[i][j+1]/ df_one_country_values[i].sum(axis=0) #question_value
-                #binary computing RCA
-#                logger.info(participant_question_ratio)
-#                logger.info(question_part[questions[j]])
-#                exit(0)
-#                if df_one_country_values.loc[i,questions[j]]<=0:
-#                        participant_question_ratio = 0
-                rca = 1 if participant_question_ratio/(question_part[questions[j]]) >=1 else 0
-                country_paticipant_quest_rca.loc[len(country_paticipant_quest_rca)] = [y, participant,questions[j], rca]
+                    participant_question_ratio= df_one_country_values.loc[i,questions[j]] /sum_participants[i]
+                    #participant_question_ratio= df_one_country_values.loc["id"==][questions[j]]/sum_participants[i]
+                    #participant_question_global_ratio = df_one_country_values[i][j+1]/ df_one_country_values[i].sum(axis=0) #question_value
+                    #binary computing RCA
+    #                logger.info(participant_question_ratio)
+    #                logger.info(question_part[questions[j]])
+    #                exit(0)
+    #                if df_one_country_values.loc[i,questions[j]]<=0:
+                        #participant_question_ratio = 0
+                    rca = 1 if participant_question_ratio/(question_part[questions[j]]) >= rca_threshold else 0
+                    country_paticipant_quest_rca.loc[len(country_paticipant_quest_rca)] = [y, participant,questions[j], rca]
 
-               ###记录有效rca对应的人
-                if rca == 1:
-                    list_participants=question_participant.get(questions[j])
-#                    logger.info(participant_question_ratio)
-#                    logger.info(question_part[questions[j]])
-#                    logger.info(participant)
-#                    exit(0)
-                    list_participants.append(participant)
-                    question_participant[questions[j]]=list_participants
+                   ###记录有效rca对应的人
+                    if rca == 1:
+                        list_participants=question_participant.get(questions[j])
+    #                    logger.info(participant_question_ratio)
+    #                    logger.info(question_part[questions[j]])
+    #                    logger.info(participant)
+    #                    exit(0)
+                        list_participants.append(participant)
+                        question_participant[questions[j]]=list_participants
             i += 1
         #计算phi
         for i in range(len(questions)-1):
@@ -172,27 +191,32 @@ for y in countries:
                     #@Todo: check  min or max
                     phi = phi_ij if phi_ij < phi_ji else phi_ji
                     country_quest_phi_weight_network.loc[len(country_quest_phi_weight_network)] = [y,questions[i], questions[j],phi]
-                else:
-                    country_quest_phi_weight_network.loc[len(country_quest_phi_weight_network)] = [y,questions[i], questions[j], 0]
+                #else:
+                #    country_quest_phi_weight_network.loc[len(country_quest_phi_weight_network)] = [y,questions[i], questions[j], 0]
+
+        #write to file
+
+        #time_end = time.time()
+        writer = pd.ExcelWriter(f_weights, engine='openpyxl',mode ='a', if_sheet_exists='overlay')
+        book=load_workbook(f_weights)
+        writer.book = book
+        writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
+        df1=pd.DataFrame(pd.read_excel(f_weights,sheet_name='Sheet1'))
+        df_rows = df1.shape[0]
+        country_quest_phi_weight_network.to_excel(writer,sheet_name='Sheet1',startrow=df_rows+1,index=False,header=False)
+        writer.save()
+        writer.close()
+
+        writer2 = pd.ExcelWriter(f_rca, engine='openpyxl', mode='a', if_sheet_exists='overlay')
+        book = load_workbook(f_rca)
+        writer2.book = book
+        writer2.sheets = dict((ws.title, ws) for ws in book.worksheets)
+        df2 = pd.DataFrame(pd.read_excel(f_rca, sheet_name='Sheet1'))
+        df_rows2 = df2.shape[0]
+        country_paticipant_quest_rca.to_excel(writer2, sheet_name='Sheet1', startrow=df_rows2 + 1, index=False, header=False)
+        writer2.save()
+        writer2.close()
 
 
-        #for c in code:
-        #    d = company_code_part.loc[(company_code_part['行业代码'] == 'J')]
-        #    for c
-logger.info("writing results to file..")
-country_quest_phi_weight_network.to_excel(f_weights, index=False)
-country_paticipant_quest_rca.to_excel(f_rca, index=False)
 time_end = time.time()
 logger.info('The end,cost time:%d s', time_end - time_start)
-#logger.info(code_company)
-        #    logger.info(c+":"+str(code_part[c]))
-        #logger.info(sum(code_part.values()))
-        #for company_industry in data_one_year:
-#logger.info(company_code_part.loc[0:10])
-#logger.info(df_one_year)
-
-#df_one_year2= df_one_year.loc[(df_one_year['行业代码1'] == 'J') & (df_one_year['行业代码2'] == 66)]
-#logger.info(df_one_year2)
-'''
-
-'''

@@ -20,6 +20,7 @@ formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(l
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
+
 def main():
 
     N=1001  # number of agents
