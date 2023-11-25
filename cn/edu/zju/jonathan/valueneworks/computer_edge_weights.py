@@ -72,7 +72,6 @@ df = pd.read_csv(f1)
 #df_code = df_code.loc[::, ['q', 'answer', 'coded_value']]
 
 time_end = time.time()
-
 logger.info("data loaded...time cost:%d s'", time_end - time_start)
 countries = {}
 data = df.values.tolist()
@@ -171,7 +170,6 @@ for y in countries:
         #exit(0)
         #计算单一question的RCA
         i=0
-        #todo come to here
         for participant in paticipants:
             #ignore invalid users : did not response at all
             if (sum_participants[i] >0):

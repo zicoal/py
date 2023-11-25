@@ -35,32 +35,31 @@ time_start=time.time()
 f = open(f1, encoding='UTF-8', mode='r', errors='ignore')
 line = f.readline()
 
-headers = pd.DataFrame(columns=line.replace("\n","").split('\t'))
+headers  =["movement_index", "tweet_id", "created_at", "author_id", "mentions"]
+#headers = pd.DataFrame(columns=line.replace("\n","").split('\t'))
 logger.info(headers)
 line_count = 0
 event_number = 0
 event = ""
-data = headers
+data = pd.DataFrame(columns=headers)
 while line:
-    if (line_count ==0 or len(line)==0) :
+    words = line.replace("\n","").split('\t')
+    event_id=words[0]
+    if (line_count ==0 or len(line)==0 or event_id=="movement_index") :
         line_count += 1
         line = f.readline()
         continue
-    words = line.replace("\n","").split('\t')
-    event_id=words[0]
     if  event=="":
         event = event_id
     elif event_id == event:
         data.loc[len(data)] = [word for word in words]
     elif (event_id != event):
         data.to_csv(f2 % event, index=False)
-        data = headers
-        event_number+=1
         time_end = time.time()
-        logger.info("events/tweets:%d/%d, time cost:%d s'", event_number , line_count, time_end - time_start)
-        if (event_number ==2):
-            f.close()
-            exit(0)
+        logger.info("event: %s, events/tweets:%d/%d, time cost:%d s'", event, event_number , line_count, time_end - time_start)
+        event_number += 1
+        event = event_id
+        data = pd.DataFrame(columns=headers)
     line_count += 1
     line = f.readline()
 f.close()
