@@ -29,6 +29,8 @@ logger.addHandler(ch)
 
 f1 = 'D:\\py\\data\\lianghai\\mentions_tozike.txt'
 f2 = 'D:\\py\\data\\lianghai\\events\\%s.csv'
+#df = pd.read_csv(f2 % "paper_10")
+#logger.info(df)
 logger.info("starting...")
 time_start=time.time()
 
@@ -80,10 +82,14 @@ while line:
     if event_id == event:
         data=data+line
 #        data.loc[len(data)] = [word for word in words]
-        if (line_count%10000==0):
-             logger.info("line:%d, event: %d/%s",line_count,event_number,event_id)
+        if (line_count%100000==0):
+            fx = open(f2 % event, encoding='UTF-8', mode='a', errors='ignore')
+            fx.write(data)
+            fx.close()
+            data = ""
+            logger.info("line:%d, event: %d/%s",line_count,event_number,event_id)
     elif event_id == "movement_index":
-        fx = open(f2 % event, encoding='UTF-8', mode='w', errors='ignore')
+        fx = open(f2 % event, encoding='UTF-8', mode='a', errors='ignore')
         fx.write(data)
         fx.close()
         #        data.to_csv(f2 % event, index=False)
@@ -95,14 +101,12 @@ while line:
         data= headers
 #        data = pd.DataFrame(columns=headers,index=False)
     line_count += 1
-
     line = f.readline()
 f.close()
 #THE LAST EVENT
-fx = open(f2 % event, encoding='UTF-8', mode='w', errors='ignore')
+fx = open(f2 % event, encoding='UTF-8', mode='a', errors='ignore')
 fx.write(data)
 fx.close()
-event_number += 1
 time_end = time.time()
 logger.info("event: %s, event/total:%d/%d, tweets/line:%d/%d,time:%ds'", event, event_number, total_movements,
             line_count - tweets_number, line_count, time_end - time_start)

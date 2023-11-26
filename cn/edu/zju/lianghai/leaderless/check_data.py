@@ -30,6 +30,18 @@ logger.addHandler(ch)
 f1 = 'D:\\py\\data\\lianghai\\mentions_tozike.txt'
 logger.info("loading data...")
 time_start=time.time()
+
+'''
+**Test Reading data
+f2 = 'D:\\py\\data\\lianghai\\events\\%s.csv'
+df = pd.read_csv(f2 % "paper_239")
+time_end=time.time()
+logger.info("data loaded! time:%d s.",time_end-time_end)
+data = df.values.tolist()
+logger.info(data[0][0].split("\t"))
+logger.info(len(data))
+exit(0)
+'''
 #df = pd.read_csv(f1,usecols=[0])
 #df = pd.read_csv(f1,nrows=10)
 #data = df.values.tolist()
