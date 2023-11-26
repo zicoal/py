@@ -30,7 +30,7 @@ logger.addHandler(ch)
 f1 = 'D:\\py\\data\\lianghai\\mentions_tozike.txt'
 logger.info("loading data...")
 time_start=time.time()
-df = pd.read_csv(f1,usecols=[0])
+#df = pd.read_csv(f1,usecols=[0])
 #df = pd.read_csv(f1,nrows=10)
 #data = df.values.tolist()
 #for i in range(len(data)):
@@ -42,7 +42,7 @@ logger.info("data loaded...time cost:%d s'", time_end - time_start)
 tweets = {}
 
 time_end = time.time()
-data = df.values.tolist()
+#data = df.values.tolist()
 logger.info("data converted...time cost:%d s'", time_end - time_start)
 
 f = open(f1, encoding='UTF-8', mode='r', errors='ignore')
