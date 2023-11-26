@@ -40,9 +40,46 @@ time_end = time.time()
 logger.info("data loaded...time cost:%d s'", time_end - time_start)
 #print(df)
 tweets = {}
+
+time_end = time.time()
 data = df.values.tolist()
-tweets = [data[i][0] for i in range(len(data))]
-tweets = sorted(list(set(tweets)))
+logger.info("data converted...time cost:%d s'", time_end - time_start)
+
+f = open(f1, encoding='UTF-8', mode='r', errors='ignore')
+line = f.readline()
+
+line_count = 0
+event_number = 0
+event = ""
+tweets_number=0
+total_movements=0
+movement_index =0
+while line:
+    words = line.replace("\n","").split('\t')
+    event_id=words[0]
+
+    if event_id =="movement_index":
+#        line_count += 1
+        movement_index +=1
+        time_end = time.time()
+        logger.info("movement_index/line:%d/%d, time cost:%d s'",  movement_index
+                    , line_count, time_end - time_start)
+#        line = f.readline()
+#        continue
+
+    line_count += 1
+    line = f.readline()
+f.close()
+time_end = time.time()
+logger.info("movement_index/line:%d/%d, time cost:%d s'",  movement_index
+            , line_count, time_end - time_start)
+
+for i in range(len(data)):
+    if data[i][0] not in tweets:
+        tweets[data[i][0]] = 1
+#tweets = [data[i][0] for i in range(len(data))]
+#tweets = set(tweets)
+#tweets = sorted(list(set(tweets)))
 logger.info("total number of tweets:",len(tweets))
 
 time_end = time.time()

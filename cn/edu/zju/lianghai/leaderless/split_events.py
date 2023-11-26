@@ -42,33 +42,59 @@ line_count = 0
 event_number = 0
 event = ""
 data = pd.DataFrame(columns=headers)
+tweets_number=0
+total_movements=108
+
 while line:
     words = line.replace("\n","").split('\t')
     event_id=words[0]
-    if (line_count ==0 or len(line)==0 or event_id=="movement_index") :
+    '''
+    if event_id =="movement_index":
+#        line_count += 1
+        movement_index +=1
+        time_end = time.time()
+        logger.info("movement_index/line:%d/%d, time cost:%d s'",  movement_index
+                    , line_count, time_end - time_start)
+#        line = f.readline()
+#        continue
+    '''
+
+    if (line_count ==0 or len(line)==0 ) :
         line_count += 1
         line = f.readline()
         continue
+#    if  event_id=="movement_index" :
+#        line_count += 1
+#        event = ""
+#        data = pd.DataFrame(columns=headers)
+#        line = f.readline()
+#        continue
     if  event=="":
         event = event_id
     elif event_id == event:
         data.loc[len(data)] = [word for word in words]
-    elif (event_id != event):
+        if (line_count%10000==0):
+             logger.info("line:%d, event: %s",line_count,event_id)
+    elif event_id == "movement_index":
         data.to_csv(f2 % event, index=False)
-        time_end = time.time()
-        logger.info("event: %s, events/tweets:%d/%d, time cost:%d s'", event, event_number , line_count, time_end - time_start)
         event_number += 1
-        event = event_id
+        time_end = time.time()
+        logger.info("event: %s, event/total:%d/%d, tweets/line:%d/%d, time cost:%d s'", event, event_number,total_movements,line_count-tweets_number, line_count, time_end - time_start)
+        event = ""
+        tweets_number = line_count
         data = pd.DataFrame(columns=headers)
     line_count += 1
     line = f.readline()
 f.close()
-#    dates.append(int(words[0]))
-#    dates.append(line_count-1)
-#    news_cul.append(int(words[2]))
-#    if (len(words[3])==0):
-#        words[3]=0
-#    cases_cul.append(int(words[3]))
+#THE LAST EVENT
+data.to_csv(f2 % event, index=False)
+event_number += 1
+time_end = time.time()
+logger.info("event: %s, event/total:%d/%d, tweets/line:%d/%d, time cost:%d s'", event, event_number, total_movements,
+            line_count - tweets_number, line_count, time_end - time_start)
+#time_end = time.time()
+#logger.info("movement_index/line:%d/%d, time cost:%d s'",  movement_index
+#            , line_count, time_end - time_start)
 
 time_end = time.time()
-logger.info("events/tweets:%d/%d, time cost:%d s'", event_number, line_count, time_end - time_start)
+logger.info("DONE! events/tweets:%d/%d, time cost:%d s'", event_number, line_count, time_end - time_start)
