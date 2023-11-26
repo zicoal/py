@@ -67,6 +67,7 @@ while line:
 #        line = f.readline()
 #        continue
 
+
     line_count += 1
     line = f.readline()
 f.close()

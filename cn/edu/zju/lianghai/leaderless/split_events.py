@@ -41,7 +41,7 @@ logger.info(headers)
 line_count = 0
 event_number = 0
 event = ""
-data = pd.DataFrame(columns=headers)
+data = pd.DataFrame(columns=headers, index=False)
 tweets_number=0
 total_movements=108
 
@@ -82,8 +82,9 @@ while line:
         logger.info("event: %s, event/total:%d/%d, tweets/line:%d/%d, time cost:%d s'", event, event_number,total_movements,line_count-tweets_number, line_count, time_end - time_start)
         event = ""
         tweets_number = line_count
-        data = pd.DataFrame(columns=headers)
+        data = pd.DataFrame(columns=headers,index=False)
     line_count += 1
+
     line = f.readline()
 f.close()
 #THE LAST EVENT
