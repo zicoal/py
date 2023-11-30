@@ -27,7 +27,7 @@ logger.addHandler(ch)
 #logger.info(getscore(5))
 #exit(0)
 
-f1 = 'D:\\py\\data\\lianghai\\mentions_tozike.txt'
+f1 = 'D:\\pydata\\data\\lianghai\\mentions_tozike.txt'
 logger.info("loading data...")
 time_start=time.time()
 
