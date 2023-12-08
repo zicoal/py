@@ -26,29 +26,21 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 q_start_columm=13
-#rca_thresholds=[1,1.1,1.2,1.3,1.4,1.5,1.6,
-#                1.7,1.8,1.9,2,2.1,2.2,2.3,
-#                2.4,2.5,2.6,2.7,2.8,2.9,3,
-#                3.1, 3.2, 3.3, 3.4, 3.5, 3.6,
-#                3.7, 3.8, 3.8, 3.9, 4, 4.1]
-
-rca_thresholds=[3.1, 3.2, 3.3, 3.4, 3.5, 3.6,
-                3.7, 3.8, 3.8, 3.9, 4, 4.1]
-
+rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
+                  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3,
+                  2.4,2.5,2.6,2.7,2.8,2.9,3,3.1,
+                  3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,4,4.1]
 rca_threshold=2.1
 
-#equations = "eq-linear"
-#def getscore (x):
-#    return x
+#equations = "score1-5"
+equations = "eq-nonlinear"
 
 
 #get the mapped score
-equations = "eq-nonlinear"
 def getscore (x):
     b = 6
     c = 10
     return x**2 - b*x +c
-
 
 #logger.info(getscore(5))
 #exit(0)
@@ -236,7 +228,7 @@ for rca_threshold in rca_thresholds:
             #write to file
 
             #time_end = time.time()
-            country_quest_phi_weight_network.to_csv(f_weights, mode="a",  index=False)
+            country_quest_phi_weight_network.to_csv(f_weights, mode="a",  index=False, header=False)
 #            writer = pd.ExcelWriter(f_weights, engine='openpyxl',mode ='a', if_sheet_exists='overlay')
 #            book=load_workbook(f_weights)
             #@depressed: book and sheet setter for version under python 3.10
@@ -248,7 +240,7 @@ for rca_threshold in rca_thresholds:
 #            writer._save()
 #            writer.close()
 
-            country_paticipant_quest_rca.to_csv(f_rca, mode="a",  index=False)
+            country_paticipant_quest_rca.to_csv(f_rca, mode="a",  index=False, header=False)
 #            writer2 = pd.CSVWriter(f_rca, engine='openpyxl', mode='a', if_sheet_exists='overlay')
 #            book = load_workbook(f_rca)
 #            writer2.book = book
