@@ -41,32 +41,31 @@ time_start = time.time()
 
 f_country_value= 'D:\\pydata\\data\\jonathan\\%s\\country_network_gini.xlsx' % equations
 
+f_weights = 'D:\\pydata\\data\\jonathan\\%s\\weights_number_min_%.1f.csv' % (equations, 1)
+
+df = pd.read_csv(f_weights)
+countries = []
+data = df.values.tolist()
+countries = [data[i][0] for i in range(len(data))]
+# delete bad rows with duplicate headers
+countries = sorted(list(set(countries)))
+countries.remove("country")
+country_value = pd.DataFrame(columns=["country"])
+
+if os.path.isfile(f_country_value) == False:
+
+    writer = pd.ExcelWriter(f_country_value)
+    for country in countries:
+        country_value.loc[len(country_value)] = [country]
+    country_value.to_excel(writer, index=False)
+    writer.save()
+
 for rca_threshold in rca_thresholds:
 
     f_weights = 'D:\\pydata\\data\\jonathan\\%s\\weights_number_min_%.1f.csv' % (equations, rca_threshold)
     add_column_name = 'rca=%.1f' % rca_threshold
-    country_value = pd.DataFrame(columns=["country"])
-
-
 
     df = pd.read_csv(f_weights)
-    countries = []
-    data = df.values.tolist()
-    countries = [data[i][0] for i in range(len(data))]
-    #delete bad rows with duplicate headers
-    countries=sorted(list(set(countries)))
-    countries.remove("country")
-    countries = sorted(list(set(countries)))
-
-
-    if os.path.isfile(f_country_value)==False:
-
-        writer = pd.ExcelWriter(f_country_value)
-        for country in countries:
-            country_value.loc[len(country_value)] = [country]
-        country_value.to_excel(writer,  index=False)
-        writer.save()
-
 
     #logger.info(data[0])
     #logger.info(data[1])
@@ -96,16 +95,18 @@ for rca_threshold in rca_thresholds:
     country_weights=[]
     for country in countries:
         df_one_country = df.loc[df['country'] == country]
+
         data_one_country = df_one_country.values.tolist()
-        #logger.info(country)
-        '''
-        for i in range(len(df_one_country)):
-            print(data_one_country[i],end="")
-        print("")
-        '''
-        weights = [float(data_one_country[i][3]) for i in range(len(df_one_country))]
-        #logger.info(country)
-        country_weights.append(gini.gini_coefficient(weights))
+
+        #empty
+        if (len(df_one_country)==0):
+            country_weights.append(-2)
+        elif (len(df_one_country) == 1):
+                country_weights.append(-1)
+        else:
+            weights = [float(data_one_country[i][3]) for i in range(len(df_one_country))]
+            #logger.info(country)
+            country_weights.append(gini.gini_coefficient(weights))
         #country_value.loc[len(country_value)] =[country,weight]
 
     df1 = pd.read_excel(f_country_value)

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="518bfeb7-75f5-4dac-beee-977f7a1b12fa" name="Default Changelist" comment="lianghai_leaderless">
-      <change afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property.py" beforeDir="false" />
+    <list default="true" id="518bfeb7-75f5-4dac-beee-977f7a1b12fa" name="Default Changelist" comment="jonathan">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/py.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +41,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -270,7 +273,7 @@
       <workItem from="1700959406048" duration="7083000" />
       <workItem from="1700976431599" duration="5512000" />
       <workItem from="1701332612603" duration="1661000" />
-      <workItem from="1702029360634" duration="4920000" />
+      <workItem from="1702029360634" duration="6862000" />
     </task>
     <task id="LOCAL-00001" summary="rca and phi">
       <created>1666944768093</created>
@@ -405,7 +408,21 @@
       <option name="project" value="LOCAL" />
       <updated>1702042449012</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="lianghai_leaderless">
+      <created>1702043722581</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1702043722581</updated>
+    </task>
+    <task id="LOCAL-00021" summary="jonathan">
+      <created>1702043811598</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1702043811598</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,9 +448,9 @@
     <MESSAGE value="calulate distance by networkx" />
     <MESSAGE value="zhanchang" />
     <MESSAGE value="chenjuanjuan" />
-    <MESSAGE value="jonathan" />
     <MESSAGE value="lianghai_leaderless" />
-    <option name="LAST_COMMIT_MESSAGE" value="lianghai_leaderless" />
+    <MESSAGE value="jonathan" />
+    <option name="LAST_COMMIT_MESSAGE" value="jonathan" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/py$gini.coverage" NAME="gini Coverage Results" MODIFIED="1699702150051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/tools" />
@@ -455,7 +472,7 @@
     <SUITE FILE_PATH="coverage/py$original_mg.coverage" NAME="original_mg Coverage Results" MODIFIED="1697534547193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/minoritygame" />
     <SUITE FILE_PATH="coverage/py$computer_weights_first.coverage" NAME="computer_weights_first Coverage Results" MODIFIED="1699624607862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$generateBilibiliUrl.coverage" NAME="generateBilibiliUrl Coverage Results" MODIFIED="1697615288068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
-    <SUITE FILE_PATH="coverage/py$computer_network_property_gini__1_.coverage" NAME="computer_network_property-gini (1) Coverage Results" MODIFIED="1702043517431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$computer_network_property_gini__1_.coverage" NAME="computer_network_property-gini (1) Coverage Results" MODIFIED="1702045175590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$compute_proxmity_nx.coverage" NAME="compute_proxmity_nx Coverage Results" MODIFIED="1669790290002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$split_events_str.coverage" NAME="split_events-str Coverage Results" MODIFIED="1700978322217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
     <SUITE FILE_PATH="coverage/py$compute_weights.coverage" NAME="compute_weights Coverage Results" MODIFIED="1666943294385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
