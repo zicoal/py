@@ -33,16 +33,19 @@ rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
 rca_threshold=2.1
 
 #equations = "score1-5"
-equations = "eq-nonlinear"
 
 
 #get the mapped score
-def getscore (x):
-    b = 6
-    c = 10
-    return x**2 - b*x +c
+#equations = "eq-nonlinear"
+#def getscore (x):
+#    b = 6
+#    c = 10
+#    return x**2 - b*x +c
 
-#logger.info(getscore(5))
+#get the mapped score
+equations = "eq-linear"
+def getscore (x):
+    return x
 #exit(0)
 
 
