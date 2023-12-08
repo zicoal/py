@@ -1,20 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="187e085d-5daa-4e34-b1ce-51e7bb0f79eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/py.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py.iml" afterDir="false" />
+    <list default="true" id="518bfeb7-75f5-4dac-beee-977f7a1b12fa" name="Default Changelist" comment="lianghai_leaderless">
+      <change afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2Yt8WmhwFzGlarioDnadBnagaya" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="23HEEfb9a4vyQz8d1OZqXyzAuI8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,16 +60,57 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="py" sdk-home="C:\Users\zico\anaconda3\python.exe">
+        <option name="mySdkHome" value="C:\Users\zico\anaconda3\python.exe" />
+        <option name="myModuleName" value="py" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\py\cn\edu\zju\jonathan\valueneworks" />
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu\zju\lianghai\leaderless" />
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu\zju\jonathan\valueneworks" />
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu" />
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu\zju\chenjuanjuan\kshell" />
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu\zju\zhangchan" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu\zju\lianghai" />
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu\zju\jonathan\valueneworks" />
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu\zju\zhangchan" />
+      <recent name="C:\Users\zico\PycharmProjects\py\cn\edu\zju" />
+      <recent name="D:\py" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.computer_network_property">
-    <configuration name="computer_edge_weights" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.computer_network_property-gini (1)">
+    <configuration name="check_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless/check_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="computer_edge_weights (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -54,7 +132,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="computer_network_property" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="computer_network_property-gini (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,7 +145,51 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="split_events-df" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\zico\PycharmProjects\py\cn\edu\zju\lianghai\leaderless\split_events-df.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="split_events-str" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless/split_events-str.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -78,66 +200,266 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.computer_network_property" />
-        <item itemvalue="Python.computer_edge_weights" />
+        <item itemvalue="Python.computer_network_property-gini (1)" />
+        <item itemvalue="Python.split_events-str" />
+        <item itemvalue="Python.split_events-df" />
+        <item itemvalue="Python.computer_edge_weights (1)" />
+        <item itemvalue="Python.check_data" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="187e085d-5daa-4e34-b1ce-51e7bb0f79eb" name="Default Changelist" comment="" />
-      <created>1701333550040</created>
+      <changelist id="518bfeb7-75f5-4dac-beee-977f7a1b12fa" name="Default Changelist" comment="" />
+      <created>1641382504972</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1701333550040</updated>
-      <workItem from="1701333551207" duration="965000" />
-      <workItem from="1701413611325" duration="459000" />
-      <workItem from="1701416729774" duration="1802000" />
-      <workItem from="1701436207847" duration="802000" />
-      <workItem from="1701437591898" duration="121000" />
-      <workItem from="1701479037008" duration="5121000" />
+      <updated>1641382504972</updated>
+      <workItem from="1641382507386" duration="72000" />
+      <workItem from="1641382595827" duration="19000" />
+      <workItem from="1652237216473" duration="8000" />
+      <workItem from="1652237232675" duration="242000" />
+      <workItem from="1662821502151" duration="12000" />
+      <workItem from="1665476857737" duration="15000" />
+      <workItem from="1665476880535" duration="799000" />
+      <workItem from="1665629576788" duration="4928000" />
+      <workItem from="1666494175468" duration="3101000" />
+      <workItem from="1666745598457" duration="8829000" />
+      <workItem from="1666851339320" duration="9068000" />
+      <workItem from="1666919609739" duration="9809000" />
+      <workItem from="1666970166707" duration="4481000" />
+      <workItem from="1667010366984" duration="3198000" />
+      <workItem from="1667053919302" duration="231000" />
+      <workItem from="1667054395607" duration="1180000" />
+      <workItem from="1667134409087" duration="7369000" />
+      <workItem from="1667350310548" duration="1364000" />
+      <workItem from="1669789052913" duration="24000" />
+      <workItem from="1669789086699" duration="1806000" />
+      <workItem from="1672544135938" duration="21000" />
+      <workItem from="1672544165770" duration="10033000" />
+      <workItem from="1678150525888" duration="15000" />
+      <workItem from="1678150550512" duration="3548000" />
+      <workItem from="1678154127685" duration="3718000" />
+      <workItem from="1678163893162" duration="1091000" />
+      <workItem from="1678167664005" duration="339000" />
+      <workItem from="1678458106340" duration="1004000" />
+      <workItem from="1692059942201" duration="198000" />
+      <workItem from="1694677246752" duration="46000" />
+      <workItem from="1696835069103" duration="11000" />
+      <workItem from="1696835088219" duration="22775000" />
+      <workItem from="1697334658900" duration="2875000" />
+      <workItem from="1697508248881" duration="7985000" />
+      <workItem from="1697614898333" duration="153000" />
+      <workItem from="1697615264897" duration="173000" />
+      <workItem from="1698979641395" duration="4235000" />
+      <workItem from="1699014607440" duration="22884000" />
+      <workItem from="1699106604007" duration="3129000" />
+      <workItem from="1699171261254" duration="8234000" />
+      <workItem from="1699187557351" duration="4295000" />
+      <workItem from="1699231687779" duration="16237000" />
+      <workItem from="1699513930317" duration="10307000" />
+      <workItem from="1699615185176" duration="5813000" />
+      <workItem from="1699701827479" duration="420000" />
+      <workItem from="1699751483704" duration="2389000" />
+      <workItem from="1700182736913" duration="1631000" />
+      <workItem from="1700226456558" duration="20000" />
+      <workItem from="1700619326685" duration="4978000" />
+      <workItem from="1700725312076" duration="2332000" />
+      <workItem from="1700897467248" duration="5641000" />
+      <workItem from="1700959406048" duration="7083000" />
+      <workItem from="1700976431599" duration="5512000" />
+      <workItem from="1701332612603" duration="1661000" />
+      <workItem from="1702029360634" duration="4920000" />
     </task>
-    <task id="LOCAL-00001" summary="jonathan_value_network">
-      <created>1701417960665</created>
+    <task id="LOCAL-00001" summary="rca and phi">
+      <created>1666944768093</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1701417960665</updated>
+      <updated>1666944768093</updated>
     </task>
-    <task id="LOCAL-00002" summary="jonathan_value_network">
-      <created>1701437003309</created>
+    <task id="LOCAL-00002" summary="dijkstra algorithm to calculate distance">
+      <created>1666947954893</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1701437003309</updated>
+      <updated>1666947954893</updated>
     </task>
-    <task id="LOCAL-00003" summary="jonathan_value_network">
-      <created>1701437709181</created>
+    <task id="LOCAL-00003" summary="dijkstra algorithm to calculate distance">
+      <created>1666950554895</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1701437709181</updated>
+      <updated>1666950554895</updated>
     </task>
-    <task id="LOCAL-00004" summary="jonathan_value_network">
-      <created>1701765026667</created>
+    <task id="LOCAL-00004" summary="dijkstra algorithm to calculate distance">
+      <created>1666974049266</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1701765026667</updated>
+      <updated>1666974049266</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="get weight and proximity for all years">
+      <created>1666974112609</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666974112609</updated>
+    </task>
+    <task id="LOCAL-00006" summary="get weight and proximity (with sales ) for all years">
+      <created>1667013460391</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667013460391</updated>
+    </task>
+    <task id="LOCAL-00007" summary="calulate distance by networkx">
+      <created>1667142930647</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667142930647</updated>
+    </task>
+    <task id="LOCAL-00008" summary="zhanchang">
+      <created>1672625458365</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672625458365</updated>
+    </task>
+    <task id="LOCAL-00009" summary="zhanchang">
+      <created>1678154851306</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678154851306</updated>
+    </task>
+    <task id="LOCAL-00010" summary="chenjuanjuan">
+      <created>1678154925319</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678154925319</updated>
+    </task>
+    <task id="LOCAL-00011" summary="chenjuanjuan">
+      <created>1678459112742</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678459112742</updated>
+    </task>
+    <task id="LOCAL-00012" summary="jonathan">
+      <created>1699080656868</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699080656868</updated>
+    </task>
+    <task id="LOCAL-00013" summary="jonathan">
+      <created>1699752999759</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699752999759</updated>
+    </task>
+    <task id="LOCAL-00014" summary="lianghai_leaderless">
+      <created>1700925139484</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700925139484</updated>
+    </task>
+    <task id="LOCAL-00015" summary="lianghai_leaderless">
+      <created>1700972862336</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700972862336</updated>
+    </task>
+    <task id="LOCAL-00016" summary="lianghai_leaderless">
+      <created>1700974083926</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700974083926</updated>
+    </task>
+    <task id="LOCAL-00017" summary="lianghai_leaderless">
+      <created>1700979340053</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700979340053</updated>
+    </task>
+    <task id="LOCAL-00018" summary="lianghai_leaderless">
+      <created>1700981759362</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700981759362</updated>
+    </task>
+    <task id="LOCAL-00019" summary="lianghai_leaderless">
+      <created>1702042449012</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1702042449012</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="jonathan_value_network" />
-    <option name="LAST_COMMIT_MESSAGE" value="jonathan_value_network" />
+    <MESSAGE value="rca and phi" />
+    <MESSAGE value="dijkstra algorithm to calculate distance" />
+    <MESSAGE value="get weight and proximity for all years" />
+    <MESSAGE value="get weight and proximity (with sales ) for all years" />
+    <MESSAGE value="calulate distance by networkx" />
+    <MESSAGE value="zhanchang" />
+    <MESSAGE value="chenjuanjuan" />
+    <MESSAGE value="jonathan" />
+    <MESSAGE value="lianghai_leaderless" />
+    <option name="LAST_COMMIT_MESSAGE" value="lianghai_leaderless" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/py$computer_network_property.coverage" NAME="computer_network_property Coverage Results" MODIFIED="1701479579257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
-    <SUITE FILE_PATH="coverage/py$computer_edge_weights.coverage" NAME="computer_edge_weights Coverage Results" MODIFIED="1701417712398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$gini.coverage" NAME="gini Coverage Results" MODIFIED="1699702150051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/tools" />
+    <SUITE FILE_PATH="coverage/py$split_events.coverage" NAME="split_events Coverage Results" MODIFIED="1700926316776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+    <SUITE FILE_PATH="coverage/py$dijkstra.coverage" NAME="dijkstra_distance Coverage Results" MODIFIED="1666947576843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$compute_rca.coverage" NAME="compute_weights Coverage Results" MODIFIED="1666885753989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$check_data.coverage" NAME="check_data Coverage Results" MODIFIED="1700620959243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+    <SUITE FILE_PATH="coverage/py$compute_behavior.coverage" NAME="compute_behavior Coverage Results" MODIFIED="1672565194806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zhangchan" />
+    <SUITE FILE_PATH="coverage/py$computer_network_property.coverage" NAME="computer_network_property Coverage Results" MODIFIED="1699753884976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$test.coverage" NAME="test Coverage Results" MODIFIED="1665637366016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$compute_proxmity.coverage" NAME="compute_proxmity Coverage Results" MODIFIED="1667137874438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$hny.coverage" NAME="compute_area Coverage Results" MODIFIED="1672560619409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zhangchan" />
+    <SUITE FILE_PATH="coverage/py$computer_edge_weights__1_.coverage" NAME="computer_edge_weights (1) Coverage Results" MODIFIED="1700725333532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$dijkstra_distance__1_.coverage" NAME="dijkstra_distance (1) Coverage Results" MODIFIED="1667054053903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$drawnetwork.coverage" NAME="drawnetwork Coverage Results" MODIFIED="1699258694596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan" />
+    <SUITE FILE_PATH="coverage/py$hny_1_.coverage" NAME="hny(1) Coverage Results" MODIFIED="1672564400971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zhangchan" />
+    <SUITE FILE_PATH="coverage/py$drawnetwork__1_.coverage" NAME="drawnetwork (1) Coverage Results" MODIFIED="1699701882562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$compute_correlation.coverage" NAME="compute_correlation Coverage Results" MODIFIED="1678459061885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/chenjuanjuan/kshell" />
+    <SUITE FILE_PATH="coverage/py$original_mg.coverage" NAME="original_mg Coverage Results" MODIFIED="1697534547193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/minoritygame" />
+    <SUITE FILE_PATH="coverage/py$computer_weights_first.coverage" NAME="computer_weights_first Coverage Results" MODIFIED="1699624607862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$generateBilibiliUrl.coverage" NAME="generateBilibiliUrl Coverage Results" MODIFIED="1697615288068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
+    <SUITE FILE_PATH="coverage/py$computer_network_property_gini__1_.coverage" NAME="computer_network_property-gini (1) Coverage Results" MODIFIED="1702043517431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$compute_proxmity_nx.coverage" NAME="compute_proxmity_nx Coverage Results" MODIFIED="1669790290002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$split_events_str.coverage" NAME="split_events-str Coverage Results" MODIFIED="1700978322217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+    <SUITE FILE_PATH="coverage/py$compute_weights.coverage" NAME="compute_weights Coverage Results" MODIFIED="1666943294385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$compute_weights__1_.coverage" NAME="compute_weights (1) Coverage Results" MODIFIED="1669789669753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$split_events_df.coverage" NAME="split_events-df Coverage Results" MODIFIED="1700977602638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
   </component>
 </project>
