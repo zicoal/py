@@ -44,7 +44,7 @@ time_start = time.time()
 
 for equation in equations:
 
-    f_country_value= 'D:\\pydata\\data\\jonathan\\results\\country_network_betweeness_%s_unweighted.xlsx' % equation
+    f_country_value= 'D:\\pydata\\data\\jonathan\\results\\rca_based\\country_network_betweeness_%s_unweighted.xlsx' % equation
 
     f_weights = 'D:\\pydata\\data\\jonathan\\%s\\weights_number_min_%.1f.csv' % (equation, 1)
 

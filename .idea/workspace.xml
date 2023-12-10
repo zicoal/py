@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="518bfeb7-75f5-4dac-beee-977f7a1b12fa" name="Default Changelist" comment="jonathan">
-      <change afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-betweeness.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-betweeness-weighted.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property_avg_weight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-betweeness.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-betweeness.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,8 +91,8 @@
       <recent name="D:\py" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.computer_network_property-gini (1)">
-    <configuration name="computer_edge_weights (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.computer_network_property_avg_weight">
+    <configuration name="computer_network_property-betweeness-weighted" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,7 +105,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_edge_weights.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-betweeness-weighted.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,7 +158,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="split_events-df" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="computer_network_property_avg_weight" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -164,12 +166,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\zico\PycharmProjects\py\cn\edu\zju\lianghai\leaderless\split_events-df.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property_avg_weight.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -202,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.computer_network_property_avg_weight" />
+        <item itemvalue="Python.computer_network_property-betweeness-weighted" />
         <item itemvalue="Python.computer_network_property-gini (1)" />
         <item itemvalue="Python.computer_network_property-betweeness" />
         <item itemvalue="Python.split_events-str" />
-        <item itemvalue="Python.split_events-df" />
-        <item itemvalue="Python.computer_edge_weights (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -273,7 +275,7 @@
       <workItem from="1700976431599" duration="5512000" />
       <workItem from="1701332612603" duration="1661000" />
       <workItem from="1702029360634" duration="7159000" />
-      <workItem from="1702169997265" duration="5753000" />
+      <workItem from="1702169997265" duration="6602000" />
     </task>
     <task id="LOCAL-00001" summary="rca and phi">
       <created>1666944768093</created>
@@ -429,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702045759330</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="jonathan">
+      <created>1702178726601</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1702178726601</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,6 +474,7 @@
     <SUITE FILE_PATH="coverage/py$dijkstra.coverage" NAME="dijkstra_distance Coverage Results" MODIFIED="1666947576843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$compute_rca.coverage" NAME="compute_weights Coverage Results" MODIFIED="1666885753989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$check_data.coverage" NAME="check_data Coverage Results" MODIFIED="1700620959243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+    <SUITE FILE_PATH="coverage/py$computer_network_property_betweeness_weighted.coverage" NAME="computer_network_property-betweeness-weighted Coverage Results" MODIFIED="1702179057099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$compute_behavior.coverage" NAME="compute_behavior Coverage Results" MODIFIED="1672565194806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zhangchan" />
     <SUITE FILE_PATH="coverage/py$computer_network_property.coverage" NAME="computer_network_property Coverage Results" MODIFIED="1699753884976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$test.coverage" NAME="test Coverage Results" MODIFIED="1665637366016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
@@ -477,6 +487,7 @@
     <SUITE FILE_PATH="coverage/py$drawnetwork__1_.coverage" NAME="drawnetwork (1) Coverage Results" MODIFIED="1699701882562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_betweeness.coverage" NAME="computer_network_property-betweeness Coverage Results" MODIFIED="1702177941265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$compute_correlation.coverage" NAME="compute_correlation Coverage Results" MODIFIED="1678459061885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/chenjuanjuan/kshell" />
+    <SUITE FILE_PATH="coverage/py$computer_network_property_avg_weight.coverage" NAME="computer_network_property_avg_weight Coverage Results" MODIFIED="1702192953454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$original_mg.coverage" NAME="original_mg Coverage Results" MODIFIED="1697534547193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/minoritygame" />
     <SUITE FILE_PATH="coverage/py$computer_weights_first.coverage" NAME="computer_weights_first Coverage Results" MODIFIED="1699624607862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$generateBilibiliUrl.coverage" NAME="generateBilibiliUrl Coverage Results" MODIFIED="1697615288068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
