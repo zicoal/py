@@ -11,6 +11,7 @@ import xlsxwriter
 from openpyxl import load_workbook
 from xlsxwriter import Workbook
 from cn.edu.tools import gini
+import networkx as nx
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -22,6 +23,8 @@ formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(l
 #fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 logger.addHandler(ch)
+
+
 
 rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
                   1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3,
@@ -35,13 +38,13 @@ equations = ["eq-nonlinear","eq-linear"]
 #exit(0)
 
 
-logger.info("program started...")
+logger.info("program started: betweeness...")
 
 time_start = time.time()
 
 for equation in equations:
 
-    f_country_value= 'D:\\pydata\\data\\jonathan\\results\\country_network_gini_%s.xlsx' % equation
+    f_country_value= 'D:\\pydata\\data\\jonathan\\results\\country_network_betweeness_%s_unweighted.xlsx' % equation
 
     f_weights = 'D:\\pydata\\data\\jonathan\\%s\\weights_number_min_%.1f.csv' % (equation, 1)
 
@@ -71,31 +74,6 @@ for equation in equations:
 
         df = pd.read_csv(f_weights)
 
-        #logger.info(data[0])
-        #logger.info(data[1])
-        #logger.info(data[2])
-        #exit(0)
-
-        #logger.info(countries)
-        #logger.info("total # of countries: %d", len(countries))
-        #logger.info(countries)
-        #exit(0)
-        #code = [data[i][3] for i in range(len(data))]
-
-        #embbing answers to numerical values
-        #answer_values ={}
-        #data_answers = df_code.values.tolist()
-        #for i in range(len(data_answers)):
-        #   q = data_answers[i][0]
-        #   answer= data_answers[i][1]
-        #   coded_value= data_answers[i][2]
-        #   if(answer_values.get(q)==None):
-        #       answer_values[q]={}
-        #   answer_values[q][answer] = coded_value
-
-        #logger.info(answer_values)
-        #exit(0)
-
         country_weights=[]
         for country in countries:
             df_one_country = df.loc[df['country'] == country]
@@ -106,11 +84,15 @@ for equation in equations:
             if (len(df_one_country)==0):
                 country_weights.append(-2)
             elif (len(df_one_country) == 1):
-                    country_weights.append(-1)
+                 country_weights.append(-1)
             else:
+                g = nx.Graph()
+                for i in range(len(data_one_country)):
+                    g.add_edge(data_one_country[i][1], data_one_country[i][2], weight=data_one_country[i][3])
                 weights = [float(data_one_country[i][3]) for i in range(len(df_one_country))]
-                #logger.info(country)
-                country_weights.append(gini.gini_coefficient(weights))
+                measure_dict = nx.betweenness_centrality(g, normalized=True)
+                values= np.sum(list(measure_dict.values())) / g.number_of_nodes()
+                country_weights.append(values)
             #country_value.loc[len(country_value)] =[country,weight]
 
         df1 = pd.read_excel(f_country_value)
