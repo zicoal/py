@@ -79,7 +79,7 @@ for c in countries:
     for i in range(len(data_one_country)):
         g.add_edge(data_one_country[i][1],data_one_country[i][2],weight=data_one_country[i][3])
 
-    logger.info('Country: %s(%d/%d),nodes/edges:%d/%d, time cost:%d s', c, k, len(countries),len(g.nodes), len(g.edges),time_end - time_start)
+    logger.info('Country: %s(%d/%d),nodes/edges:%d/%d, time:%d s', c, k, len(countries),len(g.nodes), len(g.edges),time_end - time_start)
     plt.subplot(rows, cols, k)
 
     edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
