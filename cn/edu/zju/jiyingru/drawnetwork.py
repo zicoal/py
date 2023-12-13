@@ -1,7 +1,7 @@
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
+from matplotlib.font_manager import FontManager
 from pylab import mpl
 import math
 import os
@@ -14,6 +14,7 @@ import logging
 import xlsxwriter
 from openpyxl import load_workbook
 from xlsxwriter import Workbook
+import matplotlib
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -28,9 +29,15 @@ logger.addHandler(ch)
 
 rca_threshold=1.8
 
-font_path=r"c:\windows\fonts\simsun.ttc"
-font = FontProperties(fname=font_path, size=10)
+#font_path=r"c:\windows\fonts\simsun.ttc"
+#font = FontProperties(fname=font_path, size=10)
 
+mpl_fonts = set(f.name for f in FontManager().ttflist)
+matplotlib.rc("font", family='SimSun')
+
+#print('all font list get from matplotlib.font_manager:')
+#for f in sorted(mpl_fonts):
+#    print('\t' + f)
 rca_thresholds = [1,2]
 #equations = "score1-5"
 question_type = "data1"
@@ -58,8 +65,6 @@ for rca_threshold in rca_thresholds:
     logger.info("loading data...")
     time_start=time.time()
 
-
-
     df= pd.read_csv(f_weights)
 
     country_quest_phi_weight_network = df.loc[::, ['QA', 'QB', 'weights']]
@@ -80,12 +85,14 @@ for rca_threshold in rca_thresholds:
     g = nx.Graph()
     for i in range(len(data)):
         g.add_edge(data[i][0], data[i][1], weight=data[i][2])
-    logger.info(i)
     logger.info('Questions:%d,nodes/edges:%d/%d, time:%d s',  len(questions),len(g.nodes), len(g.edges),time_end - time_start)
     #plt.subplot(rows, cols, k)
 
     edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
 
+ #   plt.xlabel('\u5e73\u5747\u503c')
+
+#   plt.rcParams['font.family'] = 'SimSun'
     nx.draw(g,pos=nx.spring_layout(g),
             node_color='r',
             edge_color='b',
@@ -95,9 +102,8 @@ for rca_threshold in rca_thresholds:
             width =edgewidth )
 
 #    mpl.rcParams['font.']=['times-new-roman']
-    plt.title("rca = %.1f" % rca_threshold)
-
-    plt.axis("off")
-    plt.show()
-   # plt.savefig(f_fig,dpi=800)
+   #plt.title("rca = %.1f" % rca_threshold)
+    #    plt.axis("off")
+   # plt.show()
+    plt.savefig(f_fig,dpi=800)
 
