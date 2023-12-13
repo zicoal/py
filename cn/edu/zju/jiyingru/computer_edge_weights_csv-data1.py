@@ -1,0 +1,225 @@
+from warnings import simplefilter
+import matplotlib.pyplot as plt
+import math
+import os
+import networkx as nx
+import numpy as np
+import pandas as pd
+from random import *
+import time
+import logging
+import xlsxwriter
+from openpyxl import load_workbook
+from xlsxwriter import Workbook
+
+simplefilter(action='ignore', category=FutureWarning)
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+# 定义handler的输出格式
+#logger to console
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s")
+#fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+logger.addHandler(ch)
+
+q_start_columm=1
+rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
+                  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3,
+                  2.4,2.5,2.6,2.7,2.8,2.9,3,3.1,
+                  3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,4,4.1]
+rca_threshold=2.1
+
+#equations = "score1-5"
+
+
+#get the mapped score
+#equations = "eq-nonlinear"
+#def getscore (x):
+#    b = 6
+#    c = 10
+#    return x**2 - b*x +c
+
+#get the mapped score
+equations = "eq-linear"
+def getscore (x):
+    return x
+#exit(0)
+
+
+
+f1 = 'D:\\pydata\\data\\jiyingru\\data1\\ESGstudy1Data.xlsx'
+
+logger.info("loading data...")
+time_start = time.time()
+questions = [
+         'Q3_1','Q3_2','Q3_3','Q3_4','Q4_1','Q4_2','Q4_3','Q4_4','Q4_5',
+         'Q5_1','Q5_2','Q5_3','Q5_4','Q5_5','Q6_1','Q6_2','Q6_3',
+         'Q7_1','Q7_2','Q7_3','Q7_4','Q7_5','Q7_6','Q7_7','Q7_8	',
+         'Q8_1','Q8_2','Q8_3','Q8_4','Q8_5','Q8_6',
+         'Q9_1','Q9_2','Q9_3','Q9_4','Q9_5','Q9_6',
+         'Q10_1','Q10_2','Q10_3','Q11_1','Q11_2','Q11_3',
+         'Q12_1','Q12_2','Q12_3','Q13_1','Q13_2','Q13_3','Q13_4','Q13_5','Q13_6','Q13_7',
+         'Q14_1','Q14_2','Q14_3','Q14_4','Q14_5','Q14_6','Q14_7','Q14_8','Q14_9',	
+         'Q15_1','Q15_2','Q15_3','Q15_4','Q15_5','Q15_6',
+         'Q16_1','Q16_2','Q16_3','Q16_4','Q16_5','Q16_6','Q16_7','Q17']
+
+df = pd.read_excel(f1)
+# df = pd.read_excel(f1)
+# df = df.loc[::, ['id','country', 'q1', 'q2', 'q3', 'q4',
+#                 'q5', 'q6', 'q7', 'q8',
+#                 'q9', 'q10', 'q11', 'q12',
+#                 'q13', 'q14', 'q15', 'q16']]
+# df_code= pd.read_excel(f_code)
+# df_code = df_code.loc[::, ['q', 'answer', 'coded_value']]
+
+time_end = time.time()
+logger.info("data loaded...time cost:%d s'", time_end - time_start)
+
+for rca_threshold in rca_thresholds:
+    f_rca= 'D:\\pydata\\data\\jiyingru\\data1\\rca_number_%.1f.csv' % ( rca_threshold)
+    f_weights = 'D:\\pydata\\data\\jiyingru\\data1\\weights_number_min_%.1f.csv' % ( rca_threshold)
+    logger.info("RCA:%.1f,Equation:%s" % (rca_threshold,equations))
+
+    if os.path.isfile(f_rca):
+        os.remove(f_rca)
+        os.remove(f_weights)
+
+    paticipant_quest_rca = pd.DataFrame(columns=['id', 'Q', 'RCA'])
+    quest_phi_weight_network = pd.DataFrame(columns=['QA', 'QB', 'weights'])
+
+    paticipant_quest_rca.to_csv(f_rca, mode="w" ,index=False)
+
+    quest_phi_weight_network.to_csv(f_weights, mode="w" , index=False)
+
+
+    time_end = time.time()
+    paticipant_quest_rca = pd.DataFrame(columns=[ 'id', 'Q', 'RCA'])
+    quest_phi_weight_network = pd.DataFrame(columns=['QA', 'QB', 'weights'])
+    
+    logger.info('RCA:%.1f,participants:%d, time:%d s',rca_threshold, len(df), time_end - time_start)
+    data_one_country = df.values.tolist()
+    df_values =  pd.DataFrame(columns=['id','Q3_1','Q3_2','Q3_3','Q3_4','Q4_1','Q4_2','Q4_3','Q4_4','Q4_5',
+         'Q5_1','Q5_2','Q5_3','Q5_4','Q5_5','Q6_1','Q6_2','Q6_3',
+         'Q7_1','Q7_2','Q7_3','Q7_4','Q7_5','Q7_6','Q7_7','Q7_8	',
+         'Q8_1','Q8_2','Q8_3','Q8_4','Q8_5','Q8_6',
+         'Q9_1','Q9_2','Q9_3','Q9_4','Q9_5','Q9_6',
+         'Q10_1','Q10_2','Q10_3','Q11_1','Q11_2','Q11_3',
+         'Q12_1','Q12_2','Q12_3','Q13_1','Q13_2','Q13_3','Q13_4','Q13_5','Q13_6','Q13_7',
+         'Q14_1','Q14_2','Q14_3','Q14_4','Q14_5','Q14_6','Q14_7','Q14_8','Q14_9',	
+         'Q15_1','Q15_2','Q15_3','Q15_4','Q15_5','Q15_6',
+         'Q16_1','Q16_2','Q16_3','Q16_4','Q16_5','Q16_6','Q16_7','Q17'])
+
+    for i in range(len(data_one_country)):
+        q_values = [data_one_country[i][0]] #id
+        for j in range(len(questions)):
+#              if data_one_country[i][j+2] in dirty_words:
+#                    q_values.append(0)  #set defalut dirty words as zero
+#              else:
+                #q_values.append(answer_values[questions[j]][data_one_country[i][j+2]])
+                v= getscore(data_one_country[i][j+q_start_columm])
+                q_values.append(v)
+        df_values.loc[len(df_values)] = q_values
+#        logger.info(df_values)
+#        logger.info(len(df_values))
+#        exit(0)
+    #code = [data_one_country[i][2] + str(data_one_country[i][3]) for i in range(len(data_one_country))]
+    #df.insert(loc=len(df.columns), column='行业代码', value=code)
+    paticipants = [data_one_country[i][0] for i in range(len(df))]
+    paticipants = sorted(list(set(paticipants))) #去重
+
+    #计算每个问题的全局权重
+    question_part={}
+    df_temp = df_values.drop(['id'], axis=1)
+#        logger.info(df_temp)
+    sum_quesitons=df_temp.sum()
+    sum_all= sum(sum_quesitons)
+    sum_participants=df_temp.sum(axis=1)
+
+    question_participant = {}
+    for i in range(len(questions)):
+        q = questions[i]
+        question_part[q] = sum_quesitons[i] / sum_all
+        question_participant[q]=[]
+        #logger.info(c,code_company.get(c))
+
+    #logger.info(question_part)
+    #exit(0)
+    #计算单一question的RCA
+    i=0
+    for participant in paticipants:
+        #ignore invalid users : did not response at all
+        if (sum_participants[i] >0):
+            for j in range(len(questions)):
+#                logger.info('est')
+#                logger.info(df_values.loc[(df_values["id"]==participant)])
+            #logger.info(df_values.loc[(df_values["id"]==participant)][questions[j]])
+#                logger.info(df_values.loc[i,questions[j]])
+#                logger.info(sum_participants[i])
+                participant_question_ratio= df_values.loc[i,questions[j]] /sum_participants[i]
+                #participant_question_ratio= df_values.loc["id"==][questions[j]]/sum_participants[i]
+                #participant_question_global_ratio = df_values[i][j+1]/ df_values[i].sum(axis=0) #question_value
+                #binary computing RCA
+#                logger.info(participant_question_ratio)
+#                logger.info(question_part[questions[j]])
+#                exit(0)
+#                if df_values.loc[i,questions[j]]<=0:
+                    #participant_question_ratio = 0
+                rca = 1 if participant_question_ratio/(question_part[questions[j]]) >= rca_threshold else 0
+                paticipant_quest_rca.loc[len(paticipant_quest_rca)] = [participant,questions[j], rca]
+
+               ###记录有效rca对应的人
+                if rca == 1:
+                    list_participants=question_participant.get(questions[j])
+#                    logger.info(participant_question_ratio)
+#                    logger.info(question_part[questions[j]])
+#                    logger.info(participant)
+#                    exit(0)
+                    list_participants.append(participant)
+                    question_participant[questions[j]]=list_participants
+        i += 1
+    #计算phi
+    for i in range(len(questions)-1):
+        for j in range(i+1, len(questions)):
+            #两个集合的交集
+            set_participants= set(question_participant[questions[i]]) & set(question_participant[questions[j]])
+            if (len(set_participants)>0):
+                phi_ij = len(set_participants) / len(question_participant[questions[j]])
+                phi_ji = len(set_participants) / len(question_participant[questions[i]])
+                #@Todo: check  min or max
+                phi = phi_ij if phi_ij < phi_ji else phi_ji
+                quest_phi_weight_network.loc[len(quest_phi_weight_network)] = [questions[i], questions[j],phi]
+            #else:
+            #    quest_phi_weight_network.loc[len(quest_phi_weight_network)] = [y,questions[i], questions[j], 0]
+
+    #write to file
+
+    #time_end = time.time()
+    quest_phi_weight_network.to_csv(f_weights, mode="a",  index=False, header=False)
+#            writer = pd.ExcelWriter(f_weights, engine='openpyxl',mode ='a', if_sheet_exists='overlay')
+#            book=load_workbook(f_weights)
+    #@depressed: book and sheet setter for version under python 3.10
+#            writer.book = book
+#            writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
+#            df1=pd.DataFrame(pd.read_excel(f_weights,sheet_name='Sheet1'))
+#            df_rows = df1.shape[0]
+#            quest_phi_weight_network.to_excel(writer,sheet_name='Sheet1',startrow=df_rows+1,index=False,header=False)
+#            writer._save()
+#            writer.close()
+
+    paticipant_quest_rca.to_csv(f_rca, mode="a",  index=False, header=False)
+#            writer2 = pd.CSVWriter(f_rca, engine='openpyxl', mode='a', if_sheet_exists='overlay')
+#            book = load_workbook(f_rca)
+#            writer2.book = book
+#            writer2.sheets = dict((ws.title, ws) for ws in book.worksheets)
+#            df2 = pd.DataFrame(pd.read_excel(f_rca, sheet_name='Sheet1'))
+#            df_rows2 = df2.shape[0]
+#            paticipant_quest_rca.to_excel(writer2, sheet_name='Sheet1', startrow=df_rows2 + 1, index=False, header=False)
+#            writer2._save()
+#            writer2.close()
+
+
+time_end = time.time()
+logger.info('The end,cost time:%d s', time_end - time_start)
