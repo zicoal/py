@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import math
 import os
@@ -22,15 +24,15 @@ formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(l
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
-rca_threshold=1.0
+rca_threshold=1.8
 #equations = "score1-5"
 equations = "eq-nonlinear"
 
-f1 = 'D:\\py\\data\\jonathan\\Climat_Survey_2022_marapril_microdata.xlsx'
-f_code= 'D:\\py\\data\\jonathan\\code.xlsx'
-f_rca= 'D:\\py\\data\\jonathan\\%s\\rca_number_%.1f.xlsx' % (equations, rca_threshold)
-f_weights = 'D:\\py\\data\\jonathan\\%s\\weights_number_min_%.1f.xlsx' % (equations, rca_threshold)
-f_fig = 'D:\\py\\data\\jonathan\\%s\\figs\\fig_%.1f.png' % (equations, rca_threshold)
+f1 = 'D:\\pydata\\data\\jonathan\\Climat_Survey_2022_marapril_microdata.xlsx'
+f_code= 'D:\\pydata\\data\\jonathan\\code.xlsx'
+f_rca= 'D:\\pydata\\data\\jonathan\\%s\\rca_number_%.1f.csv' % (equations, rca_threshold)
+f_weights = 'D:\\pydata\\data\\jonathan\\%s\\weights_number_min_%.1f.csv' % (equations, rca_threshold)
+f_fig = 'D:\\pydata\\data\\jonathan\\%s\\figs\\fig_%.1f.png' % (equations, rca_threshold)
 #f_code= 'D:\\py\\data\\jonathan\\weights_number_min_%.1f.xlsx' % rca_threshold
 
 logger.info("RCA:%.1f,Equation:%s" % (rca_threshold,equations))
@@ -47,7 +49,7 @@ questions=['q1', 'q2', 'q3', 'q4',
 #                 'q9', 'q10', 'q11', 'q12',
 #                 'q13', 'q14', 'q15', 'q16']]
 
-df= pd.read_excel(f_weights)
+df= pd.read_csv(f_weights)
 
 #country_paticipant_quest_rca = pd.DataFrame(columns=["country", 'id', 'Q', 'RCA'])
 country_quest_phi_weight_network = df.loc[::, ["country", 'QA', 'QB', 'weights']]
@@ -57,7 +59,9 @@ logger.info("data loaded...time cost:%d s'", time_end - time_start)
 countries = {}
 data = df.values.tolist()
 countries = [data[i][0] for i in range(len(data))]
-countries = sorted(list(set(countries)))
+##countries = sorted(list(set(countries)))
+
+countries = ['Germany', "Algeria",'Armenia','Austria']
 
 logger.info(len(countries))
 logger.info(countries)
