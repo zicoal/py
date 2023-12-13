@@ -1,6 +1,7 @@
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
 from pylab import mpl
 import math
 import os
@@ -27,6 +28,9 @@ logger.addHandler(ch)
 
 rca_threshold=1.8
 
+font_path=r"c:\windows\fonts\simsun.ttc"
+font = FontProperties(fname=font_path, size=10)
+
 rca_thresholds = [1,2]
 #equations = "score1-5"
 question_type = "data1"
@@ -42,7 +46,7 @@ questions = [
          'Q15_1','Q15_2','Q15_3','Q15_4','Q15_5','Q15_6',
          'Q16_1','Q16_2','Q16_3','Q16_4','Q16_5','Q16_6','Q16_7','Q17']
 
-edge_weight_manipulte = 5
+edge_weight_manipulte = 3
 
 for rca_threshold in rca_thresholds:
     f_weights = 'D:\\pydata\\data\\jiyingru\\%s\\weights_number_min_%.1f.csv' % (question_type, rca_threshold)
@@ -91,9 +95,9 @@ for rca_threshold in rca_thresholds:
             width =edgewidth )
 
 #    mpl.rcParams['font.']=['times-new-roman']
-    plt.title(question_type)
+    plt.title("rca = %.1f" % rca_threshold)
 
     plt.axis("off")
-
-    plt.savefig(f_fig,dpi=800)
+    plt.show()
+   # plt.savefig(f_fig,dpi=800)
 
