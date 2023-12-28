@@ -32,9 +32,10 @@ rca_threshold=1.8
 
 
 matplotlib.rcParams['font.sans-serif'] = ['Arial']
-rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
-                  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3,
-                  2.4,2.5,2.6,2.7,2.8,2.9,3]
+#rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
+#                  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3,
+#                  2.4,2.5,2.6,2.7,2.8,2.9,3]
+rca_thresholds = [1.5]
 #equations = "score1-5"
 data_types =["data1",'data2']
 data_files = ['ESGstudy1Data','ESGstudy2Data']
@@ -57,6 +58,9 @@ questions =[
           'Q6_1','Q6_2','Q6_3','Q6_4','Q6_5','Q6_6','Q7_1','Q7_2','Q7_3','Q7_4','Q7_5','Q7_6','Q7_7','Q7_8','Q7_9',
           'Q8_1','Q8_2','Q8_3','Q8_4','Q8_5','Q8_6','Q9_1','Q9_2','Q9_3','Q9_4','Q10_1','Q10_2']
         ]
+
+time_start = time.time()
+
 edge_weight_manipulte = 3
 for m in range(len(data_types)):
 
@@ -70,14 +74,12 @@ for m in range(len(data_types)):
         logger.info("Data:%s,RCA:%.1f" % (data_types[m],rca_threshold))
 
         logger.info("loading data...")
-        time_start=time.time()
 
         df= pd.read_csv(f_weights)
 
         country_quest_phi_weight_network = df.loc[::, ['QA', 'QB', 'weights']]
         time_end = time.time()
 
-        logger.info("data loaded...time:%d s'", time_end - time_start)
 
 
         #
@@ -114,9 +116,8 @@ for m in range(len(data_types)):
         fig.suptitle(f"RCA = {rca_threshold:.1f}")
         # plt.axis("off")
 
-        # plt.show()
-        # plt.rcParams['font.sans-serif'] = ['SimHei']
-        # plt.rcParams['axes.unicode_minus'] = False
         # plt.savefig(f'./{rca_threshold}.png', dpi=800)
         plt.savefig(f_fig, dpi=800)
+
+        logger.info("One figure obtained...time:%d s'", time_end - time_start)
 
