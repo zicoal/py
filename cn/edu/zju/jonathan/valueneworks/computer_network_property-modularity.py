@@ -13,6 +13,8 @@ from xlsxwriter import Workbook
 from cn.edu.tools import gini
 import networkx as nx
 import networkx.algorithms.community as nx_comm
+import community
+from community import community_louvain
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -39,7 +41,7 @@ equations = ["eq-nonlinear","eq-linear"]
 #exit(0)
 
 
-logger.info("program started: betweeness...")
+logger.info("program started: modularity...")
 
 time_start = time.time()
 
@@ -91,7 +93,10 @@ for equation in equations:
                 for i in range(len(data_one_country)):
                     g.add_edge(data_one_country[i][1], data_one_country[i][2], weight=data_one_country[i][3])
                 weights = [float(data_one_country[i][3]) for i in range(len(df_one_country))]
-                Q_modularity= nx_comm.modularity(g,nx_comm.label_propagation_communities(g))
+
+                #Q_modularity= nx_comm.modularity(g,nx_comm.label_propagation_communities(g))
+                Q_modularity= community_louvain.modularity(community_louvain.best_partition(g),g)
+
                 country_weights.append(Q_modularity)
             #country_value.loc[len(country_value)] =[country,weight]
 

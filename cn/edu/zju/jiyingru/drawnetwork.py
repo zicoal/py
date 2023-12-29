@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('tkagg')
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontManager
 from pylab import mpl
@@ -16,6 +16,9 @@ import xlsxwriter
 from openpyxl import load_workbook
 from xlsxwriter import Workbook
 import matplotlib
+import networkx as nx
+from community import community_louvain
+
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -32,10 +35,10 @@ rca_threshold=1.8
 
 
 matplotlib.rcParams['font.sans-serif'] = ['Arial']
-#rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
-#                  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3,
-#                  2.4,2.5,2.6,2.7,2.8,2.9,3]
-rca_thresholds = [1.5]
+rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
+                  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3,
+                  2.4,2.5,2.6,2.7,2.8,2.9,3]
+#rca_thresholds = [1.5]
 #equations = "score1-5"
 data_types =["data1",'data2']
 data_files = ['ESGstudy1Data','ESGstudy2Data']
@@ -97,11 +100,40 @@ for m in range(len(data_types)):
         logger.info('Questions:%d,nodes/edges:%d/%d, time:%d s',  len(questions[m]),len(g.nodes), len(g.edges),time_end - time_start)
         #plt.subplot(rows, cols, k)
 
-        edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
+        com = community_louvain.best_partition(g)
 
-     #   plt.xlabel('\u5e73\u5747\u503c')
+        # 节点大小设置，与度关联
+        node_size = [g.degree(i) ** 1 * 5 for i in g.nodes()]
+
+        # 格式整理
+        df_com = pd.DataFrame({'Group_id': com.values(),
+                               'object_id': com.keys()}
+                              )
+
+#        edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
+        df_com.groupby('Group_id').count().sort_values(by='object_id', ascending=False)
+
+        # 颜色设置
+        colors = ['DeepPink', 'orange', 'DarkCyan', '#A0CBE2', '#3CB371', 'b', 'orange', 'y', 'c', '#838B8B', 'purple',
+                  'olive', '#A0CBE2', '#4EEE94'] * 500
+        colors = [colors[i] for i in com.values()]
+
+        #   plt.xlabel('\u5e73\u5747\u503c')
 
     #   plt.rcParams['font.family'] = 'SimSun'
+
+        nx.draw_networkx(g,
+                         pos=nx.spring_layout(g),
+                         node_color=colors,
+                         edge_color='#2E8B57',
+                         font_color='black',
+                         node_size=node_size,
+                         font_size=5,
+                         alpha=0.9,
+                         width=0.1,
+                         font_weight=0.9
+                         )
+        '''
         nx.draw(g,pos=nx.spring_layout(g),
                 node_color='r',
                 edge_color='b',
@@ -109,6 +141,7 @@ for m in range(len(data_types)):
                 node_size = 150,
                 font_size=3,
                 width =edgewidth )
+        '''
 
     #    mpl.rcParams['font.']=['times-new-roman']
         #plt.title("RCA = %.1f" % rca_threshold)
