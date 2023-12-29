@@ -85,13 +85,6 @@ for m in range(len(data_types)):
 
 
 
-        #
-        #rows = 2
-        #cols = 2
-        #k=0
-
-         #   k+=1
-
         data = df.values.tolist()
 
         g = nx.Graph()
