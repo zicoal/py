@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="518bfeb7-75f5-4dac-beee-977f7a1b12fa" name="Default Changelist" comment="jonathan">
-      <change afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-betweeness-weighted.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property_avg_weight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-betweeness.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-betweeness.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-gini.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +271,8 @@
       <workItem from="1700976431599" duration="5512000" />
       <workItem from="1701332612603" duration="1661000" />
       <workItem from="1702029360634" duration="7159000" />
-      <workItem from="1702169997265" duration="6602000" />
+      <workItem from="1702169997265" duration="6755000" />
+      <workItem from="1704200073147" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="rca and phi">
       <created>1666944768093</created>
@@ -438,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702178726601</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="jonathan">
+      <created>1702193116147</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1702193116147</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
