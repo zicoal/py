@@ -64,7 +64,7 @@ questions =[
 
 time_start = time.time()
 
-edge_weight_manipulte = 3
+edge_weight_manipulte = 5
 for m in range(len(data_types)):
 
     for rca_threshold in rca_thresholds:
