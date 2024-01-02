@@ -12,6 +12,8 @@ import logging
 import xlsxwriter
 from openpyxl import load_workbook
 from xlsxwriter import Workbook
+from community import community_louvain
+
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -81,6 +83,25 @@ for c in countries:
 
     logger.info('Country: %s(%d/%d),nodes/edges:%d/%d, time:%d s', c, k, len(countries),len(g.nodes), len(g.edges),time_end - time_start)
     plt.subplot(rows, cols, k)
+
+    com = community_louvain.best_partition(g)
+
+    # 节点大小设置，与度关联
+    node_size = [g.degree(i) ** 1 * 5 for i in g.nodes()]
+
+    # 格式整理
+    df_com = pd.DataFrame({'Group_id': com.values(),
+                           'object_id': com.keys()}
+                          )
+
+    #        edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
+    df_com.groupby('Group_id').count().sort_values(by='object_id', ascending=False)
+
+    # 颜色设置
+    colors = ['DeepPink', 'orange', 'DarkCyan', '#A0CBE2', '#3CB371', 'b', 'orange', 'y', 'c', '#838B8B', 'purple',
+              'olive', '#A0CBE2', '#4EEE94'] * 500
+    colors = [colors[i] for i in com.values()]
+
 
     edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
 
