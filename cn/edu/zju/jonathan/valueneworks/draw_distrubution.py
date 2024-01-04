@@ -44,13 +44,15 @@ f_code= 'D:\\pydata\\data\\jonathan\\code.xlsx'
 
 f_prefix ="country_network_"
 f_dir ='D:\\pydata\\data\\jonathan\\results\\rca_based\\'
-f_figs_dir ='D:\\pydata\\data\\jonathan\\results\\rca_based\\figs\\fig_%s.png'
+f_figs_dir ='D:\\pydata\\data\\jonathan\\results\\rca_based\\figs\\metrics\\fig_%s.png'
 
 
 
 rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
                   1.7, 1.8, 1.9, 2, 2.1]
 
+str_linear="[f(x)=x]"
+str_nonlinear="[$f(x) = x^2-6x+10$]"
 #rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4,1.5]
 
 
@@ -68,9 +70,8 @@ countries = sorted(list(set(countries)))
 
 logger.info("Country Loaded! #countries:%d, time:%d s'", len(countries), time_end - time_start)
 
-show_countries = ['Senegal', "Germany",'Hong Kong','Australia',"United States","Thailand"]
+show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
 
-#colors = ["lightpink","pink","crimson","hotpink","deeppink"]
 colors = ["orange","skyblue","green","gray","deeppink","violet"]
 
 rows = 4
@@ -84,7 +85,13 @@ for f in file_list:
          continue
      network_property = f[len(f_prefix):f.index(".")]
 
-     f_fig = f_figs_dir % network_property
+     network_property_old = network_property
+
+     if ("eq-linear" in network_property):
+         network_property= network_property.replace("eq-linear",str_linear)
+     else:
+         network_property = network_property.replace("eq-nonlinear",str_nonlinear)
+     f_fig = f_figs_dir % network_property_old
 
      logger.info("File:%s，time:%d s", network_property, time_end - time_start)
 
@@ -96,6 +103,7 @@ for f in file_list:
      ax = ax.ravel()
      ax[1].set_title(network_property.capitalize())
      max_y=0
+     min_y =1
      for rca_threshold in rca_thresholds:
 
          columns_name = ['country','rca=%.1f' % rca_threshold]
@@ -120,6 +128,8 @@ for f in file_list:
                  show_country_index[country[0]] = j
              if(k==len(rca_thresholds)-1 and max_y<country[1]):
                 max_y =   country[1]
+             if (k == len(rca_thresholds) - 1 and min_y > country[1]):
+                min_y = country[1]
          matplotlib.rcParams['legend.handlelength'] = 0  #delete lines from legends
 #         ax[k].plot(x,y,label=("RCA=%.1f" % rca_threshold))
          ax[k].plot(x,y,label=("RCA=%.1f" % rca_threshold))
@@ -133,7 +143,8 @@ for f in file_list:
              ax[k].axvline(show_country_index[show_countries[i]],color=colors[i],linewidth=1,linestyle="--")
 
          k += 1
-
+     if (min_y< 0):
+         max_y = 0
      ax[k-1].text(65, max_y* 0.8, ("RCA=%.1f" % rca_threshold), fontsize=8)
      #plt.axis("off")
      legend_elements=[]
@@ -141,9 +152,10 @@ for f in file_list:
          legend_elements.append(Line2D([0], [0], marker='_',color = colors[i], label = show_countries[i]))
      #plt.legend(handles=legend_elements)
      plt.legend(handles=legend_elements,bbox_to_anchor=(-0.8, -0.2), loc='upper center', fontsize=6, frameon=False,ncols= len(show_countries))
-#     plt.legend(handles=legend_elements,bbox_to_anchor=(-0.8, -0.2), loc='upper center', fontsize=6, frameon=False,ncols= len(show_countries))
     # plt.tight_layout()
      plt.savefig(f_fig,dpi=800, bbox_inches='tight')
+     plt.close()
+     #exit(0)
 
 #     exit(0)
 
