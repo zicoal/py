@@ -111,7 +111,6 @@ for m in range(len(data_types)):
                   'olive', '#A0CBE2', '#4EEE94'] * 500
         colors = [colors[i] for i in com.values()]
 
-        #   plt.xlabel('\u5e73\u5747\u503c')
 
     #   plt.rcParams['font.family'] = 'SimSun'
 
