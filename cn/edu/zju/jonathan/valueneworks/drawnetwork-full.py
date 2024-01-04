@@ -47,7 +47,7 @@ questions=['q1', 'q2', 'q3', 'q4',
 
 
 #rca_thresholds = [1, 1.1, 1.2,  1.4, 1.5, 1.6]
-rca_thresholds = [1.6]
+rca_thresholds = [1.9]
 
 f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 
