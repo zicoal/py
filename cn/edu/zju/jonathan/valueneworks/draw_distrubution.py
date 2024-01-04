@@ -68,7 +68,7 @@ countries = sorted(list(set(countries)))
 
 logger.info("Country Loaded! #countries:%d, time:%d s'", len(countries), time_end - time_start)
 
-show_countries = ['Senegal', "South Africa",'Hong Kong','Australia',"United States","Thailand"]
+show_countries = ['Senegal', "Germany",'Hong Kong','Australia',"United States","Thailand"]
 
 #colors = ["lightpink","pink","crimson","hotpink","deeppink"]
 colors = ["orange","skyblue","green","gray","deeppink","violet"]
@@ -141,6 +141,7 @@ for f in file_list:
          legend_elements.append(Line2D([0], [0], marker='_',color = colors[i], label = show_countries[i]))
      #plt.legend(handles=legend_elements)
      plt.legend(handles=legend_elements,bbox_to_anchor=(-0.8, -0.2), loc='upper center', fontsize=6, frameon=False,ncols= len(show_countries))
+#     plt.legend(handles=legend_elements,bbox_to_anchor=(-0.8, -0.2), loc='upper center', fontsize=6, frameon=False,ncols= len(show_countries))
     # plt.tight_layout()
      plt.savefig(f_fig,dpi=800, bbox_inches='tight')
 
