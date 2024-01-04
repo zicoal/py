@@ -15,6 +15,19 @@ from xlsxwriter import Workbook
 from community import community_louvain
 
 
+def nx_draw(g, colors, node_size):
+    nx.draw_networkx(g,
+                     pos=nx.spring_layout(g),
+                     node_color=colors,
+                     edge_color='#2E8B57',
+                     font_color='black',
+                     node_size=node_size,
+                     font_size=4,
+                     alpha=0.9,
+                     width=0.1,
+                     font_weight=0.9
+                     )
+
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 # 定义handler的输出格式
@@ -28,13 +41,12 @@ logger.addHandler(ch)
 
 rca_threshold=1.8
 #equations = "score1-5"
+#equations = ["eq-nonlinear"]
+#weighted = ["unweighted"]
+
 equations = ["eq-nonlinear","eq-linear"]
 weighted = ["unweighted","weighted"]
 
-
-
-
-#f_code= 'D:\\py\\data\\jonathan\\weights_number_min_%.1f.xlsx' % rca_threshold
 
 
 
@@ -47,7 +59,7 @@ questions=['q1', 'q2', 'q3', 'q4',
 
 
 #rca_thresholds = [1, 1.1, 1.2,  1.4, 1.5, 1.6]
-rca_thresholds = [1.9]
+rca_thresholds = [1.5]
 
 f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 
@@ -57,7 +69,8 @@ f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 ##countries = sorted(list(set(countries)))
 
 
-show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
+#show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
+show_countries = ["United Kingdom","United States"]
 
 colors = ["orange","skyblue","green","gray","deeppink","violet"]
 
@@ -65,7 +78,7 @@ colors = ["orange","skyblue","green","gray","deeppink","violet"]
 logger.info(show_countries)
 
 
-rows = 2
+rows = 1
 cols = round(len(show_countries) / rows)
 
 
@@ -97,7 +110,7 @@ for equation in equations:
 
        f1 = f_dir  % (network_property_old, rca_threshold)
        df = pd.read_csv(f1)
-
+#       print(f1)
 #       countries = {}
        #       countries = [data[i][0] for i in range(len(data))]
        country_quest_phi_weight_network = df.loc[::, ["country", 'QA', 'QB', 'weights']]
@@ -111,18 +124,22 @@ for equation in equations:
                 df_one_country = df.loc[df['country'] == c]
                 data_one_country = df_one_country.values.tolist()
                 g = nx.Graph()
-                #logger.info('Country: %s(%d/%d),nodes/edges:%d/%d, time:%d s', c, k, len(countries),len(g.nodes), len(g.edges),time_end - time_start)
+                time_end =time.time()
                 plt.subplot(rows, cols, k)
-                com=None
+ #               com=None
 
                 if (w =="unweighted"):
                     for i in range(len(data_one_country)):
-                        g.add_edge(data_one_country[i][1], data_one_country[i][2])
-                    com = community_louvain.best_partition(g)
+#                        g.add_edge(data_one_country[i][1], data_one_country[i][2])
+                        g.add_edge(data_one_country[i][1], data_one_country[i][2], weight=data_one_country[i][3])
                 else:
                     for i in range(len(data_one_country)):
                         g.add_edge(data_one_country[i][1], data_one_country[i][2], weight=data_one_country[i][3])
-                    com = community_louvain.best_partition(g,weight='weight')
+                 #   com = community_louvain.best_partition(g)
+#                    com = community_louvain.best_partition(g,weight='weight')
+                com = community_louvain.best_partition(g)
+
+                #logger.info('Country: %s(%d/%d),nodes/edges:%d/%d, time:%d s', c, k, len(show_countries),len(g.nodes), len(g.edges),time_end - time_start)
 
                 # 节点大小设置，与度关联
                 node_size = [g.degree(i) ** 1 * 5 for i in g.nodes()]
@@ -134,38 +151,40 @@ for equation in equations:
                 df_com.groupby('Group_id').count().sort_values(by='object_id', ascending=False)
 
                 # 颜色设置
-                colors = [colors[i] for i in com.values()]
-                edgewidth=None
 
+
+                colors = [colors[i] for i in com.values()]
+                nx_draw(g, colors, node_size)
+
+                #print(f1)
+                print(f"{c},{com}")
+                edgewidth=None
+                '''
                 if (w == "unweighted"):
                     edgewidth = [edge_weight_manipulte for e in g.edges()]
                 else:
                     edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
-
-#                nx.draw(g,pos=nx.spring_layout(g),
-#                        node_color='r',
-#                        edge_color='b',
-#                        with_labels = True,
-#                        node_size = 100,
-#                        font_size=5,
-#                        width =edgewidth)
+                '''
+                '''    
                 nx.draw_networkx(g,
-                                 pos=nx.spring_layout(g),
-                                 node_color=colors,
-                                 edge_color='#2E8B57',
-                                 font_color='black',
-                                 node_size=node_size,
-                                 font_size=4,
-                                 alpha=0.9,
-                                 width=0.1,
-                                 font_weight=0.9
-                                 )
-                plt.title(c)
+                     pos=nx.spring_layout(g),
+                     node_color=colors,
+                     edge_color='#2E8B57',
+                     font_color='black',
+                     node_size=node_size,
+                     font_size=5,
+                     alpha=0.9,
+                     width=0.1,
+                     font_weight=0.9
+                     )
+                '''
+
+           #     plt.title(c)
             #plt.axis("off")
            xylims = plt.axis()
            min_xlim=xylims[0]
            min_ylim=xylims[2]
-           plt.text(min_xlim-4, min_ylim-0.4,"RCA=%.1f,%s %s" % (rca_threshold,w, network_property), fontsize=13, color='b')
+           #plt.text(min_xlim-4, min_ylim-0.4,"RCA=%.1f,%s %s" % (rca_threshold,w, network_property), fontsize=13, color='b')
            plt.savefig(f_fig,dpi=800, bbox_inches='tight')
            plt.close()
            time_end =time.time()

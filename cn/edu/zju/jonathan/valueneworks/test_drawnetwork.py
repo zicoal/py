@@ -39,8 +39,8 @@ matplotlib.rcParams['font.sans-serif'] = ['Arial']
 #                  2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3]
 rca_thresholds = [1.5]
 # equations = "score1-5"
-data_types = ["eq-linear", 'eq-nonlinear']
-data_files = ['ESGstudy1Data', 'ESGstudy2Data']
+data_types = ['eq-nonlinear']
+#data_types = ["eq-linear", 'eq-nonlinear']
 
 
 time_start = time.time()
@@ -92,6 +92,8 @@ for m in range(len(data_types)):
                       'purple',
                       'olive', '#A0CBE2', '#4EEE94'] * 500
             colors = [colors[i] for i in com.values()]
+
+            logger.info(f"{country},{com}")
 
             #   plt.rcParams['font.family'] = 'SimSun'
 
