@@ -40,12 +40,11 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 rca_threshold=1.8
-#equations = "score1-5"
-#equations = ["eq-nonlinear"]
-#weighted = ["unweighted"]
+equations = ["eq-nonlinear"]
+weighted = ["unweighted"]
 
-equations = ["eq-nonlinear","eq-linear"]
-weighted = ["unweighted","weighted"]
+#equations = ["eq-nonlinear","eq-linear"]
+#weighted = ["unweighted","weighted"]
 
 
 
@@ -97,7 +96,7 @@ colors = ['DeepPink', 'orange', 'DarkCyan', '#A0CBE2', '#3CB371', 'b', 'orange',
 
 
 
-edge_weight_manipulte =2
+edge_weight_manipulte =1
 e = 0
 
 for equation in equations:
@@ -154,17 +153,29 @@ for equation in equations:
 
 
                 colors = [colors[i] for i in com.values()]
-                nx_draw(g, colors, node_size)
+                #nx_draw(g, colors, node_size)
+
 
                 #print(f1)
                 print(f"{c},{com}")
                 edgewidth=None
-                '''
-                if (w == "unweighted"):
+
+                if (w == "unweighted1"):
                     edgewidth = [edge_weight_manipulte for e in g.edges()]
                 else:
                     edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
-                '''
+
+                nx.draw(g, pos=nx.spring_layout(g),
+                        node_color=colors,
+                        edge_color='#2E8B57',
+                        with_labels=True,
+                        font_color='black',
+                        node_size=node_size,
+                        font_size=5,
+                        alpha=0.9,
+                        width=edgewidth,
+                        font_weight=0.9)
+
                 '''    
                 nx.draw_networkx(g,
                      pos=nx.spring_layout(g),
@@ -188,7 +199,7 @@ for equation in equations:
            plt.savefig(f_fig,dpi=800, bbox_inches='tight')
            plt.close()
            time_end =time.time()
-           logger.info("File:%s，RCA_%.1f, %s, time:%d s", equation, rca_threshold, w,time_end - time_start)
+           #logger.info("File:%s，RCA_%.1f, %s, time:%d s", equation, rca_threshold, w,time_end - time_start)
            #exit(0)
 #plt.show()
 #nx.draw_networkx_nodes(graph, pos,

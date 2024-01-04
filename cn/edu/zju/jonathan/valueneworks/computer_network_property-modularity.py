@@ -16,6 +16,7 @@ import networkx.algorithms.community as nx_comm
 import community
 from community import community_louvain
 
+
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 # 定义handler的输出格式
