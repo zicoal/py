@@ -15,18 +15,6 @@ from xlsxwriter import Workbook
 from community import community_louvain
 
 
-def nx_draw(g, colors, node_size):
-    nx.draw_networkx(g,
-                     pos=nx.spring_layout(g),
-                     node_color=colors,
-                     edge_color='#2E8B57',
-                     font_color='black',
-                     node_size=node_size,
-                     font_size=4,
-                     alpha=0.9,
-                     width=0.1,
-                     font_weight=0.9
-                     )
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -40,11 +28,11 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 rca_threshold=1.8
-equations = ["eq-nonlinear"]
-weighted = ["unweighted"]
+#equations = ["eq-nonlinear"]
+#weighted = ["unweighted"]
 
-#equations = ["eq-nonlinear","eq-linear"]
-#weighted = ["unweighted","weighted"]
+equations = ["eq-nonlinear","eq-linear"]
+weighted = ["unweighted","weighted"]
 
 
 
@@ -58,7 +46,7 @@ questions=['q1', 'q2', 'q3', 'q4',
 
 
 #rca_thresholds = [1, 1.1, 1.2,  1.4, 1.5, 1.6]
-rca_thresholds = [1.5]
+rca_thresholds = [1.0,1.4,1.5,1.7,2.0]
 
 f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 
@@ -68,8 +56,8 @@ f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 ##countries = sorted(list(set(countries)))
 
 
-#show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
-show_countries = ["United Kingdom","United States"]
+show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
+#show_countries = ["Zambia","United States",'Germany' ]
 
 colors = ["orange","skyblue","green","gray","deeppink","violet"]
 
@@ -77,7 +65,7 @@ colors = ["orange","skyblue","green","gray","deeppink","violet"]
 logger.info(show_countries)
 
 
-rows = 1
+rows = 2
 cols = round(len(show_countries) / rows)
 
 
@@ -96,7 +84,8 @@ colors = ['DeepPink', 'orange', 'DarkCyan', '#A0CBE2', '#3CB371', 'b', 'orange',
 
 
 
-edge_weight_manipulte =1
+edge_weight_manipulte =2
+node_weight_manipulte =5
 e = 0
 
 for equation in equations:
@@ -118,30 +107,28 @@ for equation in equations:
        for w in weighted:
            f_fig = f_figs_dir % (network_property_old,w, rca_threshold)
            k = 0
+           fig = plt.figure(figsize=(15,10));   plt.clf()
+           fig, ax = plt.subplots(nrows=rows, ncols=cols, num=1)
+#           plt.subplot(rows, cols, k)
            for c in show_countries:
-                k+=1
+
                 df_one_country = df.loc[df['country'] == c]
                 data_one_country = df_one_country.values.tolist()
                 g = nx.Graph()
+                for q_node in questions:
+                    g.add_node(q_node)
                 time_end =time.time()
-                plt.subplot(rows, cols, k)
- #               com=None
+                com=None
 
                 if (w =="unweighted"):
                     for i in range(len(data_one_country)):
-#                        g.add_edge(data_one_country[i][1], data_one_country[i][2])
-                        g.add_edge(data_one_country[i][1], data_one_country[i][2], weight=data_one_country[i][3])
+                        g.add_edge(data_one_country[i][1], data_one_country[i][2])
+                    com = community_louvain.best_partition(g)
                 else:
                     for i in range(len(data_one_country)):
                         g.add_edge(data_one_country[i][1], data_one_country[i][2], weight=data_one_country[i][3])
-                 #   com = community_louvain.best_partition(g)
-#                    com = community_louvain.best_partition(g,weight='weight')
-                com = community_louvain.best_partition(g)
+                    com = community_louvain.best_partition(g,weight='weight')
 
-                #logger.info('Country: %s(%d/%d),nodes/edges:%d/%d, time:%d s', c, k, len(show_countries),len(g.nodes), len(g.edges),time_end - time_start)
-
-                # 节点大小设置，与度关联
-                node_size = [g.degree(i) ** 1 * 5 for i in g.nodes()]
                 # 格式整理
                 df_com = pd.DataFrame({'Group_id': com.values(),
                                        'object_id': com.keys()}
@@ -150,53 +137,50 @@ for equation in equations:
                 df_com.groupby('Group_id').count().sort_values(by='object_id', ascending=False)
 
                 # 颜色设置
-
-
-                colors = [colors[i] for i in com.values()]
-                #nx_draw(g, colors, node_size)
-
+                node_colors = [colors[i] for i in com.values()]
 
                 #print(f1)
-                print(f"{c},{com}")
+#                print(f"{c},{com}")
+#                print(node_colors)
+
+                # 节点和边大小设置，与度、及点关联
+                node_size = []
                 edgewidth=None
 
-                if (w == "unweighted1"):
-                    edgewidth = [edge_weight_manipulte for e in g.edges()]
+                if (w == "unweighted"):
+                    edgewidth = [edge_weight_manipulte * 0.1 for e in g.edges()]
+                    node_size = [g.degree(i) * node_weight_manipulte for i in g.nodes()]
                 else:
                     edgewidth = [g.get_edge_data(*e)['weight']*edge_weight_manipulte for e in g.edges()]
+                    for cuurent_node in g.nodes:
+                        t_nodesize =0
+                        for nb_edge in g.edges(cuurent_node):
+                            t_nodesize += g[nb_edge[0]][nb_edge[1]]['weight']
+                        node_size.append(t_nodesize * node_weight_manipulte*40)
+                ix = np.unravel_index(k, ax.shape)
+                plt.sca(ax[ix])
+                nx.draw_networkx(g, pos=nx.circular_layout(g),
+                         node_color=node_colors,
+                         edge_color='#2E8B57',
+                         with_labels=True,
+                         font_color='black',
+                         font_size=5,
+                         alpha=0.9,
+                         node_size=node_size,
+                         width=edgewidth,
+                         font_weight=0.9,
+                         font_family = 'sans-serif',
+                         ax=ax[ix])
+                ax[ix].set_title(c, fontsize=13)
+                ax[ix].set_axis_off()
+                k += 1
 
-                nx.draw(g, pos=nx.spring_layout(g),
-                        node_color=colors,
-                        edge_color='#2E8B57',
-                        with_labels=True,
-                        font_color='black',
-                        node_size=node_size,
-                        font_size=5,
-                        alpha=0.9,
-                        width=edgewidth,
-                        font_weight=0.9)
-
-                '''    
-                nx.draw_networkx(g,
-                     pos=nx.spring_layout(g),
-                     node_color=colors,
-                     edge_color='#2E8B57',
-                     font_color='black',
-                     node_size=node_size,
-                     font_size=5,
-                     alpha=0.9,
-                     width=0.1,
-                     font_weight=0.9
-                     )
-                '''
-
-           #     plt.title(c)
             #plt.axis("off")
            xylims = plt.axis()
            min_xlim=xylims[0]
            min_ylim=xylims[2]
-           #plt.text(min_xlim-4, min_ylim-0.4,"RCA=%.1f,%s %s" % (rca_threshold,w, network_property), fontsize=13, color='b')
-           plt.savefig(f_fig,dpi=800, bbox_inches='tight')
+           plt.text(min_xlim-3, min_ylim,"RCA=%.1f,%s %s" % (rca_threshold,w, network_property), fontsize=13, color='b')
+           plt.savefig(f_fig,dpi=200, bbox_inches='tight')
            plt.close()
            time_end =time.time()
            #logger.info("File:%s，RCA_%.1f, %s, time:%d s", equation, rca_threshold, w,time_end - time_start)
