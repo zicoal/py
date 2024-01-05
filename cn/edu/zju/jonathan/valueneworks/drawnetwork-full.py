@@ -81,8 +81,6 @@ colors = ['DeepPink', 'orange', 'DarkCyan', '#A0CBE2', '#3CB371', 'b', 'orange',
           'olive', '#A0CBE2', '#4EEE94'] * 500
 
 
-
-
 edge_weight_manipulte =2
 node_weight_manipulte =5
 e = 0
