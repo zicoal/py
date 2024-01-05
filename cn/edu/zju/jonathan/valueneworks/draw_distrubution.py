@@ -70,9 +70,13 @@ countries = sorted(list(set(countries)))
 
 logger.info("Country Loaded! #countries:%d, time:%d s'", len(countries), time_end - time_start)
 
-show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
+#show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
 
-colors = ["orange","skyblue","green","gray","deeppink","violet"]
+show_countries = ['Germany', "France",'Sweden','Croatia',"Hong Kong","Iraq","Zambia","United States","United Kingdom"]
+
+#colors = ["orange","skyblue","green","gray","deeppink","violet"]
+colors = [ 'y','gray', 'violet', '#A0CBE2', '#3CB371', 'b', 'orange', 'DeepPink', 'c', '#838B8B', 'purple',
+          'olive', '#A0CBE2', '#4EEE94'] * 500
 
 rows = 4
 cols = round(len(rca_thresholds) / rows)

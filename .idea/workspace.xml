@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="518bfeb7-75f5-4dac-beee-977f7a1b12fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/py.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-modularity.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-modularity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/draw_distrubution.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/draw_distrubution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/drawnetwork-full.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/drawnetwork-full.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn/edu/zju/test/test_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/cn/edu/zju/test/test_plot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +35,6 @@
       </map>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/master" />
-  </component>
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
@@ -52,6 +52,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/test_drawnetwork.py" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectId" id="23HEEfb9a4vyQz8d1OZqXyzAuI8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -91,29 +94,7 @@
       <recent name="D:\py" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.drawnetwork-full">
-    <configuration name="computer_network_property-modularity-weighted (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="py" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/computer_network_property-modularity-weighted.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.test_plot">
     <configuration name="draw_distrubution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,6 +109,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/draw_distrubution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="drawnetwork-full (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/drawnetwork-full.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -158,7 +161,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="drawnetwork" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_drawnetwork" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -166,12 +169,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/jiyingru" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jiyingru/drawnetwork.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks/test_drawnetwork.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,7 +183,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_community" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_plot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -193,7 +196,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/test/test_community.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cn/edu/zju/test/test_plot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -204,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.drawnetwork-full" />
+        <item itemvalue="Python.test_plot" />
+        <item itemvalue="Python.drawnetwork-full (1)" />
         <item itemvalue="Python.draw_distrubution" />
-        <item itemvalue="Python.drawnetwork" />
-        <item itemvalue="Python.computer_network_property-modularity-weighted (1)" />
-        <item itemvalue="Python.test_community" />
+        <item itemvalue="Python.drawnetwork-full" />
+        <item itemvalue="Python.test_drawnetwork" />
       </list>
     </recent_temporary>
   </component>
@@ -288,12 +291,17 @@
       <workItem from="1703752929862" duration="33000" />
       <workItem from="1703752969815" duration="1114000" />
       <workItem from="1703754106951" duration="305000" />
-      <workItem from="1703814628649" duration="4923000" />
-      <workItem from="1704201608176" duration="1183000" />
-      <workItem from="1704269941685" duration="614000" />
-      <workItem from="1704290073988" duration="356000" />
-      <workItem from="1704291981720" duration="245000" />
-      <workItem from="1704329842936" duration="2109000" />
+      <workItem from="1703814628649" duration="7144000" />
+      <workItem from="1703830467227" duration="574000" />
+      <workItem from="1703831053532" duration="95000" />
+      <workItem from="1703831160848" duration="60000" />
+      <workItem from="1703831236946" duration="432000" />
+      <workItem from="1703831683889" duration="2125000" />
+      <workItem from="1704154816440" duration="22116000" />
+      <workItem from="1704185666514" duration="36000" />
+      <workItem from="1704185735015" duration="70000" />
+      <workItem from="1704345106770" duration="14052000" />
+      <workItem from="1704413458578" duration="12280000" />
     </task>
     <task id="LOCAL-00001" summary="rca and phi">
       <created>1666944768093</created>
@@ -512,21 +520,56 @@
       <option name="project" value="LOCAL" />
       <updated>1703753874925</updated>
     </task>
-    <task id="LOCAL-00032" summary="draw_distrubution.py">
-      <created>1704331333548</created>
+    <task id="LOCAL-00032" summary="jonathan_valuenetwork_modularity">
+      <created>1703820480761</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1704331333548</updated>
+      <updated>1703820480761</updated>
     </task>
-    <task id="LOCAL-00033" summary="draw_distrubution.py">
-      <created>1704331958729</created>
+    <task id="LOCAL-00033" summary="jonathan_valuenetwork_modularity">
+      <created>1703840422445</created>
       <option name="number" value="00033" />
       <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1704331958729</updated>
+      <updated>1703840422445</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="jonathan_valuenetwork_cc">
+      <created>1704159406818</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1704159406818</updated>
+    </task>
+    <task id="LOCAL-00035" summary="jonathan_valuenetwork_draw_distrubtion">
+      <created>1704185600827</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1704185600827</updated>
+    </task>
+    <task id="LOCAL-00036" summary="jonathan_valuenetwork_draw_network">
+      <created>1704353948655</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1704353948655</updated>
+    </task>
+    <task id="LOCAL-00037" summary="jonathan_valuenetwork_draw_network">
+      <created>1704355735309</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1704355735309</updated>
+    </task>
+    <task id="LOCAL-00038" summary="jonathan_valuenetwork_draw_network">
+      <created>1704421755445</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1704421755445</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,11 +599,13 @@
     <MESSAGE value="jonathan" />
     <MESSAGE value="jiyingru" />
     <MESSAGE value="jonathan_valuenetwork_modularity" />
-    <MESSAGE value="draw_distrubution.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="draw_distrubution.py" />
+    <MESSAGE value="jonathan_valuenetwork_cc" />
+    <MESSAGE value="jonathan_valuenetwork_draw_distrubtion" />
+    <MESSAGE value="jonathan_valuenetwork_draw_network" />
+    <option name="LAST_COMMIT_MESSAGE" value="jonathan_valuenetwork_draw_network" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/py$drawnetwork_full.coverage" NAME="drawnetwork-full Coverage Results" MODIFIED="1704375045614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$drawnetwork_full.coverage" NAME="drawnetwork-full Coverage Results" MODIFIED="1704359405967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$gini.coverage" NAME="gini Coverage Results" MODIFIED="1699702150051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/tools" />
     <SUITE FILE_PATH="coverage/py$computer_edge_weights_csv_data1.coverage" NAME="computer_edge_weights_csv-data1 Coverage Results" MODIFIED="1702456943791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jiyingru" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_modularity_weighted__1_.coverage" NAME="computer_network_property-modularity-weighted (1) Coverage Results" MODIFIED="1703817284369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
@@ -568,35 +613,45 @@
     <SUITE FILE_PATH="coverage/py$drawnetwork__2_.coverage" NAME="drawnetwork (2) Coverage Results" MODIFIED="1702535081832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jiyingru" />
     <SUITE FILE_PATH="coverage/py$dijkstra.coverage" NAME="dijkstra_distance Coverage Results" MODIFIED="1666947576843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$compute_rca.coverage" NAME="compute_weights Coverage Results" MODIFIED="1666885753989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$draw_distrubution__1_.coverage" NAME="draw_distrubution (1) Coverage Results" MODIFIED="1704185765495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$check_data.coverage" NAME="check_data Coverage Results" MODIFIED="1700620959243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_betweeness_weighted.coverage" NAME="computer_network_property-betweeness-weighted Coverage Results" MODIFIED="1702179057099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$test_charts.coverage" NAME="test_charts Coverage Results" MODIFIED="1703831629101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
+    <SUITE FILE_PATH="coverage/py$test_drawnetwork.coverage" NAME="test_drawnetwork Coverage Results" MODIFIED="1704357155236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$compute_behavior.coverage" NAME="compute_behavior Coverage Results" MODIFIED="1672565194806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zhangchan" />
     <SUITE FILE_PATH="coverage/py$computer_network_property.coverage" NAME="computer_network_property Coverage Results" MODIFIED="1699753884976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
-    <SUITE FILE_PATH="coverage/py$test.coverage" NAME="test Coverage Results" MODIFIED="1665637366016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
+    <SUITE FILE_PATH="coverage/py$test.coverage" NAME="test Coverage Results" MODIFIED="1702532703522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jiyingru" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_modularity_weighted.coverage" NAME="computer_network_property-modularity-weighted Coverage Results" MODIFIED="1703753458135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
-    <SUITE FILE_PATH="coverage/py$draw_distrubution.coverage" NAME="draw_distrubution Coverage Results" MODIFIED="1704201956919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$draw_distrubution.coverage" NAME="draw_distrubution Coverage Results" MODIFIED="1704422386741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$compute_proxmity.coverage" NAME="compute_proxmity Coverage Results" MODIFIED="1667137874438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$hny.coverage" NAME="compute_area Coverage Results" MODIFIED="1672560619409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zhangchan" />
     <SUITE FILE_PATH="coverage/py$test_community.coverage" NAME="test_community Coverage Results" MODIFIED="1703817214837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
     <SUITE FILE_PATH="coverage/py$computer_edge_weights__1_.coverage" NAME="computer_edge_weights (1) Coverage Results" MODIFIED="1700725333532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$computer_network_property_cluster_coefficient.coverage" NAME="computer_network_property-cluster-coefficient Coverage Results" MODIFIED="1704159154807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$dijkstra_distance__1_.coverage" NAME="dijkstra_distance (1) Coverage Results" MODIFIED="1667054053903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_modularity.coverage" NAME="computer_network_property-modularity Coverage Results" MODIFIED="1703753407628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
-    <SUITE FILE_PATH="coverage/py$drawnetwork.coverage" NAME="drawnetwork Coverage Results" MODIFIED="1699258694596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan" />
+    <SUITE FILE_PATH="coverage/py$drawnetwork.coverage" NAME="drawnetwork Coverage Results" MODIFIED="1703818309201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jiyingru" />
     <SUITE FILE_PATH="coverage/py$hny_1_.coverage" NAME="hny(1) Coverage Results" MODIFIED="1672564400971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zhangchan" />
-    <SUITE FILE_PATH="coverage/py$drawnetwork__1_.coverage" NAME="drawnetwork (1) Coverage Results" MODIFIED="1699701882562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$drawnetwork__1_.coverage" NAME="drawnetwork (1) Coverage Results" MODIFIED="1702480409862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jiyingru" />
+    <SUITE FILE_PATH="coverage/py$drawnetwork_full__1_.coverage" NAME="drawnetwork-full (1) Coverage Results" MODIFIED="1704424241937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$test_charts__1_.coverage" NAME="test_charts (1) Coverage Results" MODIFIED="1703833140198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_betweeness.coverage" NAME="computer_network_property-betweeness Coverage Results" MODIFIED="1702177941265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_modularity__1_.coverage" NAME="computer_network_property-modularity (1) Coverage Results" MODIFIED="1703816393655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$test_plot.coverage" NAME="test_plot Coverage Results" MODIFIED="1704424756603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
     <SUITE FILE_PATH="coverage/py$compute_correlation.coverage" NAME="compute_correlation Coverage Results" MODIFIED="1678459061885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/chenjuanjuan/kshell" />
+    <SUITE FILE_PATH="coverage/py$test_legend.coverage" NAME="test_legend Coverage Results" MODIFIED="1704180819099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
     <SUITE FILE_PATH="coverage/py$drawnetwork__3_.coverage" NAME="drawnetwork (3) Coverage Results" MODIFIED="1702627009304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jiyingru" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_avg_weight.coverage" NAME="computer_network_property_avg_weight Coverage Results" MODIFIED="1702192953454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$original_mg.coverage" NAME="original_mg Coverage Results" MODIFIED="1697534547193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/minoritygame" />
     <SUITE FILE_PATH="coverage/py$computer_weights_first.coverage" NAME="computer_weights_first Coverage Results" MODIFIED="1699624607862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$generateBilibiliUrl.coverage" NAME="generateBilibiliUrl Coverage Results" MODIFIED="1697615288068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/test" />
     <SUITE FILE_PATH="coverage/py$computer_network_property_gini__1_.coverage" NAME="computer_network_property-gini (1) Coverage Results" MODIFIED="1702178259605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
+    <SUITE FILE_PATH="coverage/py$draw_distrubution__2_.coverage" NAME="draw_distrubution (2) Coverage Results" MODIFIED="1704346759635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
     <SUITE FILE_PATH="coverage/py$compute_proxmity_nx.coverage" NAME="compute_proxmity_nx Coverage Results" MODIFIED="1669790290002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$split_events_str.coverage" NAME="split_events-str Coverage Results" MODIFIED="1700978322217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
     <SUITE FILE_PATH="coverage/py$compute_weights.coverage" NAME="compute_weights Coverage Results" MODIFIED="1666943294385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$compute_weights__1_.coverage" NAME="compute_weights (1) Coverage Results" MODIFIED="1669789669753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/zina" />
     <SUITE FILE_PATH="coverage/py$split_events_df.coverage" NAME="split_events-df Coverage Results" MODIFIED="1700977602638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/lianghai/leaderless" />
+    <SUITE FILE_PATH="coverage/py$computer_network_property_cluster_coefficient_weighted.coverage" NAME="computer_network_property-cluster-coefficient-weighted Coverage Results" MODIFIED="1704159302725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cn/edu/zju/jonathan/valueneworks" />
   </component>
 </project>

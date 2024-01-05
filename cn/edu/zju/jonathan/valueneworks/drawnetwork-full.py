@@ -44,9 +44,9 @@ questions=['q1', 'q2', 'q3', 'q4',
                  'q9', 'q10', 'q11', 'q12',
                  'q13', 'q14', 'q15', 'q16']
 
-
 #rca_thresholds = [1, 1.1, 1.2,  1.4, 1.5, 1.6]
 rca_thresholds = [1.0,1.4,1.5,1.7,2.0]
+#rca_thresholds = [1.0]
 
 f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 
@@ -56,16 +56,15 @@ f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 ##countries = sorted(list(set(countries)))
 
 
-show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
+show_countries = ['Germany', "France",'Sweden','Croatia',"Iraq","Zambia","Hong Kong","United States","United Kingdom"]
 #show_countries = ["Zambia","United States",'Germany' ]
 
-colors = ["orange","skyblue","green","gray","deeppink","violet"]
 
 
 logger.info(show_countries)
 
 
-rows = 2
+rows = 3
 cols = round(len(show_countries) / rows)
 
 
@@ -107,7 +106,7 @@ for equation in equations:
        for w in weighted:
            f_fig = f_figs_dir % (network_property_old,w, rca_threshold)
            k = 0
-           fig = plt.figure(figsize=(15,10));   plt.clf()
+           fig = plt.figure(figsize=(18,18));   plt.clf()
            fig, ax = plt.subplots(nrows=rows, ncols=cols, num=1)
 #           plt.subplot(rows, cols, k)
            for c in show_countries:
@@ -171,7 +170,7 @@ for equation in equations:
                          font_weight=0.9,
                          font_family = 'sans-serif',
                          ax=ax[ix])
-                ax[ix].set_title(c, fontsize=13)
+                ax[ix].set_title(c, fontsize=20)
                 ax[ix].set_axis_off()
                 k += 1
 
@@ -179,11 +178,11 @@ for equation in equations:
            xylims = plt.axis()
            min_xlim=xylims[0]
            min_ylim=xylims[2]
-           plt.text(min_xlim-3, min_ylim,"RCA=%.1f,%s %s" % (rca_threshold,w, network_property), fontsize=13, color='b')
-           plt.savefig(f_fig,dpi=200, bbox_inches='tight')
+           plt.text(min_xlim-3, min_ylim,"RCA=%.1f,%s %s" % (rca_threshold,w, network_property), fontsize=18, color='b')
+           plt.savefig(f_fig,dpi=800, bbox_inches='tight')
            plt.close()
            time_end =time.time()
-           #logger.info("File:%s，RCA_%.1f, %s, time:%d s", equation, rca_threshold, w,time_end - time_start)
+           logger.info("File:%s，RCA_%.1f, %s, time:%d s", equation, rca_threshold, w,time_end - time_start)
            #exit(0)
 #plt.show()
 #nx.draw_networkx_nodes(graph, pos,
