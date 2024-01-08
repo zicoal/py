@@ -56,7 +56,8 @@ f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 ##countries = sorted(list(set(countries)))
 
 
-show_countries = ['Germany', "France",'Sweden','Croatia',"Iraq","Zambia","Hong Kong","United States","United Kingdom"]
+#show_countries = ['Germany', "France",'Sweden','Croatia',"Iraq","Zambia","Hong Kong","United States","United Kingdom"]
+show_countries = ['Germany', "France",'Sweden','Croatia',"Zambia","South Affrica","Iraq","Hong Kong","India","Japan", "United States","United Kingdom",]
 #show_countries = ["Zambia","United States",'Germany' ]
 
 
