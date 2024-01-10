@@ -41,8 +41,9 @@ def getscore (x):
 questions = ['q1', 'q2', 'q4', 'q5',
               'q6', 'q7', 'q8','q9',
              'q10', 'q11', 'q12', 'q15']
-
 new_questions = [f"q{i+1}" for i in range(len(questions))]
+show_countries = ['Germany', "France",'Sweden','Croatia',"Zambia","South Africa","Iraq","Hong Kong","India","Japan", "United States","United Kingdom",]
+
 question_meaning={}
 #mpl.rcParams['']
 rgbcolor= [(255/255,159/255,127/255),(50/255,196/255,233/255),(252/255,114/255,147/255)]
@@ -78,7 +79,6 @@ logger.info("Country Loaded! #countries:%d, time:%d s'", len(countries), time_en
 
 #show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
 
-show_countries = ['Germany', "France",'Sweden','Croatia',"Zambia","South Africa","Iraq","Hong Kong","India","Japan", "United States","United Kingdom",]
 
 #colors = ["orange","skyblue","green","gray","deeppink","violet"]
 colors = [ 'y','gray', 'violet', '#A0CBE2', '#3CB371', 'b', 'orange', 'DeepPink', 'c', '#838B8B', 'purple',
@@ -89,6 +89,7 @@ cols = round(len(questions) / rows)
 #print(cols)
 bar_width=0.8
 bins = [i / 10 for i in range(5, 56, 10)]
+x_ticks =np.arange(1,6,1)
 for country in show_countries:
 
      f_fig = f_figs_dir % country
@@ -141,21 +142,12 @@ for country in show_countries:
          else:
              ax[ix].bar(x1, frequency_linear.values / sample_num, width=width, color=colors[1])
              ax[ix].bar(x2, frequency_nonlinear.values / sample_num, width=width, color=colors[2])
-         plt.xticks(x, frequency_linear.index.astype(str), fontsize=11)
-         # if k == 0:
-         #     ax[ix].bar(frequency_linear.index.astype(str), frequency_linear.values, color=colors[1],label="Original",width=bar_width)
-         #     ax[ix].bar(frequency_nonlinear.index.astype(str), frequency_nonlinear.values,  color=colors[2], bottom=frequency_linear.values, label="Polarization",width=bar_width)
-         #     ax[ix].legend(loc="best", frameon=False, fontsize=18)
-         #
-         # else:
-         #     ax[ix].bar(frequency_linear.index.astype(str),frequency_linear.values, color=colors[1],width=bar_width)
-         #     ax[ix].bar(frequency_nonlinear.index.astype(str), frequency_nonlinear.values,bottom=frequency_linear.values, color=colors[2],width=bar_width)
-         #if k == 1:
-             #ax[ix].set_title(f"{country}",fontsize=25)
+        #  plt.xticks(x, frequency_linear.index.astype(str), fontsize=11)
+         plt.xticks(x, x_ticks.astype(str), fontsize=20)
          ax[ix].set_title(f"{new_questions[questions.index(q)]}:{question_meaning[new_questions[questions.index(q)]]}", fontsize=20)
          xylims = plt.axis()
          if k == len(questions) - 2:
-             ax[ix].text(xylims[0] - 4,xylims[2] - 0.1, f"{country}", fontsize=30)
+             ax[ix].text(xylims[0] - 4,xylims[2] - 0.12, f"{country}", fontsize=30)
          k += 1
      plt.savefig(f_fig,dpi=200, bbox_inches='tight')
      plt.close()
