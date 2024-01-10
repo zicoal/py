@@ -64,7 +64,8 @@ df= pd.read_csv(f1)
 df_question= pd.read_excel(f_question_meaning)
 
 for q in new_questions:
-    question_meaning[q] = df_question[q].values.tolist()
+    tmp = df_question[q].values.tolist()
+    question_meaning[q] = tmp[0]
 
 #print(question_meaning)
 time_end = time.time()
@@ -77,7 +78,7 @@ logger.info("Country Loaded! #countries:%d, time:%d s'", len(countries), time_en
 
 #show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
 
-show_countries = ['Germany', "France",'Sweden','Croatia',"Zambia","South Affrica","Iraq","Hong Kong","India","Japan", "United States","United Kingdom",]
+show_countries = ['Germany', "France",'Sweden','Croatia',"Zambia","South Africa","Iraq","Hong Kong","India","Japan", "United States","United Kingdom",]
 
 #colors = ["orange","skyblue","green","gray","deeppink","violet"]
 colors = [ 'y','gray', 'violet', '#A0CBE2', '#3CB371', 'b', 'orange', 'DeepPink', 'c', '#838B8B', 'purple',
@@ -86,7 +87,8 @@ colors = [ 'y','gray', 'violet', '#A0CBE2', '#3CB371', 'b', 'orange', 'DeepPink'
 rows = 3
 cols = round(len(questions) / rows)
 #print(cols)
-bar_width=0.5
+bar_width=0.8
+bins = [i / 10 for i in range(5, 56, 10)]
 for country in show_countries:
 
      f_fig = f_figs_dir % country
@@ -100,7 +102,9 @@ for country in show_countries:
      fig, ax = plt.subplots(nrows=rows, ncols=cols, num=1)
 
      #ax = ax.ravel()
-     bins=np.arange(0, 6, 1)
+#     bins=np.arange(0.5, 5.5, 1)
+     sample_num = len(df_one_country)
+ #    print(sample_num)
      for q in questions:
 
          df_one_question =pd.DataFrame()
@@ -123,52 +127,42 @@ for country in show_countries:
          ix = np.unravel_index(k, ax.shape)
          plt.sca(ax[ix])
          #sns.set(style="whitegrid")
-
-#         b_legend =False
-#         if k==0:
-#             b_legend = True
-#         sns.kdeplot(data=df_one_country[q],label="Original", legend=b_legend, n_levels=5,fill=True, ax=ax[ix])
-#         sns.kdeplot(data=df_one_question_non_linear[q],label="Polarization", n_levels=5,legend=b_legend, fill=True, ax=ax[ix])
-
-#         sns.histplot(df_one_question_non_linear[q], bins=2, color="orange", kde_kws={"shade": True}, ax=ax[ix])
-#         sns.histplot(df_one_country[q], bins=2, color="blue", kde_kws={"shade": True}, ax=ax[ix])
-
-#         matplotlib.rcParams['legend.handlelength'] = 0  #delete lines from legends
-#         ax[k].tick_params(axis="both", labelsize=5)
-#         ax[ix].bar(X, new_score, width=0.1)
          #ax[ix].xticks(X)
+         x = np.arange(0, 5 * 2, 2)
+         width = bar_width
+         x1 = x - width/2
+         x2 = x + width/2
          if k == 0:
-             ax[ix].bar(frequency_linear.index.astype(str), frequency_linear.values, color=colors[1],label="Original",width=bar_width)
-             ax[ix].bar(frequency_nonlinear.index.astype(str), frequency_nonlinear.values,  color=colors[2], bottom=frequency_linear.values, label="Polarization",width=bar_width)
+             ax[ix].bar(x1, frequency_linear.values / sample_num, width=width, color=colors[1], label="Original")
+             ax[ix].bar(x2, frequency_nonlinear.values / sample_num, width=width, color=colors[2], label='Polarization')
              ax[ix].legend(loc="best", frameon=False, fontsize=18)
-
+             # print("%%%%%%%", frequency_linear.index.astype(str))
+             # print("$$$$$$$", frequency_linear.values)
          else:
-             ax[ix].bar(frequency_linear.index.astype(str),frequency_linear.values, color=colors[1],width=bar_width)
-             ax[ix].bar(frequency_nonlinear.index.astype(str), frequency_nonlinear.values,bottom=frequency_linear.values, color=colors[2],width=bar_width)
-         if k == 1:
-             ax[ix].set_title(f"({country})",fontsize=25)
-    #         ax[k].legend(loc="lower left", frameon=False, fontsize=8)
-#         ax[ix].set_xlim([1, 5])#
-#         ax[ix].set_ylim([0, 1])
+             ax[ix].bar(x1, frequency_linear.values / sample_num, width=width, color=colors[1])
+             ax[ix].bar(x2, frequency_nonlinear.values / sample_num, width=width, color=colors[2])
+         plt.xticks(x, frequency_linear.index.astype(str), fontsize=11)
+         # if k == 0:
+         #     ax[ix].bar(frequency_linear.index.astype(str), frequency_linear.values, color=colors[1],label="Original",width=bar_width)
+         #     ax[ix].bar(frequency_nonlinear.index.astype(str), frequency_nonlinear.values,  color=colors[2], bottom=frequency_linear.values, label="Polarization",width=bar_width)
+         #     ax[ix].legend(loc="best", frameon=False, fontsize=18)
+         #
+         # else:
+         #     ax[ix].bar(frequency_linear.index.astype(str),frequency_linear.values, color=colors[1],width=bar_width)
+         #     ax[ix].bar(frequency_nonlinear.index.astype(str), frequency_nonlinear.values,bottom=frequency_linear.values, color=colors[2],width=bar_width)
+         #if k == 1:
+             #ax[ix].set_title(f"{country}",fontsize=25)
+         ax[ix].set_title(f"{new_questions[questions.index(q)]}:{question_meaning[new_questions[questions.index(q)]]}", fontsize=20)
+         xylims = plt.axis()
+         if k == len(questions) - 2:
+             ax[ix].text(xylims[0] - 4,xylims[2] - 0.1, f"{country}", fontsize=30)
          k += 1
-         ll = ax[ix].plot(bins,label="Test")
-        # ll[0].set_visible(False)
-        # ax[ix].text()#
-
-#     ax[k-1].text(65, max_y* 0.8, ("RCA=%.1f" % rca_threshold), fontsize=8)
-     #plt.axis("off")
-#     legend_elements=[]
-#     for i in range(len(show_countries)):
-#         legend_elements.append(Line2D([0], [0], marker='_',color = colors[i], label = show_countries[i]))
-     #plt.legend(handles=legend_elements)
-#     plt.legend(handles=legend_elements,bbox_to_anchor=(-0.8, -0.2), loc='upper center', fontsize=6, frameon=False,ncols= len(show_countries))
-    # plt.tight_layout()
-     #ax[0].title(country.capitalize())
      plt.savefig(f_fig,dpi=200, bbox_inches='tight')
      plt.close()
+     time_end = time.time()
      logger.info("country:%s，time:%d s", country, time_end - time_start)
 
-     exit(0)
+     #exit(0)
 
 #     exit(0)
 
