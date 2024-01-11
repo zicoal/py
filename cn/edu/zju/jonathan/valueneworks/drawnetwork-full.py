@@ -31,8 +31,7 @@ rca_threshold=1.8
 #equations = ["eq-nonlinear"]
 #weighted = ["unweighted"]
 
-equations = ["eq-nonlinear","eq-linear"]
-#weighted = ["unweighted","weighted"]
+equations = ["eq-linear","eq-nonlinear"]
 weighted = ["weighted"]
 
 
@@ -83,7 +82,7 @@ f_dir ='D:\\pydata\\data\\jonathan\\%s\\q%d\\weights_number_min_%.1f.csv'
 
 f_figs_dir =f'D:\\pydata\\data\\jonathan\\results\\rca_based\\q{len(questions)}\\figs\\networks\\fig_%s_%s_rca_%.1f.png'
 f_prefix ="country_network_"
-colors = ['DeepPink', 'orange', 'DarkCyan', '#A0CBE2', '#3CB371', 'b', 'orange', 'y', 'c', '#838B8B', 'purple',
+colors = ['DeepPink', 'orange', 'DarkCyan', 'b', '#3CB371',  'y', 'c', '#A0CBE2', '#838B8B', 'purple',
           'olive', '#A0CBE2', '#4EEE94'] * 500
 
 
@@ -169,7 +168,7 @@ for equation in equations:
                          edge_color='#2E8B57',
                          with_labels=True,
                          font_color='black',
-                         font_size=5,
+                         font_size=8,
                          alpha=0.9,
                          node_size=node_size,
                          width=edgewidth,
