@@ -26,8 +26,9 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 q_start_columm=2
-rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
-                  1.7, 1.8, 1.9, 2]
+#rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
+#                  1.7, 1.8, 1.9, 2]
+rca_thresholds = [2.1]
 rca_threshold=2.1
 
 
@@ -86,7 +87,7 @@ for equation in equations:
     for rca_threshold in rca_thresholds:
         f_rca= 'D:\\pydata\\data\\jonathan\\%s\\q%d\\rca_number_%.1f.csv' % (equation,len(questions), rca_threshold)
         f_weights = 'D:\\pydata\\data\\jonathan\\%s\\q%d\\weights_number_min_%.1f.csv' % (equation,len(questions), rca_threshold)
-        logger.info("RCA:%.1f,Equation:%s" % (rca_threshold,equation))
+        #logger.info("RCA:%.1f,Equation:%s" % (rca_threshold,equation))
         if os.path.isfile(f_rca)==False:
             country_paticipant_quest_rca = pd.DataFrame(columns=["country", 'id', 'Q', 'RCA'])
             country_quest_phi_weight_network = pd.DataFrame(columns=["country", 'QA', 'QB', 'weights'])

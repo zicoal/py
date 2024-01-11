@@ -27,10 +27,22 @@ logger.addHandler(ch)
 
 
 rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
-                  1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3,
-                  2.4,2.5,2.6,2.7,2.8,2.9,3,3.1,
-                  3.2,3.3,3.4,3.5,3.6,3.7,3.8,3.9,4,4.1]
+                  1.7, 1.8, 1.9, 2]
+
 rca_threshold = 2.1
+
+#logger.info(getscore(5))
+#exit(0)
+questions_original = ['q1', 'q2', 'q3', 'q4',
+             'q5', 'q6', 'q7', 'q8',
+             'q9', 'q10', 'q11', 'q12',
+             'q13', 'q14', 'q15', 'q16']
+
+questions = ['q1', 'q2', 'q4', 'q5',
+              'q6', 'q7', 'q8','q9',
+             'q10', 'q11', 'q12', 'q15']
+
+
 #equations = "score1-5"
 equations = ["eq-nonlinear","eq-linear"]
 
@@ -44,9 +56,11 @@ time_start = time.time()
 
 for equation in equations:
 
-    f_country_value= 'D:\\pydata\\data\\jonathan\\results\\rca_based\\country_network_cluster_coefficient_%s_weighted.xlsx' % equation
 
-    f_weights = 'D:\\pydata\\data\\jonathan\\%s\\weights_number_min_%.1f.csv' % (equation, 1)
+    f_country_value= 'D:\\pydata\\data\\jonathan\\results\\rca_based\\q%d\\country_network_cluster_coefficient_%s_weighted.xlsx' %  (len(questions), equation)
+
+    f_weights = 'D:\\pydata\\data\\jonathan\\%s\\q%d\\weights_number_min_%.1f.csv' % ( equation, len(questions), 1)
+
 
     df = pd.read_csv(f_weights)
     countries = []
@@ -69,7 +83,7 @@ for equation in equations:
 
     for rca_threshold in rca_thresholds:
 
-        f_weights = 'D:\\pydata\\data\\jonathan\\%s\\weights_number_min_%.1f.csv' % (equation, rca_threshold)
+        f_weights = 'D:\\pydata\\data\\jonathan\\%s\\q%d\\weights_number_min_%.1f.csv' % (equation, len(questions), rca_threshold)
         add_column_name = 'rca=%.1f' % rca_threshold
 
         df = pd.read_csv(f_weights)

@@ -38,22 +38,40 @@ rca_threshold=1.8
 equations = "eq-nonlinear"
 
 
+questions_original = ['q1', 'q2', 'q3', 'q4',
+             'q5', 'q6', 'q7', 'q8',
+             'q9', 'q10', 'q11', 'q12',
+             'q13', 'q14', 'q15', 'q16']
+
+questions = ['q1', 'q2', 'q4', 'q5',
+              'q6', 'q7', 'q8','q9',
+             'q10', 'q11', 'q12', 'q15']
+
 
 f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 f_code= 'D:\\pydata\\data\\jonathan\\code.xlsx'
 
 f_prefix ="country_network_"
-f_dir ='D:\\pydata\\data\\jonathan\\results\\rca_based\\'
-f_figs_dir ='D:\\pydata\\data\\jonathan\\results\\rca_based\\figs\\metrics\\fig_%s.png'
+f_dir ='D:\\pydata\\data\\jonathan\\results\\rca_based\\q%d\\' % len(questions)
+f_figs_dir ='D:\\pydata\\data\\jonathan\\results\\rca_based\\q%d\\figs\\metrics\\fig_%s.png'
 
 
 
 
-rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6,
-                  1.7, 1.8, 1.9, 2, 2.1]
+rca_thresholds = [1,  1.2,1.4,
+                  1.5, 1.6,1.7,
+                  1.8, 1.9, 2]
 
+questions_original = ['q1', 'q2', 'q3', 'q4',
+             'q5', 'q6', 'q7', 'q8',
+             'q9', 'q10', 'q11', 'q12',
+             'q13', 'q14', 'q15', 'q16']
+
+questions = ['q1', 'q2', 'q4', 'q5',
+              'q6', 'q7', 'q8','q9',
+             'q10', 'q11', 'q12', 'q15']
 str_linear="[f(x)=x]"
-str_nonlinear="[$f(x) = x^2-6x+10$]"
+str_nonlinear="[$f(x) = (x-3)^2+1$]"
 #rca_thresholds = [1, 1.1, 1.2, 1.3, 1.4,1.5]
 
 
@@ -73,13 +91,14 @@ logger.info("Country Loaded! #countries:%d, time:%d s'", len(countries), time_en
 
 #show_countries = ['Germany', "South Africa",'Hong Kong','Australia',"United States","United Kingdom"]
 
-show_countries = ['Germany', "France",'Sweden','Croatia',"Hong Kong","Iraq","Zambia","United States","United Kingdom"]
+#show_countries = ['Germany', "France",'Sweden','Croatia',"Hong Kong","Iraq","Zambia","United States","United Kingdom"]
+show_countries = ['Germany', "France",'Sweden','Croatia',"Zambia","South Africa","Iraq","Hong Kong","India","Japan", "United States","United Kingdom",]
 
 #colors = ["orange","skyblue","green","gray","deeppink","violet"]
 colors = [ 'y','gray', 'violet', '#A0CBE2', '#3CB371', 'b', 'orange', 'DeepPink', 'c', '#838B8B', 'purple',
           'olive', '#A0CBE2', '#4EEE94'] * 500
 
-rows = 4
+rows = 3
 cols = round(len(rca_thresholds) / rows)
 #print(cols)
 
@@ -96,7 +115,7 @@ for f in file_list:
          network_property= network_property.replace("eq-linear",str_linear)
      else:
          network_property = network_property.replace("eq-nonlinear",str_nonlinear)
-     f_fig = f_figs_dir % network_property_old
+     f_fig = f_figs_dir % (len(questions),network_property_old)
 
      logger.info("File:%s，time:%d s", network_property, time_end - time_start)
 
@@ -156,7 +175,7 @@ for f in file_list:
      for i in range(len(show_countries)):
          legend_elements.append(Line2D([0], [0], marker='_',color = colors[i], label = show_countries[i]))
      #plt.legend(handles=legend_elements)
-     plt.legend(handles=legend_elements,bbox_to_anchor=(-0.8, -0.2), loc='upper center', fontsize=6, frameon=False,ncols= len(show_countries))
+     plt.legend(handles=legend_elements,bbox_to_anchor=(-0.8, -0.2), loc='upper center', fontsize=6, frameon=False,ncols= len(show_countries)/2)
     # plt.tight_layout()
      plt.savefig(f_fig,dpi=800, bbox_inches='tight')
      plt.close()

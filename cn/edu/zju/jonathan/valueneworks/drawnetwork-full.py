@@ -32,20 +32,25 @@ rca_threshold=1.8
 #weighted = ["unweighted"]
 
 equations = ["eq-nonlinear","eq-linear"]
-weighted = ["unweighted","weighted"]
+#weighted = ["unweighted","weighted"]
+weighted = ["weighted"]
 
 
 
 
 logger.info("loading data...")
 time_start=time.time()
-questions=['q1', 'q2', 'q3', 'q4',
-                 'q5', 'q6', 'q7', 'q8',
-                 'q9', 'q10', 'q11', 'q12',
-                 'q13', 'q14', 'q15', 'q16']
+questions_original = ['q1', 'q2', 'q3', 'q4',
+             'q5', 'q6', 'q7', 'q8',
+             'q9', 'q10', 'q11', 'q12',
+             'q13', 'q14', 'q15', 'q16']
+
+questions = ['q1', 'q2', 'q4', 'q5',
+              'q6', 'q7', 'q8','q9',
+             'q10', 'q11', 'q12', 'q15']
 
 #rca_thresholds = [1, 1.1, 1.2,  1.4, 1.5, 1.6]
-rca_thresholds = [1.0,1.4,1.5,1.7,2.0]
+rca_thresholds = [1.4,1.5,1.6]
 #rca_thresholds = [1.0]
 
 f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
@@ -57,7 +62,7 @@ f1 = 'D:\\pydata\\data\\jonathan\\MCS_recoded.csv'
 
 
 #show_countries = ['Germany', "France",'Sweden','Croatia',"Iraq","Zambia","Hong Kong","United States","United Kingdom"]
-show_countries = ['Germany', "France",'Sweden','Croatia',"Zambia","South Affrica","Iraq","Hong Kong","India","Japan", "United States","United Kingdom",]
+show_countries = ['Germany', "France",'Sweden','Croatia',"Zambia","South Africa","Iraq","Hong Kong","India","Japan", "United States","United Kingdom",]
 #show_countries = ["Zambia","United States",'Germany' ]
 
 
@@ -69,14 +74,14 @@ rows = 3
 cols = round(len(show_countries) / rows)
 
 
-str_linears=["[f(x)=x]","[$f(x) = x^2-6x+10$]"]
+str_linears=["[f(x)=x]","[$f(x) = (x-3)^2+1$]"]
 
 
-f_dir ='D:\\pydata\\data\\jonathan\\%s\\weights_number_min_%.1f.csv'
+f_dir ='D:\\pydata\\data\\jonathan\\%s\\q%d\\weights_number_min_%.1f.csv'
 
 
 
-f_figs_dir ='D:\\pydata\\data\\jonathan\\results\\rca_based\\figs\\networks\\fig_%s_%s_rca_%.1f.png'
+f_figs_dir =f'D:\\pydata\\data\\jonathan\\results\\rca_based\\q{len(questions)}\\figs\\networks\\fig_%s_%s_rca_%.1f.png'
 f_prefix ="country_network_"
 colors = ['DeepPink', 'orange', 'DarkCyan', '#A0CBE2', '#3CB371', 'b', 'orange', 'y', 'c', '#838B8B', 'purple',
           'olive', '#A0CBE2', '#4EEE94'] * 500
@@ -94,7 +99,7 @@ for equation in equations:
      e += 1
      for rca_threshold in rca_thresholds:
 
-       f1 = f_dir  % (network_property_old, rca_threshold)
+       f1 = f_dir  % (network_property_old, len(questions),rca_threshold)
        df = pd.read_csv(f1)
 #       print(f1)
 #       countries = {}
@@ -105,7 +110,7 @@ for equation in equations:
        for w in weighted:
            f_fig = f_figs_dir % (network_property_old,w, rca_threshold)
            k = 0
-           fig = plt.figure(figsize=(18,18));   plt.clf()
+           fig = plt.figure(figsize=(22,18));   plt.clf()
            fig, ax = plt.subplots(nrows=rows, ncols=cols, num=1)
 #           plt.subplot(rows, cols, k)
            for c in show_countries:
@@ -114,17 +119,19 @@ for equation in equations:
                 data_one_country = df_one_country.values.tolist()
                 g = nx.Graph()
                 for q_node in questions:
-                    g.add_node(q_node)
+                    g.add_node(f"q{questions.index(q_node)+1}")
                 time_end =time.time()
                 com=None
 
                 if (w =="unweighted"):
                     for i in range(len(data_one_country)):
-                        g.add_edge(data_one_country[i][1], data_one_country[i][2])
+                        g.add_edge(f"q{questions.index(data_one_country[i][1])+1}", f"q{questions.index(data_one_country[i][2])+1}")
+    #                    g.add_edge(data_one_country[i][1], data_one_country[i][2])
                     com = community_louvain.best_partition(g)
                 else:
                     for i in range(len(data_one_country)):
-                        g.add_edge(data_one_country[i][1], data_one_country[i][2], weight=data_one_country[i][3])
+                        g.add_edge(f"q{questions.index(data_one_country[i][1])+1}", f"q{questions.index(data_one_country[i][2])+1}", weight=data_one_country[i][3])
+#                       g.add_edge(data_one_country[i][1], data_one_country[i][2], weight=data_one_country[i][3])
                     com = community_louvain.best_partition(g,weight='weight')
 
                 # 格式整理
@@ -177,7 +184,7 @@ for equation in equations:
            xylims = plt.axis()
            min_xlim=xylims[0]
            min_ylim=xylims[2]
-           plt.text(min_xlim-3, min_ylim,"RCA=%.1f,%s %s" % (rca_threshold,w, network_property), fontsize=18, color='b')
+           plt.text(min_xlim-4, min_ylim,"RCA=%.1f,%s %s" % (rca_threshold,w, network_property), fontsize=18, color='b')
            plt.savefig(f_fig,dpi=800, bbox_inches='tight')
            plt.close()
            time_end =time.time()
