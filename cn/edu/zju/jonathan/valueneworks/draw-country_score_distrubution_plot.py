@@ -100,7 +100,7 @@ for country in show_countries:
 
      fig = plt.figure(figsize=(24, 18));
      plt.clf()
-     fig, ax = plt.subplots(nrows=rows, ncols=cols, num=1)
+     fig, axs = plt.subplots(nrows=rows, ncols=cols, num=1)
 
      #ax = ax.ravel()
 #     bins=np.arange(0.5, 5.5, 1)
@@ -125,8 +125,8 @@ for country in show_countries:
 
          frequency_linear = df_one_question['q'].value_counts().sort_index()
          frequency_nonlinear = df_one_question_non_linear['q'].value_counts().sort_index()
-         ix = np.unravel_index(k, ax.shape)
-         plt.sca(ax[ix])
+         ix = np.unravel_index(k, axs.shape)
+         plt.sca(axs[ix])
          #sns.set(style="whitegrid")
          #ax[ix].xticks(X)
          x = np.arange(0, 5 * 2, 2)
@@ -134,27 +134,37 @@ for country in show_countries:
          x1 = x - width/2
          x2 = x + width/2
          if k == 0:
-             ax[ix].bar(x1, frequency_linear.values / sample_num, width=width, color=colors[1], label="Original")
-             ax[ix].bar(x2, frequency_nonlinear.values / sample_num, width=width, color=colors[2], label='Polarization')
-             ax[ix].legend(loc="best", frameon=False, fontsize=18)
+             axs[ix].bar(x1, frequency_linear.values / sample_num, width=width, color=colors[1], label="Original")
+             axs[ix].bar(x2, frequency_nonlinear.values / sample_num, width=width, color=colors[2], label='Polarization')
+             axs[ix].legend(loc="best", frameon=False, fontsize=18)
              # print("%%%%%%%", frequency_linear.index.astype(str))
              # print("$$$$$$$", frequency_linear.values)
          else:
-             ax[ix].bar(x1, frequency_linear.values / sample_num, width=width, color=colors[1])
-             ax[ix].bar(x2, frequency_nonlinear.values / sample_num, width=width, color=colors[2])
-        #  plt.xticks(x, frequency_linear.index.astype(str), fontsize=11)
+             axs[ix].bar(x1, frequency_linear.values / sample_num, width=width, color=colors[1])
+             axs[ix].bar(x2, frequency_nonlinear.values / sample_num, width=width, color=colors[2])
+
+         avg_original = np.mean(df_one_question[q])
+         avg_polarization =   np.mean(df_one_question_non_linear[q])
+
+         axs_twin = axs[ix].twinx()
+         axs_twin.set_ylim(1,5)
+         if (k==1):
+             axs_twin.axhline(avg_original, color=colors[1], linewidth=4, linestyle="--",label="Original" )
+             axs_twin.axhline(avg_polarization, color=colors[2], linewidth=4, linestyle="--",label="Polarization" )
+#             axs_twin.legend(loc="best", frameon=False, fontsize=28)
+         else:
+             axs_twin.axhline(avg_original, color=colors[1], linewidth=4, linestyle="--" )
+             axs_twin.axhline(avg_polarization, color=colors[2], linewidth=4, linestyle="--")
+
+         #  plt.xticks(x, frequency_linear.index.astype(str), fontsize=11)
          plt.xticks(x, x_ticks.astype(str), fontsize=20)
-         ax[ix].set_title(f"{new_questions[questions.index(q)]}:{question_meaning[new_questions[questions.index(q)]]}", fontsize=20)
+         axs[ix].set_title(f"{new_questions[questions.index(q)]}:{question_meaning[new_questions[questions.index(q)]]}", fontsize=20)
          xylims = plt.axis()
          if k == len(questions) - 2:
-             ax[ix].text(xylims[0] - 4,xylims[2] - 0.12, f"{country}", fontsize=30)
+             axs[ix].text(xylims[0] - 4,xylims[2] - 1.12, f"{country}", fontsize=30)
          k += 1
      plt.savefig(f_fig,dpi=200, bbox_inches='tight')
      plt.close()
      time_end = time.time()
      logger.info("country:%s，time:%d s", country, time_end - time_start)
-
-     #exit(0)
-
-#     exit(0)
 
