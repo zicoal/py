@@ -163,7 +163,7 @@ for country in show_countries:
          if k == len(questions) - 2:
              axs[ix].text(xylims[0] - 4,xylims[2] - 1.12, f"{country}", fontsize=30)
          k += 1
-     plt.savefig(f_fig,dpi=200, bbox_inches='tight')
+     plt.savefig(f_fig,dpi=800, bbox_inches='tight')
      plt.close()
      time_end = time.time()
      logger.info("country:%s，time:%d s", country, time_end - time_start)
