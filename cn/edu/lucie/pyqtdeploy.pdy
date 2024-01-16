@@ -1,0 +1,5 @@
+--- # pyqtdeploy configuration
+application: addition.py
+platform: ios-64
+
+pyinstaller -F -w -i logo1.ico addition.py
